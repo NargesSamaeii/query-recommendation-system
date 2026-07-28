@@ -1,0 +1,64 @@
+﻿{
+    "question":  "Which Bill of Materials (BOMs) have at least one part supplied by a supplier from Poland?",
+    "question_id":  90,
+    "expected_classes":  [
+                             "BillOfMaterial",
+                             "BomPart",
+                             "Product",
+                             "Supplier"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "BillOfMaterial",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "country"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "BomPart",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "country"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "country"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "country"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Poland":  "http://dbpedia.org/resource/Poland"
+                          },
+    "expected_results":  [
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/bom-11"
+                             },
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/bom-12"
+                             },
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/bom-6"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

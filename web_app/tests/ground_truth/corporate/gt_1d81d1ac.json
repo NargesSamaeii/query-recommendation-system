@@ -1,0 +1,49 @@
+﻿{
+    "question":  "What are the names of employees with area of expertise in Network in the Marketing department?",
+    "question_id":  58,
+    "expected_classes":  [
+                             "Department",
+                             "ProductCategory",
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Department",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "areaOfExpertise",
+                                                                "name"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "areaOfExpertise",
+                                                                "name"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "areaOfExpertise",
+                                                                "name"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "department-dept-85880":  "http://ld.company.org/prod-instances/dept-85880",
+                              "Network":  "http://ld.company.org/prod-instances/prod-cat-Network"
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Kevin Feigenbaum"
+                             },
+                             {
+                                 "name":  "Lambert Faust"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

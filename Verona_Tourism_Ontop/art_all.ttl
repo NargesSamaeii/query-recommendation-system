@@ -1,0 +1,434 @@
+@prefix ex: <http://example.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+sh:class rdf:type owl:AnnotationProperty .
+sh:datatype rdf:type owl:AnnotationProperty .
+sh:maxCount rdf:type owl:AnnotationProperty .
+sh:message rdf:type owl:AnnotationProperty .
+sh:minCount rdf:type owl:AnnotationProperty .
+sh:path rdf:type owl:AnnotationProperty .
+sh:pattern rdf:type owl:AnnotationProperty .
+sh:property rdf:type owl:AnnotationProperty .
+sh:targetClass rdf:type owl:AnnotationProperty .
+<http://www.w3.org/ns/shacl/dash#uniqueValueForClass> rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+xsd:date rdf:type rdfs:Datatype .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+ex:artstate rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Art ;
+            rdfs:range ex:State ;
+            rdfs:label "Art State" .
+
+ex:eventstate rdf:type owl:ObjectProperty ;
+              rdfs:domain ex:Event ;
+              rdfs:range ex:State ;
+              rdfs:label "Event State" .
+
+ex:includesArt rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:ArtCategory ;
+               rdfs:range ex:Art ;
+               rdfs:label "Includes Art" .
+
+
+ex:includesEvent rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:EventCategory ;
+                 rdfs:range ex:Event ;
+                 rdfs:label "Includes Event" .
+
+
+
+ex:includesArtStop rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Tour ;
+                   rdfs:range ex:Art ;
+                   rdfs:label "Includes Art Stop" .
+
+ex:tourtype rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Tour ;
+            rdfs:range ex:TourType ;
+            rdfs:label "Tour Type" .
+
+ex:hostedevent rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:Location ;
+               rdfs:range ex:Event ;
+               rdfs:label "Hosted Event" .
+
+ex:hostedat rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Event ;
+            rdfs:range ex:Location ;
+            rdfs:label "Hosted At" .
+
+ex:scheduledevent rdf:type owl:ObjectProperty ;
+                  rdfs:domain ex:Calendar ;
+                  rdfs:range ex:Event ;
+                  rdfs:label "Scheduled Event" .
+
+ex:scheduledon rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:Event ;
+               rdfs:range ex:Calendar ;
+               rdfs:label "Scheduled On" .
+
+ex:hasImage rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Art ;
+            rdfs:range ex:ArtImage ;
+            rdfs:label "Has Image" .
+
+ex:imageOfArt rdf:type owl:ObjectProperty ;
+              rdfs:domain ex:ArtImage ;
+              rdfs:range ex:Art ;
+              rdfs:label "Image Of Art" .
+              
+#################################################################
+#    Data properties
+#################################################################
+
+ex:address rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Location ;
+           rdfs:range xsd:string ;
+           rdfs:label "Address" .
+
+ex:area_di_download rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Art ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "Area Download" .
+
+ex:artcatclassid rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:ArtCategory ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Art Category Class ID" .
+
+ex:artcatname_it rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:ArtCategory ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Art Category Name" .
+
+ex:artclassid rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Art ;
+              rdfs:range xsd:string ;
+              rdfs:label "Art Class ID" .
+
+ex:artdescr_it rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Art ;
+               rdfs:range xsd:string ;
+               rdfs:label "Art Description (IT)" .
+
+ex:artimage_url rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Art ;
+                rdfs:range xsd:string ;
+                rdfs:label "Art Image URL" .
+
+ex:artname_it rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Art ;
+              rdfs:range xsd:string ;
+              rdfs:label "Art Name" .
+
+ex:calendarclassid rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Calendar ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "Calendar Class ID" .
+
+ex:day rdf:type owl:DatatypeProperty ;
+       rdfs:domain ex:Calendar ;
+       rdfs:range xsd:date ;
+       rdfs:label "Day" .
+
+ex:duration rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Tour ;
+            rdfs:range xsd:decimal ;
+            rdfs:label "Duration" .
+
+ex:end_time rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Calendar ;
+            rdfs:range xsd:string ;
+            rdfs:label "End Time" .
+
+ex:eventcatclassid rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:EventCategory ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "Event Category Class ID" .
+
+ex:eventcatname_it rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:EventCategory ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "Event Category Name" .
+
+ex:eventclassid rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Event ;
+                rdfs:range xsd:string ;
+                rdfs:label "Event Class ID" .
+
+ex:eventdescr_it rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Event ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Event Description (IT)" .
+
+ex:eventimage_url rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Event ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Event Image URL" .
+
+ex:eventname_it rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Event ;
+                rdfs:range xsd:string ;
+                rdfs:label "Event Name" .
+
+ex:geom rdf:type owl:DatatypeProperty ;
+        rdfs:domain ex:Location ;
+        rdfs:range xsd:string ;
+        rdfs:label "Geometry" .
+
+ex:geom_path rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Tour ;
+             rdfs:range xsd:string ;
+             rdfs:label "Geometry Path" .
+
+ex:kml_path rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Tour ;
+            rdfs:range xsd:string ;
+            rdfs:label "KML Path" .
+
+ex:length rdf:type owl:DatatypeProperty ;
+          rdfs:domain ex:Tour ;
+          rdfs:range xsd:decimal ;
+          rdfs:label "Length" .
+
+ex:locationclassid rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Location ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "Location Class ID" .
+
+ex:num rdf:type owl:DatatypeProperty ;
+       rdfs:domain ex:Location ;
+       rdfs:range xsd:integer ;
+       rdfs:label "Number" .
+
+ex:open_time rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Art ;
+             rdfs:range xsd:string ;
+             rdfs:label "Open Time" .
+
+ex:proximity_area rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Tour ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Proximity Area" .
+
+ex:start_time rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Calendar ;
+              rdfs:range xsd:string ;
+              rdfs:label "Start Time" .
+
+ex:statecode rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:State ;
+             rdfs:range xsd:string ;
+             rdfs:label "State Code" .
+
+ex:statename rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:State ;
+             rdfs:range xsd:string ;
+             rdfs:label "State Name" .
+
+ex:tickets rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Art ;
+           rdfs:range xsd:string ;
+           rdfs:label "Tickets" .
+
+ex:tourclassid rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Tour ;
+               rdfs:range xsd:string ;
+               rdfs:label "Tour Class ID" .
+
+ex:tourdescr_it rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Tour ;
+                rdfs:range xsd:string ;
+                rdfs:label "Tour Description (IT)" .
+
+ex:tourimage_url rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Tour ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Tour Image URL" .
+
+ex:tourname_it rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Tour ;
+               rdfs:range xsd:string ;
+               rdfs:label "Tour Name" .
+
+ex:typecode rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:TourType ;
+            rdfs:range xsd:string ;
+            rdfs:label "Tour Type Code" .
+
+ex:typename rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:TourType ;
+            rdfs:range xsd:string ;
+            rdfs:label "Tour Type Name" .
+
+ex:imageUrl rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:ArtImage ;
+            rdfs:range xsd:string ;
+            rdfs:label "Image URL" .
+
+ex:imageCaption rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:ArtImage ;
+                rdfs:range xsd:string ;
+                rdfs:label "Image Caption" .
+
+ex:imageType rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:ArtImage ;
+             rdfs:range xsd:string ;
+             rdfs:label "Image Type" .
+
+#################################################################
+#    Classes
+#################################################################
+
+ex:Art rdf:type owl:Class ;
+       owl:equivalentClass wd:Q570116 ;
+       rdfs:label "Art" .
+
+ex:ArtCategory rdf:type owl:Class ;
+               rdfs:label "Art Category" .
+
+ex:Calendar rdf:type owl:Class ;
+            rdfs:label "Calendar" .
+
+ex:Event rdf:type owl:Class ;
+         owl:equivalentClass wd:Q1656682 ;
+         rdfs:label "Event" .
+
+ex:EventCategory rdf:type owl:Class ;
+                 rdfs:label "Event Category" .
+
+ex:Location rdf:type owl:Class ;
+            rdfs:label "Location" .
+
+ex:State rdf:type owl:Class ;
+         rdfs:label "State" .
+
+ex:Tour rdf:type owl:Class ;
+        rdfs:label "Tour" .
+
+ex:TourType rdf:type owl:Class ;
+            rdfs:label "Tour Type" .
+
+sh:NodeShape rdf:type owl:Class .
+
+wd:Q1656682 rdf:type owl:Class .
+wd:Q570116 rdf:type owl:Class .
+
+ex:ArtImage rdf:type owl:Class ;
+            rdfs:label "Art Image" .
+
+#################################################################
+#    SHACL Shapes
+#################################################################
+
+ex:ArtShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+            sh:property [ sh:datatype xsd:string ;
+                          sh:maxCount 1 ;
+                          sh:minCount 1 ;
+                          sh:path ex:artclassid ] ,
+                        [ sh:datatype xsd:string ;
+                          sh:minCount 1 ;
+                          sh:path ex:artname_it ] ;
+            sh:targetClass ex:Art .
+
+ex:ArtCategoryShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+                    sh:property [ sh:datatype xsd:string ;
+                                  sh:maxCount 1 ;
+                                  sh:minCount 1 ;
+                                  sh:path ex:artcatclassid ] ,
+                                [ sh:datatype xsd:string ;
+                                  sh:minCount 1 ;
+                                  sh:path ex:artcatname_it ] ;
+                    sh:targetClass ex:ArtCategory .
+
+ex:EventShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+              sh:property [ sh:datatype xsd:string ;
+                            sh:maxCount 1 ;
+                            sh:minCount 1 ;
+                            sh:path ex:eventclassid ;
+                            <http://www.w3.org/ns/shacl/dash#uniqueValueForClass> ex:Event ] ,
+                          [ sh:datatype xsd:string ;
+                            sh:minCount 1 ;
+                            sh:path ex:eventname_it ] ,
+                          [ sh:class ex:Location ;
+                            sh:minCount 1 ;
+                            sh:path ex:hostedat ] ;
+              sh:targetClass ex:Event .
+
+ex:EventCategoryShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+                      sh:property [ sh:datatype xsd:string ;
+                                    sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:path ex:eventcatclassid ] ,
+                                  [ sh:datatype xsd:string ;
+                                    sh:minCount 1 ;
+                                    sh:path ex:eventcatname_it ] ;
+                      sh:targetClass ex:EventCategory .
+
+ex:CalendarShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+                 sh:property [ sh:datatype xsd:string ;
+                               sh:maxCount 1 ;
+                               sh:minCount 1 ;
+                               sh:path ex:calendarclassid ] ,
+                             [ sh:datatype xsd:date ;
+                               sh:minCount 1 ;
+                               sh:path ex:day ] ,
+                             [ sh:datatype xsd:string ;
+                               sh:message "Start time must be in HH:MM format (00:00 - 23:59)." ;
+                               sh:path ex:start_time ;
+                               sh:pattern "^(?:[01]\\d|2[0-3]):[0-5]\\d$" ] ,
+                             [ sh:datatype xsd:string ;
+                               sh:message "End time must be in HH:MM format (00:00 - 23:59)." ;
+                               sh:path ex:end_time ;
+                               sh:pattern "^(?:[01]\\d|2[0-3]):[0-5]\\d$" ] ;
+                 sh:targetClass ex:Calendar .
+
+ex:LocationShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+                 sh:property [ sh:datatype xsd:string ;
+                               sh:maxCount 1 ;
+                               sh:minCount 1 ;
+                               sh:path ex:locationclassid ] ,
+                             [ sh:datatype xsd:string ;
+                               sh:minCount 1 ;
+                               sh:path ex:address ] ;
+                 sh:targetClass ex:Location .
+
+ex:TourShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+             sh:property [ sh:datatype xsd:string ;
+                           sh:maxCount 1 ;
+                           sh:minCount 1 ;
+                           sh:path ex:tourclassid ] ,
+                         [ sh:datatype xsd:string ;
+                           sh:minCount 1 ;
+                           sh:path ex:tourname_it ] ;
+             sh:targetClass ex:Tour .
+
+
+
+
+

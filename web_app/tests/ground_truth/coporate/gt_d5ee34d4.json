@@ -1,0 +1,25 @@
+{
+  "question": "What is the telephone of Baldwin Dirksen?",
+  "question_id": 2,
+  "expected_classes": [
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "phone"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Baldwin Dirksen": "http://ld.company.org/prod-instances/empl-Baldwin.Dirksen%40company.org"
+  },
+  "expected_results": [
+    {
+      "result": "+49-6200-33069465"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

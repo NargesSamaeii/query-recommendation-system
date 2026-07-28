@@ -1,0 +1,2934 @@
+﻿{
+    "question":  "Which hardware items have a width greater than their height and a depth less than 50 mm? Return their IRIs and dimensions (width, height, and depth).",
+    "question_id":  83,
+    "expected_classes":  [
+                             "Hardware"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "width_mm",
+                                                                "height_mm",
+                                                                "depth_mm"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "width":  "77",
+                                 "height":  "53",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A166-3766336"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "59",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A225-1988393"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "43",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A243-3332548"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "28",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A315-1730287"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "33",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A360-3041803"
+                             },
+                             {
+                                 "width":  "42",
+                                 "height":  "15",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A391-9508821"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "39",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A403-4549719"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "16",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A464-7310986"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "43",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A566-1562523"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "27",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A595-2446575"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "62",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A769-5120124"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "19",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A816-3021832"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "25",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A837-2549775"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "50",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A981-3634031"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "41",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A994-9085459"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "45",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B120-9942467"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "55",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B143-5457756"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "31",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B150-4370781"
+                             },
+                             {
+                                 "width":  "42",
+                                 "height":  "17",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B187-7652875"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "46",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B387-9270009"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "26",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B488-6957957"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "48",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B507-9536014"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "20",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B519-3674576"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "29",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B523-5464510"
+                             },
+                             {
+                                 "width":  "20",
+                                 "height":  "12",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B567-3760235"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "23",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B625-4480024"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "37",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B818-8738213"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "24",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B825-7596233"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "52",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B888-7564557"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "29",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B918-9468392"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "73",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B926-8983325"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "47",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B937-9245602"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "19",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C119-5354812"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "16",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C171-3616793"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "20",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C182-2689274"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "27",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C200-5363446"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "14",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C213-4995667"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "16",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C245-8365837"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "27",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C402-5072074"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "35",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C409-9349178"
+                             },
+                             {
+                                 "width":  "26",
+                                 "height":  "16",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C431-5986267"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "56",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C440-1370895"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "39",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C551-8482722"
+                             },
+                             {
+                                 "width":  "17",
+                                 "height":  "13",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C574-6212593"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "25",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C605-1105328"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "27",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C614-4108640"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "41",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C625-4647902"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "13",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C697-6765940"
+                             },
+                             {
+                                 "width":  "24",
+                                 "height":  "18",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C710-5880579"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "54",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C794-6433363"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "32",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C799-8367143"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "46",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C800-3270129"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "32",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C831-2580759"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "28",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C836-5221890"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "19",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C844-8161134"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "38",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C845-4085909"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "42",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C898-2055295"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "47",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C970-6304679"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "67",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D146-5615241"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "31",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D206-3028092"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "35",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D237-6587630"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "55",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D334-6681399"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "67",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D381-6342696"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "25",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D400-2425852"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "20",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D483-7794770"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "16",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D525-4805979"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "38",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D605-8095260"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "33",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D642-3058791"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "18",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D762-3837218"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "74",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D817-8084362"
+                             },
+                             {
+                                 "width":  "36",
+                                 "height":  "12",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D844-3535311"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "48",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D965-2729258"
+                             },
+                             {
+                                 "width":  "31",
+                                 "height":  "13",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-D975-3237312"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "50",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E172-7848498"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "15",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E172-8066897"
+                             },
+                             {
+                                 "width":  "47",
+                                 "height":  "34",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E267-7496794"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "40",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E358-6492536"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "24",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E395-9906117"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "21",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E405-1045893"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "13",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E416-7318916"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "52",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E465-6674831"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "38",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E495-3503010"
+                             },
+                             {
+                                 "width":  "22",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E502-4333702"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "16",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E529-9160800"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "20",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E563-8448172"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "45",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E576-3538706"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "30",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E585-3605747"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "36",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E585-4643170"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "37",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E617-6594892"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "26",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E652-6887116"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "45",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E737-8373948"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "36",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E815-1132509"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "29",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E829-2591611"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "51",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E882-2235305"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "40",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E890-4143899"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "15",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E917-4866901"
+                             },
+                             {
+                                 "width":  "24",
+                                 "height":  "15",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E938-3071637"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "43",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F251-2666285"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "21",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F264-7752472"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "24",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F332-3707903"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "33",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F383-6450755"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "66",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F424-2241578"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "12",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F525-2265345"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "37",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F559-6763700"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "16",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F574-4728030"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "59",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F611-6226129"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "23",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F708-2915261"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "56",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F779-9528637"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "60",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F797-8658626"
+                             },
+                             {
+                                 "width":  "20",
+                                 "height":  "15",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F800-9858235"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "31",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F812-7003324"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "51",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F818-8141054"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "19",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F969-8946081"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "34",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G144-7255154"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "41",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G205-5318100"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "13",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G251-8414984"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "18",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G272-3422671"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "43",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G346-2864946"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "19",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G378-7132339"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "22",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G403-4566802"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "53",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G625-3606813"
+                             },
+                             {
+                                 "width":  "35",
+                                 "height":  "19",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G625-4620445"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "64",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G812-4734922"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "21",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G881-8555057"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "32",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-G950-4257402"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "28",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H156-2424615"
+                             },
+                             {
+                                 "width":  "27",
+                                 "height":  "14",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H173-1200706"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "56",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H197-3970480"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "30",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H236-9180061"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "29",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H244-4330589"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "13",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H252-2977732"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "39",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H288-7210201"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "21",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H338-7439287"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "24",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H355-1126195"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "34",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H374-8481414"
+                             },
+                             {
+                                 "width":  "26",
+                                 "height":  "25",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H380-8298145"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "57",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H402-6061531"
+                             },
+                             {
+                                 "width":  "22",
+                                 "height":  "15",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H426-2605604"
+                             },
+                             {
+                                 "width":  "21",
+                                 "height":  "17",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H439-1697643"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "21",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H482-4970770"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "29",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H487-6374164"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "52",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H491-2171849"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "68",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H502-2553729"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "16",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H510-3094779"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "56",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H609-2196524"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "19",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H631-9376983"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "37",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H642-6966395"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "62",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H660-6112027"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "39",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H660-8942410"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "18",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H664-9736043"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "51",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H676-3055632"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "47",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H690-4065164"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "25",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H747-8053953"
+                             },
+                             {
+                                 "width":  "41",
+                                 "height":  "35",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H752-8461936"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "65",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H941-5264433"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "18",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H956-3958783"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "12",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H962-4715431"
+                             },
+                             {
+                                 "width":  "34",
+                                 "height":  "28",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H972-9616381"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "12",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I241-8776317"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "24",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I242-5347848"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "36",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I272-3912947"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "57",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I314-5607546"
+                             },
+                             {
+                                 "width":  "33",
+                                 "height":  "13",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I319-7938682"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "23",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I468-8034393"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "21",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I503-2217600"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "51",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I571-8597034"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "32",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I590-4406621"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "60",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I653-5994473"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "45",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I696-9739398"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I904-2574215"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "14",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I966-3317124"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "20",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J129-5121523"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "40",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J178-7002767"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "15",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J209-5198739"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "40",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J259-5185660"
+                             },
+                             {
+                                 "width":  "28",
+                                 "height":  "26",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J391-2253339"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "41",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J470-3164222"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "66",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J498-2858887"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "14",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J519-7020928"
+                             },
+                             {
+                                 "width":  "31",
+                                 "height":  "26",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J571-5923698"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "24",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J625-3464908"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "42",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J653-7148856"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "68",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J725-8697253"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "55",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J734-1368842"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "41",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J820-7132026"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "18",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J872-7568181"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "15",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J986-8306638"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "12",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-J998-8511305"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "30",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K143-3113342"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "49",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K199-8327732"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "27",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K267-2045349"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "23",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K288-9703549"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "15",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K313-8452822"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "21",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K334-8882985"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "45",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K411-1729714"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "54",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K542-2074800"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "34",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K630-6895992"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "14",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K636-3664460"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "48",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K651-4147885"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "65",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K671-7410535"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "15",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K689-4865625"
+                             },
+                             {
+                                 "width":  "36",
+                                 "height":  "18",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K780-7736227"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "61",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K832-2729798"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "36",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K845-4116844"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "33",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K898-8238720"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "52",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K968-2682119"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "49",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L103-3316729"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "51",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L173-2699667"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "51",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L205-6345377"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "27",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L275-4377274"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "36",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L316-4863597"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "30",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L371-9651048"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "51",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L374-3374767"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "35",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L569-8145670"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "52",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L592-1084147"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "44",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L619-5092078"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "70",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L748-3922794"
+                             },
+                             {
+                                 "width":  "35",
+                                 "height":  "24",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L760-6079543"
+                             },
+                             {
+                                 "width":  "21",
+                                 "height":  "16",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L781-7008508"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "29",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L792-8374906"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "20",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L805-3283253"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "48",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L816-8238278"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "15",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L822-2103281"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "67",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L932-9433395"
+                             },
+                             {
+                                 "width":  "33",
+                                 "height":  "23",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L984-7886943"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "15",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M128-9664568"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "28",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M175-2087039"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "17",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M205-1376206"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "12",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M206-5050706"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "34",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M244-7026376"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "33",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M292-6646786"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "20",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M350-8985312"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "29",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M400-3382615"
+                             },
+                             {
+                                 "width":  "41",
+                                 "height":  "26",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M436-2993715"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "61",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M521-8491113"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "16",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M522-9124638"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "54",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M605-5951566"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "58",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M627-4661911"
+                             },
+                             {
+                                 "width":  "54",
+                                 "height":  "53",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M672-3016632"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "55",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M721-8978045"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "26",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M750-1800450"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "20",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M770-3602005"
+                             },
+                             {
+                                 "width":  "16",
+                                 "height":  "13",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M810-8954183"
+                             },
+                             {
+                                 "width":  "42",
+                                 "height":  "25",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M812-1436368"
+                             },
+                             {
+                                 "width":  "36",
+                                 "height":  "28",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M827-2856044"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "39",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M914-2979544"
+                             },
+                             {
+                                 "width":  "33",
+                                 "height":  "15",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M986-2342719"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "27",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N137-2655981"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "43",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N206-9059859"
+                             },
+                             {
+                                 "width":  "22",
+                                 "height":  "17",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N243-4639047"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "42",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N317-6012752"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "20",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N324-6810821"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "15",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N366-8062929"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "47",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N377-1619045"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "65",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N411-3014396"
+                             },
+                             {
+                                 "width":  "32",
+                                 "height":  "19",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N478-8857002"
+                             },
+                             {
+                                 "width":  "19",
+                                 "height":  "17",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N480-3487616"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "21",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N560-4369045"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "49",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N568-8608034"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "13",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N607-6979614"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "31",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N664-8476091"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "50",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N687-2334901"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "27",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N694-7625752"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "25",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N704-3896920"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "20",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N733-1946687"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "57",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N744-5971232"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "19",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N819-5417282"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "12",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N866-6363347"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "57",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N869-4606944"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "47",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N915-2423517"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "19",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N998-2489600"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "12",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O194-8514321"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "24",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O203-5447809"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "31",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O256-6180697"
+                             },
+                             {
+                                 "width":  "26",
+                                 "height":  "20",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O491-3823912"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "36",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O494-6195301"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "21",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O537-7333259"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "26",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O571-8892490"
+                             },
+                             {
+                                 "width":  "38",
+                                 "height":  "19",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O626-4153303"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "51",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O761-2575092"
+                             },
+                             {
+                                 "width":  "22",
+                                 "height":  "18",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O787-2734023"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "50",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O944-9764063"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "28",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O952-1686669"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "62",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P162-1457428"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "55",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P163-9337479"
+                             },
+                             {
+                                 "width":  "38",
+                                 "height":  "36",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P228-7323906"
+                             },
+                             {
+                                 "width":  "27",
+                                 "height":  "16",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P323-7286189"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "64",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P337-4636612"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "34",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P385-1200138"
+                             },
+                             {
+                                 "width":  "27",
+                                 "height":  "25",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P395-9316579"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "22",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P453-8155326"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "34",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P472-9724615"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "40",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P528-2149873"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "15",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P577-5587693"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "62",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P708-1537318"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "22",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P717-5835879"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "39",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P729-6290809"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "42",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P844-4114854"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "61",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P870-6495639"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "47",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P903-7514284"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "47",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P982-4384687"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "37",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P989-7962038"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "39",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q189-5857908"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "18",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q210-8168184"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "17",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q248-7597886"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "35",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q263-2186291"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "24",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q516-8248086"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "13",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q523-3322183"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "56",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q546-7014038"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "17",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q568-8156489"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "42",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q594-6895704"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "16",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q627-3868402"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "29",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q751-8742744"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "44",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q774-7287508"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "45",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q881-7871943"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "56",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q890-8785073"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "24",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q986-9996088"
+                             },
+                             {
+                                 "width":  "27",
+                                 "height":  "12",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Q992-9818584"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "53",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R112-2955867"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "61",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R187-6602262"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R228-5965688"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "47",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R247-6538517"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "38",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R272-9406400"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "43",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R302-4754313"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "66",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R318-8770198"
+                             },
+                             {
+                                 "width":  "47",
+                                 "height":  "41",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R383-8831143"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "69",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R389-4348258"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "22",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R410-7957011"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "52",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R414-3098561"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "16",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R454-6248815"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "13",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R524-4869682"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "62",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R586-3728998"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "48",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R591-4930195"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "31",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R599-8820686"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "56",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R675-2629492"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "44",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R725-9753976"
+                             },
+                             {
+                                 "width":  "19",
+                                 "height":  "16",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R774-2450170"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "19",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R774-3816629"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "31",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R930-5997475"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "47",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R946-7112528"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "34",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S113-2439377"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "23",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S176-7294665"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "20",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S218-3305033"
+                             },
+                             {
+                                 "width":  "34",
+                                 "height":  "33",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S314-3937138"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "44",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S388-7116324"
+                             },
+                             {
+                                 "width":  "47",
+                                 "height":  "17",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S418-2584457"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "41",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S450-5654221"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "48",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S590-1665348"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "16",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S702-5472237"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "22",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S839-8840069"
+                             },
+                             {
+                                 "width":  "47",
+                                 "height":  "22",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S841-8644004"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "63",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S859-8143033"
+                             },
+                             {
+                                 "width":  "70",
+                                 "height":  "57",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S871-7304748"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "41",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-S915-2398244"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "53",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T119-8723477"
+                             },
+                             {
+                                 "width":  "51",
+                                 "height":  "19",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T124-5609647"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "20",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T147-7011803"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "22",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T151-7042410"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "15",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T161-7769514"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "22",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T230-5902294"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "49",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T291-4144066"
+                             },
+                             {
+                                 "width":  "23",
+                                 "height":  "14",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T381-5661009"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "13",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T592-5377501"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "71",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T608-9573692"
+                             },
+                             {
+                                 "width":  "56",
+                                 "height":  "38",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T721-4459242"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "39",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T725-1852362"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "17",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T802-5361374"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "27",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T806-6069877"
+                             },
+                             {
+                                 "width":  "47",
+                                 "height":  "14",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T812-6060686"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "40",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T814-8858070"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "23",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T872-6914723"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "60",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T973-5442896"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "35",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U128-5766392"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "21",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U169-4232721"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "27",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U281-1671869"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "14",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U286-4664935"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "50",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U318-1465198"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "14",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U367-8732482"
+                             },
+                             {
+                                 "width":  "40",
+                                 "height":  "30",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U379-6681071"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "24",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U389-9635839"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "48",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U501-5365139"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "45",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U507-1853778"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "38",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U614-3483402"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "17",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U623-2779596"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "68",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U681-7406159"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "35",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U772-6050161"
+                             },
+                             {
+                                 "width":  "64",
+                                 "height":  "19",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U833-1786284"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "60",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U861-6382993"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "12",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U955-7894277"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "28",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U958-4696127"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "52",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U967-6553099"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U990-5234138"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "64",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V104-2082346"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "51",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V303-8717097"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "74",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V382-3883746"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "18",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V421-9533599"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "27",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V485-9644250"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "27",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V571-2893837"
+                             },
+                             {
+                                 "width":  "62",
+                                 "height":  "46",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V645-2413888"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "33",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V654-5789502"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "62",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V787-2710358"
+                             },
+                             {
+                                 "width":  "41",
+                                 "height":  "27",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-V892-8476786"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "13",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W176-3285571"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "29",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W177-1965331"
+                             },
+                             {
+                                 "width":  "25",
+                                 "height":  "13",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W232-7656495"
+                             },
+                             {
+                                 "width":  "24",
+                                 "height":  "15",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W268-8954866"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "67",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W295-9452529"
+                             },
+                             {
+                                 "width":  "50",
+                                 "height":  "16",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W344-5163065"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "24",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W434-6067873"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "32",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W436-5301120"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "18",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W457-2405463"
+                             },
+                             {
+                                 "width":  "20",
+                                 "height":  "18",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W501-5990901"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "40",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W579-1877166"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "17",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W615-3080767"
+                             },
+                             {
+                                 "width":  "65",
+                                 "height":  "54",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W661-3032609"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "62",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W744-1785439"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "75",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W776-4360677"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "52",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W780-8057984"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "50",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W821-9428247"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "53",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W872-7508740"
+                             },
+                             {
+                                 "width":  "68",
+                                 "height":  "55",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W892-1983772"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "52",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W903-2104201"
+                             },
+                             {
+                                 "width":  "38",
+                                 "height":  "31",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W985-1612943"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "13",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W986-7950553"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "25",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X148-3354774"
+                             },
+                             {
+                                 "width":  "33",
+                                 "height":  "18",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X204-1803083"
+                             },
+                             {
+                                 "width":  "79",
+                                 "height":  "57",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X223-5282026"
+                             },
+                             {
+                                 "width":  "73",
+                                 "height":  "21",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X234-5007377"
+                             },
+                             {
+                                 "width":  "34",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X235-5406274"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "71",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X324-6249454"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "58",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X365-6429727"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "37",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X375-4984404"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "55",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X407-9945990"
+                             },
+                             {
+                                 "width":  "26",
+                                 "height":  "18",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X408-2200602"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "51",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X504-5674380"
+                             },
+                             {
+                                 "width":  "44",
+                                 "height":  "14",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X634-4382180"
+                             },
+                             {
+                                 "width":  "55",
+                                 "height":  "20",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X643-1063819"
+                             },
+                             {
+                                 "width":  "24",
+                                 "height":  "17",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X842-8356738"
+                             },
+                             {
+                                 "width":  "53",
+                                 "height":  "41",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X863-5063447"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "43",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X946-6308579"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "37",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y134-8040496"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "28",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y162-1430218"
+                             },
+                             {
+                                 "width":  "39",
+                                 "height":  "37",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y167-8599364"
+                             },
+                             {
+                                 "width":  "38",
+                                 "height":  "12",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y185-1184618"
+                             },
+                             {
+                                 "width":  "66",
+                                 "height":  "34",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y191-7589606"
+                             },
+                             {
+                                 "width":  "21",
+                                 "height":  "14",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y327-7144928"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "15",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y354-7075426"
+                             },
+                             {
+                                 "width":  "30",
+                                 "height":  "22",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y467-5818685"
+                             },
+                             {
+                                 "width":  "78",
+                                 "height":  "59",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y505-9919340"
+                             },
+                             {
+                                 "width":  "80",
+                                 "height":  "40",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y553-3929384"
+                             },
+                             {
+                                 "width":  "77",
+                                 "height":  "40",
+                                 "depth":  "20",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y580-9027193"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "49",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y616-2122188"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "14",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y632-7948469"
+                             },
+                             {
+                                 "width":  "43",
+                                 "height":  "41",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y676-8284278"
+                             },
+                             {
+                                 "width":  "31",
+                                 "height":  "24",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y788-9882822"
+                             },
+                             {
+                                 "width":  "48",
+                                 "height":  "26",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y884-3616085"
+                             },
+                             {
+                                 "width":  "34",
+                                 "height":  "24",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y889-4226936"
+                             },
+                             {
+                                 "width":  "42",
+                                 "height":  "30",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y966-2972645"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "26",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Y968-9133870"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "19",
+                                 "depth":  "13",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z143-3180282"
+                             },
+                             {
+                                 "width":  "59",
+                                 "height":  "13",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z165-5413714"
+                             },
+                             {
+                                 "width":  "52",
+                                 "height":  "23",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z170-8513315"
+                             },
+                             {
+                                 "width":  "60",
+                                 "height":  "48",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z190-5822042"
+                             },
+                             {
+                                 "width":  "49",
+                                 "height":  "37",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z212-3451369"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "25",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z249-1364492"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "22",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z254-1002324"
+                             },
+                             {
+                                 "width":  "46",
+                                 "height":  "28",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z288-2942538"
+                             },
+                             {
+                                 "width":  "75",
+                                 "height":  "14",
+                                 "depth":  "11",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z319-4514647"
+                             },
+                             {
+                                 "width":  "74",
+                                 "height":  "14",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z322-3336300"
+                             },
+                             {
+                                 "width":  "76",
+                                 "height":  "66",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z358-9013730"
+                             },
+                             {
+                                 "width":  "71",
+                                 "height":  "40",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z373-9393076"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "46",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z397-1183067"
+                             },
+                             {
+                                 "width":  "67",
+                                 "height":  "34",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z452-1805723"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "24",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z518-1747933"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "23",
+                                 "depth":  "14",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z545-6121719"
+                             },
+                             {
+                                 "width":  "45",
+                                 "height":  "17",
+                                 "depth":  "12",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z587-4413312"
+                             },
+                             {
+                                 "width":  "72",
+                                 "height":  "43",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z615-8618743"
+                             },
+                             {
+                                 "width":  "41",
+                                 "height":  "15",
+                                 "depth":  "16",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z617-4660142"
+                             },
+                             {
+                                 "width":  "58",
+                                 "height":  "39",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z739-3332146"
+                             },
+                             {
+                                 "width":  "63",
+                                 "height":  "33",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z775-8853334"
+                             },
+                             {
+                                 "width":  "37",
+                                 "height":  "18",
+                                 "depth":  "19",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z872-5435339"
+                             },
+                             {
+                                 "width":  "61",
+                                 "height":  "41",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z889-8463159"
+                             },
+                             {
+                                 "width":  "69",
+                                 "height":  "42",
+                                 "depth":  "18",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z927-4746244"
+                             },
+                             {
+                                 "width":  "42",
+                                 "height":  "41",
+                                 "depth":  "17",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z980-8040792"
+                             },
+                             {
+                                 "width":  "57",
+                                 "height":  "30",
+                                 "depth":  "15",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z994-6661823"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

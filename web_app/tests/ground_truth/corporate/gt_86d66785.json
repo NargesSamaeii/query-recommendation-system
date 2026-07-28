@@ -1,0 +1,38 @@
+﻿{
+    "question":  "Which item in the Coil category has the highest density measured in kilograms per cubic meter?",
+    "question_id":  69,
+    "expected_classes":  [
+                             "ProductCategory",
+                             "Product"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "width_mm",
+                                                                "depth_mm",
+                                                                "height_mm",
+                                                                "weight_g"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "width_mm",
+                                                                "depth_mm",
+                                                                "height_mm",
+                                                                "weight_g"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Coil":  "http://ld.company.org/prod-instances/prod-cat-Coil"
+                          },
+    "expected_results":  [
+
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

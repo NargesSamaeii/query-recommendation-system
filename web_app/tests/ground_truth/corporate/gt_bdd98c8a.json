@@ -1,0 +1,59 @@
+{
+  "question": "In which cities are our US suppliers for LCDs?",
+  "question_id": 26,
+  "expected_classes": [
+    "Supplier",
+    "ProductCategory"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressLocality",
+        "country"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "LCD": "http://ld.company.org/prod-instances/prod-cat-LCD",
+    "US": "http://dbpedia.org/resource/United_States"
+  },
+  "expected_results": [
+    {
+      "result": "North Bellmore"
+    },
+    {
+      "result": "San Leandro"
+    },
+    {
+      "result": "Murrieta"
+    },
+    {
+      "result": "South El Monte"
+    },
+    {
+      "result": "Laramie"
+    },
+    {
+      "result": "Cypress"
+    },
+    {
+      "result": "Randolph"
+    },
+    {
+      "result": "Back Mountain"
+    },
+    {
+      "result": "Matthews"
+    },
+    {
+      "result": "Somerset"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

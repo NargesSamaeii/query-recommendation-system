@@ -1,0 +1,66 @@
+{
+  "question": "For each Bill of Material, how many parts does it contain and what is the total material quantity — show me only those BOMs exceeding 600 total items and order them descending.",
+  "question_id": 37,
+  "expected_classes": [
+    "BillOfMaterial",
+    "BomPart"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart",
+        "quantity"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "hasBomPart",
+        "quantity"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "entity_1": "http://ld.company.org/prod-instances/"
+  },
+  "expected_results": [
+    {
+      "bom": "http://ld.company.org/prod-instances/fdf637f51f26b96b",
+      "partCount": "12",
+      "totalQty": "731"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/a487cd20efacc327",
+      "partCount": "11",
+      "totalQty": "694"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bbcb9c80da831d8d",
+      "partCount": "12",
+      "totalQty": "689"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/d23f97e120624170",
+      "partCount": "15",
+      "totalQty": "681"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/0c7e49b8ebfa8bf8",
+      "partCount": "14",
+      "totalQty": "664"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/ab15027869dfcde2",
+      "partCount": "15",
+      "totalQty": "647"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/9489100f88cc6e77",
+      "partCount": "13",
+      "totalQty": "610"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

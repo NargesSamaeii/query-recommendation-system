@@ -1,0 +1,30 @@
+{
+  "question": "What is the most expensive service we offer?",
+  "question_id": 19,
+  "expected_classes": [
+    "Service",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Service",
+      "relevant_properties": [
+        "price"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "service": "http://ld.company.org/prod-instances/srv-D215-3449390"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

@@ -1,0 +1,45 @@
+{
+  "question": "What is the name of the Network expert from the Marketing Department?",
+  "question_id": 10,
+  "expected_classes": [
+    "Department",
+    "ProductCategory",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "areaOfExpertise",
+        "memberOf",
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "department-dept-85880": "http://ld.company.org/prod-instances/dept-85880",
+    "Network": "http://ld.company.org/prod-instances/prod-cat-Network"
+  },
+  "expected_results": [
+    {
+      "name": "Kevin Feigenbaum"
+    },
+    {
+      "name": "Lambert Faust"
+    }
+  ],
+  "key_field": "name",
+  "query_type": "SELECT"
+}

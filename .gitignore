@@ -1,0 +1,46 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Docker volumes are managed by Docker itself, not bind-mounted here, so nothing to ignore there.
+
+# Downloaded JDBC driver jar for the ontop containers (see docker/README.md to re-fetch)
+docker/jdbc/*.jar
+
+# Large DB dumps -- regeneratable, not source (e.g. Verona_Tourism_Ontop/tourismdb_jan 1.backup, 280MB)
+*.backup
+
+# Generated at runtime -- recommender query log, behavioral profiles, derived CSVs
+# (see docs/PHASE2_IMPLEMENTATION.md / PHASE3_IMPLEMENTATION.md)
+recommender/output/
+
+# Local embedding caches
+cache/
+
+# LaTeX build artifacts (docs/report/*.tex -> compiled .pdf is kept; these intermediates aren't)
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+docs/report/*.log
+
+# Word lock/temp files
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code local settings (machine-specific, not shared)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db

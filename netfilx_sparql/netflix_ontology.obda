@@ -1,0 +1,151 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	movie-basic-mapping
+target		:movie/{movie_id} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#Movie> ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#title> {title}^^xsd:string ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#releaseYear> {release_year}^^xsd:integer ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#contentType> {content_type}^^xsd:string . 
+source		SELECT movie_id, title, release_year, content_type
+			FROM movies
+			WHERE movie_id IS NOT NULL
+			  AND title IS NOT NULL
+			  AND release_year IS NOT NULL
+			  AND content_type IS NOT NULL
+
+mappingId	movie-rating
+target		:movie/{movie_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#imdbRating> {imdb_rating}^^xsd:decimal . 
+source		SELECT movie_id, imdb_rating
+			FROM movies
+			WHERE imdb_rating IS NOT NULL
+
+mappingId	user-basic
+target		:user/{user_id} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#User> ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#age> {age}^^xsd:integer . 
+source		SELECT user_id, age
+			FROM users
+			WHERE user_id IS NOT NULL
+			  AND age IS NOT NULL
+
+mappingId	user-watches
+target		:user/{user_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#watches> :movie/{movie_id} . 
+source		SELECT user_id, movie_id
+			FROM watch_history
+			WHERE user_id IS NOT NULL
+			  AND movie_id IS NOT NULL
+
+mappingId	movie-genre
+target		:movie/{movie_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#hasGenre> :genre/{genre_primary} . 
+source		SELECT movie_id, genre_primary
+			FROM movies
+			WHERE movie_id IS NOT NULL
+			  AND genre_primary IS NOT NULL
+
+mappingId	genre-basic
+target		:genre/{genre_primary} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#Genre> . 
+source		SELECT DISTINCT genre_primary
+			FROM movies
+			WHERE genre_primary IS NOT NULL
+
+mappingId	user-reviews
+target		:user/{user_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#reviews> :movie/{movie_id} . 
+source		SELECT user_id, movie_id
+			FROM reviews
+			WHERE user_id IS NOT NULL
+			  AND movie_id IS NOT NULL
+
+mappingId	user-recommendation
+target		:user/{user_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#receivesRecommendation> :recommendation/{recommendation_id} . 
+source		SELECT user_id, recommendation_id
+			FROM recommendation_logs
+			WHERE user_id IS NOT NULL
+			  AND recommendation_id IS NOT NULL
+
+mappingId	recommendation-movie
+target		:recommendation/{recommendation_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#recommendsMovie> :movie/{movie_id} . 
+source		SELECT recommendation_id, movie_id
+			FROM recommendation_logs
+			WHERE recommendation_id IS NOT NULL
+			  AND movie_id IS NOT NULL
+
+mappingId	user-search
+target		:user/{user_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#searches> :search/{search_id} . 
+source		SELECT user_id, search_id
+			FROM search_logs
+			WHERE user_id IS NOT NULL
+			  AND search_id IS NOT NULL
+
+mappingId	search-query
+target		:search/{search_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#searchQuery> {search_query}^^xsd:string . 
+source		SELECT search_id, search_query
+			FROM search_logs
+			WHERE search_id IS NOT NULL
+			  AND search_query IS NOT NULL
+
+mappingId	recommendation-details
+target		:recommendation/{recommendation_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#recommendationType> {recommendation_type}^^xsd:string ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#recommendationScore> {recommendation_score}^^xsd:decimal ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#wasClicked> {was_clicked}^^xsd:boolean . 
+source		SELECT recommendation_id, recommendation_type, recommendation_score, was_clicked
+			FROM recommendation_logs
+			WHERE recommendation_id IS NOT NULL
+			  AND recommendation_type IS NOT NULL
+			  AND recommendation_score IS NOT NULL
+			  AND was_clicked IS NOT NULL
+
+mappingId	review-sentiment
+target		:review/{review_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#sentiment> {sentiment}^^xsd:string ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#sentimentScore> {sentiment_score}^^xsd:decimal . 
+source		SELECT review_id, sentiment, sentiment_score
+			FROM reviews
+			WHERE review_id IS NOT NULL
+			  AND sentiment IS NOT NULL
+			  AND sentiment_score IS NOT NULL
+
+mappingId	review-basic
+target		:review/{review_id} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#Review> ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#rating> {rating}^^xsd:decimal . 
+source		SELECT review_id, rating
+			FROM reviews
+			WHERE review_id IS NOT NULL
+			  AND rating IS NOT NULL
+
+mappingId	watch-details
+target		:watch/{session_id} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#WatchSession> ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#watchDuration> {watch_duration_minutes}^^xsd:decimal ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#progressPercentage> {progress_percentage}^^xsd:decimal ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#quality> {quality}^^xsd:string .
+source		SELECT session_id,
+			       watch_duration_minutes,
+			       progress_percentage,
+			       quality
+			FROM watch_history
+			WHERE session_id IS NOT NULL
+			  AND watch_duration_minutes IS NOT NULL
+			  AND progress_percentage IS NOT NULL
+			  AND quality IS NOT NULL
+
+mappingId	watch-session-user
+target		:watch/{session_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#watchedByUser> :user/{user_id} .
+source		SELECT session_id, user_id
+			FROM watch_history
+			WHERE session_id IS NOT NULL
+			  AND user_id IS NOT NULL
+
+mappingId	watch-session-details
+target		:watch/{session_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#watchDate> {watch_date}^^xsd:date ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#action> {action}^^xsd:string ; <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#deviceType> {device_type}^^xsd:string .
+source		SELECT session_id, watch_date, action, device_type
+			FROM watch_history
+			WHERE session_id IS NOT NULL
+			  AND watch_date IS NOT NULL
+
+mappingId	search-details
+target		:search/{search_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#searchDate> {search_date}^^xsd:date .
+source		SELECT search_id, search_date
+			FROM search_logs
+			WHERE search_id IS NOT NULL
+			  AND search_date IS NOT NULL
+
+mappingId	recommendation-date
+target		:recommendation/{recommendation_id} <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#recommendationDate> {recommendation_date}^^xsd:date .
+source		SELECT recommendation_id, recommendation_date
+			FROM recommendation_logs
+			WHERE recommendation_id IS NOT NULL
+			  AND recommendation_date IS NOT NULL
+]]
+

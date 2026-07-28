@@ -1,0 +1,39 @@
+{
+  "question": "Which area of expertise is most relevant among our products, what are the top three skills?",
+  "question_id": 36,
+  "expected_classes": [
+    "Hardware",
+    "ProductCategory"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasCategory"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": [
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Compensator",
+      "hardware": "http://ld.company.org/prod-instances/prod-cat-Compensator"
+    },
+    {
+      "name": "Crystal",
+      "hardware": "http://ld.company.org/prod-instances/prod-cat-Crystal"
+    },
+    {
+      "name": "LCD",
+      "hardware": "http://ld.company.org/prod-instances/prod-cat-LCD"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

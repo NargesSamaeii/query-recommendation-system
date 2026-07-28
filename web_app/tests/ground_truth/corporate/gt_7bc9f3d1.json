@@ -1,0 +1,29 @@
+{
+  "question": "Which department is resposible for the most product and how many product are this?",
+  "question_id": 50,
+  "expected_classes": [
+    "Department",
+    "Product"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "responsibleFor"
+      ]
+    },
+    {
+      "class_name": "Product",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "count": "12",
+      "department": "http://ld.company.org/prod-instances/dept-85880"
+    }
+  ],
+  "key_field": "department",
+  "query_type": "SELECT"
+}

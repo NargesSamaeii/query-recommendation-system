@@ -1,0 +1,34 @@
+﻿{
+    "question":  "How many suppliers in France supply at least one product?",
+    "question_id":  61,
+    "expected_classes":  [
+                             "Supplier",
+                             "Product"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "hasSupplier",
+                                                                "addressCountry"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasSupplier",
+                                                                "addressCountry"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "result":  "8"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

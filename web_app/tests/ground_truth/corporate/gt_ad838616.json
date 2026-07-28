@@ -1,0 +1,62 @@
+{
+  "question": "What suppliers - I need name, country and price - deliver the 6th to 10th most expensive hardware items.",
+  "question_id": 29,
+  "expected_classes": [
+    "Supplier",
+    "Hardware",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressCountry",
+        "name"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasSupplier",
+        "name"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount",
+        "currency"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Page, Hernandez and Ayala",
+      "country": "United States",
+      "price": "5.96"
+    },
+    {
+      "name": "Fox-Delacruz",
+      "country": "Spain",
+      "price": "5.95"
+    },
+    {
+      "name": "Garcia Ltd",
+      "country": "Malaysia",
+      "price": "5.95"
+    },
+    {
+      "name": "Green-Crawford",
+      "country": "Brazil",
+      "price": "5.93"
+    },
+    {
+      "name": "Newton Inc",
+      "country": "Germany",
+      "price": "5.92"
+    }
+  ],
+  "key_field": "price",
+  "query_type": "SELECT"
+}

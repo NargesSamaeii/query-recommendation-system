@@ -1,0 +1,159 @@
+{
+  "question": "Per product category, what's our lightest and heaviest hardware item?",
+  "question_id": 31,
+  "expected_classes": [
+    "ProductCategory",
+    "Hardware"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasCategory",
+        "name",
+        "weight_g"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "cat": "Encoder",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Switch",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Resonator",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Coil",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Multiplexer",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Potentiometer",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Gauge",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Crystal",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Rheostat",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Oscillator",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Transformer",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Memristor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Meter",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Sensor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Inductor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Warp",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Network",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Resistor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Capacitor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Breaker",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Transducer",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Transistor",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Compensator",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Driver",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "LCD",
+      "minWeight": "1",
+      "maxWeight": "20"
+    },
+    {
+      "cat": "Strain",
+      "minWeight": "1",
+      "maxWeight": "20"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

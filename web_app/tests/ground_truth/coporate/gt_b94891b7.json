@@ -1,0 +1,67 @@
+﻿{
+    "question":  "Which Bill of Material has the highest weighted average unit cost of its hardware parts, and what is that value?",
+    "question_id":  85,
+    "expected_classes":  [
+                             "BillOfMaterial",
+                             "Hardware",
+                             "BomPart",
+                             "Price"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "BillOfMaterial",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity",
+                                                                "hasPart",
+                                                                "price",
+                                                                "amount",
+                                                                "currency"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity",
+                                                                "hasPart",
+                                                                "price",
+                                                                "amount",
+                                                                "currency"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "BomPart",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity",
+                                                                "hasPart",
+                                                                "price",
+                                                                "amount",
+                                                                "currency"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Price",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity",
+                                                                "hasPart",
+                                                                "price",
+                                                                "amount",
+                                                                "currency"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "avgUnitCost":  "4.22",
+                                 "hardware":  "http://ld.company.org/prod-instances/bom-8"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

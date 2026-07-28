@@ -1,0 +1,690 @@
+MissingID does not work, but the final query is correct?
+How many Sensor Switches do we offer?
+Who is our Sensor expert?
+Who is the manager of Heinrich Hoch?
+Who has expertise in Transistors?
+What is the name of the Network expert from the Marketing Department? (took from examples)
+Which supplier are available to deliver Compensators?
+What is the cheapest Encoder we can get from a french or german supplier?
+From which countries are the BOM parts of our SkySync MechWave delivered?
+MissingID works, but the final query is wrong?
+No
+What are the issues?
+In which department is Ms. Brant?
+Missingid required in groundtruth
+missingID correct and use it
+Query correct
+What is the email of Sabrina from Marketing?
+Missingid not required in groundtruth
+missingID correct but not use it
+Query correct. I added filtering that option bcase of below query.
+Found Entity IRIs:
+• Sabrina Bayer → http://ld.company.org/prod-instances/empl-Sabrina.Bayer%40company.org
+• Sabrina Geiger → http://ld.company.org/prod-instances/empl-Sabrina.Geiger%40company.org
+• Marketing → http://ld.company.org/prod-instances/dept-85880
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?employee ?email
+WHERE {
+?employee a prod_vocab:Employee .
+?employee prod_vocab:name "Sabrina" .
+?employee prod_vocab:memberOf <http://ld.company.org/prod-instances/dept-85880> .
+?employee prod_vocab:email ?email .
+}
+What is the telephone of Baldwin Dirksen?
+Missingid is required in groundtruth
+missingID correct  but not use it
+Query correct.
+What is the most expensive service we offer?
+Missingid not required in groundtruth
+missingID do not need
+Query wrong. Earlier correct.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?service
+WHERE {
+?service a prod_vocab:Service .
+?service prod_vocab:price ?price .
+?price prod_vocab:amount ?amount .
+FILTER (?amount = MAX(?amount))
+}
+How many Sensor Switches do we offer?
+Missingid is required in groundtruth: http://ld.company.org/prod-instances/prod-cat-Sensor and http://ld.company.org/prod-instances/prod-cat-Switch
+missingID do not need (Productcategory class is not extracted)
+Query correct.
+Do we have suppliers in Toulouse?
+Missingid not required in groundtruth
+missingID not need
+Query correct.
+I need to update my supplier rolodex, give me every supplier's name and all address details.
+Missingid not required in groundtruth
+missingID not need
+Query correct.
+Who is our Sensor expert?
+Missingid is required in groundtruth
+missingID correct and use it
+Query correct.
+I want to update my contact list, for each Employee give me name, email, phone number and the department they belong to as well as their direct report.
+Missingid not is required in groundtruth
+missingID not need
+Query wrong.
+PREFIX prodi: http://ld.company.org/prod-instances/ PREFIX pv: http://ld.company.org/prod-vocab/ SELECT ?name ?email ?phone ?dept ?manager WHERE { ?agentClass rdfs:subClassOf* pv:Agent . ?empl a ?agentClass ; pv:name ?name . OPTIONAL { ?empl pv:email ?email . } OPTIONAL { ?empl pv:phone ?phone . } OPTIONAL { ?empl pv:memberOf/pv:name ?dept . } OPTIONAL { ?empl pv:hasManager/pv:name ?manager . } }
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?employee ?name ?email ?phone ?department ?manager
+WHERE {
+?employee a prod_vocab:Employee .
+?employee prod_vocab:name ?name .
+?employee prod_vocab:email ?email .
+?employee prod_vocab:phone ?phone .
+?employee prod_vocab:memberOf ?department .
+OPTIONAL { ?employee prod_vocab:hasManager ?manager . }
+}
+Show me all BOMs which have at least on part from a polish supplier.
+Missingid is required in groundtruth
+missingID wrong and not use it
+Query correct.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?bom
+WHERE {
+?bom a prod_vocab:BillOfMaterial .
+?bom prod_vocab:hasBomPart ?part .
+?part prod_vocab:hasPart ?hardware .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:addressCountry ?country .
+FILTER (?country = "Poland")
+}
+For each Bill of Material, how many parts does it contain and what is the total material quantity â€” show me only those BOMs exceeding 600 total items and order them descending.
+Missingid not required in groundtruth
+missingID not need
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?billOfMaterial (COUNT(?bomPart) AS ?partCount) (SUM(?quantity) AS ?totalQuantity)
+WHERE {
+?billOfMaterial a prod_vocab:BillOfMaterial .
+?billOfMaterial prod_vocab:hasBomPart ?bomPart .
+?bomPart prod_vocab:quantity ?quantity .
+BIND(xsd:int(?quantity) AS ?quantity)
+}
+GROUP BY ?billOfMaterial
+HAVING (?totalQuantity > 600)
+ORDER BY DESC(?totalQuantity)
+Per product category, what's our lightest and heaviest hardware item?
+Missingid not required in groundtruth
+missingID not need
+Query correct.
+What is the heaviest coil that does not exceed a base area of 15x15 milimeter?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/prod-cat-Coil .
+missingID extraction was wrong and did not use it.
+Query correct.
+Give me a phone directory of everyone on staff who does not manage anyone, I need name, email, and phone, sorted by name?
+Missingid not required in groundtruth
+missingID not need
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?employee ?name ?email ?phone
+WHERE {
+?employee a prod_vocab:Employee .
+?employee prod_vocab:name ?name .
+?employee prod_vocab:email ?email .
+?employee prod_vocab:phone ?phone .
+FILTER NOT EXISTS {
+?employee prod_vocab:hasManager ?manager .
+}
+}
+ORDER BY ?name
+PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema# PREFIX prodi: http://ld.company.org/prod-instances/ PREFIX pv: http://ld.company.org/prod-vocab/ SELECT ?empl ?name ?email ?phone WHERE { ?emplClass rdfs:subClassOf* pv:Employee . ?empl a ?emplClass ; pv:name ?name ; pv:email ?email . OPTIONAL { ?empl pv:phone ?phone } FILTER NOT EXISTS { [] pv:hasManager ?empl . } } ORDER BY ?name
+Who is the manager of Heinrich Hoch?
+Missingid is required in groundtruth
+missingID correct and use it.
+Query correct.
+Who has expertise in Transistors?
+Missingid is required in groundtruth
+missingID correct and use it.
+Query correct.
+Who is the manager of the Data Services department?
+Missingid is required in groundtruth
+missingID correct and use it.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?manager
+WHERE {
+<http://ld.company.org/prod-instances/dept-41622> prod_vocab:hasManager ?manager .
+}
+PREFIX pv: http://ld.company.org/prod-vocab/
+SELECT DISTINCT ?result WHERE {
+?person pv:memberOf http://ld.company.org/prod-instances/dept-41622 .
+?person pv:hasManager ?result . } –GT
+Even all steps correct, but the problem is memberof property from Manger class is extracted but not from Employee
+Which department is responsible for the Sensor Switch M558-2275045?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/hw-M558-2275045 .
+missingID wrong but guess and use IRI from schema.
+Query correct.
+What is the name of the Network expert from the Marketing Department?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/dept-85880 and http://ld.company.org/prod-instances/prod-cat-Network .
+missingID Network is extracted and other was in schema and use them.
+Query correct.
+Which departments have Transducer Experts?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/prod-cat-Transducer .
+missingID extraction is wrong, but ID is guessed correctly.
+Query correct.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?department
+WHERE {
+?department a prod_vocab:Department .
+?employee prod_vocab:memberOf ?department .
+?employee prod_vocab:areaOfExpertise ?expertise .
+FILTER (STRSTARTS(STR(?expertise), "http://ld.company.org/prod-instances/prod-cat-Transducer"))
+}
+Which supplier are available to deliver Compensators?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/prod-cat-Compensator
+missingID extraction is wrong.
+Query wrong. But recall is 1."precision": 0.8182,
+"recall": 1.0,
+"f1": 0.9,
+"accuracy": 0.0,
+"true_positives": 90,
+"false_positives": 20,
+"false_negatives": 0,
+"actual_result_count": 110,
+"expected_result_count": 90,
+PREFIX pv: http://ld.company.org/prod-vocab/
+SELECT DISTINCT ?result WHERE {
+?hardware pv:hasSupplier ?result .
+?hardware pv:hasCategory http://ld.company.org/prod-instances/prod-cat-Compensator . }
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT ?supplier
+WHERE {
+?hardware prod_vocab:name ?hardwareName .
+FILTER (CONTAINS(LCASE(?hardwareName), "compensator"))
+?hardware prod_vocab:hasSupplier ?supplier .
+}
+How many suppliers do we have in France?
+Missingid not  required in groundtruth
+missingID extraction not need.
+Query wrong. Both needed properties were included in schema
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT (COUNT(?supplier) AS ?supplierCount)
+WHERE {
+?supplier a prod_vocab:Supplier .
+?supplier prod_vocab:country ?france .
+FILTER (?france = <http://dbpedia.org/resource/France>)
+}
+SELECT (COUNT(DISTINCT ?supplier) as ?result) WHERE {
+?product pv:hasSupplier ?supplier .
+?supplier pv:addressCountry "France" . } GT.
+Which supplier in France delivers Compensators?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/prod-cat-Compensator
+missingID extraction is wrong, but guessed the IRIs.
+Query correct. Repeat the same results.
+SELECT DISTINCT ?result WHERE { ?product pv:hasSupplier ?result . ?product pv:hasCategory http://ld.company.org/prod-instances/prod-cat-Compensator . ?result pv:addressCountry "France" . } GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT ?supplier
+WHERE {
+?supplier a prod_vocab:Supplier .
+?supplier prod_vocab:country <http://dbpedia.org/resource/France> .
+?hardware prod_vocab:hasSupplier ?supplier .
+?hardware prod_vocab:name ?name .
+FILTER (CONTAINS(?name, "Compensator"))
+}
+What is the cheapest Encoder we can get from a french or german supplier?
+Missingid is required in groundtruth http://ld.company.org/prod-instances/prod-cat-Encoder .
+missingID extraction is wrong.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?hardware ?price
+WHERE {
+?hardware rdf_schema:type prod_vocab:Hardware .
+?hardware prod_vocab:name ?hardwareName .
+FILTER (CONTAINS(LCASE(?hardwareName), "encoder"))
+?hardware prod_vocab:price ?price .
+?price prod_vocab:amount ?amount .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:country ?country .
+FILTER (STRSTARTS(LCASE(?country), "france") || STRSTARTS(LCASE(?country), "germany"))
+}
+ORDER BY ASC(?amount)
+LIMIT 1
+Which suppliers do we have in Toulouse?
+Missingid not required in groundtruth.
+missingID extraction ino need.
+Query correct.
+What is the cheapest Oscillator we have?
+Missingid is required in groundtruth. http://ld.company.org/prod-instances/prod-cat-Oscillator .
+missingID extraction is wrong and query did not use.
+Query correct.
+Which department is resposible for the most product and how many product are this?
+Missingid not required in groundtruth.
+missingID extraction is no need.
+Query correct. Repeat the same.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?department ?count
+WHERE {
+?department a prod_vocab:Department .
+?department prod_vocab:responsibleFor ?hardware .
+{
+SELECT (COUNT(?hardware) AS ?count) ?department
+WHERE {
+?department a prod_vocab:Department .
+?department prod_vocab:responsibleFor ?hardware .
+}
+GROUP BY ?department
+ORDER BY DESC(?count)
+LIMIT 1
+}
+}
+Who is responsible for the most expensive service we offer?
+Missingid not required in groundtruth.
+missingID extraction is no need.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?department
+WHERE {
+?service a prod_vocab:Service .
+?service prod_vocab:price ?price .
+?price prod_vocab:amount ?amount .
+?department prod_vocab:responsibleFor ?service .
+FILTER (?amount = (SELECT MAX(?amount) WHERE {
+?service2 a prod_vocab:Service .
+?service2 prod_vocab:price ?price2 .
+?price2 prod_vocab:amount ?amount .
+}))
+}
+PREFIX pv: http://ld.company.org/prod-vocab/
+SELECT DISTINCT ?result WHERE {
+?service a pv:Service .
+?service pv:hasProductManager ?result .
+?service pv:price ?priceR .
+?priceR pv:amount ?price . } ORDER BY DESC(?price) LIMIT 1–  GT
+What products are compatible with the U990 LCD Inductor?
+Missingid is required in groundtruth. http://ld.company.org/prod-instances/hw-U990-5234138
+missingID extraction is wrong. Search by wrong name.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?compatibleProduct
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:name ?_text_match_1 .
+FILTER(CONTAINS(LCASE(STR(?_text_match_1)), LCASE("U990 LCD Inductor")))
+?hardware prod_vocab:compatibleProduct ?compatibleProduct .
+}
+What products can I get from US suppliers that are compatible with the U990 LCD Inductor?
+Missingid is required in groundtruth.http://ld.company.org/prod-instances/hw-U990-5234138  and http://dbpedia.org/resource/United_States
+missingID extraction is wrong. Country is a property. It is not a class. And for U990 LCD Inducto, use wrong name
+Query is wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?hardware
+WHERE {
+?hardware rdf_schema:type prod_vocab:Hardware .
+?hardware prod_vocab:compatibleProduct <http://ld.company.org/prod-instances/hw-U990-1234567> .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:addressCountry ?_text_match_1 .
+FILTER(CONTAINS(LCASE(STR(?_text_match_1)), LCASE("United States")))
+}
+What is the pontiometer with the smallest volume?
+Missingid is required in groundtruth. http://ld.company.org/prod-instances/prod-cat-Potentiometer .
+missingID extraction is wrong. Productcategoyr class is not included in schema.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?hardware
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:name ?name .
+?hardware prod_vocab:depth_mm ?depth_mm .
+?hardware prod_vocab:height_mm ?height_mm .
+?hardware prod_vocab:width_mm ?width_mm .
+BIND (?depth_mm * ?height_mm * ?width_mm AS ?volume)
+FILTER (?name = "Pontiometer")
+}
+ORDER BY ?volume
+LIMIT 1
+SELECT DISTINCT ?result WHERE {
+?result pv:hasCategory http://ld.company.org/prod-instances/prod-cat-Potentiometer .
+?result pv:width_mm ?width_mm .
+?result pv:depth_mm ?depth_mm .
+?result pv:height_mm ?height_mm .
+BIND(?width_mm * ?depth_mm * ?height_mm as ?volume) }
+ORDER BY ASC(?volume) –GT
+Which coil has the highest density?
+Missingid is required in groundtruth.http://ld.company.org/prod-instances/prod-cat-Coil .
+missingID extraction is wrong. Produccategory class not in the schema.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?coil
+WHERE {
+?coil a prod_vocab:Hardware .
+?coil prod_vocab:name ?name .
+?coil prod_vocab:weight_g ?weight .
+?coil prod_vocab:width_mm ?width .
+?coil prod_vocab:height_mm ?height .
+?coil prod_vocab:depth_mm ?depth .
+BIND (?weight * ?width * ?height * ?depth AS ?density)
+FILTER NOT EXISTS {
+?otherCoil a prod_vocab:Hardware .
+?otherCoil prod_vocab:weight_g ?otherWeight .
+?otherCoil prod_vocab:width_mm ?otherWidth .
+?otherCoil prod_vocab:height_mm ?otherHeight .
+?otherCoil prod_vocab:depth_mm ?otherDepth .
+BIND (?otherWeight * ?otherWidth * ?otherHeight * ?otherDepth AS ?otherDensity)
+FILTER (?otherDensity > ?density)
+}
+}
+0
+http://ld.company.org/prod-instances/hw-D817-8084362
+But original query gives divisible by 0 error.
+In which cities are our US suppliers for LCDs?
+Missingid is required in groundtruthhttp://ld.company.org/prod-instances/prod-cat-LCD . and http://dbpedia.org/resource/United_States
+missingID extraction is wrong. Country is a property. It is not a class. And for U990 LCD Inducto, use wrong name
+Query is wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT DISTINCT ?city
+WHERE {
+?supplier a prod_vocab:Supplier .
+?supplier prod_vocab:addressLocality ?city .
+?supplier prod_vocab:country <http://dbpedia.org/resource/United_States> .
+?hardware prod_vocab:hasSupplier ?supplier .
+?hardware prod_vocab:hasCategory <http://ld.company.org/prod-instances/prod-cat-Memristor> .
+}
+It is correct if here it used LCD.
+Do we have any service that does apply to a BOM where parts are sourced from Russia?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+ASK WHERE { { # all BOMs with parts from russia SELECT ?bom WHERE { ?bom pv:hasBomPart ?bomPart . ?bomPart pv:hasPart ?hw . ?hw pv:hasSupplier ?suppl . ?suppl pv:addressCountry ?country . FILTER (CONTAINS(LCASE(?country), LCASE("Russia"))) } } # services eligible for parts associated with these BOMs? ?s a pv:Service . ?s pv:eligibleFor ?hw . ?bom pv:hasBomPart ?bomPart . ?bomPart pv:hasPart ?hw . } – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?service
+WHERE {
+?service a prod_vocab:Service .
+?bom a prod_vocab:BillOfMaterial .
+?bomPart a prod_vocab:BomPart .
+?bomPart prod_vocab:hasPart ?hardware .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:country <http://dbpedia.org/resource/Russia> .
+?service prod_vocab:eligibleFor ?bom .
+}
+Should be ASK query. And query gives false. It should be true.
+What suppliers - I need name, country and price - deliver the 6th to 10th most expensive hardware items.
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX terms: <http://purl.org/dc/terms/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX ns: <http://creativecommons.org/ns#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+SELECT ?supplierName ?supplierCountry ?priceAmount
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:price ?price .
+?price prod_vocab:amount ?priceAmount .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:name ?supplierName .
+?supplier prod_vocab:country ?supplierCountry .
+{
+SELECT ?hardware
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:price ?price .
+?price prod_vocab:amount ?amount .
+}
+ORDER BY DESC(?amount)
+OFFSET 5
+LIMIT 5
+}
+}
+PREFIX prodi: http://ld.company.org/prod-instances/ PREFIX pv: http://ld.company.org/prod-vocab/ SELECT ?name ?country ?price WHERE { ?sup a pv:Supplier ; pv:addressCountry ?country ; pv:name ?name . ?hw a pv:Hardware ; pv:price/pv:amount ?price ; pv:price/pv:currency "EUR" ; pv:hasSupplier ?sup . } ORDER BY DESC(?price) LIMIT 5 OFFSET 10 – GT
+Which department have more than 5 employees? I need their names and the number of employees.
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?name (COUNT(?emp) AS ?numEmployees) WHERE { ?dept a pv:Department ; pv:name ?name . ?emp a pv:Employee ; pv:memberOf ?dept . } GROUP BY ?depty ?name HAVING (COUNT(?emp) > 5) – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+SELECT ?departmentName (COUNT(?employee) AS ?employeeCount)
+WHERE {
+?employee prod_vocab:memberOf ?department .
+?department prod_vocab:name ?departmentName .
+}
+GROUP BY ?departmentName
+HAVING (COUNT(?employee) > 5)
+how many suppliers can deliver alternative compatible products for the k367 strain encoder?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?cat (MIN(?w) AS ?minWeight) (MAX(?w) AS ?maxWeight) WHERE { ?catItem a pv:ProductCategory ; pv:name ?cat . ?hw a pv:Hardware ; pv:hasCategory ?catItem ; pv:weight_g ?w . } GROUP BY ?cat – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT (COUNT(DISTINCT ?supplier) AS ?supplierCount)
+WHERE {
+?hardware prod_vocab:id <http://ld.company.org/prod-instances/hw-K367-1320550> .
+?hardware prod_vocab:compatibleProduct ?compatibleProduct .
+?compatibleProduct prod_vocab:hasSupplier ?supplier .
+}
+how many suppliers can deliver alternative compatible products for the k367 strain encoder?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?cat (MIN(?w) AS ?minWeight) (MAX(?w) AS ?maxWeight) WHERE { ?catItem a pv:ProductCategory ; pv:name ?cat . ?hw a pv:Hardware ; pv:hasCategory ?catItem ; pv:weight_g ?w . } GROUP BY ?cat – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT (COUNT(DISTINCT ?supplier) AS ?supplierCount)
+WHERE {
+?hardware prod_vocab:id <http://ld.company.org/prod-instances/hw-K367-1320550> .
+?hardware prod_vocab:compatibleProduct ?alternativeHardware .
+?alternativeHardware prod_vocab:hasSupplier ?supplier .
+}
+For each supplier, what's the average price (in EUR) of what they sell, round reasonably?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?name (ROUND(AVG(?amt) * 100) / 100 AS ?avgEur) WHERE { ?sup a pv:Supplier ; pv:name ?name . ?hw pv:hasSupplier ?sup ; pv:price/pv:amount ?amt ; pv:price/pv:currency "EUR" . } GROUP BY ?sup ?name – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?supplier (ROUND(AVG(?priceAmount) AS xsd:decimal)) AS ?averagePrice
+WHERE {
+?supplier a prod_vocab:Supplier .
+?hardware prod_vocab:hasSupplier ?supplier .
+?hardware prod_vocab:price ?price .
+?price prod_vocab:amount ?priceAmount .
+FILTER(STRSTARTS(STR(?price), "http://ld.company.org/prod-instances/price"))
+FILTER(CONTAINS(STR(?price), "-EUR"))
+}
+GROUP BY ?supplier
+Are there departments with no manager assigned?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+ASK WHERE { ?dept a pv:Department . FILTER NOT EXISTS { ?m pv:memberOf ?dept . ?m a pv:Manager . } }  - GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+SELECT ?department
+WHERE {
+?department a prod_vocab:Department .
+FILTER NOT EXISTS {
+?department prod_vocab:responsibleFor ?manager .
+}
+}
+Should be ASK
+For every product, list what other products it is compatible with and the price differences between both.
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?prod ?compatible (?prodAmount - ?compatibleAmount AS ?priceDiff) WHERE { ?prodClass rdfs:subClassOf* pv:Product . ?prod a ?prodClass ; pv:compatibleProduct ?compatible . ?prod pv:price/pv:amount ?prodAmount ; pv:price/pv:currency "EUR" . ?compatible pv:price/pv:amount ?compatibleAmount ; pv:price/pv:currency "EUR" . } – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?product ?compatibleProduct ?priceDifference
+WHERE {
+?product a prod_vocab:Hardware .
+?product prod_vocab:compatibleProduct ?compatibleProduct .
+?product prod_vocab:price ?price1 .
+?compatibleProduct prod_vocab:price ?price2 .
+BIND (ABS(?price1 - ?price2) AS ?priceDifference)
+}
+Which area of expertise is most relevant among our products, what are the top three skills?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?cat ?name WHERE { ?hw a pv:Hardware ; pv:hasCategory ?cat . ?cat pv:name ?name . } GROUP BY ?cat ?name ORDER BY DESC(COUNT(*)) LIMIT 3 - GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?areaOfExpertise (COUNT(?areaOfExpertise) AS ?count)
+WHERE {
+?employee prod_vocab:areaOfExpertise ?areaOfExpertise .
+}
+GROUP BY ?areaOfExpertise
+ORDER BY DESC(?count)
+LIMIT 3
+Which hardware items are wider than they are tall, and have a depth under 50 mm? List their dimensions.
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query correct.
+Which hardware items - list id and name - have no active product manager?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?hw ?id ?name WHERE { ?hw a pv:Hardware ; pv:id ?id ; pv:name ?name . FILTER NOT EXISTS { ?hw pv:hasProductManager/pv:name [] . } } - GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?hardware_id ?hardware_name
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:id ?hardware_id .
+?hardware prod_vocab:name ?hardware_name .
+OPTIONAL {
+?hardware prod_vocab:hasProductManager ?product_manager .
+}
+FILTER (!BOUND(?product_manager))
+}
+For each manager, what percentage of their entire team work in the same department as the manager?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query correct.
+Which Bill-of-Material has the highest average unit cost of its hardware parts, and what is that average?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?billOfMaterial (AVG(?price) AS ?averagePrice)
+WHERE {
+?billOfMaterial a prod_vocab:BillOfMaterial .
+?billOfMaterial prod_vocab:hasBomPart ?bomPart .
+?bomPart prod_vocab:hasPart ?hardware .
+?hardware prod_vocab:price ?price .
+FILTER (xsd:decimal(?price))
+}
+GROUP BY ?billOfMaterial
+ORDER BY DESC(?averagePrice)
+LIMIT 1
+SELECT ?bom (ROUND(AVG(?spst / ?sq) * 100) / 100 AS ?avgUnitCost) WHERE { { SELECT ?bom (SUM(?partSubTotal) AS ?spst) (SUM(xsd:int(?quant)) AS ?sq) WHERE { ?bom a pv:BillOfMaterial ; pv:hasBomPart ?part . ?part pv:quantity ?quant . ?part pv:hasPart/pv:price/pv:amount ?amount . ?part pv:hasPart/pv:price/pv:currency "EUR" . BIND(xsd:int(?quant) * ?amount AS ?partSubTotal) } GROUP BY ?bom } } GROUP BY ?bom ORDER BY DESC(?avgUnitCost) LIMIT 1 - GT
+Show me any cycles of product compatibility — i.e. product A says it's compatible with B, and B says it's compatible with A (mutual pairs).
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?a ?b WHERE { ?a pv:compatibleProduct ?b . FILTER (STR(?a) < STR(?b)) } - GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?product1 ?product2
+WHERE {
+?product1 prod_vocab:compatibleProduct ?product2 .
+?product2 prod_vocab:compatibleProduct ?product1 .
+FILTER (?product1 != ?product2)
+}
+Which hardware items have dimensions in the top 10 % of all widths, and what are their IDs, names and widths?
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+SELECT ?id ?name ?width WHERE { { # get min-max range SELECT (MIN(?width) AS ?minW) (MAX(?width) AS ?maxW) WHERE { ?hw a pv:Hardware ; pv:width_mm ?width . } } # get 90. percentile BIND(?minW + (0.9 * (?maxW - ?minW)) AS ?pct90) ?hw a pv:Hardware ; pv:id ?id ; pv:name ?name ; pv:width_mm ?width . FILTER(?width >= ?pct90) } ORDER BY DESC(?width)   – GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX terms: <http://purl.org/dc/terms/>
+PREFIX ns_0_1: <http://xmlns.com/foaf/0.1/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX ns: <http://creativecommons.org/ns#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+SELECT ?hardware ?hardware_id ?hardware_name ?hardware_width WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:id ?hardware_id .
+?hardware prod_vocab:name ?hardware_name .
+?hardware prod_vocab:width_mm ?hardware_width .
+{
+SELECT ?width_threshold WHERE {
+SELECT (PERCENTILE(90) AS ?width_threshold) WITHIN {
+?h a prod_vocab:Hardware .
+?h prod_vocab:width_mm ?w .
+}
+}
+}
+FILTER (?hardware_width >= ?width_threshold)
+}
+Which supplier delivers the most reliable Inductor?
+Missingid is required in groundtruth.
+missingID extraction is wrong. Used hardware
+Query wrong.
+SELECT DISTINCT ?result WHERE { ?hardware pv:hasCategory http://ld.company.org/prod-instances/prod-cat-Inductor . ?hardware pv:reliabilityIndex ?reliabilityIndex . ?hardware pv:hasSupplier ?result . } ORDER BY DESC(?reliabilityIndex) LIMIT 1 –GT
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?supplier
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:name ?hardwareName .
+FILTER (CONTAINS(STR(?hardwareName), "Inductor"))
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier prod_vocab:reliabilityIndex ?reliabilityIndex .
+}
+ORDER BY DESC(?reliabilityIndex)
+LIMIT 1
+What are the top 5 suppliers with best average reliability over their products.
+Missingid not required in groundtruth.
+missingID extraction no need.
+Query wrong.
+PREFIX prod_vocab: <http://ld.company.org/prod-vocab/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf_schema: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?supplier ?avgReliability
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:hasSupplier ?supplier .
+?supplier a prod_vocab:Supplier .
+?hardware prod_vocab:reliabilityIndex ?reliability .
+{
+SELECT ?supplier (AVG(?reliability) AS ?avgReliability)
+WHERE {
+?hardware a prod_vocab:Hardware .
+?hardware prod_vocab:hasSupplier ?supplier .
+?hardware prod_vocab:reliabilityIndex ?reliability .
+}
+GROUP BY ?supplier
+ORDER BY DESC(?avgReliability)
+LIMIT 5
+}
+}
+SELECT DISTINCT ?result (AVG(?reliabilityIndex) AS ?averageReliabilityIndex) WHERE { ?hardware pv:reliabilityIndex ?reliabilityIndex . ?hardware pv:hasSupplier ?result . } GROUP BY ?result ORDER BY DESC(?averageReliabilityIndex) LIMIT 5  – GT

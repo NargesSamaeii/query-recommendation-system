@@ -1,0 +1,38 @@
+﻿{
+    "question":  "What is the Potentiometer with the smallest volume?",
+    "question_id":  68,
+    "expected_classes":  [
+                             "ProductCategory",
+                             "Product"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "width_mm",
+                                                                "depth_mm",
+                                                                "height_mm"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "width_mm",
+                                                                "depth_mm",
+                                                                "height_mm"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Potentiometer":  "http://ld.company.org/prod-instances/prod-cat-Potentiometer"
+                          },
+    "expected_results":  [
+                             {
+                                 "productCategory":  "http://ld.company.org/prod-instances/hw-I893-5009730"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

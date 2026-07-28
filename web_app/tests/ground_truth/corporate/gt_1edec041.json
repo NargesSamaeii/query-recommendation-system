@@ -1,0 +1,52 @@
+{
+  "question": "Show me all BOMs which have at least on part from a polish supplier.",
+  "question_id": 48,
+  "expected_classes": [
+    "BillOfMaterial",
+    "BomPart",
+    "Product",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "hasPart"
+      ]
+    },
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "country"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Poland": "http://dbpedia.org/resource/Poland"
+  },
+  "expected_results": [
+    {
+      "supplier": "http://ld.company.org/prod-instances/bom-11"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/bom-12"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/bom-6"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

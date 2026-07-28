@@ -1,0 +1,124 @@
+@prefix ex: <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CountryShape a sh:NodeShape ;
+    sh:targetClass ex:Country .
+
+ex:DeviceShape a sh:NodeShape ;
+    sh:targetClass ex:Device .
+
+ex:GenreShape a sh:NodeShape ;
+    sh:targetClass ex:Genre .
+
+ex:LanguageShape a sh:NodeShape ;
+    sh:targetClass ex:Language .
+
+ex:MovieShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:path ex:contentType ],
+        [ sh:class ex:Language ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:hasLanguage ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:title ],
+        [ sh:datatype xsd:integer ;
+            sh:path ex:releaseYear ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:durationMinutes ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:imdbRating ],
+        [ sh:class ex:Country ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:producedIn ],
+        [ sh:class ex:Genre ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:hasGenre ] ;
+    sh:targetClass ex:Movie .
+
+ex:RecommendationShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:boolean ;
+            sh:path ex:wasClicked ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:recommendationType ],
+        [ sh:datatype xsd:date ;
+            sh:path ex:recommendationDate ],
+        [ sh:class ex:Movie ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:recommendsMovie ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:recommendationScore ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:algorithmVersion ] ;
+    sh:targetClass ex:Recommendation .
+
+ex:ReviewShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:path ex:reviewText ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:rating ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:sentimentScore ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:helpfulVotes ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:sentiment ],
+        [ sh:class ex:Movie ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:reviewsMovie ],
+        [ sh:class ex:User ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:belongsToUser ] ;
+    sh:targetClass ex:Review .
+
+ex:SearchShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:date ;
+            sh:path ex:searchDate ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:searchQuery ] ;
+    sh:targetClass ex:Search .
+
+ex:SubscriptionPlanShape a sh:NodeShape ;
+    sh:targetClass ex:SubscriptionPlan .
+
+ex:UserShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Movie ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:watches ],
+        [ sh:class ex:SubscriptionPlan ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:hasSubscriptionPlan ],
+        [ sh:class ex:Search ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:searches ],
+        [ sh:class ex:Recommendation ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:receivesRecommendation ],
+        [ sh:datatype xsd:integer ;
+            sh:path ex:age ] ;
+    sh:targetClass ex:User .
+
+ex:WatchSessionShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:date ;
+            sh:path ex:watchDate ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:action ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:progressPercentage ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:deviceType ],
+        [ sh:class ex:Device ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:usesDevice ],
+        [ sh:class ex:Movie ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:watchedMovie ],
+        [ sh:datatype xsd:string ;
+            sh:path ex:quality ],
+        [ sh:datatype xsd:decimal ;
+            sh:path ex:watchDuration ],
+        [ sh:class ex:User ;
+            sh:nodeKind sh:IRI ;
+            sh:path ex:watchedByUser ] ;
+    sh:targetClass ex:WatchSession .
+

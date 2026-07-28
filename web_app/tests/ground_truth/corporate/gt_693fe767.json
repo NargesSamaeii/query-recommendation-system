@@ -1,0 +1,37 @@
+{
+  "question": "What products can I get from US suppliers that are compatible with the U990 LCD Inductor?",
+  "question_id": 23,
+  "expected_classes": [
+    "Hardware",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "compatibleProduct",
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "country"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "U990-5234138": "http://ld.company.org/prod-instances/hw-U990-5234138",
+    "United States": "http://dbpedia.org/resource/United_States"
+  },
+  "expected_results": [
+    {
+      "product": "http://ld.company.org/prod-instances/hw-A360-3041803"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-A509-5571891"
+    }
+  ],
+  "key_field": "product",
+  "query_type": "SELECT"
+}

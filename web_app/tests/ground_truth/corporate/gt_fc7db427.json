@@ -1,0 +1,62 @@
+{
+  "question": "For each Bill of Material, how many parts does it contain and what is the total material quantity â€” show me only those BOMs exceeding 600 total items and order them descending.",
+  "question_id": 37,
+  "expected_classes": [
+    "BillOfMaterial",
+    "BomPart"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "quantity"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-6",
+      "partCount": "12",
+      "totalQty": "731"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-15",
+      "partCount": "11",
+      "totalQty": "694"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-11",
+      "partCount": "12",
+      "totalQty": "689"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-19",
+      "partCount": "15",
+      "totalQty": "681"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-12",
+      "partCount": "14",
+      "totalQty": "664"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-4",
+      "partCount": "15",
+      "totalQty": "647"
+    },
+    {
+      "bom": "http://ld.company.org/prod-instances/bom-2",
+      "partCount": "13",
+      "totalQty": "610"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

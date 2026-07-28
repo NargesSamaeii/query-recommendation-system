@@ -1,0 +1,38 @@
+{
+  "question": "What is the cheapest Oscillator we have?",
+  "question_id": 18,
+  "expected_classes": [
+    "Product",
+    "ProductCategory",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasCategory",
+        "price"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Oscillator": "http://ld.company.org/prod-instances/prod-cat-Oscillator"
+  },
+  "expected_results": [
+    {
+      "product": "http://ld.company.org/prod-instances/hw-F388-7030185"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

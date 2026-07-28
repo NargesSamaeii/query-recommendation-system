@@ -1,0 +1,35 @@
+# Multi-Knowledge Graph Configuration
+# This file tracks different knowledge graphs for evaluation
+
+knowledge_graphs:
+  - name: "copypu"
+    description: "Products and Components KG"
+    file: "data/input/copypu.ttl"
+    sparql_endpoint: "http://localhost:8080/sparql"  # if remote
+    source_type: "local_rdf"  # local_rdf, sparql_endpoint, file
+    enabled: true
+    notes: "Primary RDF dataset with products, suppliers, categories"
+
+  - name: "movie"
+    description: "Netflix-style Movie KG (netfilx_sparql/ + netflix_dataset/, via Ontop)"
+    file: "netfilx_sparql/netflix_ontology.owl"
+    sparql_endpoint: "http://localhost:8081/sparql"
+    source_type: "sparql_endpoint"
+    enabled: true
+    notes: "Movie/TV catalog + per-user watch/search/review/recommendation behavior. Ontop endpoint stood up via docker-compose.yml (docker/README.md)."
+
+  - name: "tourism"
+    description: "Verona Tourism KG (Verona_Tourism_Ontop/, via Ontop)"
+    file: "Verona_Tourism_Ontop/art_all.ttl"
+    sparql_endpoint: "http://localhost:8082/sparql"
+    source_type: "sparql_endpoint"
+    enabled: true
+    notes: "Art/POI, event, tour, calendar, location catalog data. No per-user data (see docs/THESIS_PROJECT_PLAN.md Phase 0 known limitations) -- catalog-query-only for this thesis. Ontop endpoint stood up via docker-compose.yml (docker/README.md)."
+
+  # Add more KGs here when ready
+  # - name: "dbpedia"
+  #   description: "DBpedia Knowledge Graph"
+  #   sparql_endpoint: "https://dbpedia.org/sparql"
+  #   source_type: "sparql_endpoint"
+  #   enabled: false
+  #   notes: "Public KG for testing"

@@ -1,0 +1,42 @@
+﻿{
+    "question":  "Who manages the people that are members of the Data Services department?",
+    "question_id":  55,
+    "expected_classes":  [
+                             "Department",
+                             "Manager",
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Department",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "hasManager"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Manager",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "hasManager"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "memberOf",
+                                                                "hasManager"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "department-dept-41622":  "http://ld.company.org/prod-instances/dept-41622"
+                          },
+    "expected_results":  [
+                             {
+                                 "department":  "http://ld.company.org/prod-instances/empl-Elena.Herzog%40company.org"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

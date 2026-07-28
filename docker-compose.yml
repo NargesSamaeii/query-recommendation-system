@@ -1,0 +1,91 @@
+services:
+  postgres-movie:
+    image: postgres:16
+    container_name: postgres-movie
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_MOVIE_PASSWORD}
+      POSTGRES_DB: netflix_vkg
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-movie-data:/var/lib/postgresql/data
+      - ./netflix_dataset:/csv:ro
+      - ./docker/movie/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  postgres-tourism:
+    image: postgis/postgis:16-3.4
+    container_name: postgres-tourism
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_TOURISM_PASSWORD}
+      POSTGRES_DB: tourismdb
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-tourism-data:/var/lib/postgresql/data
+      - "./Verona_Tourism_Ontop/tourismdb_jan 1.backup:/backup/tourismdb.backup:ro"
+      - ./docker/tourism/restore.sh:/docker-entrypoint-initdb.d/restore.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 60
+
+  ontop-movie:
+    image: ontop/ontop
+    container_name: ontop-movie
+    depends_on:
+      postgres-movie:
+        condition: service_healthy
+    environment:
+      ONTOP_MAPPING_FILE: /opt/ontop/input/netflix_ontology.obda
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/netflix_ontology.owl
+      ONTOP_DB_URL: jdbc:postgresql://postgres-movie:5432/netflix_vkg
+      ONTOP_DB_USER: postgres
+      ONTOP_DB_PASSWORD: ${POSTGRES_MOVIE_PASSWORD}
+      ONTOP_DB_DRIVER: org.postgresql.Driver
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+    volumes:
+      - ./netfilx_sparql:/opt/ontop/input:ro
+      - ./docker/jdbc:/opt/ontop/jdbc:ro
+    ports:
+      - "8081:8080"
+
+  ontop-tourism:
+    image: ontop/ontop
+    container_name: ontop-tourism
+    depends_on:
+      postgres-tourism:
+        condition: service_healthy
+    environment:
+      ONTOP_MAPPING_FILE: /opt/ontop/input/art_all.obda
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/art_all.ttl
+      ONTOP_DB_URL: jdbc:postgresql://postgres-tourism:5432/tourismdb
+      ONTOP_DB_USER: postgres
+      ONTOP_DB_PASSWORD: ${POSTGRES_TOURISM_PASSWORD}
+      ONTOP_DB_DRIVER: org.postgresql.Driver
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+    volumes:
+      - ./Verona_Tourism_Ontop:/opt/ontop/input:ro
+      - ./docker/jdbc:/opt/ontop/jdbc:ro
+    ports:
+      - "8082:8080"
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+
+volumes:
+  postgres-movie-data:
+  postgres-tourism-data:
+  ollama-data:

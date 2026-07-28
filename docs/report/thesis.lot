@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Movie-domain tables, with row counts verified exactly against the source CSVs.}}{7}{table.caption.7}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tourism-domain tables, row counts verified exactly against the source backup.}}{8}{table.caption.8}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Behavioral-profiling results on the full dataset. 300 users have no watch history and therefore receive no profile.}}{13}{table.caption.13}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Absolute cosine-floor calibration data. The Movie domain separates cleanly, but the Tourism domain does not: the supervisor's own canonical example, \emph {``Free Churches in Verona,''} scores below an off-topic control phrase.}}{18}{table.caption.15}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Movie-domain ablation results, averaged across 3 users $\times $ 4 questions.}}{23}{table.caption.17}%
+\addvspace {10\p@ }

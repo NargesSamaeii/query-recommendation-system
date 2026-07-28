@@ -1,0 +1,32 @@
+﻿{
+    "question":  "Are there any departments that have no members of type Manager?",
+    "question_id":  77,
+    "expected_classes":  [
+                             "Department",
+                             "Manager"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Department",
+                                    "relevant_properties":  [
+                                                                "memberOf"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Manager",
+                                    "relevant_properties":  [
+                                                                "memberOf"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "result":  "false"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "ASK"
+}

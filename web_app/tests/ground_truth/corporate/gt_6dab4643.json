@@ -1,0 +1,402 @@
+{
+  "question": "I want to update my contact list, for each Employee give me name, email, phone number and the department they belong to as well as their direct report.",
+  "question_id": 38,
+  "expected_classes": [
+    "Agent",
+    "Employee",
+    "Manager",
+    "Department"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Agent",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "email",
+        "hasManager",
+        "memberOf",
+        "name",
+        "phone"
+      ]
+    },
+    {
+      "class_name": "Manager",
+      "relevant_properties": [
+        "email",
+        "memberOf",
+        "name",
+        "phone"
+      ]
+    },
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Adolfina Hoch",
+      "email": "Adolfina.Hoch@company.org",
+      "phone": "+49-109-5719002",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Anamchara Foerstner",
+      "email": "Anamchara.Foerstner@company.org",
+      "phone": "+49-360-5655698",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Arendt Beitel",
+      "email": "Arendt.Beitel@company.org",
+      "phone": "+49-8763-66514379",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Arnelle Gerber",
+      "email": "Arnelle.Gerber@company.org",
+      "phone": "(03586) 7240528",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Baldwin Dirksen",
+      "email": "Baldwin.Dirksen@company.org",
+      "phone": "+49-6200-33069465",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Corinna Ludwig",
+      "email": "Corinna.Ludwig@company.org",
+      "phone": "+49-1743-24836762",
+      "dept": "Engineering",
+      "manager": "Thomas Mueller"
+    },
+    {
+      "name": "Dieterich Blau",
+      "email": "Dieterich.Blau@company.org",
+      "phone": "+49-2961-28181571",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Elisabeth Harman",
+      "email": "Elisabeth.Harman@company.org",
+      "phone": "+49-4278-55203507",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Emil Gotti",
+      "email": "Emil.Gotti@company.org",
+      "phone": "(0101) 854043584",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Erhard Fried",
+      "email": "Erhard.Fried@company.org",
+      "phone": "+49-400-5290537",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Franziska Acker",
+      "email": "Franziska.Acker@company.org",
+      "phone": "(01908) 6892372",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Frauke Faerber",
+      "email": "Frauke.Faerber@company.org",
+      "phone": "(01356) 2318280",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Gretel Roth",
+      "email": "Gretel.Roth@company.org",
+      "phone": "+49-9456-94517553",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Heinrich Hoch",
+      "email": "Heinrich.Hoch@company.org",
+      "phone": "+49-4446-26033173",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Henny Foth",
+      "email": "Henny.Foth@company.org",
+      "phone": "(0686) 108701699",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Herr Haan Bader",
+      "email": "Herr.Haan.Bader@company.org",
+      "phone": "(05126) 3204437",
+      "dept": "Engineering",
+      "manager": "Thomas Mueller"
+    },
+    {
+      "name": "Jarvis Jans",
+      "email": "Jarvis.Jans@company.org",
+      "phone": "(0322) 517636576",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Lambert Faust",
+      "email": "Lambert.Faust@company.org",
+      "phone": "(0673) 525930320",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Liese Adam",
+      "email": "Liese.Adam@company.org",
+      "phone": "+49-6092-34516857",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Lili Geier",
+      "email": "Lili.Geier@company.org",
+      "phone": "(0938) 228702909",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Marius Fux",
+      "email": "Marius.Fux@company.org",
+      "phone": "+49-73-917-19816",
+      "dept": "Production",
+      "manager": "Reiner Widmann"
+    },
+    {
+      "name": "Miles Amsel",
+      "email": "Miles.Amsel@company.org",
+      "phone": "+49-528-8615329",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Minnie Kuehn",
+      "email": "Minnie.Kuehn@company.org",
+      "phone": "+49-551-5670308",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Nadia Schubert",
+      "email": "Nadia.Schubert@company.org",
+      "phone": "+49-1805-80560374",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Ratt Beyer",
+      "email": "Ratt.Beyer@company.org",
+      "phone": "+49-2117-55002657",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Ratt Hartmann",
+      "email": "Ratt.Hartmann@company.org",
+      "phone": "(00636) 1323749",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Rebecca Hall",
+      "email": "Rebecca.Hall@company.org",
+      "phone": "+49-2776-10372538",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Sabrina Bayer",
+      "email": "Sabrina.Bayer@company.org",
+      "phone": "+49-82-534-91423",
+      "dept": "Production",
+      "manager": "Reiner Widmann"
+    },
+    {
+      "name": "Sabrina Geiger",
+      "email": "Sabrina.Geiger@company.org",
+      "phone": "+49-8295-77923757",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Siglind Brinkerhoff",
+      "email": "Siglind.Brinkerhoff@company.org",
+      "phone": "+49-4855-99936426",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Sigmund Gros",
+      "email": "Sigmund.Gros@company.org",
+      "phone": "(0916) 071777489",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Sylvester Brant",
+      "email": "Sylvester.Brant@company.org",
+      "phone": "(08514) 9139423",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Valda Everhart",
+      "email": "Valda.Everhart@company.org",
+      "phone": "+49-04-969-14255",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Wanja Hoffmann",
+      "email": "Wanja.Hoffmann@company.org",
+      "phone": "+49-1083-38194095",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Wolfgang Martin",
+      "email": "Wolfgang.Martin@company.org",
+      "phone": "+49-701-5973041",
+      "dept": "Data Services",
+      "manager": "Elena Herzog"
+    },
+    {
+      "name": "Karen Brant",
+      "email": "Karen.Brant@company.org",
+      "phone": "(00530) 5040048",
+      "dept": "Engineering",
+      "manager": "Thomas Mueller"
+    },
+    {
+      "name": "Baldwin Guenther",
+      "email": "Baldwin.Guenther@company.org",
+      "dept": "Production",
+      "manager": "Reiner Widmann"
+    },
+    {
+      "name": "Berlin Schulz",
+      "email": "Berlin.Schulz@company.org",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Bert Blumstein",
+      "email": "Bert.Blumstein@company.org",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Herr Burgh Eichel",
+      "email": "Herr.Burgh.Eichel@company.org",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Karch Moeller",
+      "email": "Karch.Moeller@company.org",
+      "dept": "Engineering",
+      "manager": "Thomas Mueller"
+    },
+    {
+      "name": "Kevin Feigenbaum",
+      "email": "Kevin.Feigenbaum@company.org",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Kristen Bauers",
+      "email": "Kristen.Bauers@company.org",
+      "dept": "Procurement",
+      "manager": "Waldtraud Kuttner"
+    },
+    {
+      "name": "Manfred Foth",
+      "email": "Manfred.Foth@company.org",
+      "dept": "Engineering",
+      "manager": "Thomas Mueller"
+    },
+    {
+      "name": "Ulrik Denzel",
+      "email": "Ulrik.Denzel@company.org",
+      "dept": "Production",
+      "manager": "Reiner Widmann"
+    },
+    {
+      "name": "Xochitl Aue",
+      "email": "Xochitl.Aue@company.org",
+      "dept": "Product Management",
+      "manager": "Franz Kornhaeusel"
+    },
+    {
+      "name": "Yanka Schreiber",
+      "email": "Yanka.Schreiber@company.org",
+      "dept": "Marketing",
+      "manager": "Dietlinde Boehme"
+    },
+    {
+      "name": "Dietlinde Boehme",
+      "email": "Dietlinde.Boehme@company.org",
+      "phone": "(06582) 6550636",
+      "dept": "Marketing"
+    },
+    {
+      "name": "Elena Herzog",
+      "email": "Elena.Herzog@company.org",
+      "phone": "+49-7608-83268331",
+      "dept": "Data Services"
+    },
+    {
+      "name": "Franz Kornhaeusel",
+      "email": "Franz.Kornhaeusel@company.org",
+      "phone": "(02065) 4946239",
+      "dept": "Product Management"
+    },
+    {
+      "name": "Reiner Widmann",
+      "email": "Reiner.Widmann@company.org",
+      "phone": "+49-408-8516878",
+      "dept": "Production"
+    },
+    {
+      "name": "Thomas Mueller",
+      "email": "Thomas.Mueller@company.org",
+      "phone": "+49-8200-38218301",
+      "dept": "Engineering"
+    },
+    {
+      "name": "Waldtraud Kuttner",
+      "email": "Waldtraud.Kuttner@company.org",
+      "phone": "(08798) 5416209",
+      "dept": "Procurement"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

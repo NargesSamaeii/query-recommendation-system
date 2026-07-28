@@ -1,0 +1,45 @@
+﻿{
+    "question":  "Who is the product manager of the most expensive service we offer?",
+    "question_id":  64,
+    "expected_classes":  [
+                             "Service",
+                             "Price",
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Service",
+                                    "relevant_properties":  [
+                                                                "hasProductManager",
+                                                                "price",
+                                                                "amount"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Price",
+                                    "relevant_properties":  [
+                                                                "hasProductManager",
+                                                                "price",
+                                                                "amount"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "hasProductManager",
+                                                                "price",
+                                                                "amount"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "service":  "http://ld.company.org/prod-instances/empl-Ida.Halle%40company.org"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

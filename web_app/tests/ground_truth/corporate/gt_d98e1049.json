@@ -1,0 +1,51 @@
+﻿{
+    "question":  "Which suppliers in France delivers Compensators?",
+    "question_id":  62,
+    "expected_classes":  [
+                             "Product",
+                             "ProductCategory",
+                             "Supplier"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasSupplier",
+                                                                "hasCategory",
+                                                                "addressCountry"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "hasSupplier",
+                                                                "hasCategory",
+                                                                "addressCountry"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "hasSupplier",
+                                                                "hasCategory",
+                                                                "addressCountry"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Compensator":  "http://ld.company.org/prod-instances/prod-cat-Compensator"
+                          },
+    "expected_results":  [
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/suppl-2b70d47e-fa6a-4329-8112-22287096bc44"
+                             },
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/suppl-22b9733f-4b49-4e82-82b9-d4f87d2b5916"
+                             },
+                             {
+                                 "supplier":  "http://ld.company.org/prod-instances/suppl-1ee8f22a-1460-4875-b1a8-89d7cb2607d6"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

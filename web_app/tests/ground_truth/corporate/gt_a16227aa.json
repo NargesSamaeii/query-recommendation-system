@@ -1,0 +1,30 @@
+{
+  "question": "Who is the manager of Heinrich Hoch?",
+  "question_id": 3,
+  "expected_classes": [
+    "Employee",
+    "Manager"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "hasManager"
+      ]
+    },
+    {
+      "class_name": "Manager",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "Heinrich Hoch": "http://ld.company.org/prod-instances/empl-Heinrich.Hoch%40company.org"
+  },
+  "expected_results": [
+    {
+      "manager": "http://ld.company.org/prod-instances/empl-Waldtraud.Kuttner%40company.org"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

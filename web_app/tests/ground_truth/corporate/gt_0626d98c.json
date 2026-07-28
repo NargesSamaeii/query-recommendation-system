@@ -1,0 +1,30 @@
+{
+  "question": "In which department is Ms. Brant?",
+  "question_id": 1,
+  "expected_classes": [
+    "Department",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "memberOf"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Karen Brant": "http://ld.company.org/prod-instances/empl-Karen.Brant%40company.org"
+  },
+  "expected_results": [
+    {
+      "department": "http://ld.company.org/prod-instances/dept-73191"
+    }
+  ],
+  "key_field": "department",
+  "query_type": "SELECT"
+}

@@ -1,0 +1,38 @@
+{
+  "question": "Who is the manager of the Data Services department?",
+  "question_id": 7,
+  "expected_classes": [
+    "Department",
+    "Manager",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Manager",
+      "relevant_properties": [
+        "memberOf"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "hasManager",
+        "memberOf"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "department-dept-41622": "http://ld.company.org/prod-instances/dept-41622"
+  },
+  "expected_results": [
+    {
+      "department": "http://ld.company.org/prod-instances/empl-Elena.Herzog%40company.org"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

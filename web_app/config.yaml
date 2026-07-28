@@ -1,0 +1,189 @@
+# NL2SPARQL Configuration File
+
+# LLM Configuration
+llm:
+  # Default provider (used if no stage-specific override)
+  provider: "mistral"  # Options: gemini, mistral, openai
+  model_name: "gpt-4o-mini"  # Default remote model name (used for gemini/openai if stage model_name is not set)
+  api_key: ""
+  max_tokens: 5000
+  temperature: 0.0
+  seed: 42  # Global seed; set null to disable deterministic seeding
+
+  # Mistral local model configuration (fast extraction - 7B)
+  mistral:
+    model_path: "C:\\Users\\dhami\\nl2sparql\\mistral-7b-instruct-v0.2.Q2_K.gguf"
+    n_ctx: 4096
+    n_threads: 7000
+  
+  # Stage-specific LLM overrides (optional)
+  stages:
+    class_extraction:
+      provider: "mistral"  # Fast extraction - use Mistral (7B)
+      # seed: 42            # Optional per-stage override
+    property_extraction:
+      provider: "mistral"  # Fast extraction - use Mistral (7B)
+      # seed: 42            # Optional per-stage override
+    missing_id_extraction:
+      provider: "azure"  # Use Azure OpenAI for better entity resolution
+      model_name: "gpt-4o-mini"
+      # seed: 42            # Optional per-stage override
+    query_generation:
+      provider: "azure"  # Use Azure OpenAI for best query generation quality
+      model_name: "gpt-4o-mini"
+      # seed: 42            # Optional per-stage override
+    query_routing:
+      provider: "azure"  # Use Azure OpenAI for routing preview and stage decisions
+      model_name: "gpt-4o-mini"
+      # seed: 42            # Optional per-stage override
+
+# SPARQL Endpoint Configuration
+sparql:
+  # Virtuoso SPARQL endpoint - common URLs:
+  # - http://localhost:8890/sparql (standard Virtuoso endpoint, returns JSON)
+  # - http://localhost:8890/conductor/sparql_input.vspx (Conductor HTML interface, returns HTML)
+  # - http://localhost:8890/sparql-auth (with authentication)
+  # IMPORTANT: Use the direct /sparql endpoint, NOT /conductor or /conductor/sparql_input.vspx
+  # If you get HTML error page, your endpoint URL is wrong
+  endpoint_url: "http://localhost:8891/sparql"
+  #endpoint_url: "http://localhost:8090/sparql" (ontop)
+  #endpoint_url: "http://localhost:8890/sparql"
+  #endpoint_url: "http://localhost:8080/sparql"
+  timeout: 30  # seconds
+  default_limit: null
+  # Named graph (optional) - queries will use GRAPH <uri> { ... } pattern
+  #default_graph: null  # Set to null to disable named graph usage
+  default_graph: "http://localhost:8890/coporateNew"
+  #https://text2sparql.aksw.org/2025/corporate/
+
+# Schema Configuration
+schema:
+  input_dir: "data/input"  # Directory containing SHACL .ttl files
+  output_dir: "data/output"  # Directory for generated m_schema JSON files
+  fix_syntax: true  # Attempt to fix common Turtle syntax errors
+
+# Pipeline Configuration
+pipeline:
+  # Which stages to execute
+  # You can disable stages you don't need to speed up processing
+  stages:
+    query_routing: false
+    schema_extraction: true
+    class_extraction: true
+    property_extraction: true
+    
+    # Missing ID Extraction: Resolves entity names to IRIs
+    # - Enable (true): When question mentions specific entities (e.g., "Italy", "Berlin", "John Smith")
+    # - Disable (false): For general queries without entity names (e.g., "What are the 10 most populated countries?")
+    # Disabling saves processing time and LLM calls
+    missing_id_extraction: true
+    
+    # Missing ID Extraction options
+    missing_id:
+      max_iris: null         # Maximum number of resolved IRIs to pass to query generation (null = no limit)
+      max_results_per_query: null  # Post-execution cap per missing-ID query (does NOT modify generated query)
+      enable_llm_repair: true  # If missing-ID query execution fails, send query+error to LLM repair once and retry
+      # Examples:
+      # max_iris: null        # No limit - pass all found IRIs
+      # max_iris: 5           # Limit to 5 IRIs (takes first 5 found)
+      # max_iris: 10          # Limit to 10 IRIs
+      # max_results_per_query: 50  # Keep first 50 rows from each missing-ID query result
+    
+    query_generation: true
+    query_execution: true
+
+  # Schema examples configuration - control example display per step
+  schema:
+    class_extraction:
+      include_examples: true  # Include example instances in class extraction schema
+    property_extraction:
+      include_examples: true  # Include example instances in property extraction schema
+    missing_id_extraction:
+      include_descriptions: true  # Include property descriptions in schema passed to missing ID prompt
+    query_generation:
+      include_examples: true  # Include examples in query generation
+      include_descriptions: true  # Include property descriptions in schema passed to final query prompt
+      force_text_filter_matching: true  # Rewrite literal text equality into case-insensitive FILTER matching
+      include_resolved_entity_labels: true  # Include labels alongside IRIs in RESOLVED ENTITIES prompt context
+    # Note: missing_id_extraction currently always includes examples in prompt schema
+  
+  # Extraction method configuration
+  extraction:
+    method: "embedding"  # Options: llm, embedding (LLM recommended - more accurate)
+    # LLM method: Uses language model reasoning (accurate, recommended)
+    # Embedding method: Uses pure cosine similarity with statistical thresholding (experimental)
+    
+    # Embedding-specific settings (only used when method="embedding")
+    embedding:
+      model: "all-mpnet-base-v2"  # High-quality embeddings, supports all languages
+      # Alternative: "all-MiniLM-L6-v2" (smaller, faster but lower quality)
+      include_descriptions: true  # Include property descriptions in embeddings
+      include_examples: true  # Include property examples in embeddings
+      toon_direct_mode: false  # Experimental: for .toon input, embed TOON class/property text blocks directly
+      # 
+      # New approach: Pure cosine similarity with statistical thresholding (mean - std)
+      # Automatically filters relevant items without manual threshold tuning
+      
+      # Embedding caching configuration
+      # Caches embeddings per schema to avoid recomputation
+      # First query: ~17 min for DBpedia (1000+ classes)
+      # Subsequent queries with same schema: ~0.15 sec (instant)
+      cache:
+        enabled: true  # Enable persistent embedding caching
+        cache_dir: "cache/embeddings"  # Directory to store cached embeddings
+        # Cache files:
+        # - classes_{schema_hash}.npz: Class embeddings (numpy format)
+        # - properties_{schema_hash}.npz: Property embeddings per class
+        # - metadata_{schema_hash}.json: Class/property name mappings
+        # Schema hash validates cache integrity - outdated caches are ignored
+
+  # Logging
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "logs/nl2sparql.log"
+
+  # Evaluation behavior
+  evaluation:
+    # Query execution evaluation method
+    query_execution:
+      method: "set_based"  # Options: "row_based" (default), "set_based"
+      # - row_based: Compares SPARQL results row-by-row with value subset matching
+      #   Best for: Typical SPARQL queries, order-agnostic results
+      #   Supports: Value normalization (URL decode, local-name extraction, numeric rounding)
+      # - set_based: Uses pytrec_eval for set-based comparison (treats results as unordered sets)
+      #   Best for: Evaluations requiring standard ranking metrics
+      #   Based on: text2sparql evaluation approach
+      
+      normalize_values: false  # If false, compare query results with exact string matching only
+      
+      # Order-aware evaluation settings
+      order_matters: false  # If true, consider SPARQL result order in evaluation
+      # When order_matters=true, enables order-sensitive metrics calculation
+      # Requires: method="set_based"
+      # Useful for: Ranking queries or when result order carries semantic meaning
+      
+      # Questions requiring order-aware evaluation (only evaluated with order when in this list)
+      order_required_questions: []
+      # Example:
+      # order_required_questions:
+      #   - "What are the top 10 most..."
+      #   - "Which products rank highest..."
+
+# Output Configuration
+output:
+  format: "json"  # Options: json, table, csv
+  save_intermediate: true  # Save intermediate results
+  results_dir: "tests/results"
+  extractions_dir: "tests/extractions"  # Directory to save extracted classes and properties
+  prompts_dir: "tests/prompts"  # Directory to save generated prompts
+  evaluation_results_dir: "tests/evaluation_results"  # Base folder for mSchema evaluation outputs
+  toon_evaluation_results_dir: "tests/evaluation_results_toon"  # Separate folder for TOON evaluation outputs
+  toon_results_dir: "tests/results_toon"  # Separate folder for TOON run results
+  toon_extractions_dir: "tests/extractions_toon"  # Separate folder for TOON extraction files
+  toon_prompts_dir: "tests/prompts_toon"  # Separate folder for TOON prompts
+
+# TOON Format Configuration
+toon:
+  formatting:
+    include_examples: true  # Include example values in TOON output
+    include_descriptions: false # Include property descriptions in TOON output
+    max_examples: 2  # Maximum number of example values per class/property

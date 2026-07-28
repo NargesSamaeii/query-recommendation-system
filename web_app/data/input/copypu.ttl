@@ -1,0 +1,2352 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://shaclshapes.org/AirportShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/KUF( ) is a https://schema.coypu.org/global#Airport( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/MJM( ) is a https://schema.coypu.org/global#Airport( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/SKD(Samarkand International) is a https://schema.coypu.org/global#Airport( )" ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCountryLocationAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTotalSeatsPerYearAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelAirportShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/global#Airport> .
+
+<http://shaclshapes.org/CoastalBreakwaterPortShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/AUWMB(Warrnambool) is a https://schema.coypu.org/world-port-index#CoastalBreakwaterPort( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/DKMRS(Marstal) is a https://schema.coypu.org/world-port-index#CoastalBreakwaterPort( )" ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourceCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasDryDockCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionIceCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionOtherCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionSwellCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityWharvesCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGmlIdCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIndexNumberCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts0_24CoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPrecisionCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOperatingCountryCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPilotageLocalAssistanceCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortSizeCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRailwayCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRepairsCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasShelterCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesProvisionsCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTidesRangeCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isEtaRequiredCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAdvisableCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageCompulsoryCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/sameAsCoastalBreakwaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/world-port-index#CoastalBreakwaterPort> .
+
+<http://shaclshapes.org/CoastalNaturalPortShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/GLGOH( ) is a https://schema.coypu.org/world-port-index#CoastalNaturalPort( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at least 1 at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/world-port-index#isUSRepresentative( ); has at most 1 https://schema.coypu.org/world-port-index#hasCranesMobile( ); has at most 1 https://schema.coypu.org/world-port-index#hasGoodHoldingGround( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasPortSize( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRailway( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasFacilityMedMooring( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDieselOil( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDeck( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesEngine( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/JMPOT( ) is a https://schema.coypu.org/world-port-index#CoastalNaturalPort( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/USJNU(Juneau) is a https://schema.coypu.org/world-port-index#CoastalNaturalPort( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/YENIS(Nishtun) is a https://schema.coypu.org/world-port-index#CoastalNaturalPort( )" ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourceCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesFixedCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesMobileCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionIceCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionOtherCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionSwellCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionTideCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityMedMooringCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityWharvesCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGmlIdCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGoodHoldingGroundCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIndexNumberCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts0_24CoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPrecisionCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLongitudeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOperatingCountryCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortNameCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortSizeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRailwayCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRepairsCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasShelterCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSizeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDeckCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDieselOilCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesEngineCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesFuelOilCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesProvisionsCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesWaterCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTidesRangeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTurningAreaCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isEtaRequiredCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isFirstPortOfEntryCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAvailableCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isUSRepresentativeCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/sameAsCoastalNaturalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/world-port-index#CoastalNaturalPort> .
+
+<http://shaclshapes.org/CoastalPortShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/AUWMB(Warrnambool) is a https://schema.coypu.org/world-port-index#CoastalPort( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at most 1 https://schema.coypu.org/wfp-ports#hasGmlId( ); has at most 1 https://schema.coypu.org/wfp-ports#hasLocationPrecision( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther( ); has at most 1 https://schema.coypu.org/world-port-index#hasFacilityWharves( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at most 1 https://schema.coypu.org/world-port-index#hasLifts0_24( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasTidesRange( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/DKMRS(Marstal) is a https://schema.coypu.org/world-port-index#CoastalPort( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageAdvisable( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageCompulsory( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasPortSize( ); has at most 1 https://schema.coypu.org/wfp-ports#hasLocationPrecision( ); has at least 1 at most 1 https://schema.coypu.org/wfp-ports#hasOperatingCountry( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasDryDock( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at most 1 https://schema.coypu.org/world-port-index#hasPilotageLocalAssistance( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRailway( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesProvisions( ); has at least 1 at most 1 http://www.w3.org/2002/07/owl#sameAs( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/JMPOT( ) is a https://schema.coypu.org/world-port-index#CoastalPort( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/world-port-index#isUSRepresentative( ); has at most 1 https://schema.coypu.org/world-port-index#hasCranesMobile( ); has at most 1 https://schema.coypu.org/world-port-index#hasGoodHoldingGround( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasPortSize( ); has at most 1 https://schema.coypu.org/wfp-ports#hasLocationPrecision( ); has at least 1 at most 1 https://schema.coypu.org/wfp-ports#hasOperatingCountry( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDieselOil( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesFuelOil( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/USJNU(Juneau) is a https://schema.coypu.org/world-port-index#CoastalPort( ); has at most 1 https://schema.coypu.org/world-port-index#hasTurningArea( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/world-port-index#isFirstPortOfEntry( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageAvailable( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasPortSize( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesWater( ); has at most 1 https://schema.coypu.org/world-port-index#hasFacilityWharves( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRailway( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesProvisions( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/YENIS(Nishtun) is a https://schema.coypu.org/world-port-index#CoastalPort( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/global#hasId( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at most 1 https://schema.coypu.org/wfp-ports#hasGmlId( ); has at most 1 https://schema.coypu.org/wfp-ports#hasLocationPrecision( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at most 1 https://schema.coypu.org/world-port-index#hasLifts0_24( ); has at most 1 https://schema.coypu.org/world-port-index#hasTidesRange( ); has at least 1 at most 1 http://www.w3.org/2002/07/owl#sameAs( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDieselOil( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell( ); has at least 1 at most 1 https://schema.coypu.org/global#hasLocation( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( ); has at least 1 at most 1 https://schema.coypu.org/wfp-ports#hasSize( ); has at most 1 https://schema.coypu.org/world-port-index#hasCranesFixed( )" ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourceCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesFixedCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesMobileCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasDryDockCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionIceCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionOtherCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionSwellCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionTideCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityWharvesCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGmlIdCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGoodHoldingGroundCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIndexNumberCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts0_24CoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPrecisionCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLongitudeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOperatingCountryCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPilotageLocalAssistanceCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortNameCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortSizeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRailwayCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRepairsCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasShelterCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSizeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDieselOilCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesFuelOilCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesProvisionsCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesWaterCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTidesRangeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTurningAreaCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isEtaRequiredCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isFirstPortOfEntryCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAdvisableCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAvailableCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageCompulsoryCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isUSRepresentativeCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/sameAsCoastalPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/world-port-index#CoastalPort> .
+
+<http://shaclshapes.org/GeometryShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16580( ) is a http://www.opengis.net/ont/geosparql#Geometry( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( )" ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourceGeometryShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeGeometryShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://www.opengis.net/ont/geosparql#Geometry> .
+
+<http://shaclshapes.org/InfrastructureShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/KUF( ) is a https://schema.coypu.org/global#Infrastructure( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has at most 1 https://schema.coypu.org/global#hasTotalSeatsPerYear( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/MJM( ) is a https://schema.coypu.org/global#Infrastructure( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/airport/SKD(Samarkand International) is a https://schema.coypu.org/global#Infrastructure( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has at most 1 https://schema.coypu.org/global#hasTotalSeatsPerYear( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at least 1 at most 1 https://schema.coypu.org/global#hasCountryLocation( )" ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCountryLocationInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTotalSeatsPerYearInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelInfrastructureShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/global#Infrastructure> .
+
+<http://shaclshapes.org/NamedIndividualShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/BRITJ( ) is a http://www.w3.org/2002/07/owl#NamedIndividual( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at most 1 https://schema.coypu.org/wfp-ports#hasLocationPrecision( ); has at most 1 https://schema.coypu.org/world-port-index#hasFacilityWharves( ); has at most 1 https://schema.coypu.org/world-port-index#hasLifts0_24( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at least 1 at most 1 http://www.w3.org/2002/07/owl#sameAs( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDeck( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesEngine( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesFuelOil( ); has at most 1 https://schema.coypu.org/world-port-index#hasTurningArea( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/world-port-index#isFirstPortOfEntry( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageAdvisable( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageAvailable( ); has at most 1 https://schema.coypu.org/world-port-index#isPilotageCompulsory( ); has at most 1 https://schema.coypu.org/world-port-index#isUSRepresentative( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/CASEI(Sept Iles (Seven Is.)) is a http://www.w3.org/2002/07/owl#NamedIndividual( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/JMPOT( ) is a http://www.w3.org/2002/07/owl#NamedIndividual( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/YENIS(Nishtun) is a http://www.w3.org/2002/07/owl#NamedIndividual( )" ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourceNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesFixedNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesMobileNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionIceNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionSwellNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionTideNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityWharvesNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGmlIdNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGoodHoldingGroundNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIndexNumberNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts0_24NamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts100_plusNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts50_100NamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPrecisionNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLongitudeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOperatingCountryNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOverheadLimitationsNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortNameNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortSizeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRepairsNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasShelterNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSizeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDeckNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDieselOilNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesEngineNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesFuelOilNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesWaterNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTidesRangeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTurningAreaNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isEtaRequiredNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isFirstPortOfEntryNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAdvisableNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageAvailableNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isPilotageCompulsoryNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isUSRepresentativeNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/sameAsNamedIndividualShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:NamedIndividual .
+
+<http://shaclshapes.org/PortShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/CASEI(Sept Iles (Seven Is.)) is a https://schema.coypu.org/global#Port( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/global#hasId( ); has at most 1 https://schema.coypu.org/world-port-index#isFirstPortOfEntry( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/world-port-index#isUSRepresentative( ); has at most 1 https://schema.coypu.org/world-port-index#hasCranesMobile( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide( ); has at most 1 https://schema.coypu.org/world-port-index#hasGoodHoldingGround( ); has at most 1 https://schema.coypu.org/world-port-index#hasLifts100_plus( ); has at most 1 https://schema.coypu.org/world-port-index#hasLifts50_100( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at most 1 https://schema.coypu.org/world-port-index#hasOverheadLimitations( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasPortSize( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesWater( ); has at most 1 https://schema.coypu.org/world-port-index#hasIndexNumber( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasTidesRange( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesFuelOil( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/GLGOH( ) is a https://schema.coypu.org/global#Port( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/JMPOT( ) is a https://schema.coypu.org/global#Port( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/JPFSK(Fushiki) is a https://schema.coypu.org/global#Port( ); has at least 1 at most 1 http://www.opengis.net/ont/geosparql#hasGeometry( ); has at least 1 at most 1 https://schema.coypu.org/wfp-ports#hasOperatingCountry( ); has at most 1 https://schema.coypu.org/global#hasLatitude( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at least 1 at most 1 http://www.w3.org/2002/07/owl#sameAs( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 http://www.w3.org/2000/01/rdf-schema#label( ); has at least 1 at most 1 https://schema.coypu.org/global#hasLocation( ); has at least 1 at most 1 http://www.w3.org/ns/prov#hadPrimarySource( ); has at most 1 https://schema.coypu.org/wfp-ports#hasGmlId( )" ;
+  <http://example.org/example> "https://data.coypu.org/infrastructure/port/USETW( ) is a https://schema.coypu.org/global#Port( ); has at most 1 https://schema.coypu.org/world-port-index#isEtaRequired( ); has at most 1 https://schema.coypu.org/global#hasId( ); has http://www.w3.org/1999/02/22-rdf-syntax-ns#type( ); has at most 1 https://schema.coypu.org/global#hasInfrastructureType( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide( ); has at most 1 https://schema.coypu.org/world-port-index#hasGoodHoldingGround( ); has at most 1 https://schema.coypu.org/world-port-index#hasOverheadLimitations( ); has at most 1 https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther( ); has at most 1 https://schema.coypu.org/world-port-index#hasFacilityWharves( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRailway( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasShelter( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesProvisions( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesDieselOil( ); has at most 1 https://schema.coypu.org/global#hasLongitude( ); has at most 1 https://schema.coypu.org/world-port-index#hasPortName( ); has at least 1 at most 1 https://schema.coypu.org/global#hasLocation( ); has at least 1 at most 1 https://schema.coypu.org/world-port-index#hasRepairs( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesEngine( ); has at most 1 https://schema.coypu.org/world-port-index#hasSuppliesFuelOil( )" ;
+  <http://shaclshapes.org/support> "6"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hadPrimarySourcePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesFixedPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCranesMobilePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionIcePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionOtherPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionSwellPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasEntranceRestrictionTidePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityMedMooringPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasFacilityWharvesPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGeometryPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGmlIdPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasGoodHoldingGroundPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIdPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasIndexNumberPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasInfrastructureTypePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLatitudePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts0_24PortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts100_plusPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLifts50_100PortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLocationPrecisionPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasLongitudePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOperatingCountryPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasOverheadLimitationsPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortNamePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPortSizePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRailwayPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasRepairsPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasShelterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSizePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDeckPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesDieselOilPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesEnginePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesFuelOilPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesProvisionsPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSuppliesWaterPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasTidesRangePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/instanceTypePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isEtaRequiredPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isFirstPortOfEntryPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isUSRepresentativePortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/sameAsPortShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <https://schema.coypu.org/global#Port> .
+
+<http://shaclshapes.org/hadPrimarySourceCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hadPrimarySourceCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://example.org/example> "<https://msi.nga.mil/Publications/WPI>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hadPrimarySourceCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://example.org/example> "<https://msi.nga.mil/Publications/WPI>( )" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hadPrimarySourceGeometryShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hadPrimarySourceNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://example.org/example> "<https://msi.nga.mil/Publications/WPI>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hadPrimarySourcePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>( )" ;
+  <http://example.org/example> "<https://msi.nga.mil/Publications/WPI>( )" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#hadPrimarySource> .
+
+<http://shaclshapes.org/hasCountryLocationAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/UZB>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasCountryLocation> .
+
+<http://shaclshapes.org/hasCountryLocationInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/UZB>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasCountryLocation> .
+
+<http://shaclshapes.org/hasCranesFixedCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesFixed> .
+
+<http://shaclshapes.org/hasCranesFixedCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesFixed> .
+
+<http://shaclshapes.org/hasCranesFixedNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesFixed> .
+
+<http://shaclshapes.org/hasCranesFixedPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesFixed> .
+
+<http://shaclshapes.org/hasCranesMobileCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesMobile> .
+
+<http://shaclshapes.org/hasCranesMobileCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesMobile> .
+
+<http://shaclshapes.org/hasCranesMobileNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesMobile> .
+
+<http://shaclshapes.org/hasCranesMobilePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasCranesMobile> .
+
+<http://shaclshapes.org/hasDryDockCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#DryDockSizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasDryDock> .
+
+<http://shaclshapes.org/hasDryDockCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#DryDockSizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasDryDock> .
+
+<http://shaclshapes.org/hasEntranceRestrictionIceCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce> .
+
+<http://shaclshapes.org/hasEntranceRestrictionIceCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce> .
+
+<http://shaclshapes.org/hasEntranceRestrictionIceCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce> .
+
+<http://shaclshapes.org/hasEntranceRestrictionIceNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce> .
+
+<http://shaclshapes.org/hasEntranceRestrictionIcePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionIce> .
+
+<http://shaclshapes.org/hasEntranceRestrictionOtherCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther> .
+
+<http://shaclshapes.org/hasEntranceRestrictionOtherCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther> .
+
+<http://shaclshapes.org/hasEntranceRestrictionOtherCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther> .
+
+<http://shaclshapes.org/hasEntranceRestrictionOtherPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionOther> .
+
+<http://shaclshapes.org/hasEntranceRestrictionSwellCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell> .
+
+<http://shaclshapes.org/hasEntranceRestrictionSwellCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell> .
+
+<http://shaclshapes.org/hasEntranceRestrictionSwellCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell> .
+
+<http://shaclshapes.org/hasEntranceRestrictionSwellNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell> .
+
+<http://shaclshapes.org/hasEntranceRestrictionSwellPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionSwell> .
+
+<http://shaclshapes.org/hasEntranceRestrictionTideCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide> .
+
+<http://shaclshapes.org/hasEntranceRestrictionTideCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide> .
+
+<http://shaclshapes.org/hasEntranceRestrictionTideNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide> .
+
+<http://shaclshapes.org/hasEntranceRestrictionTidePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasEntranceRestrictionTide> .
+
+<http://shaclshapes.org/hasFacilityMedMooringCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityMedMooring> .
+
+<http://shaclshapes.org/hasFacilityMedMooringPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityMedMooring> .
+
+<http://shaclshapes.org/hasFacilityWharvesCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityWharves> .
+
+<http://shaclshapes.org/hasFacilityWharvesCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityWharves> .
+
+<http://shaclshapes.org/hasFacilityWharvesCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityWharves> .
+
+<http://shaclshapes.org/hasFacilityWharvesNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityWharves> .
+
+<http://shaclshapes.org/hasFacilityWharvesPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasFacilityWharves> .
+
+<http://shaclshapes.org/hasGeometryAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/airport/MJM/geometry>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15342>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16420>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wpi/geometry/640>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15342>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16420>( )" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/airport/MJM/geometry>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15181>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGeometryPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15877>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/infrastructure/port/wpi/geometry/640>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
+<http://shaclshapes.org/hasGmlIdCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "wld_trs_ports_wfp.16420" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasGmlId> .
+
+<http://shaclshapes.org/hasGmlIdCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "wld_trs_ports_wfp.17688" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasGmlId> .
+
+<http://shaclshapes.org/hasGmlIdCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "wld_trs_ports_wfp.16420" ;
+  <http://example.org/example> "wld_trs_ports_wfp.17688" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasGmlId> .
+
+<http://shaclshapes.org/hasGmlIdNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "wld_trs_ports_wfp.17688" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasGmlId> .
+
+<http://shaclshapes.org/hasGmlIdPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "wld_trs_ports_wfp.15877" ;
+  <http://example.org/example> "wld_trs_ports_wfp.17688" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasGmlId> .
+
+<http://shaclshapes.org/hasGoodHoldingGroundCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasGoodHoldingGround> .
+
+<http://shaclshapes.org/hasGoodHoldingGroundCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasGoodHoldingGround> .
+
+<http://shaclshapes.org/hasGoodHoldingGroundNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasGoodHoldingGround> .
+
+<http://shaclshapes.org/hasGoodHoldingGroundPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasGoodHoldingGround> .
+
+<http://shaclshapes.org/hasIdAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "KUF" ;
+  <http://example.org/example> "SKD" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "AUWMB" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "GLGOH" ;
+  <http://example.org/example> "JMPOT" ;
+  <http://example.org/example> "USJNU" ;
+  <http://example.org/example> "YENIS" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "AUWMB" ;
+  <http://example.org/example> "JMPOT" ;
+  <http://example.org/example> "USJNU" ;
+  <http://example.org/example> "YENIS" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "KUF" ;
+  <http://example.org/example> "SKD" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "CASEI" ;
+  <http://example.org/example> "JMPOT" ;
+  <http://example.org/example> "YENIS" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIdPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "CASEI" ;
+  <http://example.org/example> "GLGOH" ;
+  <http://example.org/example> "JMPOT" ;
+  <http://example.org/example> "USETW" ;
+  <http://example.org/example> "YENIS" ;
+  <http://shaclshapes.org/confidence> 8,3333E-1 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasId> .
+
+<http://shaclshapes.org/hasIndexNumberCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "29790"^^xsd:long ;
+  <http://example.org/example> "54120"^^xsd:long ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:long ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasIndexNumber> .
+
+<http://shaclshapes.org/hasIndexNumberCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "10710"^^xsd:long ;
+  <http://example.org/example> "48198"^^xsd:long ;
+  <http://example.org/example> "640"^^xsd:long ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:long ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasIndexNumber> .
+
+<http://shaclshapes.org/hasIndexNumberCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "10710"^^xsd:long ;
+  <http://example.org/example> "29790"^^xsd:long ;
+  <http://example.org/example> "48198"^^xsd:long ;
+  <http://example.org/example> "54120"^^xsd:long ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:long ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasIndexNumber> .
+
+<http://shaclshapes.org/hasIndexNumberNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "10710"^^xsd:long ;
+  <http://example.org/example> "1955"^^xsd:long ;
+  <http://example.org/example> "48198"^^xsd:long ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:long ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasIndexNumber> .
+
+<http://shaclshapes.org/hasIndexNumberPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "10710"^^xsd:long ;
+  <http://example.org/example> "1955"^^xsd:long ;
+  <http://example.org/example> "48198"^^xsd:long ;
+  <http://example.org/example> "640"^^xsd:long ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:long ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasIndexNumber> .
+
+<http://shaclshapes.org/hasInfrastructureTypeAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "airport" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypeCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "port" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "port" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "port" ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypeInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "airport" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "port" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasInfrastructureTypePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "port" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasInfrastructureType> .
+
+<http://shaclshapes.org/hasLatitudeAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 3,97E1 ;
+  <http://example.org/example> 5,3507E1 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudeCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -3,8402E1 ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1,8182E1 ;
+  <http://example.org/example> 5,8303E1 ;
+  <http://example.org/example> 6,4183E1 ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -3,8402E1 ;
+  <http://example.org/example> 1,8182E1 ;
+  <http://example.org/example> 5,8303E1 ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudeInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 3,97E1 ;
+  <http://example.org/example> 5,3507E1 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -2,6911E1 ;
+  <http://example.org/example> 1,8182E1 ;
+  <http://example.org/example> 5,0199E1 ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLatitudePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1,8182E1 ;
+  <http://example.org/example> 3,6802E1 ;
+  <http://example.org/example> 5,0199E1 ;
+  <http://example.org/example> 6,4183E1 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLatitude> .
+
+<http://shaclshapes.org/hasLifts0_24CoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts0_24> .
+
+<http://shaclshapes.org/hasLifts0_24CoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts0_24> .
+
+<http://shaclshapes.org/hasLifts0_24CoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts0_24> .
+
+<http://shaclshapes.org/hasLifts0_24NamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts0_24> .
+
+<http://shaclshapes.org/hasLifts0_24PortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts0_24> .
+
+<http://shaclshapes.org/hasLifts100_plusNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts100_plus> .
+
+<http://shaclshapes.org/hasLifts100_plusPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts100_plus> .
+
+<http://shaclshapes.org/hasLifts50_100NamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts50_100> .
+
+<http://shaclshapes.org/hasLifts50_100PortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasLifts50_100> .
+
+<http://shaclshapes.org/hasLocationCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/YEM>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLocation> .
+
+<http://shaclshapes.org/hasLocationCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/YEM>( )" ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLocation> .
+
+<http://shaclshapes.org/hasLocationNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/YEM>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLocation> .
+
+<http://shaclshapes.org/hasLocationPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/JPN>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/country/USA>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/country/YEM>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLocation> .
+
+<http://shaclshapes.org/hasLocationPrecisionCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "accurate" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasLocationPrecision> .
+
+<http://shaclshapes.org/hasLocationPrecisionCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "accurate" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasLocationPrecision> .
+
+<http://shaclshapes.org/hasLocationPrecisionCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "accurate" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasLocationPrecision> .
+
+<http://shaclshapes.org/hasLocationPrecisionNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "accurate" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasLocationPrecision> .
+
+<http://shaclshapes.org/hasLocationPrecisionPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "accurate" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasLocationPrecision> .
+
+<http://shaclshapes.org/hasLongitudeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -1,3443E2 ;
+  <http://example.org/example> 5,2198E1 ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLongitude> .
+
+<http://shaclshapes.org/hasLongitudeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -1,3443E2 ;
+  <http://example.org/example> 5,2198E1 ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLongitude> .
+
+<http://shaclshapes.org/hasLongitudeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -4,8655E1 ;
+  <http://example.org/example> -6,6381E1 ;
+  <http://example.org/example> 5,2198E1 ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLongitude> .
+
+<http://shaclshapes.org/hasLongitudePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> -6,6381E1 ;
+  <http://example.org/example> -7,05E1 ;
+  <http://example.org/example> 1,3706E2 ;
+  <http://example.org/example> 5,2198E1 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:double ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasLongitude> .
+
+<http://shaclshapes.org/hasOperatingCountryCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/DNK>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasOperatingCountry> .
+
+<http://shaclshapes.org/hasOperatingCountryCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/JAM>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasOperatingCountry> .
+
+<http://shaclshapes.org/hasOperatingCountryCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/DNK>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/country/JAM>( )" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasOperatingCountry> .
+
+<http://shaclshapes.org/hasOperatingCountryNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/JAM>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasOperatingCountry> .
+
+<http://shaclshapes.org/hasOperatingCountryPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://data.coypu.org/country/JAM>( )" ;
+  <http://example.org/example> "<https://data.coypu.org/country/JPN>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasOperatingCountry> .
+
+<http://shaclshapes.org/hasOverheadLimitationsNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasOverheadLimitations> .
+
+<http://shaclshapes.org/hasOverheadLimitationsPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasOverheadLimitations> .
+
+<http://shaclshapes.org/hasPilotageLocalAssistanceCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPilotageLocalAssistance> .
+
+<http://shaclshapes.org/hasPilotageLocalAssistanceCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPilotageLocalAssistance> .
+
+<http://shaclshapes.org/hasPortNameCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Juneau" ;
+  <http://example.org/example> "Nuuk" ;
+  <http://example.org/example> "Port Antonio" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortName> .
+
+<http://shaclshapes.org/hasPortNameCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Juneau" ;
+  <http://example.org/example> "Port Antonio" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortName> .
+
+<http://shaclshapes.org/hasPortNameNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Itajai" ;
+  <http://example.org/example> "Port Antonio" ;
+  <http://example.org/example> "Sept Iles" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortName> .
+
+<http://shaclshapes.org/hasPortNamePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Edgartown" ;
+  <http://example.org/example> "Nuuk" ;
+  <http://example.org/example> "Port Antonio" ;
+  <http://example.org/example> "Sept Iles" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortName> .
+
+<http://shaclshapes.org/hasPortSizeCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortSize> .
+
+<http://shaclshapes.org/hasPortSizeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortSize> .
+
+<http://shaclshapes.org/hasPortSizeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortSize> .
+
+<http://shaclshapes.org/hasPortSizeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:M>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortSize> .
+
+<http://shaclshapes.org/hasPortSizePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:M>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#SizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasPortSize> .
+
+<http://shaclshapes.org/hasRailwayCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#MarineRailwaySizeClass:M>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRailway> .
+
+<http://shaclshapes.org/hasRailwayCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#MarineRailwaySizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRailway> .
+
+<http://shaclshapes.org/hasRailwayCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#MarineRailwaySizeClass:M>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#MarineRailwaySizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRailway> .
+
+<http://shaclshapes.org/hasRailwayPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#MarineRailwaySizeClass:S>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRailway> .
+
+<http://shaclshapes.org/hasRepairsCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:C>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRepairs> .
+
+<http://shaclshapes.org/hasRepairsCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:C>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:N>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRepairs> .
+
+<http://shaclshapes.org/hasRepairsCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:C>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:N>( )" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRepairs> .
+
+<http://shaclshapes.org/hasRepairsNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:B>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:C>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:N>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRepairs> .
+
+<http://shaclshapes.org/hasRepairsPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:C>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#RepairClass:N>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasRepairs> .
+
+<http://shaclshapes.org/hasShelterCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:G>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:P>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasShelter> .
+
+<http://shaclshapes.org/hasShelterCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:G>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasShelter> .
+
+<http://shaclshapes.org/hasShelterCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:G>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:P>( )" ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasShelter> .
+
+<http://shaclshapes.org/hasShelterNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:G>( )" ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasShelter> .
+
+<http://shaclshapes.org/hasShelterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#ShelterClass:G>( )" ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasShelter> .
+
+<http://shaclshapes.org/hasSizeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/wfp-ports#Size:small>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasSize> .
+
+<http://shaclshapes.org/hasSizeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/wfp-ports#Size:small>( )" ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasSize> .
+
+<http://shaclshapes.org/hasSizeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/wfp-ports#Size:small>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasSize> .
+
+<http://shaclshapes.org/hasSizePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/wfp-ports#Size:small>( )" ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/wfp-ports#hasSize> .
+
+<http://shaclshapes.org/hasSuppliesDeckCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDeck> .
+
+<http://shaclshapes.org/hasSuppliesDeckNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDeck> .
+
+<http://shaclshapes.org/hasSuppliesDeckPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDeck> .
+
+<http://shaclshapes.org/hasSuppliesDieselOilCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDieselOil> .
+
+<http://shaclshapes.org/hasSuppliesDieselOilCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDieselOil> .
+
+<http://shaclshapes.org/hasSuppliesDieselOilNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDieselOil> .
+
+<http://shaclshapes.org/hasSuppliesDieselOilPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesDieselOil> .
+
+<http://shaclshapes.org/hasSuppliesEngineCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesEngine> .
+
+<http://shaclshapes.org/hasSuppliesEngineNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesEngine> .
+
+<http://shaclshapes.org/hasSuppliesEnginePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesEngine> .
+
+<http://shaclshapes.org/hasSuppliesFuelOilCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesFuelOil> .
+
+<http://shaclshapes.org/hasSuppliesFuelOilCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesFuelOil> .
+
+<http://shaclshapes.org/hasSuppliesFuelOilNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesFuelOil> .
+
+<http://shaclshapes.org/hasSuppliesFuelOilPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesFuelOil> .
+
+<http://shaclshapes.org/hasSuppliesProvisionsCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesProvisions> .
+
+<http://shaclshapes.org/hasSuppliesProvisionsCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesProvisions> .
+
+<http://shaclshapes.org/hasSuppliesProvisionsCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesProvisions> .
+
+<http://shaclshapes.org/hasSuppliesProvisionsPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesProvisions> .
+
+<http://shaclshapes.org/hasSuppliesWaterCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesWater> .
+
+<http://shaclshapes.org/hasSuppliesWaterCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesWater> .
+
+<http://shaclshapes.org/hasSuppliesWaterNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesWater> .
+
+<http://shaclshapes.org/hasSuppliesWaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasSuppliesWater> .
+
+<http://shaclshapes.org/hasTidesRangeCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 2.0 ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTidesRange> .
+
+<http://shaclshapes.org/hasTidesRangeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1.0 ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTidesRange> .
+
+<http://shaclshapes.org/hasTidesRangeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1.0 ;
+  <http://example.org/example> 2.0 ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTidesRange> .
+
+<http://shaclshapes.org/hasTidesRangeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1.0 ;
+  <http://example.org/example> 10.0 ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTidesRange> .
+
+<http://shaclshapes.org/hasTidesRangePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 1.0 ;
+  <http://example.org/example> 10.0 ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTidesRange> .
+
+<http://shaclshapes.org/hasTotalSeatsPerYearAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 243943567 ;
+  <http://example.org/example> 342081684 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasTotalSeatsPerYear> .
+
+<http://shaclshapes.org/hasTotalSeatsPerYearInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 243943567 ;
+  <http://example.org/example> 342081684 ;
+  <http://shaclshapes.org/confidence> 6,6667E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/global#hasTotalSeatsPerYear> .
+
+<http://shaclshapes.org/hasTurningAreaCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTurningArea> .
+
+<http://shaclshapes.org/hasTurningAreaCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTurningArea> .
+
+<http://shaclshapes.org/hasTurningAreaNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#hasTurningArea> .
+
+<http://shaclshapes.org/instanceTypeAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Airport>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Infrastructure>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <https://schema.coypu.org/global#Airport> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalBreakwaterPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalPort>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( 
+    <https://schema.coypu.org/world-port-index#CoastalBreakwaterPort> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.w3.org/2002/07/owl#NamedIndividual>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Port>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalNaturalPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalPort>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <https://schema.coypu.org/world-port-index#CoastalNaturalPort> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.w3.org/2002/07/owl#NamedIndividual>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Port>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalBreakwaterPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalNaturalPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalPort>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <https://schema.coypu.org/world-port-index#CoastalPort> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeGeometryShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.opengis.net/ont/geosparql#Geometry>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <http://www.opengis.net/ont/geosparql#Geometry> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Airport>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Infrastructure>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <https://schema.coypu.org/global#Infrastructure> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.w3.org/2002/07/owl#NamedIndividual>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Port>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalNaturalPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalPort>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( owl:NamedIndividual ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/instanceTypePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.w3.org/2002/07/owl#NamedIndividual>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/global#Port>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalNaturalPort>( )" ;
+  <http://example.org/example> "<https://schema.coypu.org/world-port-index#CoastalPort>( )" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "6"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#in> ( <https://schema.coypu.org/global#Port> ) ;
+  <http://www.w3.org/ns/shacl#path> rdf:type .
+
+<http://shaclshapes.org/isEtaRequiredCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isEtaRequired> .
+
+<http://shaclshapes.org/isEtaRequiredCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isEtaRequired> .
+
+<http://shaclshapes.org/isEtaRequiredCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 6E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isEtaRequired> .
+
+<http://shaclshapes.org/isEtaRequiredNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isEtaRequired> .
+
+<http://shaclshapes.org/isEtaRequiredPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 8,3333E-1 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isEtaRequired> .
+
+<http://shaclshapes.org/isFirstPortOfEntryCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isFirstPortOfEntry> .
+
+<http://shaclshapes.org/isFirstPortOfEntryCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isFirstPortOfEntry> .
+
+<http://shaclshapes.org/isFirstPortOfEntryNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isFirstPortOfEntry> .
+
+<http://shaclshapes.org/isFirstPortOfEntryPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 1,6667E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isFirstPortOfEntry> .
+
+<http://shaclshapes.org/isPilotageAdvisableCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAdvisable> .
+
+<http://shaclshapes.org/isPilotageAdvisableCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAdvisable> .
+
+<http://shaclshapes.org/isPilotageAdvisableNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAdvisable> .
+
+<http://shaclshapes.org/isPilotageAvailableCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAvailable> .
+
+<http://shaclshapes.org/isPilotageAvailableCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAvailable> .
+
+<http://shaclshapes.org/isPilotageAvailableNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageAvailable> .
+
+<http://shaclshapes.org/isPilotageCompulsoryCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageCompulsory> .
+
+<http://shaclshapes.org/isPilotageCompulsoryCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageCompulsory> .
+
+<http://shaclshapes.org/isPilotageCompulsoryNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isPilotageCompulsory> .
+
+<http://shaclshapes.org/isUSRepresentativeCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isUSRepresentative> .
+
+<http://shaclshapes.org/isUSRepresentativeCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isUSRepresentative> .
+
+<http://shaclshapes.org/isUSRepresentativeNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://shaclshapes.org/confidence> 7,5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isUSRepresentative> .
+
+<http://shaclshapes.org/isUSRepresentativePortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> false ;
+  <http://example.org/example> true ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:boolean ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <https://schema.coypu.org/world-port-index#isUSRepresentative> .
+
+<http://shaclshapes.org/labelAirportShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Samarkand International" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Marstal" ;
+  <http://example.org/example> "Warrnambool" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Juneau" ;
+  <http://example.org/example> "Nishtun" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Juneau" ;
+  <http://example.org/example> "Marstal" ;
+  <http://example.org/example> "Nishtun" ;
+  <http://example.org/example> "Warrnambool" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelInfrastructureShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Samarkand International" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Nishtun" ;
+  <http://example.org/example> "Sept Iles (Seven Is.)" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/labelPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Fushiki" ;
+  <http://example.org/example> "Nishtun" ;
+  <http://example.org/example> "Sept Iles (Seven Is.)" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label .
+
+<http://shaclshapes.org/sameAsCoastalBreakwaterPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://sws.geonames.org/2617030/>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:sameAs .
+
+<http://shaclshapes.org/sameAsCoastalNaturalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://sws.geonames.org/72176/>( )" ;
+  <http://shaclshapes.org/confidence> 2,5E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:sameAs .
+
+<http://shaclshapes.org/sameAsCoastalPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://sws.geonames.org/2617030/>( )" ;
+  <http://example.org/example> "<http://sws.geonames.org/72176/>( )" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:sameAs .
+
+<http://shaclshapes.org/sameAsNamedIndividualShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://sws.geonames.org/3460845/>( )" ;
+  <http://example.org/example> "<http://sws.geonames.org/72176/>( )" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:sameAs .
+
+<http://shaclshapes.org/sameAsPortShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://sws.geonames.org/1863793/>( )" ;
+  <http://example.org/example> "<http://sws.geonames.org/72176/>( )" ;
+  <http://shaclshapes.org/confidence> 3,3333E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:sameAs .
+
+

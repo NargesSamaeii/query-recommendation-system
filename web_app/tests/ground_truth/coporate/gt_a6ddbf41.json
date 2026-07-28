@@ -1,0 +1,1032 @@
+﻿{
+    "question":  "For each supplier, return the supplier's name and the average price in EUR of the hardware items they supply, rounded to two decimal places.",
+    "question_id":  76,
+    "expected_classes":  [
+                             "Supplier",
+                             "Price",
+                             "Hardware"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "price",
+                                                                "amount",
+                                                                "currency",
+                                                                "hasSupplier",
+                                                                "name"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Price",
+                                    "relevant_properties":  [
+                                                                "price",
+                                                                "amount",
+                                                                "currency",
+                                                                "hasSupplier",
+                                                                "name"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "price",
+                                                                "amount",
+                                                                "currency",
+                                                                "hasSupplier",
+                                                                "name"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Hensley-Porter",
+                                 "avgEur":  "1.65"
+                             },
+                             {
+                                 "name":  "Boyd, Berg and Sampson",
+                                 "avgEur":  "2.32"
+                             },
+                             {
+                                 "name":  "Cook LLC",
+                                 "avgEur":  "3.1"
+                             },
+                             {
+                                 "name":  "Marsh, Cunningham and Hill",
+                                 "avgEur":  "3.26"
+                             },
+                             {
+                                 "name":  "Singh Inc",
+                                 "avgEur":  "2.18"
+                             },
+                             {
+                                 "name":  "Harris, Wright and Morales",
+                                 "avgEur":  "2.87"
+                             },
+                             {
+                                 "name":  "Nelson, Cruz and Bush",
+                                 "avgEur":  "1.41"
+                             },
+                             {
+                                 "name":  "Lynch LLC",
+                                 "avgEur":  "2.73"
+                             },
+                             {
+                                 "name":  "Wright Inc",
+                                 "avgEur":  "2.88"
+                             },
+                             {
+                                 "name":  "Martinez and Sons",
+                                 "avgEur":  "2.61"
+                             },
+                             {
+                                 "name":  "Martin-Mcbride",
+                                 "avgEur":  "2.82"
+                             },
+                             {
+                                 "name":  "Stevens Ltd",
+                                 "avgEur":  "2.06"
+                             },
+                             {
+                                 "name":  "Anderson Ltd",
+                                 "avgEur":  "3.55"
+                             },
+                             {
+                                 "name":  "Anderson Ltd",
+                                 "avgEur":  "1.1"
+                             },
+                             {
+                                 "name":  "Avery-Johnson",
+                                 "avgEur":  "2.35"
+                             },
+                             {
+                                 "name":  "Richardson Inc",
+                                 "avgEur":  "2.62"
+                             },
+                             {
+                                 "name":  "White-Nash",
+                                 "avgEur":  "2.46"
+                             },
+                             {
+                                 "name":  "Hutchinson-Lane",
+                                 "avgEur":  "2.75"
+                             },
+                             {
+                                 "name":  "Bryan-James",
+                                 "avgEur":  "4.15"
+                             },
+                             {
+                                 "name":  "Miller, Green and Scott",
+                                 "avgEur":  "3.75"
+                             },
+                             {
+                                 "name":  "Green and Sons",
+                                 "avgEur":  "3.45"
+                             },
+                             {
+                                 "name":  "Salinas-Kelly",
+                                 "avgEur":  "2.78"
+                             },
+                             {
+                                 "name":  "Martin and Sons",
+                                 "avgEur":  "3.46"
+                             },
+                             {
+                                 "name":  "Buchanan Group",
+                                 "avgEur":  "2.52"
+                             },
+                             {
+                                 "name":  "Griffith-Stout",
+                                 "avgEur":  "4.13"
+                             },
+                             {
+                                 "name":  "Page, Hernandez and Ayala",
+                                 "avgEur":  "2.59"
+                             },
+                             {
+                                 "name":  "Drake Ltd",
+                                 "avgEur":  "4.03"
+                             },
+                             {
+                                 "name":  "Cook Group",
+                                 "avgEur":  "1.93"
+                             },
+                             {
+                                 "name":  "Thornton, Cook and Estrada",
+                                 "avgEur":  "3.27"
+                             },
+                             {
+                                 "name":  "Swanson-Kennedy",
+                                 "avgEur":  "2.87"
+                             },
+                             {
+                                 "name":  "Knight PLC",
+                                 "avgEur":  "1.6"
+                             },
+                             {
+                                 "name":  "Flores PLC",
+                                 "avgEur":  "3.93"
+                             },
+                             {
+                                 "name":  "Calderon-Montgomery",
+                                 "avgEur":  "2.81"
+                             },
+                             {
+                                 "name":  "Hall-Hodges",
+                                 "avgEur":  "4.06"
+                             },
+                             {
+                                 "name":  "Peterson Ltd",
+                                 "avgEur":  "4.03"
+                             },
+                             {
+                                 "name":  "Church Inc",
+                                 "avgEur":  "2.2"
+                             },
+                             {
+                                 "name":  "Rowland, Todd and Whitaker",
+                                 "avgEur":  "3.4"
+                             },
+                             {
+                                 "name":  "Brown, Torres and Bautista",
+                                 "avgEur":  "3.28"
+                             },
+                             {
+                                 "name":  "Santana LLC",
+                                 "avgEur":  "3.24"
+                             },
+                             {
+                                 "name":  "Rich, Powell and Ward",
+                                 "avgEur":  "2.89"
+                             },
+                             {
+                                 "name":  "Maldonado Inc",
+                                 "avgEur":  "4.34"
+                             },
+                             {
+                                 "name":  "Daniels Group",
+                                 "avgEur":  "5.29"
+                             },
+                             {
+                                 "name":  "Collins and Sons",
+                                 "avgEur":  "0.95"
+                             },
+                             {
+                                 "name":  "Barrera Inc",
+                                 "avgEur":  "4.43"
+                             },
+                             {
+                                 "name":  "Turner, Hall and Jimenez",
+                                 "avgEur":  "3.5"
+                             },
+                             {
+                                 "name":  "Gomez Inc",
+                                 "avgEur":  "2.34"
+                             },
+                             {
+                                 "name":  "Adams-White",
+                                 "avgEur":  "2.6"
+                             },
+                             {
+                                 "name":  "Lucas and Sons",
+                                 "avgEur":  "1.54"
+                             },
+                             {
+                                 "name":  "Ferrell-Dixon",
+                                 "avgEur":  "2.22"
+                             },
+                             {
+                                 "name":  "Nguyen-Cruz",
+                                 "avgEur":  "3.38"
+                             },
+                             {
+                                 "name":  "Bennett, Best and Jacobson",
+                                 "avgEur":  "2.56"
+                             },
+                             {
+                                 "name":  "Perkins, Garza and Cochran",
+                                 "avgEur":  "0.95"
+                             },
+                             {
+                                 "name":  "Thompson Ltd",
+                                 "avgEur":  "3.39"
+                             },
+                             {
+                                 "name":  "Fuentes Inc",
+                                 "avgEur":  "3.63"
+                             },
+                             {
+                                 "name":  "Collins, Martin and Lane",
+                                 "avgEur":  "3.73"
+                             },
+                             {
+                                 "name":  "Ross-Brooks",
+                                 "avgEur":  "3.5"
+                             },
+                             {
+                                 "name":  "Fernandez-Roberts",
+                                 "avgEur":  "2.52"
+                             },
+                             {
+                                 "name":  "Guerrero, Sutton and Lucas",
+                                 "avgEur":  "2.84"
+                             },
+                             {
+                                 "name":  "Ford, Martinez and Gutierrez",
+                                 "avgEur":  "2.1"
+                             },
+                             {
+                                 "name":  "Mayo, Aguirre and Ryan",
+                                 "avgEur":  "3.27"
+                             },
+                             {
+                                 "name":  "Zamora, Adams and Koch",
+                                 "avgEur":  "3.53"
+                             },
+                             {
+                                 "name":  "Smith-Cobb",
+                                 "avgEur":  "2.13"
+                             },
+                             {
+                                 "name":  "Odom-Lawrence",
+                                 "avgEur":  "2.71"
+                             },
+                             {
+                                 "name":  "Gentry-Gross",
+                                 "avgEur":  "2.72"
+                             },
+                             {
+                                 "name":  "Newton Inc",
+                                 "avgEur":  "3.03"
+                             },
+                             {
+                                 "name":  "Moreno Group",
+                                 "avgEur":  "3.2"
+                             },
+                             {
+                                 "name":  "Sanchez-Mcdonald",
+                                 "avgEur":  "3.17"
+                             },
+                             {
+                                 "name":  "Figueroa, Ibarra and Jackson",
+                                 "avgEur":  "2.82"
+                             },
+                             {
+                                 "name":  "Davis-Wagner",
+                                 "avgEur":  "3.28"
+                             },
+                             {
+                                 "name":  "Jordan, James and Bradley",
+                                 "avgEur":  "1.71"
+                             },
+                             {
+                                 "name":  "Morgan-Leonard",
+                                 "avgEur":  "3.03"
+                             },
+                             {
+                                 "name":  "Long-Sullivan",
+                                 "avgEur":  "2.65"
+                             },
+                             {
+                                 "name":  "Barr-Melendez",
+                                 "avgEur":  "2.53"
+                             },
+                             {
+                                 "name":  "Meyer, Marquez and Mckenzie",
+                                 "avgEur":  "3.21"
+                             },
+                             {
+                                 "name":  "Nguyen-Peters",
+                                 "avgEur":  "2.52"
+                             },
+                             {
+                                 "name":  "Wagner-Ramirez",
+                                 "avgEur":  "2.91"
+                             },
+                             {
+                                 "name":  "Harris-Cunningham",
+                                 "avgEur":  "3.6"
+                             },
+                             {
+                                 "name":  "Brown, Estrada and Riggs",
+                                 "avgEur":  "2.74"
+                             },
+                             {
+                                 "name":  "Grant-Nelson",
+                                 "avgEur":  "1.65"
+                             },
+                             {
+                                 "name":  "Garcia Ltd",
+                                 "avgEur":  "4.36"
+                             },
+                             {
+                                 "name":  "Bolton, Sanchez and Rodgers",
+                                 "avgEur":  "3.52"
+                             },
+                             {
+                                 "name":  "Cantu-Ferguson",
+                                 "avgEur":  "1.95"
+                             },
+                             {
+                                 "name":  "Rodriguez-Warren",
+                                 "avgEur":  "4.6"
+                             },
+                             {
+                                 "name":  "Nichols Inc",
+                                 "avgEur":  "2.74"
+                             },
+                             {
+                                 "name":  "Jackson, Chan and Rivera",
+                                 "avgEur":  "2.96"
+                             },
+                             {
+                                 "name":  "Hodges-Johnson",
+                                 "avgEur":  "2.18"
+                             },
+                             {
+                                 "name":  "Mcdaniel, Dean and Delgado",
+                                 "avgEur":  "2.25"
+                             },
+                             {
+                                 "name":  "Barnes LLC",
+                                 "avgEur":  "1.77"
+                             },
+                             {
+                                 "name":  "Shaffer PLC",
+                                 "avgEur":  "1.97"
+                             },
+                             {
+                                 "name":  "Moran, Martin and Freeman",
+                                 "avgEur":  "2.94"
+                             },
+                             {
+                                 "name":  "Reese-Williams",
+                                 "avgEur":  "3.23"
+                             },
+                             {
+                                 "name":  "Bender PLC",
+                                 "avgEur":  "2.22"
+                             },
+                             {
+                                 "name":  "Smith LLC",
+                                 "avgEur":  "2.35"
+                             },
+                             {
+                                 "name":  "Fletcher, Pierce and Navarro",
+                                 "avgEur":  "2.46"
+                             },
+                             {
+                                 "name":  "Lopez, Goodman and Miller",
+                                 "avgEur":  "2.77"
+                             },
+                             {
+                                 "name":  "Little, Dunlap and Nelson",
+                                 "avgEur":  "2.28"
+                             },
+                             {
+                                 "name":  "Carr, Smith and Mayo",
+                                 "avgEur":  "3.66"
+                             },
+                             {
+                                 "name":  "Baker, Medina and George",
+                                 "avgEur":  "2.86"
+                             },
+                             {
+                                 "name":  "Li-Gonzalez",
+                                 "avgEur":  "4.58"
+                             },
+                             {
+                                 "name":  "Cooper, Walker and Perez",
+                                 "avgEur":  "2.24"
+                             },
+                             {
+                                 "name":  "Douglas Inc",
+                                 "avgEur":  "2.85"
+                             },
+                             {
+                                 "name":  "Petty, Hamilton and Solomon",
+                                 "avgEur":  "2.39"
+                             },
+                             {
+                                 "name":  "Garrison, Williams and Johnson",
+                                 "avgEur":  "3.85"
+                             },
+                             {
+                                 "name":  "Schroeder and Sons",
+                                 "avgEur":  "3.7"
+                             },
+                             {
+                                 "name":  "Harris-Waller",
+                                 "avgEur":  "3.79"
+                             },
+                             {
+                                 "name":  "White, Wong and Trevino",
+                                 "avgEur":  "1.85"
+                             },
+                             {
+                                 "name":  "Manning, Hodges and Mckenzie",
+                                 "avgEur":  "4.8"
+                             },
+                             {
+                                 "name":  "Gross, Frey and Mcmahon",
+                                 "avgEur":  "3.46"
+                             },
+                             {
+                                 "name":  "Russell, Mcclain and Larson",
+                                 "avgEur":  "3.51"
+                             },
+                             {
+                                 "name":  "Jones-Martinez",
+                                 "avgEur":  "1.85"
+                             },
+                             {
+                                 "name":  "Thompson Ltd",
+                                 "avgEur":  "3.19"
+                             },
+                             {
+                                 "name":  "Rodriguez LLC",
+                                 "avgEur":  "3.12"
+                             },
+                             {
+                                 "name":  "Cohen, Bell and Rodriguez",
+                                 "avgEur":  "2.17"
+                             },
+                             {
+                                 "name":  "White, Lewis and Evans",
+                                 "avgEur":  "4.44"
+                             },
+                             {
+                                 "name":  "Olson LLC",
+                                 "avgEur":  "1.79"
+                             },
+                             {
+                                 "name":  "Marshall PLC",
+                                 "avgEur":  "5.51"
+                             },
+                             {
+                                 "name":  "Rodriguez, Estrada and Kim",
+                                 "avgEur":  "2.6"
+                             },
+                             {
+                                 "name":  "Bryant-Stark",
+                                 "avgEur":  "3.12"
+                             },
+                             {
+                                 "name":  "Stewart PLC",
+                                 "avgEur":  "4.88"
+                             },
+                             {
+                                 "name":  "Huang, Guerrero and Hurst",
+                                 "avgEur":  "3.62"
+                             },
+                             {
+                                 "name":  "Martin and Sons",
+                                 "avgEur":  "2.04"
+                             },
+                             {
+                                 "name":  "Simmons, Cox and Craig",
+                                 "avgEur":  "4.06"
+                             },
+                             {
+                                 "name":  "Taylor, Obrien and Delacruz",
+                                 "avgEur":  "2.42"
+                             },
+                             {
+                                 "name":  "Cervantes, Wagner and Jackson",
+                                 "avgEur":  "4.32"
+                             },
+                             {
+                                 "name":  "Riley, Barrett and Mccullough",
+                                 "avgEur":  "3.58"
+                             },
+                             {
+                                 "name":  "Arnold-Knight",
+                                 "avgEur":  "2.14"
+                             },
+                             {
+                                 "name":  "Parker-Lawrence",
+                                 "avgEur":  "1.8"
+                             },
+                             {
+                                 "name":  "Anderson-Young",
+                                 "avgEur":  "3.08"
+                             },
+                             {
+                                 "name":  "Phillips, Love and Smith",
+                                 "avgEur":  "1.83"
+                             },
+                             {
+                                 "name":  "Morgan, Brown and Martin",
+                                 "avgEur":  "3.6"
+                             },
+                             {
+                                 "name":  "Aguilar, Matthews and Martinez",
+                                 "avgEur":  "4.11"
+                             },
+                             {
+                                 "name":  "Larson, Lambert and Gay",
+                                 "avgEur":  "5.09"
+                             },
+                             {
+                                 "name":  "Washington-Villanueva",
+                                 "avgEur":  "2.4"
+                             },
+                             {
+                                 "name":  "White and Sons",
+                                 "avgEur":  "2.29"
+                             },
+                             {
+                                 "name":  "Brown, Jackson and Simpson",
+                                 "avgEur":  "3.33"
+                             },
+                             {
+                                 "name":  "Kerr LLC",
+                                 "avgEur":  "2.82"
+                             },
+                             {
+                                 "name":  "Collins-Hensley",
+                                 "avgEur":  "3.43"
+                             },
+                             {
+                                 "name":  "Mcpherson Ltd",
+                                 "avgEur":  "2.13"
+                             },
+                             {
+                                 "name":  "Rodriguez, Schmidt and Hodge",
+                                 "avgEur":  "4.33"
+                             },
+                             {
+                                 "name":  "Jones Group",
+                                 "avgEur":  "3.51"
+                             },
+                             {
+                                 "name":  "Kidd, Mcdaniel and Russell",
+                                 "avgEur":  "1.36"
+                             },
+                             {
+                                 "name":  "Hardy, Bauer and Martinez",
+                                 "avgEur":  "2.13"
+                             },
+                             {
+                                 "name":  "Davidson, Rosales and Stewart",
+                                 "avgEur":  "2.55"
+                             },
+                             {
+                                 "name":  "Ibarra and Sons",
+                                 "avgEur":  "2.66"
+                             },
+                             {
+                                 "name":  "Cortez Group",
+                                 "avgEur":  "3.29"
+                             },
+                             {
+                                 "name":  "Carroll, Nguyen and Martin",
+                                 "avgEur":  "4.35"
+                             },
+                             {
+                                 "name":  "Mclaughlin-Hawkins",
+                                 "avgEur":  "2.12"
+                             },
+                             {
+                                 "name":  "Stewart-Woodard",
+                                 "avgEur":  "5.35"
+                             },
+                             {
+                                 "name":  "Horton, Sims and Pacheco",
+                                 "avgEur":  "4.22"
+                             },
+                             {
+                                 "name":  "Williamson-Young",
+                                 "avgEur":  "2.82"
+                             },
+                             {
+                                 "name":  "Duran, Mueller and Payne",
+                                 "avgEur":  "2.49"
+                             },
+                             {
+                                 "name":  "Stevens PLC",
+                                 "avgEur":  "3.25"
+                             },
+                             {
+                                 "name":  "Goodman-Chapman",
+                                 "avgEur":  "1.74"
+                             },
+                             {
+                                 "name":  "Todd-Mcneil",
+                                 "avgEur":  "2.32"
+                             },
+                             {
+                                 "name":  "Johnson, Khan and Oconnell",
+                                 "avgEur":  "2.57"
+                             },
+                             {
+                                 "name":  "Evans, Park and James",
+                                 "avgEur":  "4.14"
+                             },
+                             {
+                                 "name":  "Lee and Sons",
+                                 "avgEur":  "1.89"
+                             },
+                             {
+                                 "name":  "Brown PLC",
+                                 "avgEur":  "2.64"
+                             },
+                             {
+                                 "name":  "Cooper and Sons",
+                                 "avgEur":  "3.3"
+                             },
+                             {
+                                 "name":  "Williamson-Green",
+                                 "avgEur":  "2.88"
+                             },
+                             {
+                                 "name":  "Curtis, Doyle and Singleton",
+                                 "avgEur":  "3.34"
+                             },
+                             {
+                                 "name":  "Morris, Cain and Boone",
+                                 "avgEur":  "1.55"
+                             },
+                             {
+                                 "name":  "Curtis, Perkins and Sims",
+                                 "avgEur":  "3.85"
+                             },
+                             {
+                                 "name":  "Poole, Coleman and Shea",
+                                 "avgEur":  "2.39"
+                             },
+                             {
+                                 "name":  "Smith-Williamson",
+                                 "avgEur":  "3.66"
+                             },
+                             {
+                                 "name":  "Hernandez, Mayer and Jones",
+                                 "avgEur":  "3.92"
+                             },
+                             {
+                                 "name":  "Hernandez, Jenkins and Luna",
+                                 "avgEur":  "3.72"
+                             },
+                             {
+                                 "name":  "Green-Crawford",
+                                 "avgEur":  "3.72"
+                             },
+                             {
+                                 "name":  "Harper PLC",
+                                 "avgEur":  "1.7"
+                             },
+                             {
+                                 "name":  "Hill-Jones",
+                                 "avgEur":  "2.55"
+                             },
+                             {
+                                 "name":  "Mccarthy-Galloway",
+                                 "avgEur":  "4.22"
+                             },
+                             {
+                                 "name":  "Doyle, King and Thompson",
+                                 "avgEur":  "2.16"
+                             },
+                             {
+                                 "name":  "Allen-Short",
+                                 "avgEur":  "1.29"
+                             },
+                             {
+                                 "name":  "Alvarez-Curtis",
+                                 "avgEur":  "3.29"
+                             },
+                             {
+                                 "name":  "Coleman LLC",
+                                 "avgEur":  "3.84"
+                             },
+                             {
+                                 "name":  "Hubbard Ltd",
+                                 "avgEur":  "2.68"
+                             },
+                             {
+                                 "name":  "Carter, Webb and Bush",
+                                 "avgEur":  "3.21"
+                             },
+                             {
+                                 "name":  "Barry PLC",
+                                 "avgEur":  "3.48"
+                             },
+                             {
+                                 "name":  "Hines-Allen",
+                                 "avgEur":  "2.73"
+                             },
+                             {
+                                 "name":  "Martinez LLC",
+                                 "avgEur":  "3.17"
+                             },
+                             {
+                                 "name":  "Pollard LLC",
+                                 "avgEur":  "2.13"
+                             },
+                             {
+                                 "name":  "Adkins, Lopez and Boyd",
+                                 "avgEur":  "3.45"
+                             },
+                             {
+                                 "name":  "Carter Group",
+                                 "avgEur":  "1.21"
+                             },
+                             {
+                                 "name":  "King-Johnson",
+                                 "avgEur":  "1.74"
+                             },
+                             {
+                                 "name":  "Smith and Sons",
+                                 "avgEur":  "2.97"
+                             },
+                             {
+                                 "name":  "Boyd, Turner and Byrd",
+                                 "avgEur":  "2.18"
+                             },
+                             {
+                                 "name":  "Larsen-Martinez",
+                                 "avgEur":  "1.94"
+                             },
+                             {
+                                 "name":  "Watkins Group",
+                                 "avgEur":  "2.59"
+                             },
+                             {
+                                 "name":  "Harrison PLC",
+                                 "avgEur":  "2.16"
+                             },
+                             {
+                                 "name":  "Barber-Hayes",
+                                 "avgEur":  "3.82"
+                             },
+                             {
+                                 "name":  "Fox-Delacruz",
+                                 "avgEur":  "4.83"
+                             },
+                             {
+                                 "name":  "Turner and Sons",
+                                 "avgEur":  "5.72"
+                             },
+                             {
+                                 "name":  "Powell-Nguyen",
+                                 "avgEur":  "3.52"
+                             },
+                             {
+                                 "name":  "Jones PLC",
+                                 "avgEur":  "2.84"
+                             },
+                             {
+                                 "name":  "Peterson, Norton and Preston",
+                                 "avgEur":  "4.8"
+                             },
+                             {
+                                 "name":  "Lynch-Ramirez",
+                                 "avgEur":  "3.17"
+                             },
+                             {
+                                 "name":  "Bruce, Gutierrez and Thompson",
+                                 "avgEur":  "3.76"
+                             },
+                             {
+                                 "name":  "Maxwell Inc",
+                                 "avgEur":  "1.27"
+                             },
+                             {
+                                 "name":  "Clarke-Brown",
+                                 "avgEur":  "2.65"
+                             },
+                             {
+                                 "name":  "Fleming Inc",
+                                 "avgEur":  "2.23"
+                             },
+                             {
+                                 "name":  "Myers-Brown",
+                                 "avgEur":  "2.55"
+                             },
+                             {
+                                 "name":  "Bryan-Jones",
+                                 "avgEur":  "3.72"
+                             },
+                             {
+                                 "name":  "Santiago-Gardner",
+                                 "avgEur":  "2.48"
+                             },
+                             {
+                                 "name":  "Wilson, Kim and Dorsey",
+                                 "avgEur":  "2.5"
+                             },
+                             {
+                                 "name":  "Wilson-Callahan",
+                                 "avgEur":  "3.93"
+                             },
+                             {
+                                 "name":  "Harris, Graves and Gonzalez",
+                                 "avgEur":  "3.55"
+                             },
+                             {
+                                 "name":  "Howell-Meyer",
+                                 "avgEur":  "3.42"
+                             },
+                             {
+                                 "name":  "Lee, Pearson and Gates",
+                                 "avgEur":  "2.99"
+                             },
+                             {
+                                 "name":  "Meyer, Floyd and Jackson",
+                                 "avgEur":  "3.56"
+                             },
+                             {
+                                 "name":  "Thomas-Jenkins",
+                                 "avgEur":  "3.02"
+                             },
+                             {
+                                 "name":  "Odonnell-Williams",
+                                 "avgEur":  "2.82"
+                             },
+                             {
+                                 "name":  "Becker LLC",
+                                 "avgEur":  "2.86"
+                             },
+                             {
+                                 "name":  "Peck, Tucker and Patterson",
+                                 "avgEur":  "4.16"
+                             },
+                             {
+                                 "name":  "Griffin, Smith and Smith",
+                                 "avgEur":  "2.97"
+                             },
+                             {
+                                 "name":  "Romero-Nguyen",
+                                 "avgEur":  "5.7"
+                             },
+                             {
+                                 "name":  "Huerta, Clark and Johnson",
+                                 "avgEur":  "1.99"
+                             },
+                             {
+                                 "name":  "Garcia-Roberts",
+                                 "avgEur":  "2.51"
+                             },
+                             {
+                                 "name":  "Mendoza, Moore and Thomas",
+                                 "avgEur":  "2.98"
+                             },
+                             {
+                                 "name":  "Stevens LLC",
+                                 "avgEur":  "3.77"
+                             },
+                             {
+                                 "name":  "Williams, Bailey and Martinez",
+                                 "avgEur":  "2.13"
+                             },
+                             {
+                                 "name":  "Snyder, Robinson and Brown",
+                                 "avgEur":  "2.3"
+                             },
+                             {
+                                 "name":  "Martinez and Sons",
+                                 "avgEur":  "4.24"
+                             },
+                             {
+                                 "name":  "Cochran-Delacruz",
+                                 "avgEur":  "3"
+                             },
+                             {
+                                 "name":  "James-Wright",
+                                 "avgEur":  "2.59"
+                             },
+                             {
+                                 "name":  "Gibson-Jackson",
+                                 "avgEur":  "3.48"
+                             },
+                             {
+                                 "name":  "Wagner Group",
+                                 "avgEur":  "1.55"
+                             },
+                             {
+                                 "name":  "Vincent LLC",
+                                 "avgEur":  "3.86"
+                             },
+                             {
+                                 "name":  "Rivera Group",
+                                 "avgEur":  "4.17"
+                             },
+                             {
+                                 "name":  "Carr, Smith and Webb",
+                                 "avgEur":  "4.99"
+                             },
+                             {
+                                 "name":  "Hubbard-Holmes",
+                                 "avgEur":  "2.65"
+                             },
+                             {
+                                 "name":  "Carlson Inc",
+                                 "avgEur":  "2.98"
+                             },
+                             {
+                                 "name":  "Estes, Johnston and Richardson",
+                                 "avgEur":  "3.49"
+                             },
+                             {
+                                 "name":  "Nichols-Davis",
+                                 "avgEur":  "2.24"
+                             },
+                             {
+                                 "name":  "Jimenez PLC",
+                                 "avgEur":  "2.27"
+                             },
+                             {
+                                 "name":  "May, Ruiz and Butler",
+                                 "avgEur":  "2.96"
+                             },
+                             {
+                                 "name":  "Peterson-Rose",
+                                 "avgEur":  "3.46"
+                             },
+                             {
+                                 "name":  "Allison PLC",
+                                 "avgEur":  "3.53"
+                             },
+                             {
+                                 "name":  "Neal LLC",
+                                 "avgEur":  "3.19"
+                             },
+                             {
+                                 "name":  "Chavez-Price",
+                                 "avgEur":  "2.28"
+                             },
+                             {
+                                 "name":  "Johnson-Carroll",
+                                 "avgEur":  "2.24"
+                             },
+                             {
+                                 "name":  "Davis Ltd",
+                                 "avgEur":  "3.01"
+                             },
+                             {
+                                 "name":  "Benitez and Sons",
+                                 "avgEur":  "3.43"
+                             },
+                             {
+                                 "name":  "Scott, Frazier and Cooper",
+                                 "avgEur":  "1.12"
+                             },
+                             {
+                                 "name":  "Reyes, Taylor and Ramirez",
+                                 "avgEur":  "2.65"
+                             },
+                             {
+                                 "name":  "Gregory PLC",
+                                 "avgEur":  "3.38"
+                             },
+                             {
+                                 "name":  "Rodriguez-Mcdonald",
+                                 "avgEur":  "3.22"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

@@ -1,0 +1,47 @@
+﻿{
+    "question":  "Which departments have more than 5 employees? List each department name and its employee count.",
+    "question_id":  74,
+    "expected_classes":  [
+                             "Department",
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Department",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "memberOf"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "memberOf"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Product Management",
+                                 "numEmployees":  "12"
+                             },
+                             {
+                                 "name":  "Data Services",
+                                 "numEmployees":  "9"
+                             },
+                             {
+                                 "name":  "Procurement",
+                                 "numEmployees":  "8"
+                             },
+                             {
+                                 "name":  "Marketing",
+                                 "numEmployees":  "9"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

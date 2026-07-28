@@ -1,0 +1,2779 @@
+{
+    "prefixes": {
+        "global": "https://schema.coypu.org/global#",
+        "geosparql": "http://www.opengis.net/ont/geosparql#",
+        "22_rdf_syntax_ns": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "world_port_index": "https://schema.coypu.org/world-port-index#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "wfp_ports": "https://schema.coypu.org/wfp-ports#",
+        "owl": "http://www.w3.org/2002/07/owl#"
+    },
+    "classes": {
+        "global:Airport": {
+            "class_label": "Airport",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/airport/KUF>",
+                "<https://data.coypu.org/infrastructure/airport/MJM>",
+                "<https://data.coypu.org/infrastructure/airport/SKD (Samarkand International)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "global:hasCountryLocation",
+                    "property_label": "hasCountryLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/UZB>"
+                    ],
+                    "description": "Airport has exactly 1 hasCountryLocation."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/airport/MJM/geometry>"
+                    ],
+                    "description": "Airport has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "KUF",
+                        "SKD"
+                    ],
+                    "description": "Airport has at most 1 hasId."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "airport"
+                    ],
+                    "description": "Airport has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "3",
+                        "970.0",
+                        "5",
+                        "35070.0"
+                    ],
+                    "description": "Airport has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "global:hasTotalSeatsPerYear",
+                    "property_label": "hasTotalSeatsPerYear",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#integer"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "243943567",
+                        "342081684"
+                    ],
+                    "description": "Airport has at most 1 hasTotalSeatsPerYear."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "global:Airport",
+                        "global:Infrastructure"
+                    ],
+                    "description": "Airport has typically one, but may vary type."
+                }
+            ]
+        },
+        "world_port_index:CoastalBreakwaterPort": {
+            "class_label": "CoastalBreakwaterPort",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/AUWMB (Warrnambool)>",
+                "<https://data.coypu.org/infrastructure/port/DKMRS (Marstal)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "world_port_index:hasDryDock",
+                    "property_label": "hasDryDock",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:DryDockSizeClass:S"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasDryDock."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionIce",
+                    "property_label": "hasEntranceRestrictionIce",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasEntranceRestrictionIce."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionOther",
+                    "property_label": "hasEntranceRestrictionOther",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasEntranceRestrictionOther."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionSwell",
+                    "property_label": "hasEntranceRestrictionSwell",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalBreakwaterPort has at most 1 hasEntranceRestrictionSwell."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityWharves",
+                    "property_label": "hasFacilityWharves",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasFacilityWharves."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15342>",
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16420>"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "wfp_ports:hasGmlId",
+                    "property_label": "hasGmlId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "wld_trs_ports_wfp.16420"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasGmlId."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "AUWMB"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasId."
+                },
+                {
+                    "property_name": "world_port_index:hasIndexNumber",
+                    "property_label": "hasIndexNumber",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#long"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "29790",
+                        "54120"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasIndexNumber."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "port"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-3",
+                        "84020.0"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts0_24",
+                    "property_label": "hasLifts0_24",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasLifts0_24."
+                },
+                {
+                    "property_name": "wfp_ports:hasLocationPrecision",
+                    "property_label": "hasLocationPrecision",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "accurate"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasLocationPrecision."
+                },
+                {
+                    "property_name": "wfp_ports:hasOperatingCountry",
+                    "property_label": "hasOperatingCountry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/DNK>"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasOperatingCountry."
+                },
+                {
+                    "property_name": "world_port_index:hasPilotageLocalAssistance",
+                    "property_label": "hasPilotageLocalAssistance",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalBreakwaterPort has at most 1 hasPilotageLocalAssistance."
+                },
+                {
+                    "property_name": "world_port_index:hasPortSize",
+                    "property_label": "hasPortSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:SizeClass:S"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasPortSize."
+                },
+                {
+                    "property_name": "world_port_index:hasRailway",
+                    "property_label": "hasRailway",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:MarineRailwaySizeClass:M"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasRailway."
+                },
+                {
+                    "property_name": "world_port_index:hasRepairs",
+                    "property_label": "hasRepairs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:RepairClass:C"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasRepairs."
+                },
+                {
+                    "property_name": "world_port_index:hasShelter",
+                    "property_label": "hasShelter",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:ShelterClass:G",
+                        "world_port_index:ShelterClass:P"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 hasShelter."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesProvisions",
+                    "property_label": "hasSuppliesProvisions",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasSuppliesProvisions."
+                },
+                {
+                    "property_name": "world_port_index:hasTidesRange",
+                    "property_label": "hasTidesRange",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#decimal"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "2.0"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 hasTidesRange."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "world_port_index:CoastalBreakwaterPort",
+                        "world_port_index:CoastalPort"
+                    ],
+                    "description": "CoastalBreakwaterPort has typically one, but may vary type."
+                },
+                {
+                    "property_name": "world_port_index:isEtaRequired",
+                    "property_label": "isEtaRequired",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 isEtaRequired."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAdvisable",
+                    "property_label": "isPilotageAdvisable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalBreakwaterPort has at most 1 isPilotageAdvisable."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageCompulsory",
+                    "property_label": "isPilotageCompulsory",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalBreakwaterPort has at most 1 isPilotageCompulsory."
+                },
+                {
+                    "property_name": "owl:sameAs",
+                    "property_label": "sameAs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<http://sws.geonames.org/2617030/>"
+                    ],
+                    "description": "CoastalBreakwaterPort has exactly 1 sameAs."
+                }
+            ]
+        },
+        "world_port_index:CoastalNaturalPort": {
+            "class_label": "CoastalNaturalPort",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/GLGOH>",
+                "<https://data.coypu.org/infrastructure/port/JMPOT>",
+                "<https://data.coypu.org/infrastructure/port/USJNU (Juneau)>",
+                "<https://data.coypu.org/infrastructure/port/YENIS (Nishtun)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>",
+                        "<https://msi.nga.mil/Publications/WPI>"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesFixed",
+                    "property_label": "hasCranesFixed",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasCranesFixed."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesMobile",
+                    "property_label": "hasCranesMobile",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasCranesMobile."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionIce",
+                    "property_label": "hasEntranceRestrictionIce",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasEntranceRestrictionIce."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionOther",
+                    "property_label": "hasEntranceRestrictionOther",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasEntranceRestrictionOther."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionSwell",
+                    "property_label": "hasEntranceRestrictionSwell",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasEntranceRestrictionSwell."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionTide",
+                    "property_label": "hasEntranceRestrictionTide",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasEntranceRestrictionTide."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityMedMooring",
+                    "property_label": "hasFacilityMedMooring",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasFacilityMedMooring."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityWharves",
+                    "property_label": "hasFacilityWharves",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasFacilityWharves."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/port/wpi/geometry/640>"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "wfp_ports:hasGmlId",
+                    "property_label": "hasGmlId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "wld_trs_ports_wfp.17688"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasGmlId."
+                },
+                {
+                    "property_name": "world_port_index:hasGoodHoldingGround",
+                    "property_label": "hasGoodHoldingGround",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasGoodHoldingGround."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "GLGOH",
+                        "JMPOT",
+                        "USJNU",
+                        "YENIS"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasId."
+                },
+                {
+                    "property_name": "world_port_index:hasIndexNumber",
+                    "property_label": "hasIndexNumber",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#long"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "10710",
+                        "48198",
+                        "640"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasIndexNumber."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "port"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1",
+                        "81820.0",
+                        "5",
+                        "83030.0",
+                        "6",
+                        "41830.0"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts0_24",
+                    "property_label": "hasLifts0_24",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasLifts0_24."
+                },
+                {
+                    "property_name": "global:hasLocation",
+                    "property_label": "hasLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/YEM>"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasLocation."
+                },
+                {
+                    "property_name": "wfp_ports:hasLocationPrecision",
+                    "property_label": "hasLocationPrecision",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "accurate"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasLocationPrecision."
+                },
+                {
+                    "property_name": "global:hasLongitude",
+                    "property_label": "hasLongitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-1",
+                        "344300.0",
+                        "5",
+                        "21980.0"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasLongitude."
+                },
+                {
+                    "property_name": "wfp_ports:hasOperatingCountry",
+                    "property_label": "hasOperatingCountry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/JAM>"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasOperatingCountry."
+                },
+                {
+                    "property_name": "world_port_index:hasPortName",
+                    "property_label": "hasPortName",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "Juneau",
+                        "Nuuk",
+                        "Port (Antonio)"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasPortName."
+                },
+                {
+                    "property_name": "world_port_index:hasPortSize",
+                    "property_label": "hasPortSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:SizeClass:S"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasPortSize."
+                },
+                {
+                    "property_name": "world_port_index:hasRailway",
+                    "property_label": "hasRailway",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:MarineRailwaySizeClass:S"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasRailway."
+                },
+                {
+                    "property_name": "world_port_index:hasRepairs",
+                    "property_label": "hasRepairs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:RepairClass:C",
+                        "world_port_index:RepairClass:N"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasRepairs."
+                },
+                {
+                    "property_name": "world_port_index:hasShelter",
+                    "property_label": "hasShelter",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:ShelterClass:G"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasShelter."
+                },
+                {
+                    "property_name": "wfp_ports:hasSize",
+                    "property_label": "hasSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "wfp_ports:Size:small"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 hasSize."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDeck",
+                    "property_label": "hasSuppliesDeck",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesDeck."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDieselOil",
+                    "property_label": "hasSuppliesDieselOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesDieselOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesEngine",
+                    "property_label": "hasSuppliesEngine",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesEngine."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesFuelOil",
+                    "property_label": "hasSuppliesFuelOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesFuelOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesProvisions",
+                    "property_label": "hasSuppliesProvisions",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesProvisions."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesWater",
+                    "property_label": "hasSuppliesWater",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasSuppliesWater."
+                },
+                {
+                    "property_name": "world_port_index:hasTidesRange",
+                    "property_label": "hasTidesRange",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#decimal"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1.0"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasTidesRange."
+                },
+                {
+                    "property_name": "world_port_index:hasTurningArea",
+                    "property_label": "hasTurningArea",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 hasTurningArea."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "owl:NamedIndividual",
+                        "global:Port",
+                        "world_port_index:CoastalNaturalPort",
+                        "world_port_index:CoastalPort"
+                    ],
+                    "description": "CoastalNaturalPort has typically one, but may vary type."
+                },
+                {
+                    "property_name": "world_port_index:isEtaRequired",
+                    "property_label": "isEtaRequired",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 isEtaRequired."
+                },
+                {
+                    "property_name": "world_port_index:isFirstPortOfEntry",
+                    "property_label": "isFirstPortOfEntry",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 isFirstPortOfEntry."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAvailable",
+                    "property_label": "isPilotageAvailable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 isPilotageAvailable."
+                },
+                {
+                    "property_name": "world_port_index:isUSRepresentative",
+                    "property_label": "isUSRepresentative",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalNaturalPort has at most 1 isUSRepresentative."
+                },
+                {
+                    "property_name": "owl:sameAs",
+                    "property_label": "sameAs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<http://sws.geonames.org/72176/>"
+                    ],
+                    "description": "CoastalNaturalPort has exactly 1 sameAs."
+                }
+            ]
+        },
+        "world_port_index:CoastalPort": {
+            "class_label": "CoastalPort",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/AUWMB (Warrnambool)>",
+                "<https://data.coypu.org/infrastructure/port/DKMRS (Marstal)>",
+                "<https://data.coypu.org/infrastructure/port/JMPOT>",
+                "<https://data.coypu.org/infrastructure/port/USJNU (Juneau)>",
+                "<https://data.coypu.org/infrastructure/port/YENIS (Nishtun)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>",
+                        "<https://msi.nga.mil/Publications/WPI>"
+                    ],
+                    "description": "CoastalPort has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesFixed",
+                    "property_label": "hasCranesFixed",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasCranesFixed."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesMobile",
+                    "property_label": "hasCranesMobile",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalPort has at most 1 hasCranesMobile."
+                },
+                {
+                    "property_name": "world_port_index:hasDryDock",
+                    "property_label": "hasDryDock",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:DryDockSizeClass:S"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasDryDock."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionIce",
+                    "property_label": "hasEntranceRestrictionIce",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasEntranceRestrictionIce."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionOther",
+                    "property_label": "hasEntranceRestrictionOther",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasEntranceRestrictionOther."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionSwell",
+                    "property_label": "hasEntranceRestrictionSwell",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasEntranceRestrictionSwell."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionTide",
+                    "property_label": "hasEntranceRestrictionTide",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasEntranceRestrictionTide."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityWharves",
+                    "property_label": "hasFacilityWharves",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasFacilityWharves."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15342>",
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16420>"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "wfp_ports:hasGmlId",
+                    "property_label": "hasGmlId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "wld_trs_ports_wfp.16420",
+                        "wld_trs_ports_wfp.17688"
+                    ],
+                    "description": "CoastalPort has at most 1 hasGmlId."
+                },
+                {
+                    "property_name": "world_port_index:hasGoodHoldingGround",
+                    "property_label": "hasGoodHoldingGround",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasGoodHoldingGround."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "AUWMB",
+                        "JMPOT",
+                        "USJNU",
+                        "YENIS"
+                    ],
+                    "description": "CoastalPort has at most 1 hasId."
+                },
+                {
+                    "property_name": "world_port_index:hasIndexNumber",
+                    "property_label": "hasIndexNumber",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#long"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "10710",
+                        "29790",
+                        "48198",
+                        "54120"
+                    ],
+                    "description": "CoastalPort has at most 1 hasIndexNumber."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "port"
+                    ],
+                    "description": "CoastalPort has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-3",
+                        "84020.0",
+                        "1",
+                        "81820.0",
+                        "5",
+                        "83030.0"
+                    ],
+                    "description": "CoastalPort has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts0_24",
+                    "property_label": "hasLifts0_24",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasLifts0_24."
+                },
+                {
+                    "property_name": "global:hasLocation",
+                    "property_label": "hasLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/YEM>"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasLocation."
+                },
+                {
+                    "property_name": "wfp_ports:hasLocationPrecision",
+                    "property_label": "hasLocationPrecision",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "accurate"
+                    ],
+                    "description": "CoastalPort has at most 1 hasLocationPrecision."
+                },
+                {
+                    "property_name": "global:hasLongitude",
+                    "property_label": "hasLongitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-1",
+                        "344300.0",
+                        "5",
+                        "21980.0"
+                    ],
+                    "description": "CoastalPort has at most 1 hasLongitude."
+                },
+                {
+                    "property_name": "wfp_ports:hasOperatingCountry",
+                    "property_label": "hasOperatingCountry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/DNK>",
+                        "<https://data.coypu.org/country/JAM>"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasOperatingCountry."
+                },
+                {
+                    "property_name": "world_port_index:hasPilotageLocalAssistance",
+                    "property_label": "hasPilotageLocalAssistance",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalPort has at most 1 hasPilotageLocalAssistance."
+                },
+                {
+                    "property_name": "world_port_index:hasPortName",
+                    "property_label": "hasPortName",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "Juneau",
+                        "Port (Antonio)"
+                    ],
+                    "description": "CoastalPort has at most 1 hasPortName."
+                },
+                {
+                    "property_name": "world_port_index:hasPortSize",
+                    "property_label": "hasPortSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:SizeClass:S"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasPortSize."
+                },
+                {
+                    "property_name": "world_port_index:hasRailway",
+                    "property_label": "hasRailway",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:MarineRailwaySizeClass:M",
+                        "world_port_index:MarineRailwaySizeClass:S"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasRailway."
+                },
+                {
+                    "property_name": "world_port_index:hasRepairs",
+                    "property_label": "hasRepairs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:RepairClass:C",
+                        "world_port_index:RepairClass:N"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasRepairs."
+                },
+                {
+                    "property_name": "world_port_index:hasShelter",
+                    "property_label": "hasShelter",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:ShelterClass:G",
+                        "world_port_index:ShelterClass:P"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasShelter."
+                },
+                {
+                    "property_name": "wfp_ports:hasSize",
+                    "property_label": "hasSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "wfp_ports:Size:small"
+                    ],
+                    "description": "CoastalPort has exactly 1 hasSize."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDieselOil",
+                    "property_label": "hasSuppliesDieselOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasSuppliesDieselOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesFuelOil",
+                    "property_label": "hasSuppliesFuelOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasSuppliesFuelOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesProvisions",
+                    "property_label": "hasSuppliesProvisions",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasSuppliesProvisions."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesWater",
+                    "property_label": "hasSuppliesWater",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasSuppliesWater."
+                },
+                {
+                    "property_name": "world_port_index:hasTidesRange",
+                    "property_label": "hasTidesRange",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#decimal"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1.0",
+                        "2.0"
+                    ],
+                    "description": "CoastalPort has at most 1 hasTidesRange."
+                },
+                {
+                    "property_name": "world_port_index:hasTurningArea",
+                    "property_label": "hasTurningArea",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 hasTurningArea."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "owl:NamedIndividual",
+                        "global:Port",
+                        "world_port_index:CoastalBreakwaterPort",
+                        "world_port_index:CoastalNaturalPort",
+                        "world_port_index:CoastalPort"
+                    ],
+                    "description": "CoastalPort has typically one, but may vary type."
+                },
+                {
+                    "property_name": "world_port_index:isEtaRequired",
+                    "property_label": "isEtaRequired",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 isEtaRequired."
+                },
+                {
+                    "property_name": "world_port_index:isFirstPortOfEntry",
+                    "property_label": "isFirstPortOfEntry",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 isFirstPortOfEntry."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAdvisable",
+                    "property_label": "isPilotageAdvisable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 isPilotageAdvisable."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAvailable",
+                    "property_label": "isPilotageAvailable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "CoastalPort has at most 1 isPilotageAvailable."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageCompulsory",
+                    "property_label": "isPilotageCompulsory",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalPort has at most 1 isPilotageCompulsory."
+                },
+                {
+                    "property_name": "world_port_index:isUSRepresentative",
+                    "property_label": "isUSRepresentative",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "CoastalPort has at most 1 isUSRepresentative."
+                },
+                {
+                    "property_name": "owl:sameAs",
+                    "property_label": "sameAs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<http://sws.geonames.org/2617030/>",
+                        "<http://sws.geonames.org/72176/>"
+                    ],
+                    "description": "CoastalPort has exactly 1 sameAs."
+                }
+            ]
+        },
+        "geosparql:Geometry": {
+            "class_label": "Geometry",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.16580>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>"
+                    ],
+                    "description": "Geometry has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "geosparql:Geometry"
+                    ],
+                    "description": "Geometry has typically one, but may vary type."
+                }
+            ]
+        },
+        "global:Infrastructure": {
+            "class_label": "Infrastructure",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/airport/KUF>",
+                "<https://data.coypu.org/infrastructure/airport/MJM>",
+                "<https://data.coypu.org/infrastructure/airport/SKD (Samarkand International)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "global:hasCountryLocation",
+                    "property_label": "hasCountryLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/UZB>"
+                    ],
+                    "description": "Infrastructure has exactly 1 hasCountryLocation."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/airport/MJM/geometry>"
+                    ],
+                    "description": "Infrastructure has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "KUF",
+                        "SKD"
+                    ],
+                    "description": "Infrastructure has at most 1 hasId."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "airport"
+                    ],
+                    "description": "Infrastructure has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "3",
+                        "970.0",
+                        "5",
+                        "35070.0"
+                    ],
+                    "description": "Infrastructure has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "global:hasTotalSeatsPerYear",
+                    "property_label": "hasTotalSeatsPerYear",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#integer"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "243943567",
+                        "342081684"
+                    ],
+                    "description": "Infrastructure has at most 1 hasTotalSeatsPerYear."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "global:Airport",
+                        "global:Infrastructure"
+                    ],
+                    "description": "Infrastructure has typically one, but may vary type."
+                }
+            ]
+        },
+        "owl:NamedIndividual": {
+            "class_label": "NamedIndividual",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/BRITJ>",
+                "<https://data.coypu.org/infrastructure/port/CASEI (Sept Iles (Seven Is.)>",
+                "<https://data.coypu.org/infrastructure/port/JMPOT>",
+                "<https://data.coypu.org/infrastructure/port/YENIS (Nishtun)>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>",
+                        "<https://msi.nga.mil/Publications/WPI>"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesFixed",
+                    "property_label": "hasCranesFixed",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasCranesFixed."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesMobile",
+                    "property_label": "hasCranesMobile",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasCranesMobile."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionIce",
+                    "property_label": "hasEntranceRestrictionIce",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "NamedIndividual has at most 1 hasEntranceRestrictionIce."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionSwell",
+                    "property_label": "hasEntranceRestrictionSwell",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasEntranceRestrictionSwell."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionTide",
+                    "property_label": "hasEntranceRestrictionTide",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasEntranceRestrictionTide."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityWharves",
+                    "property_label": "hasFacilityWharves",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasFacilityWharves."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15181>"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "wfp_ports:hasGmlId",
+                    "property_label": "hasGmlId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "wld_trs_ports_wfp.17688"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasGmlId."
+                },
+                {
+                    "property_name": "world_port_index:hasGoodHoldingGround",
+                    "property_label": "hasGoodHoldingGround",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasGoodHoldingGround."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "CASEI",
+                        "JMPOT",
+                        "YENIS"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasId."
+                },
+                {
+                    "property_name": "world_port_index:hasIndexNumber",
+                    "property_label": "hasIndexNumber",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#long"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "10710",
+                        "1955",
+                        "48198"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasIndexNumber."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "port"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-2",
+                        "69110.0",
+                        "1",
+                        "81820.0",
+                        "5",
+                        "1990.0"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts0_24",
+                    "property_label": "hasLifts0_24",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLifts0_24."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts100_plus",
+                    "property_label": "hasLifts100_plus",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLifts100_plus."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts50_100",
+                    "property_label": "hasLifts50_100",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLifts50_100."
+                },
+                {
+                    "property_name": "global:hasLocation",
+                    "property_label": "hasLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/YEM>"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasLocation."
+                },
+                {
+                    "property_name": "wfp_ports:hasLocationPrecision",
+                    "property_label": "hasLocationPrecision",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "accurate"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLocationPrecision."
+                },
+                {
+                    "property_name": "global:hasLongitude",
+                    "property_label": "hasLongitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-4",
+                        "86550.0",
+                        "-6",
+                        "63810.0",
+                        "5",
+                        "21980.0"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasLongitude."
+                },
+                {
+                    "property_name": "wfp_ports:hasOperatingCountry",
+                    "property_label": "hasOperatingCountry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/JAM>"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasOperatingCountry."
+                },
+                {
+                    "property_name": "world_port_index:hasOverheadLimitations",
+                    "property_label": "hasOverheadLimitations",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "NamedIndividual has at most 1 hasOverheadLimitations."
+                },
+                {
+                    "property_name": "world_port_index:hasPortName",
+                    "property_label": "hasPortName",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "Itajai",
+                        "Port (Antonio)",
+                        "Sept (Iles)"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasPortName."
+                },
+                {
+                    "property_name": "world_port_index:hasPortSize",
+                    "property_label": "hasPortSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:SizeClass:M",
+                        "world_port_index:SizeClass:S"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasPortSize."
+                },
+                {
+                    "property_name": "world_port_index:hasRepairs",
+                    "property_label": "hasRepairs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:RepairClass:B",
+                        "world_port_index:RepairClass:C",
+                        "world_port_index:RepairClass:N"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasRepairs."
+                },
+                {
+                    "property_name": "world_port_index:hasShelter",
+                    "property_label": "hasShelter",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:ShelterClass:G"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasShelter."
+                },
+                {
+                    "property_name": "wfp_ports:hasSize",
+                    "property_label": "hasSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "wfp_ports:Size:small"
+                    ],
+                    "description": "NamedIndividual has exactly 1 hasSize."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDeck",
+                    "property_label": "hasSuppliesDeck",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasSuppliesDeck."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDieselOil",
+                    "property_label": "hasSuppliesDieselOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasSuppliesDieselOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesEngine",
+                    "property_label": "hasSuppliesEngine",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasSuppliesEngine."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesFuelOil",
+                    "property_label": "hasSuppliesFuelOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasSuppliesFuelOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesWater",
+                    "property_label": "hasSuppliesWater",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasSuppliesWater."
+                },
+                {
+                    "property_name": "world_port_index:hasTidesRange",
+                    "property_label": "hasTidesRange",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#decimal"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1.0",
+                        "10.0"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasTidesRange."
+                },
+                {
+                    "property_name": "world_port_index:hasTurningArea",
+                    "property_label": "hasTurningArea",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 hasTurningArea."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "owl:NamedIndividual",
+                        "global:Port",
+                        "world_port_index:CoastalNaturalPort",
+                        "world_port_index:CoastalPort"
+                    ],
+                    "description": "NamedIndividual has typically one, but may vary type."
+                },
+                {
+                    "property_name": "world_port_index:isEtaRequired",
+                    "property_label": "isEtaRequired",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has exactly 1 isEtaRequired."
+                },
+                {
+                    "property_name": "world_port_index:isFirstPortOfEntry",
+                    "property_label": "isFirstPortOfEntry",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 isFirstPortOfEntry."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAdvisable",
+                    "property_label": "isPilotageAdvisable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 isPilotageAdvisable."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageAvailable",
+                    "property_label": "isPilotageAvailable",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 isPilotageAvailable."
+                },
+                {
+                    "property_name": "world_port_index:isPilotageCompulsory",
+                    "property_label": "isPilotageCompulsory",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "NamedIndividual has at most 1 isPilotageCompulsory."
+                },
+                {
+                    "property_name": "world_port_index:isUSRepresentative",
+                    "property_label": "isUSRepresentative",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "NamedIndividual has at most 1 isUSRepresentative."
+                },
+                {
+                    "property_name": "owl:sameAs",
+                    "property_label": "sameAs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<http://sws.geonames.org/3460845/>",
+                        "<http://sws.geonames.org/72176/>"
+                    ],
+                    "description": "NamedIndividual has exactly 1 sameAs."
+                }
+            ]
+        },
+        "global:Port": {
+            "class_label": "Port",
+            "class_examples": [
+                "<https://data.coypu.org/infrastructure/port/CASEI (Sept Iles (Seven Is.)>",
+                "<https://data.coypu.org/infrastructure/port/GLGOH>",
+                "<https://data.coypu.org/infrastructure/port/JMPOT>",
+                "<https://data.coypu.org/infrastructure/port/JPFSK (Fushiki)>",
+                "<https://data.coypu.org/infrastructure/port/USETW>"
+            ],
+            "properties": [
+                {
+                    "property_name": "prov:hadPrimarySource",
+                    "property_label": "hadPrimarySource",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://geonode.wfp.org/layers/geonode:wld_trs_ports_wfp>",
+                        "<https://msi.nga.mil/Publications/WPI>"
+                    ],
+                    "description": "Port has exactly 1 hadPrimarySource."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesFixed",
+                    "property_label": "hasCranesFixed",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasCranesFixed."
+                },
+                {
+                    "property_name": "world_port_index:hasCranesMobile",
+                    "property_label": "hasCranesMobile",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasCranesMobile."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionIce",
+                    "property_label": "hasEntranceRestrictionIce",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasEntranceRestrictionIce."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionOther",
+                    "property_label": "hasEntranceRestrictionOther",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasEntranceRestrictionOther."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionSwell",
+                    "property_label": "hasEntranceRestrictionSwell",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasEntranceRestrictionSwell."
+                },
+                {
+                    "property_name": "world_port_index:hasEntranceRestrictionTide",
+                    "property_label": "hasEntranceRestrictionTide",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasEntranceRestrictionTide."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityMedMooring",
+                    "property_label": "hasFacilityMedMooring",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasFacilityMedMooring."
+                },
+                {
+                    "property_name": "world_port_index:hasFacilityWharves",
+                    "property_label": "hasFacilityWharves",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasFacilityWharves."
+                },
+                {
+                    "property_name": "geosparql:hasGeometry",
+                    "property_label": "hasGeometry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/infrastructure/port/wfp/geometry/wld_trs_ports_wfp.15877>",
+                        "<https://data.coypu.org/infrastructure/port/wpi/geometry/640>"
+                    ],
+                    "description": "Port has exactly 1 hasGeometry."
+                },
+                {
+                    "property_name": "wfp_ports:hasGmlId",
+                    "property_label": "hasGmlId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "wld_trs_ports_wfp.15877",
+                        "wld_trs_ports_wfp.17688"
+                    ],
+                    "description": "Port has at most 1 hasGmlId."
+                },
+                {
+                    "property_name": "world_port_index:hasGoodHoldingGround",
+                    "property_label": "hasGoodHoldingGround",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasGoodHoldingGround."
+                },
+                {
+                    "property_name": "global:hasId",
+                    "property_label": "hasId",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "CASEI",
+                        "GLGOH",
+                        "JMPOT",
+                        "USETW",
+                        "YENIS"
+                    ],
+                    "description": "Port has at most 1 hasId."
+                },
+                {
+                    "property_name": "world_port_index:hasIndexNumber",
+                    "property_label": "hasIndexNumber",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#long"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "10710",
+                        "1955",
+                        "48198",
+                        "640"
+                    ],
+                    "description": "Port has at most 1 hasIndexNumber."
+                },
+                {
+                    "property_name": "global:hasInfrastructureType",
+                    "property_label": "hasInfrastructureType",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "port"
+                    ],
+                    "description": "Port has at most 1 hasInfrastructureType."
+                },
+                {
+                    "property_name": "global:hasLatitude",
+                    "property_label": "hasLatitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1",
+                        "81820.0",
+                        "3",
+                        "68020.0",
+                        "5",
+                        "1990.0",
+                        "6",
+                        "41830.0"
+                    ],
+                    "description": "Port has at most 1 hasLatitude."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts0_24",
+                    "property_label": "hasLifts0_24",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasLifts0_24."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts100_plus",
+                    "property_label": "hasLifts100_plus",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasLifts100_plus."
+                },
+                {
+                    "property_name": "world_port_index:hasLifts50_100",
+                    "property_label": "hasLifts50_100",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasLifts50_100."
+                },
+                {
+                    "property_name": "global:hasLocation",
+                    "property_label": "hasLocation",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/JPN>",
+                        "<https://data.coypu.org/country/USA>",
+                        "<https://data.coypu.org/country/YEM>"
+                    ],
+                    "description": "Port has exactly 1 hasLocation."
+                },
+                {
+                    "property_name": "wfp_ports:hasLocationPrecision",
+                    "property_label": "hasLocationPrecision",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "accurate"
+                    ],
+                    "description": "Port has at most 1 hasLocationPrecision."
+                },
+                {
+                    "property_name": "global:hasLongitude",
+                    "property_label": "hasLongitude",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#double"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "-6",
+                        "63810.0",
+                        "-7",
+                        "50.0",
+                        "1",
+                        "370600.0",
+                        "5",
+                        "21980.0"
+                    ],
+                    "description": "Port has at most 1 hasLongitude."
+                },
+                {
+                    "property_name": "wfp_ports:hasOperatingCountry",
+                    "property_label": "hasOperatingCountry",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<https://data.coypu.org/country/JAM>",
+                        "<https://data.coypu.org/country/JPN>"
+                    ],
+                    "description": "Port has exactly 1 hasOperatingCountry."
+                },
+                {
+                    "property_name": "world_port_index:hasOverheadLimitations",
+                    "property_label": "hasOverheadLimitations",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "description": "Port has at most 1 hasOverheadLimitations."
+                },
+                {
+                    "property_name": "world_port_index:hasPortName",
+                    "property_label": "hasPortName",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#string"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "Edgartown",
+                        "Nuuk",
+                        "Port (Antonio)",
+                        "Sept (Iles)"
+                    ],
+                    "description": "Port has at most 1 hasPortName."
+                },
+                {
+                    "property_name": "world_port_index:hasPortSize",
+                    "property_label": "hasPortSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:SizeClass:M",
+                        "world_port_index:SizeClass:S"
+                    ],
+                    "description": "Port has exactly 1 hasPortSize."
+                },
+                {
+                    "property_name": "world_port_index:hasRailway",
+                    "property_label": "hasRailway",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:MarineRailwaySizeClass:S"
+                    ],
+                    "description": "Port has exactly 1 hasRailway."
+                },
+                {
+                    "property_name": "world_port_index:hasRepairs",
+                    "property_label": "hasRepairs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:RepairClass:C",
+                        "world_port_index:RepairClass:N"
+                    ],
+                    "description": "Port has exactly 1 hasRepairs."
+                },
+                {
+                    "property_name": "world_port_index:hasShelter",
+                    "property_label": "hasShelter",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "world_port_index:ShelterClass:G"
+                    ],
+                    "description": "Port has exactly 1 hasShelter."
+                },
+                {
+                    "property_name": "wfp_ports:hasSize",
+                    "property_label": "hasSize",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "wfp_ports:Size:small"
+                    ],
+                    "description": "Port has exactly 1 hasSize."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDeck",
+                    "property_label": "hasSuppliesDeck",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesDeck."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesDieselOil",
+                    "property_label": "hasSuppliesDieselOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesDieselOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesEngine",
+                    "property_label": "hasSuppliesEngine",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesEngine."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesFuelOil",
+                    "property_label": "hasSuppliesFuelOil",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesFuelOil."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesProvisions",
+                    "property_label": "hasSuppliesProvisions",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesProvisions."
+                },
+                {
+                    "property_name": "world_port_index:hasSuppliesWater",
+                    "property_label": "hasSuppliesWater",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 hasSuppliesWater."
+                },
+                {
+                    "property_name": "world_port_index:hasTidesRange",
+                    "property_label": "hasTidesRange",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#decimal"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "1.0",
+                        "10.0"
+                    ],
+                    "description": "Port has at most 1 hasTidesRange."
+                },
+                {
+                    "property_name": "22_rdf_syntax_ns:type",
+                    "property_label": "type",
+                    "examples": [
+                        "owl:NamedIndividual",
+                        "global:Port",
+                        "world_port_index:CoastalNaturalPort",
+                        "world_port_index:CoastalPort"
+                    ],
+                    "description": "Port has typically one, but may vary type."
+                },
+                {
+                    "property_name": "world_port_index:isEtaRequired",
+                    "property_label": "isEtaRequired",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 isEtaRequired."
+                },
+                {
+                    "property_name": "world_port_index:isFirstPortOfEntry",
+                    "property_label": "isFirstPortOfEntry",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 isFirstPortOfEntry."
+                },
+                {
+                    "property_name": "world_port_index:isUSRepresentative",
+                    "property_label": "isUSRepresentative",
+                    "datatype": [
+                        "http://www.w3.org/2001/XMLSchema#boolean"
+                    ],
+                    "max_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#Literal",
+                    "examples": [
+                        "true"
+                    ],
+                    "description": "Port has at most 1 isUSRepresentative."
+                },
+                {
+                    "property_name": "owl:sameAs",
+                    "property_label": "sameAs",
+                    "max_count": 1,
+                    "min_count": 1,
+                    "node_kind": "http://www.w3.org/ns/shacl#IRI",
+                    "examples": [
+                        "<http://sws.geonames.org/1863793/>",
+                        "<http://sws.geonames.org/72176/>"
+                    ],
+                    "description": "Port has exactly 1 sameAs."
+                }
+            ]
+        }
+    }
+}

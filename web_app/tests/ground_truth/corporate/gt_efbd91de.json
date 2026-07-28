@@ -1,0 +1,30 @@
+{
+  "question": "Do we have suppliers in Toulouse?",
+  "question_id": 16,
+  "expected_classes": [
+    "Product",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressLocality"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "result": "true"
+    }
+  ],
+  "key_field": null,
+  "query_type": "ASK"
+}

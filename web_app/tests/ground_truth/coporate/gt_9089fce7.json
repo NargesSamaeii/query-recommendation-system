@@ -1,0 +1,51 @@
+{
+  "question": "Do we have any service that does apply to a BOM where parts are sourced from Russia?",
+  "question_id": 28,
+  "expected_classes": [
+    "Service",
+    "BillOfMaterial",
+    "BomPart",
+    "Supplier",
+    "Hardware"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Service",
+      "relevant_properties": [
+        "eligibleFor"
+      ]
+    },
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "hasPart"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressCountry"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasSupplier"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "result": "true"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

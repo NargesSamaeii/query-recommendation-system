@@ -1,0 +1,490 @@
+﻿{
+    "question":  "Which hardware items have widths in the top 10% of the width range (based on minimum and maximum widths), and what are their IDs, names, and widths?",
+    "question_id":  87,
+    "expected_classes":  [
+                             "Hardware"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "compatibleProduct",
+                                                                "width_mm",
+                                                                "id",
+                                                                "name"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "id":  "B523-5464510",
+                                 "name":  "Bipolar-junction Switch Transducer",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "C409-9349178",
+                                 "name":  "Multiplexer Rheostat Encoder",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "F797-8658626",
+                                 "name":  "Multiplexer Gauge Crystal",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "M205-1376206",
+                                 "name":  "Dipole Memristor Encoder",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "M350-8985312",
+                                 "name":  "Oscillator Memristor Transistor",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "N206-9059859",
+                                 "name":  "Polymer Memristor Capacitor",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "P337-4636612",
+                                 "name":  "Sensor Driver Crystal",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "U967-6553099",
+                                 "name":  "Bipolar-junction Gauge Warp",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "Y274-1029755",
+                                 "name":  "Polymer Transistor Transformer",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "Y553-3929384",
+                                 "name":  "Crystal Capacitor",
+                                 "width":  "80"
+                             },
+                             {
+                                 "id":  "C440-1370895",
+                                 "name":  "Potentiometer Capacitor",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "D817-8084362",
+                                 "name":  "Multiplexer Resistor Compensator",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "E737-8373948",
+                                 "name":  "Oscillator Inductor",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "F424-2241578",
+                                 "name":  "Strain Meter",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "F559-6763700",
+                                 "name":  "Gauge Capacitor",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "F708-2915261",
+                                 "name":  "Crystal Resonator",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "G205-5318100",
+                                 "name":  "LCD Gauge",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "G625-3606813",
+                                 "name":  "Phase Multiplexer Inductor Crystal",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "H941-5264433",
+                                 "name":  "Transformer Breaker Meter",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "K199-8327732",
+                                 "name":  "Phase Transistor Crystal",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "O537-7333259",
+                                 "name":  "Oscillator Transformer",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "P528-2149873",
+                                 "name":  "Encoder Compensator",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "Q568-8156489",
+                                 "name":  "Gauge Capacitor Meter",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "R410-7957011",
+                                 "name":  "Planck Network Dipole",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "X223-5282026",
+                                 "name":  "LCD Capacitor",
+                                 "width":  "79"
+                             },
+                             {
+                                 "id":  "I590-4406621",
+                                 "name":  "Heisenberg Coil Resistor Meter",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "O194-8514321",
+                                 "name":  "Aluminum Capacitor Warp",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "P163-9337479",
+                                 "name":  "Transistor Encoder Compensator",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "S590-1665348",
+                                 "name":  "Heisenberg LCD Resonator Transformer",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "U507-1853778",
+                                 "name":  "LCD Dipole Capacitor",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "U990-5234138",
+                                 "name":  "LCD Inductor",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "Y505-9919340",
+                                 "name":  "Ceramic Capacitor Transformer Warp",
+                                 "width":  "78"
+                             },
+                             {
+                                 "id":  "A166-3766336",
+                                 "name":  "Aluminum LCD Driver Gauge",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "A225-1988393",
+                                 "name":  "Field-effect Dipole Gauge",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "A595-2446575",
+                                 "name":  "Sensor Driver Capacitor",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "E815-1132509",
+                                 "name":  "Resistor Sensor Resonator",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "H609-2196524",
+                                 "name":  "Planck Potentiometer Transformer",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "J498-2858887",
+                                 "name":  "Bipolar-junction Oscillator Memristor Capacitor",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "M400-3382615",
+                                 "name":  "Field-effect Transistor Compensator",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "O952-1686669",
+                                 "name":  "LCD Resonator Breaker",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "R389-4348258",
+                                 "name":  "Network Gauge",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "U955-7894277",
+                                 "name":  "Transducer Gauge Meter",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "V382-3883746",
+                                 "name":  "Network Dipole Warp",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "W776-4360677",
+                                 "name":  "Field-effect Transducer Meter",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "Y580-9027193",
+                                 "name":  "Bipolar-junction LCD Resistor",
+                                 "width":  "77"
+                             },
+                             {
+                                 "id":  "B926-8983325",
+                                 "name":  "Gauge Encoder Capacitor",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "E829-2591611",
+                                 "name":  "Memristor Compensator",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "G812-4734922",
+                                 "name":  "Heisenberg Network Potentiometer",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "I653-5994473",
+                                 "name":  "Bipolar-junction Potentiometer Capacitor",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "J628-9483622",
+                                 "name":  "Field-effect Transistor Crystal",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "K898-8238720",
+                                 "name":  "Multiplexer Transformer",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "L932-9433395",
+                                 "name":  "Dipole Inductor Crystal",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "M721-8978045",
+                                 "name":  "LCD Memristor Warp",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "O571-8892490",
+                                 "name":  "Network Rheostat Transformer",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "Q248-7597886",
+                                 "name":  "Oscillator Strain",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "Q594-6895704",
+                                 "name":  "LCD Network",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "R272-9406400",
+                                 "name":  "Potentiometer Driver",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "R318-8770198",
+                                 "name":  "Flow Transistor Compensator Transducer",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "S915-2398244",
+                                 "name":  "Bipolar-junction Capacitor Crystal Breaker",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "T973-5442896",
+                                 "name":  "Sensor Driver Transducer",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "W872-7508740",
+                                 "name":  "Gauge Rheostat",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "Y134-8040496",
+                                 "name":  "Oscillator Memristor",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "Y968-9133870",
+                                 "name":  "Oscillator Rheostat",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "Z358-9013730",
+                                 "name":  "Flow Potentiometer Transistor",
+                                 "width":  "76"
+                             },
+                             {
+                                 "id":  "B519-3674576",
+                                 "name":  "LCD Crystal Encoder",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "C614-4108640",
+                                 "name":  "Log-periodic LCD Breaker",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "D381-6342696",
+                                 "name":  "Inductor",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "E585-4643170",
+                                 "name":  "LCD Memristor Rheostat",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "G346-2864946",
+                                 "name":  "LCD Strain Encoder",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "H676-3055632",
+                                 "name":  "Film LCD Warp",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "H973-6742173",
+                                 "name":  "Bipolar-junction Transistor Transformer",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "N915-2423517",
+                                 "name":  "Aluminum Encoder Transformer Meter",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "P472-9724615",
+                                 "name":  "Field-effect Potentiometer Resonator",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "P989-7962038",
+                                 "name":  "Bipolar-junction LCD Resistor",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "S839-8840069",
+                                 "name":  "Phase Resonator Meter",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "Z319-4514647",
+                                 "name":  "Phase Resistor Breaker Oscillator",
+                                 "width":  "75"
+                             },
+                             {
+                                 "id":  "A315-1730287",
+                                 "name":  "Network Dipole",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "B825-7596233",
+                                 "name":  "Resistor Compensator",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "C898-2055295",
+                                 "name":  "Sensor Potentiometer",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "D237-6587630",
+                                 "name":  "Heisenberg Transformer Crystal Encoder",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "H267-1492366",
+                                 "name":  "Sensor Transducer",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "H491-2171849",
+                                 "name":  "Multiplexer Meter",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "H660-6112027",
+                                 "name":  "Network Multiplexer Encoder",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "I571-8597034",
+                                 "name":  "Transistor Compensator",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "L748-3922794",
+                                 "name":  "Phase Driver Switch",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "S859-8143033",
+                                 "name":  "Field-effect Breaker Strain Transformer",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "T147-7011803",
+                                 "name":  "Oscillator Transistor Capacitor",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "T608-9573692",
+                                 "name":  "Coil Resonator",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "W177-1965331",
+                                 "name":  "Ceramic Coil Memristor Gauge",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "W744-1785439",
+                                 "name":  "Film Multiplexer Dipole Strain",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "X324-6249454",
+                                 "name":  "Breaker Meter",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "Y440-4146454",
+                                 "name":  "Resistor Memristor",
+                                 "width":  "74"
+                             },
+                             {
+                                 "id":  "Z322-3336300",
+                                 "name":  "Transducer Encoder Switch",
+                                 "width":  "74"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

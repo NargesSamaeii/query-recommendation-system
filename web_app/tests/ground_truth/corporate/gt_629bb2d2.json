@@ -1,0 +1,37 @@
+{
+  "question": "Which supplier delivers the most reliable Inductor?",
+  "question_id": 45,
+  "expected_classes": [
+    "Hardware",
+    "Supplier",
+    "ProductCategory"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasCategory",
+        "hasSupplier",
+        "reliabilityIndex"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "Inductor": "http://ld.company.org/prod-instances/prod-cat-Inductor"
+  },
+  "expected_results": [
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-445081d6-305c-4fb7-b89e-82c86969d4bd"
+    }
+  ],
+  "key_field": "supplier",
+  "query_type": "SELECT"
+}

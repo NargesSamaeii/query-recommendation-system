@@ -1,0 +1,91 @@
+[PrefixDeclaration]
+ex:		http://example.org/
+sh:		http://www.w3.org/ns/shacl#
+wd:		http://www.wikidata.org/entity/
+geo:		http://www.opengis.net/ont/geosparql#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+schema:		https://schema.org/
+geonames:	http://www.geonames.org/ontology#
+
+[MappingDeclaration] @collection [[
+mappingId	status-mapping
+target		ex:arteventStatus/{code} a ex:State ; ex:statecode {code}^^xsd:string ; ex:statename {name}^^xsd:string . 
+source		SELECT "code", "name"
+			FROM d_art_e_stato
+
+mappingId	art-mapping
+target		ex:art/{classid} a ex:Art ; ex:artclassid {classid}^^xsd:string ; ex:artname_it {name_it}^^xsd:string ; ex:artdescr_it {descr_it}^^xsd:string ; ex:artimage_url {image_url}^^xsd:string ; ex:area_di_download {area_di_download}^^xsd:string ; ex:open_time {open_time}^^xsd:string ; ex:tickets {tickets}^^xsd:string ; ex:artstate ex:arteventStatus/{state} . 
+source		SELECT "classid", "name_it", "descr_it", "image_url", "area_di_download", "open_time", "tickets", "state"
+			FROM art
+
+mappingId	art-category-mapping
+target		ex:artCategory/{classid} a ex:ArtCategory ; ex:artcatclassid {classid}^^xsd:string ; ex:artcatname_it {name_it}^^xsd:string . 
+source		SELECT "classid", "name_it"
+			FROM art_category
+
+mappingId	art-category-art-mapping
+target		ex:artCategory/{category} ex:includesArt ex:art/{points} . 
+source		SELECT "category", "points"
+			FROM a_art_category_art_category
+
+
+mappingId	tour-type-mapping
+target		ex:tourType/{code} a ex:TourType ; ex:typecode {code}^^xsd:string ; ex:typename {name}^^xsd:string . 
+source		SELECT "code", "name"
+			FROM d_tour_e_tipoit
+
+mappingId	tour-mapping
+target		ex:tour/{classid} a ex:Tour ; ex:tourclassid {classid}^^xsd:string ; ex:tourname_it {name_it}^^xsd:string ; ex:tourdescr_it {descr_it}^^xsd:string ; ex:tourimage_url {image_url}^^xsd:string ; ex:geom_path {geom_path}^^xsd:string ; ex:kml_path {kml_path}^^xsd:string ; ex:proximity_area {proximity_area}^^xsd:string ; ex:duration {duration}^^xsd:decimal ; ex:length {length}^^xsd:decimal ; ex:tourtype ex:tourType/{type} . 
+source		SELECT "classid", "name_it", "descr_it", "image_url", "geom_path", "kml_path", "proximity_area", "duration", "length", "type"
+			FROM tour
+
+mappingId	tour-art-mapping
+target		ex:tour/{tour} ex:includesArtStop ex:art/{point_of_interest} . 
+source		SELECT "tour", "point_of_interest"
+			FROM a_art_tour_tour
+
+mappingId	event-mapping
+target		ex:event/{classid} a ex:Event ; ex:eventclassid {classid}^^xsd:string ; ex:eventname_it {name_it}^^xsd:string ; ex:eventdescr_it {descr_it}^^xsd:string ; ex:eventimage_url {image_url}^^xsd:string ; ex:eventstate ex:arteventStatus/{state} . 
+source		SELECT "classid", "name_it", "descr_it", "image_url", "state"
+			FROM event
+
+mappingId   event-category-mapping
+target      ex:eventCategory/{classid} a ex:EventCategory ; 
+            ex:eventcatclassid {original_classid}^^xsd:string ; 
+            ex:eventcatname_it {name_it}^^xsd:string .
+source      SELECT CONCAT('ec-', "classid") AS classid, 
+                   "classid" AS original_classid,
+                   "name_it"
+            FROM event_category
+
+mappingId	event-category-event-mapping
+target		ex:eventCategory/{category} ex:includesEvent ex:event/{event} . 
+source		SELECT CONCAT('ec-', "category") AS category, "event"
+			FROM a_event_category_event_category
+
+
+mappingId	calendar-mapping
+target		ex:calendar/{classid} a ex:Calendar ; ex:calendarclassid {classid}^^xsd:string ; ex:day {day}^^xsd:date ; ex:start_time {start_time}^^xsd:string ; ex:end_time {end_time}^^xsd:string ; ex:scheduledevent ex:event/{event} . 
+source		SELECT "classid", "day", "start_time", "end_time", "event"
+			FROM calendar
+
+mappingId	location-mapping
+target		ex:location/{classid} a ex:Location ; ex:locationclassid {classid}^^xsd:string ; ex:address {address}^^xsd:string ; ex:num {num}^^xsd:integer ; ex:geom {geom}^^xsd:string ; ex:hostedevent ex:event/{event} . 
+source		SELECT "classid", "address", "num", "geom", "event"
+			FROM location
+
+mappingId	event-to-location-mapping
+target		ex:event/{event} a ex:Event ; ex:hostedat ex:location/{classid} . 
+source		SELECT "event", "classid" FROM location WHERE "event" IS NOT NULL;
+
+mappingId	event-to-calendar-mapping
+target		ex:event/{event} a ex:Event ; ex:scheduledon ex:calendar/{classid} .
+source		SELECT "event", "classid" FROM calendar WHERE "event" IS NOT NULL;
+
+]]
+

@@ -1,0 +1,30 @@
+{
+  "question": "Which coil has the highest density?",
+  "question_id": 25,
+  "expected_classes": [
+    "ProductCategory",
+    "Product"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "depth_mm",
+        "hasCategory",
+        "height_mm",
+        "weight_g",
+        "width_mm"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Coil": "http://ld.company.org/prod-instances/prod-cat-Coil"
+  },
+  "expected_results": [],
+  "key_field": "result",
+  "query_type": "SELECT"
+}

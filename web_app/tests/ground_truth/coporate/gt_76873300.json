@@ -1,0 +1,30 @@
+{
+  "question": "Which suppliers do we have in Toulouse?",
+  "question_id": 17,
+  "expected_classes": [
+    "Product",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressLocality"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-1ee8f22a-1460-4875-b1a8-89d7cb2607d6"
+    }
+  ],
+  "key_field": "supplier",
+  "query_type": "SELECT"
+}

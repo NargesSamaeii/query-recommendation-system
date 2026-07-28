@@ -1,0 +1,348 @@
+{
+  "prefixes": {
+    "untitled_ontology_57": "http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#"
+  },
+  "classes": {
+    "untitled_ontology_57:Country": {
+      "class_label": "Country"
+    },
+    "untitled_ontology_57:Device": {
+      "class_label": "Device"
+    },
+    "untitled_ontology_57:Genre": {
+      "class_label": "Genre"
+    },
+    "untitled_ontology_57:Language": {
+      "class_label": "Language"
+    },
+    "untitled_ontology_57:Movie": {
+      "class_label": "Movie",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:contentType",
+          "property_label": "contentType",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Movie has typically one, but may vary contentType."
+        },
+        {
+          "property_name": "untitled_ontology_57:hasLanguage",
+          "property_label": "hasLanguage",
+          "datatype": [
+            "untitled_ontology_57:Language"
+          ],
+          "description": "Movie has typically one, but may vary hasLanguage."
+        },
+        {
+          "property_name": "untitled_ontology_57:title",
+          "property_label": "title",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Movie has typically one, but may vary title."
+        },
+        {
+          "property_name": "untitled_ontology_57:releaseYear",
+          "property_label": "releaseYear",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#integer>"
+          ],
+          "description": "Movie has typically one, but may vary releaseYear."
+        },
+        {
+          "property_name": "untitled_ontology_57:durationMinutes",
+          "property_label": "durationMinutes",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Movie has typically one, but may vary durationMinutes."
+        },
+        {
+          "property_name": "untitled_ontology_57:imdbRating",
+          "property_label": "imdbRating",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Movie has typically one, but may vary imdbRating."
+        },
+        {
+          "property_name": "untitled_ontology_57:producedIn",
+          "property_label": "producedIn",
+          "datatype": [
+            "untitled_ontology_57:Country"
+          ],
+          "description": "Movie has typically one, but may vary producedIn."
+        },
+        {
+          "property_name": "untitled_ontology_57:hasGenre",
+          "property_label": "hasGenre",
+          "datatype": [
+            "untitled_ontology_57:Genre"
+          ],
+          "description": "Movie has typically one, but may vary hasGenre."
+        }
+      ]
+    },
+    "untitled_ontology_57:Recommendation": {
+      "class_label": "Recommendation",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:wasClicked",
+          "property_label": "wasClicked",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#boolean>"
+          ],
+          "description": "Recommendation has typically one, but may vary wasClicked."
+        },
+        {
+          "property_name": "untitled_ontology_57:recommendationType",
+          "property_label": "recommendationType",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Recommendation has typically one, but may vary recommendationType."
+        },
+        {
+          "property_name": "untitled_ontology_57:recommendationDate",
+          "property_label": "recommendationDate",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#date>"
+          ],
+          "description": "Recommendation has typically one, but may vary recommendationDate."
+        },
+        {
+          "property_name": "untitled_ontology_57:recommendsMovie",
+          "property_label": "recommendsMovie",
+          "datatype": [
+            "untitled_ontology_57:Movie"
+          ],
+          "description": "Recommendation has typically one, but may vary recommendsMovie."
+        },
+        {
+          "property_name": "untitled_ontology_57:recommendationScore",
+          "property_label": "recommendationScore",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Recommendation has typically one, but may vary recommendationScore."
+        },
+        {
+          "property_name": "untitled_ontology_57:algorithmVersion",
+          "property_label": "algorithmVersion",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Recommendation has typically one, but may vary algorithmVersion."
+        }
+      ]
+    },
+    "untitled_ontology_57:Review": {
+      "class_label": "Review",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:reviewText",
+          "property_label": "reviewText",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Review has typically one, but may vary reviewText."
+        },
+        {
+          "property_name": "untitled_ontology_57:rating",
+          "property_label": "rating",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Review has typically one, but may vary rating."
+        },
+        {
+          "property_name": "untitled_ontology_57:sentimentScore",
+          "property_label": "sentimentScore",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Review has typically one, but may vary sentimentScore."
+        },
+        {
+          "property_name": "untitled_ontology_57:helpfulVotes",
+          "property_label": "helpfulVotes",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "Review has typically one, but may vary helpfulVotes."
+        },
+        {
+          "property_name": "untitled_ontology_57:sentiment",
+          "property_label": "sentiment",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Review has typically one, but may vary sentiment."
+        },
+        {
+          "property_name": "untitled_ontology_57:reviewsMovie",
+          "property_label": "reviewsMovie",
+          "datatype": [
+            "untitled_ontology_57:Movie"
+          ],
+          "description": "Review has typically one, but may vary reviewsMovie."
+        },
+        {
+          "property_name": "untitled_ontology_57:belongsToUser",
+          "property_label": "belongsToUser",
+          "datatype": [
+            "untitled_ontology_57:User"
+          ],
+          "description": "Review has typically one, but may vary belongsToUser."
+        }
+      ]
+    },
+    "untitled_ontology_57:Search": {
+      "class_label": "Search",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:searchDate",
+          "property_label": "searchDate",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#date>"
+          ],
+          "description": "Search has typically one, but may vary searchDate."
+        },
+        {
+          "property_name": "untitled_ontology_57:searchQuery",
+          "property_label": "searchQuery",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Search has typically one, but may vary searchQuery."
+        }
+      ]
+    },
+    "untitled_ontology_57:SubscriptionPlan": {
+      "class_label": "SubscriptionPlan"
+    },
+    "untitled_ontology_57:User": {
+      "class_label": "User",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:watches",
+          "property_label": "watches",
+          "datatype": [
+            "untitled_ontology_57:Movie"
+          ],
+          "description": "User has typically one, but may vary watches."
+        },
+        {
+          "property_name": "untitled_ontology_57:hasSubscriptionPlan",
+          "property_label": "hasSubscriptionPlan",
+          "datatype": [
+            "untitled_ontology_57:SubscriptionPlan"
+          ],
+          "description": "User has typically one, but may vary hasSubscriptionPlan."
+        },
+        {
+          "property_name": "untitled_ontology_57:searches",
+          "property_label": "searches",
+          "datatype": [
+            "untitled_ontology_57:Search"
+          ],
+          "description": "User has typically one, but may vary searches."
+        },
+        {
+          "property_name": "untitled_ontology_57:receivesRecommendation",
+          "property_label": "receivesRecommendation",
+          "datatype": [
+            "untitled_ontology_57:Recommendation"
+          ],
+          "description": "User has typically one, but may vary receivesRecommendation."
+        },
+        {
+          "property_name": "untitled_ontology_57:age",
+          "property_label": "age",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#integer>"
+          ],
+          "description": "User has typically one, but may vary age."
+        }
+      ]
+    },
+    "untitled_ontology_57:WatchSession": {
+      "class_label": "WatchSession",
+      "properties": [
+        {
+          "property_name": "untitled_ontology_57:watchDate",
+          "property_label": "watchDate",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#date>"
+          ],
+          "description": "WatchSession has typically one, but may vary watchDate."
+        },
+        {
+          "property_name": "untitled_ontology_57:action",
+          "property_label": "action",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "WatchSession has typically one, but may vary action."
+        },
+        {
+          "property_name": "untitled_ontology_57:progressPercentage",
+          "property_label": "progressPercentage",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "WatchSession has typically one, but may vary progressPercentage."
+        },
+        {
+          "property_name": "untitled_ontology_57:deviceType",
+          "property_label": "deviceType",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "WatchSession has typically one, but may vary deviceType."
+        },
+        {
+          "property_name": "untitled_ontology_57:usesDevice",
+          "property_label": "usesDevice",
+          "datatype": [
+            "untitled_ontology_57:Device"
+          ],
+          "description": "WatchSession has typically one, but may vary usesDevice."
+        },
+        {
+          "property_name": "untitled_ontology_57:watchedMovie",
+          "property_label": "watchedMovie",
+          "datatype": [
+            "untitled_ontology_57:Movie"
+          ],
+          "description": "WatchSession has typically one, but may vary watchedMovie."
+        },
+        {
+          "property_name": "untitled_ontology_57:quality",
+          "property_label": "quality",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "WatchSession has typically one, but may vary quality."
+        },
+        {
+          "property_name": "untitled_ontology_57:watchDuration",
+          "property_label": "watchDuration",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#decimal>"
+          ],
+          "description": "WatchSession has typically one, but may vary watchDuration."
+        },
+        {
+          "property_name": "untitled_ontology_57:watchedByUser",
+          "property_label": "watchedByUser",
+          "datatype": [
+            "untitled_ontology_57:User"
+          ],
+          "description": "WatchSession has typically one, but may vary watchedByUser."
+        }
+      ]
+    }
+  }
+}

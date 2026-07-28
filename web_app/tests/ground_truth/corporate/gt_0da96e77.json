@@ -1,0 +1,34 @@
+﻿{
+    "question":  "How many suppliers provide products that are compatible with the K367-1320550 - Strain Encoder?",
+    "question_id":  91,
+    "expected_classes":  [
+                             "Product",
+                             "Supplier"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "compatibleProduct",
+                                                                "hasSupplier"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "compatibleProduct",
+                                                                "hasSupplier"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "K367-1320550":  "http://ld.company.org/prod-instances/hw-K367-1320550"
+                          },
+    "expected_results":  [
+                             {
+                                 "result":  "6"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

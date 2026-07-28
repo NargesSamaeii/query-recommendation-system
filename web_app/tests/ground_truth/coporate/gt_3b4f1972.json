@@ -1,0 +1,47 @@
+{
+  "question": "Which Bill-of-Material has the highest average unit cost of its hardware parts, and what is that average?",
+  "question_id": 42,
+  "expected_classes": [
+    "BillOfMaterial",
+    "Hardware",
+    "BomPart",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "price"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "hasPart",
+        "quantity"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount",
+        "currency"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "avgUnitCost": "4.22",
+      "hardware": "http://ld.company.org/prod-instances/bom-8"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

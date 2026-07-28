@@ -1,0 +1,44 @@
+{
+  "question": "Which department have more than 5 employees? I need their names and the number of employees.",
+  "question_id": 30,
+  "expected_classes": [
+    "Department",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "memberOf",
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Product Management",
+      "numEmployees": "12"
+    },
+    {
+      "name": "Data Services",
+      "numEmployees": "9"
+    },
+    {
+      "name": "Procurement",
+      "numEmployees": "8"
+    },
+    {
+      "name": "Marketing",
+      "numEmployees": "9"
+    }
+  ],
+  "key_field": "department",
+  "query_type": "SELECT"
+}

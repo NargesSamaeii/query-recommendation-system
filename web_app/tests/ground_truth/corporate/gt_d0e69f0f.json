@@ -1,0 +1,73 @@
+﻿{
+    "question":  "Is there any service that is eligible for at least one part used in a bill of material (BOM) that includes parts supplied by suppliers in Russia?",
+    "question_id":  72,
+    "expected_classes":  [
+                             "Service",
+                             "BillOfMaterial",
+                             "BomPart",
+                             "Supplier",
+                             "Hardware"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Service",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "addressCountry",
+                                                                "eligibleFor"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "BillOfMaterial",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "addressCountry",
+                                                                "eligibleFor"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "BomPart",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "addressCountry",
+                                                                "eligibleFor"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "addressCountry",
+                                                                "eligibleFor"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "hasPart",
+                                                                "hasSupplier",
+                                                                "addressCountry",
+                                                                "eligibleFor"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "result":  "true"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "ASK"
+}

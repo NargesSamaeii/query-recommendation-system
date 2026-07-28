@@ -1,0 +1,30 @@
+{
+  "question": "Which department is responsible for the Sensor Switch M558-2275045?",
+  "question_id": 8,
+  "expected_classes": [
+    "Department",
+    "Hardware"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "responsibleFor"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "M558-2275045": "http://ld.company.org/prod-instances/hw-M558-2275045"
+  },
+  "expected_results": [
+    {
+      "department": "http://ld.company.org/prod-instances/dept-41622"
+    }
+  ],
+  "key_field": "department",
+  "query_type": "SELECT"
+}

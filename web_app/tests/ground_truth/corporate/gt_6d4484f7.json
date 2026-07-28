@@ -1,0 +1,32 @@
+{
+  "question": "What is the email of Sabrina from Marketing?",
+  "question_id": 4,
+  "expected_classes": [
+    "Department",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": [
+        "email",
+        "memberOf",
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "email": "Sabrina.Geiger@company.org"
+    }
+  ],
+  "key_field": "email",
+  "query_type": "SELECT"
+}

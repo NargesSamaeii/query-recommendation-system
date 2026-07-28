@@ -1,0 +1,38 @@
+﻿{
+    "question":  "What is the heaviest item in the Coil category with width and depth each at most 15 mm?",
+    "question_id":  65,
+    "expected_classes":  [
+                             "Product",
+                             "ProductCategory"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Product",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "weight_g",
+                                                                "width_mm",
+                                                                "depth_mm"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "hasCategory",
+                                                                "weight_g",
+                                                                "width_mm",
+                                                                "depth_mm"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Coil":  "http://ld.company.org/prod-instances/prod-cat-Coil"
+                          },
+    "expected_results":  [
+                             {
+                                 "product":  "http://ld.company.org/prod-instances/hw-N558-1730215"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

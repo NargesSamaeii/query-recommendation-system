@@ -1,0 +1,273 @@
+﻿{
+    "question":  "Which hardware items (with their ID and name) do not have an assigned name for the product manager?",
+    "question_id":  84,
+    "expected_classes":  [
+                             "Hardware",
+                             "Agent"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "id",
+                                                                "name",
+                                                                "hasProductManager"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Agent",
+                                    "relevant_properties":  [
+                                                                "id",
+                                                                "name",
+                                                                "hasProductManager"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "id":  "A509-5571891",
+                                 "name":  "Multiplexer Inductor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A509-5571891"
+                             },
+                             {
+                                 "id":  "A595-2446575",
+                                 "name":  "Sensor Driver Capacitor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-A595-2446575"
+                             },
+                             {
+                                 "id":  "B523-5464510",
+                                 "name":  "Bipolar-junction Switch Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B523-5464510"
+                             },
+                             {
+                                 "id":  "B567-3760235",
+                                 "name":  "LCD Resonator",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-B567-3760235"
+                             },
+                             {
+                                 "id":  "C605-1105328",
+                                 "name":  "Log-periodic Gauge Compensator Meter",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C605-1105328"
+                             },
+                             {
+                                 "id":  "C799-8367143",
+                                 "name":  "Coil Strain Meter",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-C799-8367143"
+                             },
+                             {
+                                 "id":  "E267-7496794",
+                                 "name":  "Crystal Rheostat",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E267-7496794"
+                             },
+                             {
+                                 "id":  "E395-9906117",
+                                 "name":  "Flow Inductor Crystal Encoder",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E395-9906117"
+                             },
+                             {
+                                 "id":  "E815-1132509",
+                                 "name":  "Resistor Sensor Resonator",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E815-1132509"
+                             },
+                             {
+                                 "id":  "E938-3071637",
+                                 "name":  "LCD Dipole",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E938-3071637"
+                             },
+                             {
+                                 "id":  "E952-1325145",
+                                 "name":  "Driver Gauge",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-E952-1325145"
+                             },
+                             {
+                                 "id":  "F344-7012314",
+                                 "name":  "Switch Encoder Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-F344-7012314"
+                             },
+                             {
+                                 "id":  "H609-2196524",
+                                 "name":  "Planck Potentiometer Transformer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-H609-2196524"
+                             },
+                             {
+                                 "id":  "I319-7938682",
+                                 "name":  "Phase Network Transistor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I319-7938682"
+                             },
+                             {
+                                 "id":  "I625-9097378",
+                                 "name":  "Coil Compensator",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-I625-9097378"
+                             },
+                             {
+                                 "id":  "K780-7736227",
+                                 "name":  "Driver Rheostat",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-K780-7736227"
+                             },
+                             {
+                                 "id":  "L557-1467804",
+                                 "name":  "Phase Resistor Transistor Strain",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L557-1467804"
+                             },
+                             {
+                                 "id":  "L592-1084147",
+                                 "name":  "Coil Potentiometer Compensator",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L592-1084147"
+                             },
+                             {
+                                 "id":  "L691-1489542",
+                                 "name":  "Phase Multiplexer Driver Capacitor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L691-1489542"
+                             },
+                             {
+                                 "id":  "L932-9433395",
+                                 "name":  "Dipole Inductor Crystal",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L932-9433395"
+                             },
+                             {
+                                 "id":  "L940-7353182",
+                                 "name":  "Resonator Warp",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-L940-7353182"
+                             },
+                             {
+                                 "id":  "M323-1526287",
+                                 "name":  "Encoder Meter",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M323-1526287"
+                             },
+                             {
+                                 "id":  "M645-5460777",
+                                 "name":  "Log-periodic Multiplexer Rheostat",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-M645-5460777"
+                             },
+                             {
+                                 "id":  "N105-3985051",
+                                 "name":  "Multiplexer Resistor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N105-3985051"
+                             },
+                             {
+                                 "id":  "N480-3487616",
+                                 "name":  "Resonator Transformer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N480-3487616"
+                             },
+                             {
+                                 "id":  "N733-1946687",
+                                 "name":  "LCD Encoder",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-N733-1946687"
+                             },
+                             {
+                                 "id":  "O494-6195301",
+                                 "name":  "Capacitor Strain Breaker",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O494-6195301"
+                             },
+                             {
+                                 "id":  "O906-8511345",
+                                 "name":  "Ceramic Inductor Transistor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-O906-8511345"
+                             },
+                             {
+                                 "id":  "P317-3419187",
+                                 "name":  "Network Breaker Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P317-3419187"
+                             },
+                             {
+                                 "id":  "P577-5587693",
+                                 "name":  "Network Dipole Memristor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-P577-5587693"
+                             },
+                             {
+                                 "id":  "R231-2442628",
+                                 "name":  "Transformer Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R231-2442628"
+                             },
+                             {
+                                 "id":  "R454-6248815",
+                                 "name":  "LCD Sensor Network",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R454-6248815"
+                             },
+                             {
+                                 "id":  "R774-2450170",
+                                 "name":  "Log-periodic Network Warp",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-R774-2450170"
+                             },
+                             {
+                                 "id":  "T147-7011803",
+                                 "name":  "Oscillator Transistor Capacitor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T147-7011803"
+                             },
+                             {
+                                 "id":  "T802-5361374",
+                                 "name":  "Gauge Breaker Switch",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T802-5361374"
+                             },
+                             {
+                                 "id":  "T812-6060686",
+                                 "name":  "Coil Gauge Strain",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T812-6060686"
+                             },
+                             {
+                                 "id":  "T941-8766844",
+                                 "name":  "Planck Inductor Gauge Resonator",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T941-8766844"
+                             },
+                             {
+                                 "id":  "T973-5442896",
+                                 "name":  "Sensor Driver Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-T973-5442896"
+                             },
+                             {
+                                 "id":  "U229-5087557",
+                                 "name":  "Log-periodic Sensor Inductor Transistor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U229-5087557"
+                             },
+                             {
+                                 "id":  "U333-8518360",
+                                 "name":  "Driver Switch Transducer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U333-8518360"
+                             },
+                             {
+                                 "id":  "U489-9025040",
+                                 "name":  "Compensator Warp",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-U489-9025040"
+                             },
+                             {
+                                 "id":  "W268-8954866",
+                                 "name":  "Gauge Warp",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W268-8954866"
+                             },
+                             {
+                                 "id":  "W295-9452529",
+                                 "name":  "Sensor Encoder",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-W295-9452529"
+                             },
+                             {
+                                 "id":  "X365-6429727",
+                                 "name":  "Coil Inductor Multiplexer",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X365-6429727"
+                             },
+                             {
+                                 "id":  "X408-2200602",
+                                 "name":  "Inductor Capacitor Meter",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X408-2200602"
+                             },
+                             {
+                                 "id":  "X620-7792033",
+                                 "name":  "Ceramic Resistor Rheostat",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-X620-7792033"
+                             },
+                             {
+                                 "id":  "Z358-9013730",
+                                 "name":  "Flow Potentiometer Transistor",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z358-9013730"
+                             },
+                             {
+                                 "id":  "Z768-8346288",
+                                 "name":  "Coil Sensor Network",
+                                 "hardware":  "http://ld.company.org/prod-instances/hw-Z768-8346288"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

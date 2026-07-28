@@ -1,0 +1,37 @@
+﻿{
+    "question":  "Which departments have employees with an area of expertise in Transducer?",
+    "question_id":  59,
+    "expected_classes":  [
+                             "Department",
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Department",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise",
+                                                                "memberOf"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise",
+                                                                "memberOf"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Transducer":  "http://ld.company.org/prod-instances/prod-cat-Transducer"
+                          },
+    "expected_results":  [
+                             {
+                                 "department":  "http://ld.company.org/prod-instances/dept-22183"
+                             },
+                             {
+                                 "department":  "http://ld.company.org/prod-instances/dept-85880"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

@@ -1,0 +1,65 @@
+{
+  "question": "For each manager, what percentage of their entire team work in the same department as the manager?",
+  "question_id": 41,
+  "expected_classes": [
+    "Manager",
+    "Agent",
+    "Department"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Manager",
+      "relevant_properties": [
+        "memberOf",
+        "name"
+      ]
+    },
+    {
+      "class_name": "Agent",
+      "relevant_properties": [
+        "name"
+      ]
+    },
+    {
+      "class_name": "Department",
+      "relevant_properties": [
+        "name"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Dietlinde Boehme",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Dietlinde.Boehme%40company.org"
+    },
+    {
+      "name": "Elena Herzog",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Elena.Herzog%40company.org"
+    },
+    {
+      "name": "Franz Kornhaeusel",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Franz.Kornhaeusel%40company.org"
+    },
+    {
+      "name": "Reiner Widmann",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Reiner.Widmann%40company.org"
+    },
+    {
+      "name": "Thomas Mueller",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Thomas.Mueller%40company.org"
+    },
+    {
+      "name": "Waldtraud Kuttner",
+      "pct": "100",
+      "department": "http://ld.company.org/prod-instances/empl-Waldtraud.Kuttner%40company.org"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

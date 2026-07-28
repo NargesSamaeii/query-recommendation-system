@@ -1,0 +1,31 @@
+{
+  "question": "How many suppliers can deliver alternative compatible products for the K367 Strain Encoder?",
+  "question_id": 49,
+  "expected_classes": [
+    "Product",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "compatibleProduct",
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "K367-1320550": "http://ld.company.org/prod-instances/hw-K367-1320550"
+  },
+  "expected_results": [
+    {
+      "result": "6"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

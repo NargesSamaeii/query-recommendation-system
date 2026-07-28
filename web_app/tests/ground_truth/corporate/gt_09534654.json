@@ -1,0 +1,43 @@
+﻿{
+    "question":  "What are the top three product categories based on the number of hardware items they include? Return the category IRI and the category name.",
+    "question_id":  80,
+    "expected_classes":  [
+                             "Hardware",
+                             "ProductCategory"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "hasCategory"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "hasCategory"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Compensator",
+                                 "hardware":  "http://ld.company.org/prod-instances/prod-cat-Compensator"
+                             },
+                             {
+                                 "name":  "Crystal",
+                                 "hardware":  "http://ld.company.org/prod-instances/prod-cat-Crystal"
+                             },
+                             {
+                                 "name":  "LCD",
+                                 "hardware":  "http://ld.company.org/prod-instances/prod-cat-LCD"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

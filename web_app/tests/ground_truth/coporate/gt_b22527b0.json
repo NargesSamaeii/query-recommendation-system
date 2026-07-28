@@ -1,0 +1,50 @@
+﻿{
+    "question":  "Who has area of expertise in Sensor?",
+    "question_id":  54,
+    "expected_classes":  [
+                             "Employee",
+                             "ProductCategory"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Sensor":  "http://ld.company.org/prod-instances/prod-cat-Sensor"
+                          },
+    "expected_results":  [
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Anamchara.Foerstner%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Arendt.Beitel%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Gretel.Roth%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Liese.Adam%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Lili.Geier%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Sylvester.Brant%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Xochitl.Aue%40company.org"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

@@ -1,0 +1,33 @@
+{
+  "question": "What is the heaviest coil that does not exceed a base area of 15x15 milimeter?",
+  "question_id": 21,
+  "expected_classes": [
+    "Product",
+    "ProductCategory"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "depth_mm",
+        "hasCategory",
+        "weight_g",
+        "width_mm"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "Coil": "http://ld.company.org/prod-instances/prod-cat-Coil"
+  },
+  "expected_results": [
+    {
+      "product": "http://ld.company.org/prod-instances/hw-N558-1730215"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

@@ -1,0 +1,45 @@
+{
+  "question": "What products are compatible with the U990 LCD Inductor?",
+  "question_id": 22,
+  "expected_classes": [
+    "Product",
+    "Hardware"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "compatibleProduct"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "U990-5234138": "http://ld.company.org/prod-instances/hw-U990-5234138"
+  },
+  "expected_results": [
+    {
+      "product": "http://ld.company.org/prod-instances/hw-A360-3041803"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-A509-5571891"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-F675-6890144"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-I264-7314323"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-J178-7002767"
+    },
+    {
+      "product": "http://ld.company.org/prod-instances/hw-S113-2439377"
+    }
+  ],
+  "key_field": "product",
+  "query_type": "SELECT"
+}

@@ -1,0 +1,31 @@
+﻿{
+    "question":  "Give me IRI, name, email, and phone number of all employees who do not manage anyone, sorted by name.",
+    "question_id":  71,
+    "expected_classes":  [
+                             "Employee"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "email",
+                                                                "phone",
+                                                                "hasManager"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Adolfina Hoch",
+                                 "email":  "Adolfina.Hoch@company.org",
+                                 "phone":  "+49-109-5719002",
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Adolfina.Hoch%40company.org"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

@@ -1,0 +1,46 @@
+{
+  "question": "What is the cheapest Encoder we can get from a french or german supplier?",
+  "question_id": 15,
+  "expected_classes": [
+    "Product",
+    "ProductCategory",
+    "Supplier",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasCategory",
+        "hasSupplier",
+        "price"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressCountry"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "Encoder": "http://ld.company.org/prod-instances/prod-cat-Encoder"
+  },
+  "expected_results": [
+    {
+      "supplier": "http://ld.company.org/prod-instances/hw-P453-8155326"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

@@ -1,0 +1,41 @@
+﻿{
+    "question":  "Who has area of expertise in Transistors?",
+    "question_id":  53,
+    "expected_classes":  [
+                             "Employee",
+                             "ProductCategory"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Employee",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "ProductCategory",
+                                    "relevant_properties":  [
+                                                                "areaOfExpertise"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "Transistor":  "http://ld.company.org/prod-instances/prod-cat-Transistor"
+                          },
+    "expected_results":  [
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Anamchara.Foerstner%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Erhard.Fried%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Lili.Geier%40company.org"
+                             },
+                             {
+                                 "employee":  "http://ld.company.org/prod-instances/empl-Manfred.Foth%40company.org"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

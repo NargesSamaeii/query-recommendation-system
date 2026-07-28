@@ -1,0 +1,46 @@
+{
+  "question": "What are the top 5 suppliers with best average reliability over their products.",
+  "question_id": 46,
+  "expected_classes": [
+    "Supplier",
+    "Product"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Supplier",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasSupplier",
+        "reliabilityIndex"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "averageReliabilityIndex": "0.962",
+      "supplier": "http://ld.company.org/prod-instances/suppl-2a51afd9-a3de-45ee-8ada-b74203fed37b"
+    },
+    {
+      "averageReliabilityIndex": "0.962",
+      "supplier": "http://ld.company.org/prod-instances/suppl-445081d6-305c-4fb7-b89e-82c86969d4bd"
+    },
+    {
+      "averageReliabilityIndex": "0.951",
+      "supplier": "http://ld.company.org/prod-instances/suppl-11f1284a-d6f0-4822-b716-3e70d1fb91df"
+    },
+    {
+      "averageReliabilityIndex": "0.945",
+      "supplier": "http://ld.company.org/prod-instances/suppl-888698ef-ad70-4022-9624-4dc111f56c01"
+    },
+    {
+      "averageReliabilityIndex": "0.942",
+      "supplier": "http://ld.company.org/prod-instances/suppl-4d849ba4-b932-4ffc-8b52-61a704dddf0b"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

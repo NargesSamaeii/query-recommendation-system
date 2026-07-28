@@ -1,0 +1,66 @@
+﻿{
+    "question":  "For each Bill of Material (BOM), return its IRI, the count of its BOM parts, and the sum of their quantities. Include only Bill of Materials where the total quantity exceeds 600, and order results by total quantity in descending order.",
+    "question_id":  81,
+    "expected_classes":  [
+                             "BillOfMaterial",
+                             "BomPart"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "BillOfMaterial",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "BomPart",
+                                    "relevant_properties":  [
+                                                                "hasBomPart",
+                                                                "quantity"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+                              "entity_1":  "http://ld.company.org/prod-instances/"
+                          },
+    "expected_results":  [
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/fdf637f51f26b96b",
+                                 "partCount":  "12",
+                                 "totalQty":  "731"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/a487cd20efacc327",
+                                 "partCount":  "11",
+                                 "totalQty":  "694"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/bbcb9c80da831d8d",
+                                 "partCount":  "12",
+                                 "totalQty":  "689"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/d23f97e120624170",
+                                 "partCount":  "15",
+                                 "totalQty":  "681"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/0c7e49b8ebfa8bf8",
+                                 "partCount":  "14",
+                                 "totalQty":  "664"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/ab15027869dfcde2",
+                                 "partCount":  "15",
+                                 "totalQty":  "647"
+                             },
+                             {
+                                 "bom":  "http://ld.company.org/prod-instances/9489100f88cc6e77",
+                                 "partCount":  "13",
+                                 "totalQty":  "610"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}

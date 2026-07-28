@@ -1,0 +1,64 @@
+{
+  "question": "From which countries are the BOM parts of our SkySync MechWave delivered?",
+  "question_id": 47,
+  "expected_classes": [
+    "BillOfMaterial",
+    "BomPart",
+    "Product",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "BillOfMaterial",
+      "relevant_properties": [
+        "hasBomPart"
+      ]
+    },
+    {
+      "class_name": "BomPart",
+      "relevant_properties": [
+        "hasPart"
+      ]
+    },
+    {
+      "class_name": "Product",
+      "relevant_properties": [
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "country"
+      ]
+    }
+  ],
+  "expected_entities": {
+    "BOM-17": "http://ld.company.org/prod-instances/bom-17"
+  },
+  "expected_results": [
+    {
+      "bom": "http://dbpedia.org/resource/Vietnam"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Slovakia"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Germany"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Finland"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Kingdom_of_the_Netherlands"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Belarus"
+    },
+    {
+      "bom": "http://dbpedia.org/resource/Tanzania"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

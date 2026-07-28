@@ -1,0 +1,200 @@
+{
+  "prefixes": {
+    "example": "http://example.org/"
+  },
+  "classes": {
+    "example:Art": {
+      "class_label": "Art",
+      "properties": [
+        {
+          "property_name": "example:artclassid",
+          "property_label": "Art Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Art has exactly 1 Art Class ID."
+        },
+        {
+          "property_name": "example:artname_it",
+          "property_label": "Art Name",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Art has at least 1 Art Name."
+        }
+      ]
+    },
+    "example:ArtCategory": {
+      "class_label": "Art Category",
+      "properties": [
+        {
+          "property_name": "example:artcatclassid",
+          "property_label": "Art Category Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Art Category has exactly 1 Art Category Class ID."
+        },
+        {
+          "property_name": "example:artcatname_it",
+          "property_label": "Art Category Name",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Art Category has at least 1 Art Category Name."
+        }
+      ]
+    },
+    "example:Event": {
+      "class_label": "Event",
+      "properties": [
+        {
+          "property_name": "example:eventclassid",
+          "property_label": "Event Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Event has exactly 1 Event Class ID."
+        },
+        {
+          "property_name": "example:eventname_it",
+          "property_label": "Event Name",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Event has at least 1 Event Name."
+        },
+        {
+          "property_name": "example:hostedat",
+          "property_label": "Hosted At",
+          "datatype": [
+            "example:Location"
+          ],
+          "min_count": 1,
+          "description": "Event has at least 1 Hosted At."
+        }
+      ]
+    },
+    "example:EventCategory": {
+      "class_label": "Event Category",
+      "properties": [
+        {
+          "property_name": "example:eventcatclassid",
+          "property_label": "Event Category Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Event Category has exactly 1 Event Category Class ID."
+        },
+        {
+          "property_name": "example:eventcatname_it",
+          "property_label": "Event Category Name",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Event Category has at least 1 Event Category Name."
+        }
+      ]
+    },
+    "example:Calendar": {
+      "class_label": "Calendar",
+      "properties": [
+        {
+          "property_name": "example:calendarclassid",
+          "property_label": "Calendar Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Calendar has exactly 1 Calendar Class ID."
+        },
+        {
+          "property_name": "example:day",
+          "property_label": "Day",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#date>"
+          ],
+          "min_count": 1,
+          "description": "Calendar has at least 1 Day."
+        },
+        {
+          "property_name": "example:start_time",
+          "property_label": "Start Time",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Calendar has typically one, but may vary Start Time."
+        },
+        {
+          "property_name": "example:end_time",
+          "property_label": "End Time",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "description": "Calendar has typically one, but may vary End Time."
+        }
+      ]
+    },
+    "example:Location": {
+      "class_label": "Location",
+      "properties": [
+        {
+          "property_name": "example:locationclassid",
+          "property_label": "Location Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Location has exactly 1 Location Class ID."
+        },
+        {
+          "property_name": "example:address",
+          "property_label": "Address",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Location has at least 1 Address."
+        }
+      ]
+    },
+    "example:Tour": {
+      "class_label": "Tour",
+      "properties": [
+        {
+          "property_name": "example:tourclassid",
+          "property_label": "Tour Class ID",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "description": "Tour has exactly 1 Tour Class ID."
+        },
+        {
+          "property_name": "example:tourname_it",
+          "property_label": "Tour Name",
+          "datatype": [
+            "<http://www.w3.org/2001/XMLSchema#string>"
+          ],
+          "min_count": 1,
+          "description": "Tour has at least 1 Tour Name."
+        }
+      ]
+    }
+  }
+}

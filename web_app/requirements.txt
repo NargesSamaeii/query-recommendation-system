@@ -1,0 +1,36 @@
+# NL2SPARQL Requirements
+
+# Core dependencies
+rdflib>=7.0.0
+SPARQLWrapper>=2.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# GUI (gui_v2.py)
+streamlit>=1.30.0
+pandas>=2.0.0
+
+# LLM providers
+google-generativeai>=0.3.0
+llama-cpp-python>=0.2.0
+openai>=1.0.0
+
+# Embedding models (for semantic similarity-based extraction)
+sentence-transformers>=2.2.0
+torch>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+rank-bm25>=0.2.2  # BM25 for hybrid search
+ijson>=3.2.3  # Streaming parser for very large schema files
+
+# Evaluation (set-based metrics)
+pytrec_eval>=0.5
+
+# Optional dependencies for enhanced features
+# langchain>=0.1.0
+# langchain-community>=0.0.1
+
+# Recommender API (recommender/api/) -- Phase 2, docs/THESIS_PROJECT_PLAN.md SS7
+fastapi>=0.110.0
+uvicorn>=0.29.0
+pydantic>=2.0.0

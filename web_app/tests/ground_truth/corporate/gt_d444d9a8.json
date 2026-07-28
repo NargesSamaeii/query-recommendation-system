@@ -1,0 +1,28 @@
+{
+  "question": "Are there departments with no manager assigned?",
+  "question_id": 33,
+  "expected_classes": [
+    "Department",
+    "Manager"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Department",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Manager",
+      "relevant_properties": [
+        "memberOf"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "result": "false"
+    }
+  ],
+  "key_field": null,
+  "query_type": "ASK"
+}

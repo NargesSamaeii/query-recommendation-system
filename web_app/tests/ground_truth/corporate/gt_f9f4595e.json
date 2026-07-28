@@ -1,0 +1,31 @@
+{
+  "question": "How many Sensor Switches do we offer?",
+  "question_id": 9,
+  "expected_classes": [
+    "Hardware",
+    "ProductCategory"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasCategory"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "Sensor": "http://ld.company.org/prod-instances/prod-cat-Sensor",
+    "Switch": "http://ld.company.org/prod-instances/prod-cat-Switch"
+  },
+  "expected_results": [
+    {
+      "result": "3"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

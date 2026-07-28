@@ -1,0 +1,303 @@
+{
+  "question": "Which supplier are available to deliver Compensators?",
+  "question_id": 12,
+  "expected_classes": [
+    "Hardware",
+    "ProductCategory",
+    "Supplier"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasCategory",
+        "hasSupplier"
+      ]
+    },
+    {
+      "class_name": "ProductCategory",
+      "relevant_properties": []
+    },
+    {
+      "class_name": "Supplier",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {
+    "Compensator": "http://ld.company.org/prod-instances/prod-cat-Compensator"
+  },
+  "expected_results": [
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-42a20063-bd30-49d3-8506-ceac4ceb2d9e"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-816202d7-9e53-402c-94a2-fb21b0e37c0e"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-2b70d47e-fa6a-4329-8112-22287096bc44"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a04a193e-3025-4ae3-aec0-4a464ccd95a9"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-8486f6f9-18fe-440e-b3ed-9be6cc7dbaeb"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-0817f6f5-8011-4c46-aeab-ba89def6df14"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-3a54413c-eb58-4ce0-a538-383fd9c79ba9"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-c39c750f-2398-4f5a-a389-2c200e84c45b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-aed0f6a6-37b1-4359-a136-cc011522ca85"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-8518fe84-b0e0-40c5-9a86-351b91eb3828"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-4d849ba4-b932-4ffc-8b52-61a704dddf0b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-cb74384a-d91a-4ce8-9266-44a578c2b505"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-3dc28ff8-fb6c-46fc-9fa6-5b12826cedc3"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-7608b763-1e52-4ad9-94b0-d574af19612c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-8943ee5e-5f73-4765-85cd-0c2c934f8877"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-22b9733f-4b49-4e82-82b9-d4f87d2b5916"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-dc1364ba-300b-4fcb-949a-4cd90afee69b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-b66c44e8-057e-4267-8a38-29324107705f"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-07335cfb-9bbc-4be5-b546-bdd8af104e7e"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-847abdb2-44de-41ba-a4ec-235dc4f4a617"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-93e3958e-3e49-4cb3-8ab2-2c2bae697be5"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-ce5caf26-49fb-4813-812b-4675c58b4164"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a35a7e67-e729-455a-9dbc-1bf661456179"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-d5b857ce-34b9-4bad-9018-216dbe06258c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-ac3591e8-16d9-4c35-a73e-7ee8466155c6"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-fdd83431-425f-4291-b8e4-f08805b6b89d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-29cf8eca-50be-460e-9816-5ae505fc9491"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-de70a51b-3263-411b-9820-d7c21676e4d6"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-47528cbf-c41b-4897-b917-6f4c1394fe1f"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-625a4b1a-07b2-4ed1-a197-cc5fd96d110e"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-ee3143c4-d3eb-4457-b884-651cac99ee9d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-23933f2a-5407-45d9-8bbb-ec36287a1425"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-cd24daf1-7f42-48a1-a2f2-74127303eaee"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-36060220-55ab-4726-9b30-30de76c56344"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a6367485-a91c-41dc-9e18-8939ef990b5b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f118463c-1952-4db0-b089-99dbd89ff9d9"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-1f275c2a-8e37-4032-a54e-86b99ec56351"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-9093f9c5-0f56-40d7-b129-c13135c46a14"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-88964aa2-4b9a-4427-8232-6c2ea65a851f"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-9bd9e5d6-1726-4bd6-8765-be37a59f5d93"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-dafc3247-7fb3-406b-976c-9e656e9a6b45"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-445081d6-305c-4fb7-b89e-82c86969d4bd"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-cba23738-b63d-4845-a168-1fd1fc6082aa"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-7478aeec-1a1e-4d96-95ff-05d5b3a5522b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-ea372457-5016-4c1d-a8fc-9d84d6a1138d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-6b6e148d-449f-4e88-808d-cdf9cdc9bba3"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-266084c2-dcbc-406b-8371-9adcbc81521a"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f78ea3cf-fe86-4b17-ba41-96dd934e043e"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-b7f007d8-137c-4d3f-9ceb-03326f71a6c9"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a167cc0e-4bd5-4831-b9e7-8fef7705d61b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-95881d4c-8788-46b1-948f-8b359464556d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-9a27c6be-84c6-4fe8-a671-d9d6a5ec7f6a"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-1ee8f22a-1460-4875-b1a8-89d7cb2607d6"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-d541c0b3-1e4b-4521-9f57-d5be820d4cbc"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-bf300186-9235-481d-be21-15c8e216dcf1"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-169db3fc-b253-465a-ba91-33f3617a9313"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-518d3d05-716c-483f-9ed0-03c4e81e683c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f8337d39-2d97-423a-9f94-35a45ee9ade6"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-3f49ac31-7bb0-4a52-8798-548b5cdb9451"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f76eb805-4d84-4b4b-9aa3-95c287be41d0"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-fbc53ab7-1c1e-41c8-afe2-44b405858cda"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-c7727eb2-7951-47e3-9021-df78e52c2d35"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-78ecdd96-9fd7-46ca-9174-f4170ce51eff"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-3a9702b1-ea92-4fd3-871c-9108ef23921b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-84101fbf-6743-43d4-ba46-a35b6a4456ee"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-06d152e4-f062-46da-b6be-750b192a5a4b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-12566cfa-500d-4e07-8117-e0bf16d7fb8c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-29fa5aeb-0830-4490-abed-20aaed11e786"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f2db56ae-0856-4a72-a5a1-497f97e728e5"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-63168792-6134-48e8-a709-8e3cc0d5811c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-e9e1b979-df68-4c17-99a4-64dfee7f1926"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-671512dd-f11c-41c7-845d-1a00ae9f40c4"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-e39aa402-6c12-4c0e-a638-c572784d0e78"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-06034b22-8e1b-435f-902e-88739f77d86a"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-d66c8d06-9bac-4663-94a5-ef971423f2ce"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a8d712db-e0d5-45ab-a8cc-c752ad53f8e6"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-183cf105-b1a6-42ee-b8a9-002709f1b582"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-ae3e7157-5d50-464c-9b47-e14e1b30ce4c"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-f9bfd642-7152-407c-8158-d53fbc55f45b"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-a29b2c3f-4db3-4f4d-a947-5f512d615a1d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-40a29030-eccd-43f8-974b-ef788e2d3f00"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-9fdd4db4-fed8-4e24-ba3c-8bbe6c499ec7"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-2a78338a-084a-4595-88ec-98f141e653f7"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-89dbd72a-3118-4fdf-bdf4-671c351a4b66"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-034022f5-5327-45c2-aaff-524b1be2fbd5"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-e157b0e5-1085-4999-83a0-02a46d7a8994"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-d615c5f3-9db3-4bea-bbf3-0d42edf45c2d"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-bdd38a8e-1976-4f90-ad0b-fb5e7932fd03"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-57f3326a-e53b-4cb6-9b32-658df4cc11a4"
+    },
+    {
+      "supplier": "http://ld.company.org/prod-instances/suppl-13dabe70-36c5-4a87-bc13-15664eda25a9"
+    }
+  ],
+  "key_field": "supplier",
+  "query_type": "SELECT"
+}

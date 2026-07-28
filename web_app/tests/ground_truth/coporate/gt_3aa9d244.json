@@ -1,0 +1,36 @@
+{
+  "question": "Who is responsible for the most expensive service we offer?",
+  "question_id": 20,
+  "expected_classes": [
+    "Service",
+    "Price",
+    "Employee"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Service",
+      "relevant_properties": [
+        "hasProductManager",
+        "price"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount"
+      ]
+    },
+    {
+      "class_name": "Employee",
+      "relevant_properties": []
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "service": "http://ld.company.org/prod-instances/empl-Ida.Halle%40company.org"
+    }
+  ],
+  "key_field": null,
+  "query_type": "SELECT"
+}

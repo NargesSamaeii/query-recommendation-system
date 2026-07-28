@@ -1,0 +1,1296 @@
+{
+  "prefixes": {
+    "ecce": "https://ns.eccenca.com/",
+    "ns": "http://creativecommons.org/ns#",
+    "prod_inst": "http://ld.company.org/prod-instances/",
+    "ontology": "http://dbpedia.org/ontology/",
+    "prod_vocab": "http://ld.company.org/prod-vocab/",
+    "resource": "http://dbpedia.org/resource/",
+    "terms": "http://purl.org/dc/terms/",
+    "ns_0_1": "http://xmlns.com/foaf/0.1/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf_schema": "http://www.w3.org/2000/01/rdf-schema#",
+    "creativecommons": "http://creativecommons.org/",
+    "gis": "https://api.iconify.design/gis/",
+    "material_symbols_light": "https://api.iconify.design/material-symbols-light/",
+    "mdi": "https://api.iconify.design/mdi/",
+    "void": "http://rdfs.org/ns/void#",
+    "api": "https://api.iconify.design/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ns_4_0": "http://creativecommons.org/licenses/by/4.0/",
+    "vann": "http://purl.org/vocab/vann/",
+    "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  },
+  "classes": {
+    "terms:Agent": {
+      "class_label": "Agent",
+      "class_examples": [
+        "ecce:eccenca-GmbH"
+      ],
+      "properties": [
+        {
+          "property_name": "ns_0_1:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "eccenca GmbH"
+          ],
+          "description": "Agent has at most 1 name."
+        }
+      ]
+    },
+    "owl:AnnotationProperty": {
+      "class_label": "AnnotationProperty",
+      "class_examples": [
+        "ns:license"
+      ],
+      "properties": [
+        {
+          "property_name": "rdf_schema:isDefinedBy",
+          "property_label": "isDefinedBy",
+          "examples": [
+            "creativecommons:ns"
+          ],
+          "description": "AnnotationProperty has typically one, but may vary isDefinedBy."
+        }
+      ]
+    },
+    "prod_vocab:BillOfMaterial": {
+      "class_label": "BillOfMaterial",
+      "class_examples": [
+        "prod_inst:bom-1 - ElectroMech ProDrive",
+        "prod_inst:bom-19 - MechaScape IonDrive",
+        "prod_inst:bom-5 - ElectraWing Nimbus",
+        "prod_inst:bom-6 - MechaVolt Surge",
+        "prod_inst:bom-8 - MotoSync QuantumWave"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:hasBomPart",
+          "property_label": "hasBomPart",
+          "datatype": [
+            "prod_vocab:BomPart"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:bom-part-2-P323-7286189 - P323-7286189 (7)",
+            "prod_inst:bom-part-20-O787-2734023 - O787-2734023 (92)",
+            "prod_inst:bom-part-4-L557-1467804 - L557-1467804 (31)",
+            "prod_inst:bom-part-6-R725-9753976 - R725-9753976 (9)",
+            "prod_inst:bom-part-7-D599-6113892 - D599-6113892 (62)"
+          ],
+          "description": "BillOfMaterial has at most 1 hasBomPart."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "ElectroMech ProDrive",
+            "MechaScape IonDrive",
+            "MechaVolt Surge",
+            "Mechtron SynthWave",
+            "NexaCore Integrator"
+          ],
+          "description": "BillOfMaterial has at most 1 name."
+        }
+      ]
+    },
+    "prod_vocab:BomPart": {
+      "class_label": "BomPart",
+      "class_examples": [
+        "prod_inst:bom-part-10-K367-1320550 - K367-1320550 (26)",
+        "prod_inst:bom-part-10-M662-6209836 - M662-6209836 (23)",
+        "prod_inst:bom-part-10-W986-7950553 - W986-7950553 (10)",
+        "prod_inst:bom-part-12-X365-6429727 - X365-6429727 (11)",
+        "prod_inst:bom-part-7-L536-5185541 - L536-5185541 (19)"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:hasPart",
+          "property_label": "hasPart",
+          "examples": [
+            "prod_inst:hw-B646-2108570 - B646-2108570 - Dipole Transducer",
+            "prod_inst:hw-K367-1320550 - K367-1320550 - Strain Encoder",
+            "prod_inst:hw-N881-4812973 - N881-4812973 - Meter",
+            "prod_inst:hw-W986-7950553 - W986-7950553 - Field-effect Memristor Resonator Compensator",
+            "prod_inst:hw-X716-6172862 - X716-6172862 - Coil Resonator"
+          ],
+          "description": "BomPart has typically one, but may vary hasPart."
+        },
+        {
+          "property_name": "prod_vocab:quantity",
+          "property_label": "quantity",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "11",
+            "17",
+            "23",
+            "26",
+            "90"
+          ],
+          "description": "BomPart has at most 1 quantity."
+        }
+      ]
+    },
+    "owl:Class": {
+      "class_label": "Class",
+      "class_examples": [
+        "ontology:Country - Country",
+        "prod_vocab:ProductCategory - Product Category",
+        "prod_vocab:Service - Service",
+        "prod_vocab:Supplier - Supplier"
+      ],
+      "properties": [
+        {
+          "property_name": "rdf_schema:comment",
+          "property_label": "comment",
+          "datatype": [
+            "<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Some value added service realized based on other product(s).",
+            "The Supplier of some item(s).",
+            "The category of a product."
+          ],
+          "description": "Class has at most 1 comment."
+        },
+        {
+          "property_name": "ns_0_1:depiction",
+          "property_label": "depiction",
+          "examples": [
+            "gis:search-country.svg?color=%23D6AF00&format=svg",
+            "material_symbols_light:category-outline.svg?color=%23D6AF00&format=svg",
+            "mdi:account-service-outline.svg?color=%23D6AF00&format=svg",
+            "mdi:company.svg?color=%23D6AF00&format=svg"
+          ],
+          "description": "Class has typically one, but may vary depiction."
+        },
+        {
+          "property_name": "rdf_schema:isDefinedBy",
+          "property_label": "isDefinedBy",
+          "datatype": [
+            "owl:Ontology"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_vocab: - pv: Products - Vocab"
+          ],
+          "description": "Class has at most 1 isDefinedBy."
+        },
+        {
+          "property_name": "rdf_schema:subClassOf",
+          "property_label": "subClassOf",
+          "examples": [
+            "prod_vocab:Product - Product"
+          ],
+          "description": "Class has typically one, but may vary subClassOf."
+        }
+      ]
+    },
+    "ontology:Country": {
+      "class_label": "Country",
+      "class_examples": [
+        "resource:Cambodia - Cambodia",
+        "resource:Central_African_Republic - Central African Republic",
+        "resource:China - China",
+        "resource:Colombia - Colombia",
+        "resource:Egypt - Egypt"
+      ]
+    },
+    "void:Dataset": {
+      "class_label": "Dataset",
+      "class_examples": [
+        "prod_inst: - Products - Integration"
+      ]
+    },
+    "owl:DatatypeProperty": {
+      "class_label": "DatatypeProperty",
+      "class_examples": [
+        "prod_vocab:addressCountry - address country",
+        "prod_vocab:name - name",
+        "prod_vocab:phone - phone number",
+        "prod_vocab:reliabilityIndex - has reliability index",
+        "prod_vocab:width_mm - width (mm)"
+      ],
+      "properties": [
+        {
+          "property_name": "rdf_schema:comment",
+          "property_label": "comment",
+          "datatype": [
+            "<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "A computed KPI to have an reliablity indicator in the context of a supply chain.",
+            "A phone number.",
+            "The name of something.",
+            "The weight of an item measured in grams.",
+            "The width of an item measured in millimeter."
+          ],
+          "description": "DatatypeProperty has at most 1 comment."
+        },
+        {
+          "property_name": "ns_0_1:depiction",
+          "property_label": "depiction",
+          "examples": [
+            "api:carbon:property-relationship.svg?color=%2339AB4B&format=svg"
+          ],
+          "description": "DatatypeProperty has typically one, but may vary depiction."
+        },
+        {
+          "property_name": "rdf_schema:domain",
+          "property_label": "domain",
+          "examples": [
+            "prod_vocab:Agent - Agent",
+            "prod_vocab:BomPart - BOM Part",
+            "prod_vocab:Hardware - Hardware"
+          ],
+          "description": "DatatypeProperty has typically one, but may vary domain."
+        },
+        {
+          "property_name": "rdf_schema:isDefinedBy",
+          "property_label": "isDefinedBy",
+          "datatype": [
+            "owl:Ontology"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_vocab: - pv: Products - Vocab"
+          ],
+          "description": "DatatypeProperty has at most 1 isDefinedBy."
+        },
+        {
+          "property_name": "rdf_schema:range",
+          "property_label": "range",
+          "examples": [
+            "xsd:decimal",
+            "xsd:string"
+          ],
+          "description": "DatatypeProperty has typically one, but may vary range."
+        }
+      ]
+    },
+    "prod_vocab:Department": {
+      "class_label": "Department",
+      "class_examples": [
+        "prod_inst:dept-22183 - Product Management"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:id",
+          "property_label": "id",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "22183"
+          ],
+          "description": "Department has at most 1 id."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Product Management"
+          ],
+          "description": "Department has at most 1 name."
+        },
+        {
+          "property_name": "prod_vocab:responsibleFor",
+          "property_label": "responsible for",
+                    "datatype": [
+            "prod_vocab:Hardware"
+          ],
+          "examples": [
+            "prod_inst:hw-L128-5499058 - L128-5499058 - Field-effect Multiplexer Potentiometer",
+            "prod_inst:hw-L316-4863597 - L316-4863597 - Potentiometer Inductor",
+            "prod_inst:hw-O857-5463957 - O857-5463957 - Transistor Compensator",
+            "prod_inst:hw-T291-4144066 - T291-4144066 - LCD Gauge Warp",
+            "prod_inst:hw-W501-5990901 - W501-5990901 - Film Memristor Resonator Compensator"
+          ],
+          "description": "Department has typically one, but may vary responsible for"
+        }
+      ]
+    },
+    "prod_vocab:Employee": {
+      "class_label": "Employee",
+      "class_examples": [
+        "prod_inst:empl-Emil.Gotti%40company.org - Emil Gotti",
+        "prod_inst:empl-Frauke.Faerber%40company.org - Frauke Faerber",
+        "prod_inst:empl-Gretel.Roth%40company.org - Gretel Roth",
+        "prod_inst:empl-Heinrich.Hoch%40company.org - Heinrich Hoch",
+        "prod_inst:empl-Henny.Foth%40company.org - Henny Foth"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:addressText",
+          "property_label": "addressText",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Berliner Straße 428, 50920 Tann",
+            "Hohe Straße 288, 09116 Hofheim",
+            "Holstenwall 430, 31356 Gießen",
+            "Kaiserhofstraße 484, 13104 Wittenburg",
+            "Motzstraße 26, 13611 Gartz"
+          ],
+          "description": "Employee has at most 1 addressText."
+        },
+        {
+          "property_name": "prod_vocab:areaOfExpertise",
+          "property_label": "area of expertise",
+          "datatype": [
+            "prod_vocab:ProductCategory"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:prod-cat-Breaker - Breaker",
+            "prod_inst:prod-cat-Gauge - Gauge",
+            "prod_inst:prod-cat-Memristor - Memristor",
+            "prod_inst:prod-cat-Meter - Meter",
+            "prod_inst:prod-cat-Sensor - Sensor"
+          ],
+          "description": "Employee has at most 1 area of expertise."
+        },
+        {
+          "property_name": "prod_vocab:email",
+          "property_label": "email",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Emil.Gotti@company.org",
+            "Franziska.Acker@company.org",
+            "Gretel.Roth@company.org",
+            "Henny.Foth@company.org",
+            "Herr.Burgh.Eichel@company.org"
+          ],
+          "description": "Employee has at most 1 email."
+        },
+        {
+          "property_name": "prod_vocab:hasManager",
+          "property_label": "hasManager",
+          "datatype": [
+            "prod_vocab:Manager"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:empl-Dietlinde.Boehme%40company.org - Dietlinde Boehme",
+            "prod_inst:empl-Elena.Herzog%40company.org - Elena Herzog",
+            "prod_inst:empl-Franz.Kornhaeusel%40company.org - Franz Kornhaeusel",
+            "prod_inst:empl-Waldtraud.Kuttner%40company.org - Waldtraud Kuttner"
+          ],
+          "description": "Employee has at most 1 hasManager."
+        },
+        {
+          "property_name": "prod_vocab:memberOf",
+          "property_label": "member of",
+          "datatype": [
+            "prod_vocab:Department"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:dept-22183 - Product Management",
+            "prod_inst:dept-41622 - Data Services",
+            "prod_inst:dept-84279 - Procurement",
+            "prod_inst:dept-85880 - Marketing"
+          ],
+          "description": "Employee has at most 1 member of."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Elisabeth Harman",
+            "Emil Gotti",
+            "Erhard Fried",
+            "Heinrich Hoch",
+            "Herr Burgh Eichel"
+          ],
+          "description": "Employee has at most 1 name."
+        },
+        {
+          "property_name": "prod_vocab:phone",
+          "property_label": "phone number",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "(0101) 854043584",
+            "(0686) 108701699",
+            "+49-109-5719002",
+            "+49-4446-26033173",
+            "+49-9456-94517553"
+          ],
+          "description": "Employee has at most 1 phone number."
+        }
+      ]
+    },
+    "prod_vocab:Hardware": {
+      "class_label": "Hardware",
+      "class_examples": [
+        "prod_inst:hw-A509-5571891 - A509-5571891 - Multiplexer Inductor",
+        "prod_inst:hw-A548-4778785 - A548-4778785 - Coil Potentiometer Dipole",
+        "prod_inst:hw-A560-7347187 - A560-7347187 - Oscillator Driver",
+        "prod_inst:hw-A566-1562523 - A566-1562523 - Planck Dipole Sensor Warp",
+        "prod_inst:hw-B387-9270009 - B387-9270009 - Film Inductor Warp"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:compatibleProduct",
+          "property_label": "compatibleProduct",
+          "examples": [
+            "prod_inst:hw-A360-3041803 - A360-3041803 - Inductor Transformer Warp",
+            "prod_inst:hw-F675-6890144 - F675-6890144 - Resistor Inductor Strain",
+            "prod_inst:hw-I264-7314323 - I264-7314323 - Film Inductor Memristor",
+            "prod_inst:hw-U990-5234138 - U990-5234138 - LCD Inductor",
+            "prod_inst:hw-X204-1803083 - X204-1803083 - Crystal Strain Compensator"
+          ],
+          "description": "Hardware has typically one, but may vary compatibleProduct."
+        },
+        {
+          "property_name": "prod_vocab:depth_mm",
+          "property_label": "depth_mm",
+          "datatype": [
+            "xsd:integer"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "11",
+            "15",
+            "16",
+            "18",
+            "20"
+          ],
+          "description": "Hardware has at most 1 depth_mm."
+        },
+        {
+          "property_name": "prod_vocab:hasCategory",
+          "property_label": "hasCategory",
+          "datatype": [
+            "prod_vocab:ProductCategory"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:prod-cat-Crystal - Crystal",
+            "prod_inst:prod-cat-Inductor - Inductor",
+            "prod_inst:prod-cat-Multiplexer - Multiplexer",
+            "prod_inst:prod-cat-Sensor - Sensor",
+            "prod_inst:prod-cat-Warp - Warp"
+          ],
+          "description": "Hardware has at most 1 hasCategory."
+        },
+        {
+          "property_name": "prod_vocab:hasProductManager",
+          "property_label": "hasProductManager",
+          "datatype": [
+            "prod_vocab:Employee"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:empl-Arnelle.Gerber%40company.org - Arnelle Gerber",
+            "prod_inst:empl-Bert.Blumstein%40company.org - Bert Blumstein",
+            "prod_inst:empl-Frauke.Faerber%40company.org - Frauke Faerber",
+            "prod_inst:empl-Kevin.Feigenbaum%40company.org - Kevin Feigenbaum",
+            "prod_inst:empl-Ratt.Hartmann%40company.org - Ratt Hartmann"
+          ],
+          "description": "Hardware has at most 1 hasProductManager."
+        },
+        {
+          "property_name": "prod_vocab:hasSupplier",
+          "property_label": "hasSupplier",
+          "datatype": [
+            "prod_vocab:Supplier"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:suppl-33da751a-1358-4530-b0e5-e3b9a509e952 - Brown, Jackson and Simpson (Tuvalu)",
+            "prod_inst:suppl-42a20063-bd30-49d3-8506-ceac4ceb2d9e - Davis-Wagner (Spain)",
+            "prod_inst:suppl-47528cbf-c41b-4897-b917-6f4c1394fe1f - Moran, Martin and Freeman (United States)",
+            "prod_inst:suppl-c39c750f-2398-4f5a-a389-2c200e84c45b - Wilson, Kim and Dorsey (Brazil)",
+            "prod_inst:suppl-ea372457-5016-4c1d-a8fc-9d84d6a1138d - Rivera Group (Philippines)"
+          ],
+          "description": "Hardware has at most 1 supplier."
+        },
+        {
+          "property_name": "prod_vocab:height_mm",
+          "property_label": "height_mm",
+          "datatype": [
+            "xsd:integer"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "27",
+            "38",
+            "43",
+            "45",
+            "64"
+          ],
+          "description": "Hardware has at most 1 height_mm."
+        },
+        {
+          "property_name": "prod_vocab:id",
+          "property_label": "id",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "A529-2906246",
+            "A560-7347187",
+            "A607-3251492",
+            "A617-7075018",
+            "B387-9270009"
+          ],
+          "description": "Hardware has at most 1 id."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Bipolar-junction Coil Compensator Transducer",
+            "Film Inductor Warp",
+            "Multiplexer Inductor",
+            "Sensor Crystal",
+            "Sensor Driver Capacitor"
+          ],
+          "description": "Hardware has at most 1 name."
+        },
+        {
+          "property_name": "prod_vocab:price",
+          "property_label": "price",
+          "datatype": [
+            "prod_vocab:Price"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:price-hw-A509-5571891-EUR - 0,49 EUR",
+            "prod_inst:price-hw-A529-2906246-EUR - 2,47 EUR",
+            "prod_inst:price-hw-A566-1562523-EUR - 2,83 EUR",
+            "prod_inst:price-hw-A607-3251492-EUR - 2,79 EUR",
+            "prod_inst:price-hw-B387-9270009-EUR - 4,67 EUR"
+          ],
+          "description": "Hardware has at most 1 price."
+        },
+        {
+          "property_name": "prod_vocab:reliabilityIndex",
+          "property_label": "has reliability index",
+          "datatype": [
+            "xsd:decimal"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "0.633",
+            "0.699",
+            "0.754",
+            "0.842",
+            "0.921"
+          ],
+          "description": "Hardware has at most 1 has reliability index."
+        },
+        {
+          "property_name": "prod_vocab:weight_g",
+          "property_label": "weight_g",
+          "datatype": [
+            "xsd:integer"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "14",
+            "16",
+            "19",
+            "20",
+            "7"
+          ],
+          "description": "Hardware has at most 1 weight_g."
+        },
+        {
+          "property_name": "prod_vocab:width_mm",
+          "property_label": "width (mm)",
+          "datatype": [
+            "xsd:integer"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "22",
+            "34",
+            "51",
+            "57",
+            "77"
+          ],
+          "description": "Hardware has at most 1 width (mm)."
+        }
+      ]
+    },
+    "prod_vocab:Manager": {
+      "class_label": "Manager",
+      "class_examples": [
+        "prod_inst:empl-Dietlinde.Boehme%40company.org - Dietlinde Boehme"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:addressText",
+          "property_label": "addressText",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Biebricher Allee 880, 65826 Neukalen"
+          ],
+          "description": "Manager has at most 1 addressText."
+        },
+        {
+          "property_name": "prod_vocab:email",
+          "property_label": "email",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Dietlinde.Boehme@company.org"
+          ],
+          "description": "Manager has at most 1 email."
+        },
+        {
+          "property_name": "prod_vocab:memberOf",
+          "property_label": "member of",
+                    "datatype": [
+            "prod_vocab:Department"
+          ],
+          "examples": [
+            "prod_inst:dept-85880 - Marketing"
+          ],
+          "description": "Manager has typically one, but may vary member of."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Dietlinde Boehme"
+          ],
+          "description": "Manager has at most 1 name."
+        },
+        {
+          "property_name": "prod_vocab:phone",
+          "property_label": "phone number",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "(06582) 6550636"
+          ],
+          "description": "Manager has at most 1 phone number."
+        }
+      ]
+    },
+    "owl:ObjectProperty": {
+      "class_label": "ObjectProperty",
+      "class_examples": [
+        "prod_vocab:areaOfExpertise - area of expertise",
+        "prod_vocab:hasSupplier - supplier",
+        "prod_vocab:memberOf - member of",
+        "prod_vocab:price - price",
+        "prod_vocab:responsibleFor - responsible for"
+      ],
+      "properties": [
+        {
+          "property_name": "rdf_schema:comment",
+          "property_label": "comment",
+          "datatype": [
+            "<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "The department to which an agents belongs.",
+            "The price specification of a product.",
+            "The product category agent is expert for.",
+            "The product for which a department is responsible.",
+            "The supplier of a product."
+          ],
+          "description": "ObjectProperty has at most 1 comment."
+        },
+        {
+          "property_name": "ns_0_1:depiction",
+          "property_label": "depiction",
+          "examples": [
+            "api:carbon:property-relationship.svg?color=%230085C6&format=svg"
+          ],
+          "description": "ObjectProperty has typically one, but may vary depiction."
+        },
+        {
+          "property_name": "rdf_schema:domain",
+          "property_label": "domain",
+          "examples": [
+            "prod_vocab:Agent - Agent",
+            "prod_vocab:Department - Department",
+            "prod_vocab:Product - Product"
+          ],
+          "description": "ObjectProperty has typically one, but may vary domain."
+        },
+        {
+          "property_name": "rdf_schema:isDefinedBy",
+          "property_label": "isDefinedBy",
+          "datatype": [
+            "owl:Ontology"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_vocab: - pv: Products - Vocab"
+          ],
+          "description": "ObjectProperty has at most 1 isDefinedBy."
+        },
+        {
+          "property_name": "rdf_schema:range",
+          "property_label": "range",
+          "datatype": [
+            "owl:Class"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_vocab:Department - Department",
+            "prod_vocab:Price - Price",
+            "prod_vocab:Product - Product",
+            "prod_vocab:ProductCategory - Product Category",
+            "prod_vocab:Supplier - Supplier"
+          ],
+          "description": "ObjectProperty has at most 1 range."
+        }
+      ]
+    },
+    "owl:Ontology": {
+      "class_label": "Ontology",
+      "class_examples": [
+        "prod_vocab: - pv: Products - Vocab"
+      ],
+      "properties": [
+        {
+          "property_name": "rdf_schema:comment",
+          "property_label": "comment",
+          "datatype": [
+            "<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Example vocabulary modeled from a simple sentence about products and services."
+          ],
+          "description": "Ontology has exactly 1 comment."
+        },
+        {
+          "property_name": "terms:contributor",
+          "property_label": "contributor",
+          "examples": [
+            "ecce:stramp - Sebastian Tramp"
+          ],
+          "description": "Ontology has typically one, but may vary contributor."
+        },
+        {
+          "property_name": "terms:created",
+          "property_label": "created",
+          "datatype": [
+            "xsd:date"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "2018-08-29"
+          ],
+          "description": "Ontology has exactly 1 created."
+        },
+        {
+          "property_name": "terms:creator",
+          "property_label": "creator",
+          "datatype": [
+            "ns_0_1:Person"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "ecce:rpietzsch - René Pietzsch"
+          ],
+          "description": "Ontology has exactly 1 creator."
+        },
+        {
+          "property_name": "rdf_schema:isDefinedBy",
+          "property_label": "isDefinedBy",
+          "datatype": [
+            "owl:Ontology"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_vocab: - pv: Products - Vocab"
+          ],
+          "description": "Ontology has exactly 1 isDefinedBy."
+        },
+        {
+          "property_name": "ns:license",
+          "property_label": "license",
+          "examples": [
+            "creativecommons:licenses/by/4.0/ - Creative Commons Attribution 4.0 International"
+          ],
+          "description": "Ontology has typically one, but may vary license."
+        },
+        {
+          "property_name": "terms:modified",
+          "property_label": "modified",
+          "datatype": [
+            "xsd:date"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "2018-08-29"
+          ],
+          "description": "Ontology has exactly 1 modified."
+        },
+        {
+          "property_name": "vann:preferredNamespacePrefix",
+          "property_label": "preferredNamespacePrefix",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "pv"
+          ],
+          "description": "Ontology has exactly 1 preferredNamespacePrefix."
+        },
+        {
+          "property_name": "vann:preferredNamespaceUri",
+          "property_label": "preferredNamespaceUri",
+          "examples": [
+            "\"http://ld.company.org/prod-vocab/\" - (pv: Products - Vocab)"
+          ],
+          "description": "Ontology has typically one, but may vary preferredNamespaceUri."
+        },
+        {
+          "property_name": "terms:publisher",
+          "property_label": "publisher",
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "or_classes": [
+            "terms:Agent",
+            "ns_0_1:Organization"
+          ],
+          "examples": [
+            "ecce:eccenca-GmbH"
+          ],
+          "description": "Ontology has at least 1 publisher."
+        },
+        {
+          "property_name": "owl:versionInfo",
+          "property_label": "versionInfo",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "v0.0.1-37-g15bd45c-dirty"
+          ],
+          "description": "Ontology has exactly 1 versionInfo."
+        },
+        {
+          "property_name": "void:vocabulary",
+          "property_label": "vocabulary",
+          "examples": [
+            "vann:",
+            "ns_0_1:"
+          ],
+          "description": "Ontology has typically one, but may vary vocabulary."
+        }
+      ]
+    },
+    "ns_0_1:Organization": {
+      "class_label": "Organization",
+      "class_examples": [
+        "ecce:eccenca-GmbH"
+      ],
+      "properties": [
+        {
+          "property_name": "ns_0_1:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "min_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "eccenca GmbH"
+          ],
+          "description": "Organization has exactly 1 name."
+        }
+      ]
+    },
+    "ns_0_1:Person": {
+      "class_label": "Person",
+      "class_examples": [
+        "ecce:rpietzsch - René Pietzsch"
+      ]
+    },
+    "prod_vocab:Price": {
+      "class_label": "Price",
+      "class_examples": [
+        "prod_inst:price-hw-A509-5571891-EUR - 0,49 EUR",
+        "prod_inst:price-hw-A560-7347187-EUR - 0,52 EUR",
+        "prod_inst:price-hw-A595-2446575-EUR - 3,67 EUR",
+        "prod_inst:price-hw-A617-7075018-EUR - 1,40 EUR",
+        "prod_inst:price-hw-G556-4971578-EUR - 5,84 EUR"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:amount",
+          "property_label": "amount",
+          "datatype": [
+            "xsd:decimal"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "0.49",
+            "0.52",
+            "2.79",
+            "3.67",
+            "5.84"
+          ],
+          "description": "Price has at most 1 amount."
+        },
+        {
+          "property_name": "prod_vocab:currency",
+          "property_label": "currency",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "EUR"
+          ],
+          "description": "Price has at most 1 currency."
+        }
+      ]
+    },
+    "prod_vocab:ProductCategory": {
+      "class_label": "Product Category",
+      "class_examples": [
+        "prod_inst:prod-cat-Meter - Meter",
+        "prod_inst:prod-cat-Oscillator - Oscillator",
+        "prod_inst:prod-cat-Potentiometer - Potentiometer",
+        "prod_inst:prod-cat-Resistor - Resistor",
+        "prod_inst:prod-cat-Resonator - Resonator"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Breaker",
+            "Memristor",
+            "Oscillator",
+            "Resistor",
+            "Rheostat"
+          ],
+          "description": "Product Category has at most 1 name."
+        }
+      ]
+    },
+    "prod_vocab:Service": {
+      "class_label": "Service",
+      "class_examples": [
+        "prod_inst:srv-D215-3449390 - D215-3449390 - Manual Inspection"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:eligibleFor",
+          "property_label": "eligibleFor",
+          "datatype": [
+            "prod_vocab:Hardware"
+          ],
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "prod_inst:hw-E395-9906117 - E395-9906117 - Flow Inductor Crystal Encoder",
+            "prod_inst:hw-I503-2217600 - I503-2217600 - Aluminum Dipole Breaker",
+            "prod_inst:hw-J653-7148856 - J653-7148856 - Coil Transducer Warp",
+            "prod_inst:hw-M449-5231838 - M449-5231838 - Transistor Crystal",
+            "prod_inst:hw-P360-3765415 - P360-3765415 - LCD Dipole"
+          ],
+          "description": "Service has typically one, but may vary eligibleFor."
+        },
+        {
+          "property_name": "prod_vocab:hasProductManager",
+          "property_label": "hasProductManager",
+          "examples": [
+            "prod_inst:empl-Ida.Halle%40company.org - Ida Halle"
+          ],
+          "description": "Service has typically one, but may vary hasProductManager."
+        },
+        {
+          "property_name": "prod_vocab:id",
+          "property_label": "id",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "D215-3449390"
+          ],
+          "description": "Service has at most 1 id."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Manual Inspection"
+          ],
+          "description": "Service has at most 1 name."
+        },
+        {
+          "property_name": "prod_vocab:price",
+          "property_label": "price",
+          "examples": [
+            "prod_inst:price-srv-D215-3449390-EUR - 1709,54 EUR"
+          ],
+          "description": "Service has typically one, but may vary price."
+        }
+      ]
+    },
+    "prod_vocab:Supplier": {
+      "class_label": "Supplier",
+      "class_examples": [
+        "prod_inst:suppl-0058fc5e-e9e8-46eb-ac6d-673e436a5d7a - Allen-Short (South Africa)",
+        "prod_inst:suppl-0ca3c664-7fb2-446a-b5c6-73fe140c4f02 - Benitez and Sons (United States)",
+        "prod_inst:suppl-11f1284a-d6f0-4822-b716-3e70d1fb91df - Grant-Nelson (Australia)",
+        "prod_inst:suppl-12417d4e-b119-46a1-8c47-a560c2d103dd - Cochran-Delacruz (Colombia)",
+        "prod_inst:suppl-15bdf688-23a7-4f52-be5c-fe82bba7add7 - Taylor, Obrien and Delacruz (Poland)"
+      ],
+      "properties": [
+        {
+          "property_name": "prod_vocab:addressCountryCode",
+          "property_label": "addressCountryCode",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "AU",
+            "CN",
+            "CO",
+            "IT",
+            "ZA"
+          ],
+          "description": "Supplier has at most 1 addressCountryCode."
+        },
+        {
+          "property_name": "prod_vocab:addressCountry",
+          "property_label": "address country",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Australia",
+            "Colombia",
+            "Germany",
+            "Poland",
+            "South Africa"
+          ],
+          "description": "Supplier has at most 1 address country."
+        },
+        {
+          "property_name": "prod_vocab:addressLocality",
+          "property_label": "addressLocality",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Ebersbach an der Fils",
+            "Huangshan",
+            "Morogoro",
+            "Olecko",
+            "Piedecuesta"
+          ],
+          "description": "Supplier has at most 1 addressLocality."
+        },
+        {
+          "property_name": "prod_vocab:country",
+          "property_label": "country",
+          "datatype": [
+            "ontology:Country"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#IRI",
+          "examples": [
+            "resource:Australia - Australia",
+            "resource:Colombia - Colombia",
+            "resource:Germany - Germany",
+            "resource:South_Africa - South Africa",
+            "resource:United_States - United States"
+          ],
+          "description": "Supplier has at most 1 country."
+        },
+        {
+          "property_name": "prod_vocab:id",
+          "property_label": "id",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "11f1284a-d6f0-4822-b716-3e70d1fb91df",
+            "12417d4e-b119-46a1-8c47-a560c2d103dd",
+            "12566cfa-500d-4e07-8117-e0bf16d7fb8c",
+            "13dabe70-36c5-4a87-bc13-15664eda25a9",
+            "169db3fc-b253-465a-ba91-33f3617a9313"
+          ],
+          "description": "Supplier has at most 1 id."
+        },
+        {
+          "property_name": "wgs84_pos:lat",
+          "property_label": "lat",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "-37.8768611",
+            "30.2841703",
+            "41.5231076",
+            "48.7149061",
+            "54.0398024"
+          ],
+          "description": "Supplier has at most 1 lat."
+        },
+        {
+          "property_name": "wgs84_pos:long",
+          "property_label": "long",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "-81.5184553",
+            "145.0691707",
+            "30.7196884",
+            "38.79211626125999",
+            "9.5259189"
+          ],
+          "description": "Supplier has at most 1 long."
+        },
+        {
+          "property_name": "prod_vocab:name",
+          "property_label": "name",
+          "datatype": [
+            "xsd:string"
+          ],
+          "max_count": 1,
+          "node_kind": "http://www.w3.org/ns/shacl#Literal",
+          "examples": [
+            "Aguilar, Matthews and Martinez",
+            "Bryan-James",
+            "Cochran-Delacruz",
+            "Larsen-Martinez",
+            "Nguyen-Peters"
+          ],
+          "description": "Supplier has at most 1 name."
+        }
+      ]
+    }
+  }
+}

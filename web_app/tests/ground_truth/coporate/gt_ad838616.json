@@ -1,0 +1,62 @@
+{
+  "question": "What suppliers - I need name, country and price - deliver the 6th to 10th most expensive hardware items.",
+  "question_id": 29,
+  "expected_classes": [
+    "Supplier",
+    "Hardware",
+    "Price"
+  ],
+  "expected_properties": [
+    {
+      "class_name": "Supplier",
+      "relevant_properties": [
+        "addressCountry",
+        "name"
+      ]
+    },
+    {
+      "class_name": "Hardware",
+      "relevant_properties": [
+        "hasSupplier",
+        "name"
+      ]
+    },
+    {
+      "class_name": "Price",
+      "relevant_properties": [
+        "amount",
+        "currency"
+      ]
+    }
+  ],
+  "expected_entities": {},
+  "expected_results": [
+    {
+      "name": "Curtis, Perkins and Sims",
+      "country": "United States",
+      "price": "5.99"
+    },
+    {
+      "name": "Hernandez, Mayer and Jones",
+      "country": "Cambodia",
+      "price": "5.97"
+    },
+    {
+      "name": "Romero-Nguyen",
+      "country": "Spain",
+      "price": "5.97"
+    },
+    {
+      "name": "Cortez Group",
+      "country": "United States",
+      "price": "5.97"
+    },
+    {
+      "name": "Mcdaniel, Dean and Delgado",
+      "country": "India",
+      "price": "5.96"
+    }
+  ],
+  "key_field": "price",
+  "query_type": "SELECT"
+}

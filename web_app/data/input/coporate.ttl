@@ -1,0 +1,1340 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://shaclshapes.org/AgentShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://ns.eccenca.com/eccenca-GmbH ( ) is a http://purl.org/dc/terms/Agent ( )" ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameAgentShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> dcterms:Agent ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://purl.org/dc/terms/Agent ( ) has at most 1 http://xmlns.com/foaf/0.1/name ( )" .
+
+<http://shaclshapes.org/AnnotationPropertyShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://creativecommons.org/ns#license ( ) is a http://www.w3.org/2002/07/owl#AnnotationProperty ( )" ;
+  <http://shaclshapes.org/support> "8"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isDefinedByAnnotationPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:AnnotationProperty ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://www.w3.org/2002/07/owl#AnnotationProperty ( ) has http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( )" .
+
+<http://shaclshapes.org/BillOfMaterialShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-1 (ElectroMech ProDrive) is a http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-19 (MechaScape IonDrive) is a http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-5 (ElectraWing Nimbus) is a http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-6 (MechaVolt Surge) is a http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-8 (MotoSync QuantumWave) is a http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" ;
+  <http://shaclshapes.org/support> "20"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasBomPartBillOfMaterialShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelBillOfMaterialShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameBillOfMaterialShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/BillOfMaterial> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM)) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/hasBomPart (has BOM Part), has at most 1 http://ld.company.org/prod-vocab/name (name)" .
+
+<http://shaclshapes.org/BomPartShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-part-10-K367-1320550 (K367-1320550 (26)) is a http://ld.company.org/prod-vocab/BomPart (BOM Part)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-part-10-M662-6209836 (M662-6209836 (23)) is a http://ld.company.org/prod-vocab/BomPart (BOM Part)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-part-10-W986-7950553 (W986-7950553 (10)) is a http://ld.company.org/prod-vocab/BomPart (BOM Part)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-part-12-X365-6429727 (X365-6429727 (11)) is a http://ld.company.org/prod-vocab/BomPart (BOM Part)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/bom-part-7-L536-5185541 (L536-5185541 (19)) is a http://ld.company.org/prod-vocab/BomPart (BOM Part)" ;
+  <http://shaclshapes.org/support> "197"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasPartBomPartShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelBomPartShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/quantityBomPartShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/BomPart> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/BomPart (BOM Part) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has http://ld.company.org/prod-vocab/hasPart (part), has at most 1 http://ld.company.org/prod-vocab/quantity (quantity)" .
+
+<http://shaclshapes.org/ClassShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://dbpedia.org/ontology/Country (Country) is a http://www.w3.org/2002/07/owl#Class ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/ProductCategory (Product Category) is a http://www.w3.org/2002/07/owl#Class ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/Service (Service) is a http://www.w3.org/2002/07/owl#Class ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/Supplier (Supplier) is a http://www.w3.org/2002/07/owl#Class ( )" ;
+  <http://shaclshapes.org/support> "13"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/commentClassShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/depictionClassShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isDefinedByClassShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelClassShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/subClassOfClassShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:Class ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://www.w3.org/2002/07/owl#Class ( ) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#comment ( ), has http://www.w3.org/2000/01/rdf-schema#subClassOf ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ), has http://xmlns.com/foaf/0.1/depiction ( )" .
+
+<http://shaclshapes.org/CountryShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://dbpedia.org/resource/Cambodia (Cambodia) is a http://dbpedia.org/ontology/Country (Country)" ;
+  <http://example.org/example> "http://dbpedia.org/resource/Central_African_Republic (Central African Republic) is a http://dbpedia.org/ontology/Country (Country)" ;
+  <http://example.org/example> "http://dbpedia.org/resource/China (China) is a http://dbpedia.org/ontology/Country (Country)" ;
+  <http://example.org/example> "http://dbpedia.org/resource/Colombia (Colombia) is a http://dbpedia.org/ontology/Country (Country)" ;
+  <http://example.org/example> "http://dbpedia.org/resource/Egypt (Egypt) is a http://dbpedia.org/ontology/Country (Country)" ;
+  <http://shaclshapes.org/support> "63"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelCountryShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://dbpedia.org/ontology/Country> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://dbpedia.org/ontology/Country (Country) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( )" .
+
+<http://shaclshapes.org/DatasetShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/ (Products - Integration) is a http://rdfs.org/ns/void#Dataset ( )" ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelDatasetShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://rdfs.org/ns/void#Dataset> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://rdfs.org/ns/void#Dataset ( ) has at least 1 at most 1 http://www.w3.org/2000/01/rdf-schema#label ( )" .
+
+<http://shaclshapes.org/DatatypePropertyShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/addressCountry (address country) is a http://www.w3.org/2002/07/owl#DatatypeProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/name (name) is a http://www.w3.org/2002/07/owl#DatatypeProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/phone (phone number) is a http://www.w3.org/2002/07/owl#DatatypeProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/reliabilityIndex (has reliability index) is a http://www.w3.org/2002/07/owl#DatatypeProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/width_mm (width (mm)) is a http://www.w3.org/2002/07/owl#DatatypeProperty ( )" ;
+  <http://shaclshapes.org/support> "16"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/commentDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/depictionDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/domainDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isDefinedByDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/rangeDatatypePropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:DatatypeProperty ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://www.w3.org/2002/07/owl#DatatypeProperty ( ) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#comment ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ), has http://www.w3.org/2000/01/rdf-schema#domain ( ), has http://www.w3.org/2000/01/rdf-schema#range ( ), has http://xmlns.com/foaf/0.1/depiction ( )" .
+
+<http://shaclshapes.org/DepartmentShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/dept-22183 (Product Management) is a http://ld.company.org/prod-vocab/Department (Department)" ;
+  <http://shaclshapes.org/support> "6"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/idDepartmentShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelDepartmentShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameDepartmentShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/responsibleForDepartmentShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Department> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Department (Department) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name), has at most 1 http://ld.company.org/prod-vocab/id (ID), has http://ld.company.org/prod-vocab/responsibleFor (responsible for)" .
+
+<http://shaclshapes.org/EmployeeShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Emil.Gotti%40company.org (Emil Gotti) is a http://ld.company.org/prod-vocab/Employee (Employee)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Frauke.Faerber%40company.org (Frauke Faerber) is a http://ld.company.org/prod-vocab/Employee (Employee)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Gretel.Roth%40company.org (Gretel Roth) is a http://ld.company.org/prod-vocab/Employee (Employee)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Heinrich.Hoch%40company.org (Heinrich Hoch) is a http://ld.company.org/prod-vocab/Employee (Employee)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Henny.Foth%40company.org (Henny Foth) is a http://ld.company.org/prod-vocab/Employee (Employee)" ;
+  <http://shaclshapes.org/support> "47"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/addressTextEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/areaOfExpertiseEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/emailEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasManagerEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/memberOfEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/phoneEmployeeShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Employee> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Employee (Employee) has at most 1 http://ld.company.org/prod-vocab/phone (phone number), has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name), has at most 1 http://ld.company.org/prod-vocab/addressText (address text), has at most 1 http://ld.company.org/prod-vocab/areaOfExpertise (area of expertise), has at most 1 http://ld.company.org/prod-vocab/email (email), has at most 1 http://ld.company.org/prod-vocab/hasManager (has manager), has at most 1 http://ld.company.org/prod-vocab/memberOf (member of)" .
+
+<http://shaclshapes.org/HardwareShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/hw-A509-5571891 (A509-5571891 - Multiplexer Inductor) is a http://ld.company.org/prod-vocab/Hardware (Hardware)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/hw-A548-4778785 (A548-4778785 - Coil Potentiometer Dipole) is a http://ld.company.org/prod-vocab/Hardware (Hardware)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/hw-A560-7347187 (A560-7347187 - Oscillator Driver) is a http://ld.company.org/prod-vocab/Hardware (Hardware)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/hw-A566-1562523 (A566-1562523 - Planck Dipole Sensor Warp) is a http://ld.company.org/prod-vocab/Hardware (Hardware)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/hw-B387-9270009 (B387-9270009 - Film Inductor Warp) is a http://ld.company.org/prod-vocab/Hardware (Hardware)" ;
+  <http://shaclshapes.org/support> "1000"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/compatibleProductHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/depth_mmHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasCategoryHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasProductManagerHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasSupplierHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/height_mmHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/idHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/priceHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/reliabilityIndexHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/weight_gHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/width_mmHardwareShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Hardware> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Hardware (Hardware) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name), has at most 1 http://ld.company.org/prod-vocab/id (ID), has http://ld.company.org/prod-vocab/compatibleProduct (compatible product), has at most 1 http://ld.company.org/prod-vocab/depth_mm (depth (mm)), has at most 1 http://ld.company.org/prod-vocab/hasCategory (has category), has at most 1 http://ld.company.org/prod-vocab/hasProductManager (has product manager), has at most 1 http://ld.company.org/prod-vocab/hasSupplier (supplier), has at most 1 http://ld.company.org/prod-vocab/height_mm (height (mm)), has at most 1 http://ld.company.org/prod-vocab/price (price), has at most 1 http://ld.company.org/prod-vocab/weight_g (weight (g)), has at most 1 http://ld.company.org/prod-vocab/width_mm (width (mm)), has at most 1 http://ld.company.org/prod-vocab/reliabilityIndex (has reliability index)" .
+
+<http://shaclshapes.org/ManagerShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/empl-Dietlinde.Boehme%40company.org (Dietlinde Boehme) is a http://ld.company.org/prod-vocab/Manager (Manager)" ;
+  <http://shaclshapes.org/support> "9"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/addressTextManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/emailManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/memberOfManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/phoneManagerShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Manager> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Manager (Manager) has at most 1 http://ld.company.org/prod-vocab/phone (phone number), has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name), has at most 1 http://ld.company.org/prod-vocab/addressText (address text), has at most 1 http://ld.company.org/prod-vocab/email (email), has http://ld.company.org/prod-vocab/memberOf (member of)" .
+
+<http://shaclshapes.org/ObjectPropertyShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/areaOfExpertise (area of expertise) is a http://www.w3.org/2002/07/owl#ObjectProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/hasSupplier (supplier) is a http://www.w3.org/2002/07/owl#ObjectProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/memberOf (member of) is a http://www.w3.org/2002/07/owl#ObjectProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/price (price) is a http://www.w3.org/2002/07/owl#ObjectProperty ( )" ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/responsibleFor (responsible for) is a http://www.w3.org/2002/07/owl#ObjectProperty ( )" ;
+  <http://shaclshapes.org/support> "14"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/commentObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/depictionObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/domainObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isDefinedByObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/rangeObjectPropertyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:ObjectProperty ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://www.w3.org/2002/07/owl#ObjectProperty ( ) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#comment ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ), has http://www.w3.org/2000/01/rdf-schema#domain ( ), has at most 1 http://www.w3.org/2000/01/rdf-schema#range ( ), has http://xmlns.com/foaf/0.1/depiction ( )" .
+
+<http://shaclshapes.org/OntologyShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-vocab/ (pv: Products - Vocab) is a http://www.w3.org/2002/07/owl#Ontology ( )" ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/commentOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/contributorOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/createdOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/creatorOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/isDefinedByOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/licenseOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/modifiedOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/preferredNamespacePrefixOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/preferredNamespaceUriOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/publisherOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/versionInfoOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/vocabularyOntologyShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> owl:Ontology ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://www.w3.org/2002/07/owl#Ontology ( ) has at least 1 at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at least 1 at most 1 http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ), has http://creativecommons.org/ns#license ( ), has http://purl.org/dc/terms/contributor ( ), has at least 1 at most 1 http://purl.org/dc/terms/created ( ), has at least 1 at most 1 http://purl.org/dc/terms/creator ( ), has at least 1 at most 1 http://purl.org/dc/terms/modified ( ), has at least 1 http://purl.org/dc/terms/publisher ( ), has at least 1 at most 1 http://purl.org/vocab/vann/preferredNamespacePrefix ( ), has http://purl.org/vocab/vann/preferredNamespaceUri ( ), has http://rdfs.org/ns/void#vocabulary ( ), has at least 1 at most 1 http://www.w3.org/2000/01/rdf-schema#comment ( ), has at least 1 at most 1 http://www.w3.org/2002/07/owl#versionInfo ( )" .
+
+<http://shaclshapes.org/OrganizationShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://ns.eccenca.com/eccenca-GmbH ( ) is a http://xmlns.com/foaf/0.1/Organization ( )" ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameOrganizationShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://xmlns.com/foaf/0.1/Organization> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://xmlns.com/foaf/0.1/Organization ( ) has at least 1 at most 1 http://xmlns.com/foaf/0.1/name ( )" .
+
+<http://shaclshapes.org/PersonShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "https://ns.eccenca.com/rpietzsch (René Pietzsch) is a http://xmlns.com/foaf/0.1/Person ( )" ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelPersonShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://xmlns.com/foaf/0.1/Person> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://xmlns.com/foaf/0.1/Person ( ) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( )" .
+
+<http://shaclshapes.org/PriceShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/price-hw-A509-5571891-EUR (0,49 EUR) is a http://ld.company.org/prod-vocab/Price (Price)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/price-hw-A560-7347187-EUR (0,52 EUR) is a http://ld.company.org/prod-vocab/Price (Price)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/price-hw-A595-2446575-EUR (3,67 EUR) is a http://ld.company.org/prod-vocab/Price (Price)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/price-hw-A617-7075018-EUR (1,40 EUR) is a http://ld.company.org/prod-vocab/Price (Price)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/price-hw-G556-4971578-EUR (5,84 EUR) is a http://ld.company.org/prod-vocab/Price (Price)" ;
+  <http://shaclshapes.org/support> "1009"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/amountPriceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/currencyPriceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelPriceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Price> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Price (Price) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/amount (amount), has at most 1 http://ld.company.org/prod-vocab/currency (currency)" .
+
+<http://shaclshapes.org/ProductCategoryShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/prod-cat-Meter (Meter) is a http://ld.company.org/prod-vocab/ProductCategory (Product Category)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/prod-cat-Oscillator (Oscillator) is a http://ld.company.org/prod-vocab/ProductCategory (Product Category)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/prod-cat-Potentiometer (Potentiometer) is a http://ld.company.org/prod-vocab/ProductCategory (Product Category)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/prod-cat-Resistor (Resistor) is a http://ld.company.org/prod-vocab/ProductCategory (Product Category)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/prod-cat-Resonator (Resonator) is a http://ld.company.org/prod-vocab/ProductCategory (Product Category)" ;
+  <http://shaclshapes.org/support> "26"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelProductCategoryShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameProductCategoryShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/ProductCategory> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/ProductCategory (Product Category) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name)" .
+
+<http://shaclshapes.org/ServiceShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/srv-D215-3449390 (D215-3449390 - Manual Inspection) is a http://ld.company.org/prod-vocab/Service (Service)" ;
+  <http://shaclshapes.org/support> "9"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/eligibleForServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/hasProductManagerServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/idServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/priceServiceShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Service> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Service (Service) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has http://ld.company.org/prod-vocab/eligibleFor (eligible for), has at most 1 http://ld.company.org/prod-vocab/name (name), has http://ld.company.org/prod-vocab/hasProductManager (has product manager), has at most 1 http://ld.company.org/prod-vocab/id (ID), has http://ld.company.org/prod-vocab/price (price)" .
+
+<http://shaclshapes.org/SupplierShape> rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/suppl-0058fc5e-e9e8-46eb-ac6d-673e436a5d7a (Allen-Short (South Africa)) is a http://ld.company.org/prod-vocab/Supplier (Supplier)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/suppl-0ca3c664-7fb2-446a-b5c6-73fe140c4f02 (Benitez and Sons (United States)) is a http://ld.company.org/prod-vocab/Supplier (Supplier)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/suppl-11f1284a-d6f0-4822-b716-3e70d1fb91df (Grant-Nelson (Australia)) is a http://ld.company.org/prod-vocab/Supplier (Supplier)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/suppl-12417d4e-b119-46a1-8c47-a560c2d103dd (Cochran-Delacruz (Colombia)) is a http://ld.company.org/prod-vocab/Supplier (Supplier)" ;
+  <http://example.org/example> "http://ld.company.org/prod-instances/suppl-15bdf688-23a7-4f52-be5c-fe82bba7add7 (Taylor, Obrien and Delacruz (Poland)) is a http://ld.company.org/prod-vocab/Supplier (Supplier)" ;
+  <http://shaclshapes.org/support> "250"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/addressCountryCodeSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/addressCountrySupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/addressLocalitySupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/countrySupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/idSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/labelSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/latSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/longSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#property> <http://shaclshapes.org/nameSupplierShapeProperty> ;
+  <http://www.w3.org/ns/shacl#targetClass> <http://ld.company.org/prod-vocab/Supplier> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "Each http://ld.company.org/prod-vocab/Supplier (Supplier) has at most 1 http://www.w3.org/2000/01/rdf-schema#label ( ), has at most 1 http://ld.company.org/prod-vocab/name (name), has at most 1 http://ld.company.org/prod-vocab/addressCountry (address country), has at most 1 http://ld.company.org/prod-vocab/addressCountryCode (address country code), has at most 1 http://ld.company.org/prod-vocab/addressLocality (address locality), has at most 1 http://ld.company.org/prod-vocab/country (country), has at most 1 http://ld.company.org/prod-vocab/id (ID), has at most 1 http://www.w3.org/2003/01/geo/wgs84_pos#lat ( ), has at most 1 http://www.w3.org/2003/01/geo/wgs84_pos#long ( )" .
+
+<http://shaclshapes.org/addressCountryCodeSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "AU" ;
+  <http://example.org/example> "CN" ;
+  <http://example.org/example> "CO" ;
+  <http://example.org/example> "IT" ;
+  <http://example.org/example> "ZA" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/addressCountryCode> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/addressCountryCode (address country code) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/addressCountrySupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Australia" ;
+  <http://example.org/example> "Colombia" ;
+  <http://example.org/example> "Germany" ;
+  <http://example.org/example> "Poland" ;
+  <http://example.org/example> "South Africa" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/addressCountry> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/addressCountry (address country) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/addressLocalitySupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Ebersbach an der Fils" ;
+  <http://example.org/example> "Huangshan" ;
+  <http://example.org/example> "Morogoro" ;
+  <http://example.org/example> "Olecko" ;
+  <http://example.org/example> "Piedecuesta" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/addressLocality> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/addressLocality (address locality) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/addressTextEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Berliner Straße 428, 50920 Tann" ;
+  <http://example.org/example> "Hohe Straße 288, 09116 Hofheim" ;
+  <http://example.org/example> "Holstenwall 430, 31356 Gießen" ;
+  <http://example.org/example> "Kaiserhofstraße 484, 13104 Wittenburg" ;
+  <http://example.org/example> "Motzstraße 26, 13611 Gartz" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/addressText> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/addressText (address text) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/addressTextManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Biebricher Allee 880, 65826 Neukalen" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/addressText> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/addressText (address text) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/amountPriceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 0.49 ;
+  <http://example.org/example> 0.52 ;
+  <http://example.org/example> 2.79 ;
+  <http://example.org/example> 3.67 ;
+  <http://example.org/example> 5.84 ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/amount> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/amount (amount) is a property that takes values from http://ld.company.org/prod-vocab/Price (Price)" .
+
+<http://shaclshapes.org/areaOfExpertiseEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Breaker> (Breaker)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Gauge> (Gauge)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Memristor> (Memristor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Meter> (Meter)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Sensor> (Sensor)" ;
+  <http://shaclshapes.org/confidence> 5E-1 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/ProductCategory> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/ProductCategoryShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/areaOfExpertise> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/areaOfExpertise (area of expertise) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/commentClassShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Some value added service realized based on other product(s)."@en ;
+  <http://example.org/example> "The Supplier of some item(s)."@en ;
+  <http://example.org/example> "The category of a product."@en ;
+  <http://shaclshapes.org/confidence> 7.5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:comment ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#comment ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Class ( )" .
+
+<http://shaclshapes.org/commentDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "A computed KPI to have an reliablity indicator in the context of a supply chain."@en ;
+  <http://example.org/example> "A phone number."@en ;
+  <http://example.org/example> "The name of something."@en ;
+  <http://example.org/example> "The weight of an item measured in grams."@en ;
+  <http://example.org/example> "The width of an item measured in millimeter."@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "7"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:comment ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#comment ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/commentObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "The department to which an agents belongs."@en ;
+  <http://example.org/example> "The price specification of a product."@en ;
+  <http://example.org/example> "The product category agent is expert for."@en ;
+  <http://example.org/example> "The product for which a department is responsible."@en ;
+  <http://example.org/example> "The supplier of a product."@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:comment ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#comment ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/commentOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Example vocabulary modeled from a simple sentence about products and services."@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:comment ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#comment ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/compatibleProductHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-A360-3041803> (A360-3041803 - Inductor Transformer Warp)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-F675-6890144> (F675-6890144 - Resistor Inductor Strain)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-I264-7314323> (I264-7314323 - Film Inductor Memristor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-U990-5234138> (U990-5234138 - LCD Inductor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-X204-1803083> (X204-1803083 - Crystal Strain Compensator)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/compatibleProduct> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/compatibleProduct (compatible product) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/contributorOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://ns.eccenca.com/stramp> (Sebastian Tramp)" ;
+  <http://www.w3.org/ns/shacl#path> dcterms:contributor ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/dc/terms/contributor ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/countrySupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://dbpedia.org/resource/Australia> (Australia)" ;
+  <http://example.org/example> "<http://dbpedia.org/resource/Colombia> (Colombia)" ;
+  <http://example.org/example> "<http://dbpedia.org/resource/Germany> (Germany)" ;
+  <http://example.org/example> "<http://dbpedia.org/resource/South_Africa> (South Africa)" ;
+  <http://example.org/example> "<http://dbpedia.org/resource/United_States> (United States)" ;
+  <http://shaclshapes.org/confidence> 2E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://dbpedia.org/ontology/Country> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/CountryShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/country> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/country (country) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/createdOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "2018-08-29"^^xsd:date ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:date ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> dcterms:created ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/dc/terms/created ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/creatorOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://ns.eccenca.com/rpietzsch> (René Pietzsch)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://xmlns.com/foaf/0.1/Person> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/PersonShape> ;
+  <http://www.w3.org/ns/shacl#path> dcterms:creator ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/dc/terms/creator ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/currencyPriceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "EUR" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/currency> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/currency (currency) is a property that takes values from http://ld.company.org/prod-vocab/Price (Price)" .
+
+<http://shaclshapes.org/depictionClassShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://api.iconify.design/gis/search-country.svg?color=%23D6AF00&format=svg> ( )" ;
+  <http://example.org/example> "<https://api.iconify.design/material-symbols-light/category-outline.svg?color=%23D6AF00&format=svg> ( )" ;
+  <http://example.org/example> "<https://api.iconify.design/mdi/account-service-outline.svg?color=%23D6AF00&format=svg> ( )" ;
+  <http://example.org/example> "<https://api.iconify.design/mdi/company.svg?color=%23D6AF00&format=svg> ( )" ;
+  <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/depiction> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://xmlns.com/foaf/0.1/depiction ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Class ( )" .
+
+<http://shaclshapes.org/depictionDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://api.iconify.design/carbon:property-relationship.svg?color=%2339AB4B&format=svg> ( )" ;
+  <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/depiction> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://xmlns.com/foaf/0.1/depiction ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/depictionObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://api.iconify.design/carbon:property-relationship.svg?color=%230085C6&format=svg> ( )" ;
+  <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/depiction> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://xmlns.com/foaf/0.1/depiction ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/depth_mmHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 11 ;
+  <http://example.org/example> 15 ;
+  <http://example.org/example> 16 ;
+  <http://example.org/example> 18 ;
+  <http://example.org/example> 20 ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/depth_mm> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/depth_mm (depth (mm)) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/domainDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Agent> (Agent)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/BomPart> (BOM Part)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Hardware> (Hardware)" ;
+  <http://www.w3.org/ns/shacl#path> rdfs:domain ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#domain ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/domainObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Agent> (Agent)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Department> (Department)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Product> (Product)" ;
+  <http://www.w3.org/ns/shacl#path> rdfs:domain ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#domain ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/eligibleForServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-E395-9906117> (E395-9906117 - Flow Inductor Crystal Encoder)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-I503-2217600> (I503-2217600 - Aluminum Dipole Breaker)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-J653-7148856> (J653-7148856 - Coil Transducer Warp)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-M449-5231838> (M449-5231838 - Transistor Crystal)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-P360-3765415> (P360-3765415 - LCD Dipole)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Hardware> ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/HardwareShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/eligibleFor> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/eligibleFor (eligible for) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/emailEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Emil.Gotti@company.org" ;
+  <http://example.org/example> "Franziska.Acker@company.org" ;
+  <http://example.org/example> "Gretel.Roth@company.org" ;
+  <http://example.org/example> "Henny.Foth@company.org" ;
+  <http://example.org/example> "Herr.Burgh.Eichel@company.org" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/email> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/email (email) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/emailManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Dietlinde.Boehme@company.org" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/email> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/email (email) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/hasBomPartBillOfMaterialShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/bom-part-2-P323-7286189> (P323-7286189 (7))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/bom-part-20-O787-2734023> (O787-2734023 (92))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/bom-part-4-L557-1467804> (L557-1467804 (31))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/bom-part-6-R725-9753976> (R725-9753976 (9))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/bom-part-7-D599-6113892> (D599-6113892 (62))" ;
+  <http://shaclshapes.org/confidence> 1E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/BomPart> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/BomPartShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasBomPart> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasBomPart (has BOM Part) is a property that takes values from http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" .
+
+<http://shaclshapes.org/hasCategoryHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Crystal> (Crystal)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Inductor> (Inductor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Multiplexer> (Multiplexer)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Sensor> (Sensor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/prod-cat-Warp> (Warp)" ;
+  <http://shaclshapes.org/confidence> 3E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/ProductCategory> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/ProductCategoryShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasCategory> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasCategory (has category) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/hasManagerEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Dietlinde.Boehme%40company.org> (Dietlinde Boehme)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Elena.Herzog%40company.org> (Elena Herzog)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Franz.Kornhaeusel%40company.org> (Franz Kornhaeusel)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Waldtraud.Kuttner%40company.org> (Waldtraud Kuttner)" ;
+  <http://shaclshapes.org/confidence> 1E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Manager> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/ManagerShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasManager> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasManager (has manager) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/hasPartBomPartShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-B646-2108570> (B646-2108570 - Dipole Transducer)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-K367-1320550> (K367-1320550 - Strain Encoder)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-N881-4812973> (N881-4812973 - Meter)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-W986-7950553> (W986-7950553 - Field-effect Memristor Resonator Compensator)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-X716-6172862> (X716-6172862 - Coil Resonator)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasPart> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasPart (part) is a property that takes values from http://ld.company.org/prod-vocab/BomPart (BOM Part)" .
+
+<http://shaclshapes.org/hasProductManagerHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Arnelle.Gerber%40company.org> (Arnelle Gerber)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Bert.Blumstein%40company.org> (Bert Blumstein)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Frauke.Faerber%40company.org> (Frauke Faerber)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Kevin.Feigenbaum%40company.org> (Kevin Feigenbaum)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Ratt.Hartmann%40company.org> (Ratt Hartmann)" ;
+  <http://shaclshapes.org/confidence> 3E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Employee> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/EmployeeShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasProductManager> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasProductManager (has product manager) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/hasProductManagerServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/empl-Ida.Halle%40company.org> (Ida Halle)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasProductManager> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasProductManager (has product manager) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/hasSupplierHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/suppl-33da751a-1358-4530-b0e5-e3b9a509e952> (Brown, Jackson and Simpson (Tuvalu))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/suppl-42a20063-bd30-49d3-8506-ceac4ceb2d9e> (Davis-Wagner (Spain))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/suppl-47528cbf-c41b-4897-b917-6f4c1394fe1f> (Moran, Martin and Freeman (United States))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/suppl-c39c750f-2398-4f5a-a389-2c200e84c45b> (Wilson, Kim and Dorsey (Brazil))" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/suppl-ea372457-5016-4c1d-a8fc-9d84d6a1138d> (Rivera Group (Philippines))" ;
+  <http://shaclshapes.org/confidence> 1E-1 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Supplier> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/SupplierShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/hasSupplier> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/hasSupplier (supplier) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/height_mmHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 27 ;
+  <http://example.org/example> 38 ;
+  <http://example.org/example> 43 ;
+  <http://example.org/example> 45 ;
+  <http://example.org/example> 64 ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/height_mm> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/height_mm (height (mm)) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/idDepartmentShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "22183" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/id> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/id (ID) is a property that takes values from http://ld.company.org/prod-vocab/Department (Department)" .
+
+<http://shaclshapes.org/idHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "A529-2906246" ;
+  <http://example.org/example> "A560-7347187" ;
+  <http://example.org/example> "A607-3251492" ;
+  <http://example.org/example> "A617-7075018" ;
+  <http://example.org/example> "B387-9270009" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/id> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/id (ID) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/idServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "D215-3449390" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/id> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/id (ID) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/idSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "11f1284a-d6f0-4822-b716-3e70d1fb91df" ;
+  <http://example.org/example> "12417d4e-b119-46a1-8c47-a560c2d103dd" ;
+  <http://example.org/example> "12566cfa-500d-4e07-8117-e0bf16d7fb8c" ;
+  <http://example.org/example> "13dabe70-36c5-4a87-bc13-15664eda25a9" ;
+  <http://example.org/example> "169db3fc-b253-465a-ba91-33f3617a9313" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/id> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/id (ID) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/isDefinedByAnnotationPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://creativecommons.org/ns> ( )" ;
+  <http://www.w3.org/ns/shacl#path> rdfs:isDefinedBy ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ) is a property that takes values from http://www.w3.org/2002/07/owl#AnnotationProperty ( )" .
+
+<http://shaclshapes.org/isDefinedByClassShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/> (pv: Products - Vocab)" ;
+  <http://shaclshapes.org/confidence> 7.5E-1 ;
+  <http://shaclshapes.org/support> "3"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> owl:Ontology ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/OntologyShape> ;
+  <http://www.w3.org/ns/shacl#path> rdfs:isDefinedBy ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Class ( )" .
+
+<http://shaclshapes.org/isDefinedByDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/> (pv: Products - Vocab)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "7"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> owl:Ontology ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/OntologyShape> ;
+  <http://www.w3.org/ns/shacl#path> rdfs:isDefinedBy ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/isDefinedByObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/> (pv: Products - Vocab)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> owl:Ontology ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/OntologyShape> ;
+  <http://www.w3.org/ns/shacl#path> rdfs:isDefinedBy ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/isDefinedByOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/> (pv: Products - Vocab)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> owl:Ontology ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/OntologyShape> ;
+  <http://www.w3.org/ns/shacl#path> rdfs:isDefinedBy ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#isDefinedBy ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/labelBillOfMaterialShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "MechaVolt Surge" ;
+  <http://example.org/example> "Mechtron SynthWave" ;
+  <http://example.org/example> "MotoSync QuantumWave" ;
+  <http://example.org/example> "NexaCore Integrator" ;
+  <http://example.org/example> "PulseCraft Vertex" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" .
+
+<http://shaclshapes.org/labelBomPartShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "K367-1320550 (26)" ;
+  <http://example.org/example> "M662-6209836 (23)" ;
+  <http://example.org/example> "V178-8820348 (26)" ;
+  <http://example.org/example> "X365-6429727 (11)" ;
+  <http://example.org/example> "X480-1491345 (21)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/BomPart (BOM Part)" .
+
+<http://shaclshapes.org/labelClassShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Country"@en ;
+  <http://example.org/example> "Product Category"@en ;
+  <http://example.org/example> "Service"@en ;
+  <http://example.org/example> "Supplier"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Class ( )" .
+
+<http://shaclshapes.org/labelCountryShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Cameroon"@en ;
+  <http://example.org/example> "Canada"@en ;
+  <http://example.org/example> "Central African Republic"@en ;
+  <http://example.org/example> "China"@en ;
+  <http://example.org/example> "Egypt"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://dbpedia.org/ontology/Country (Country)" .
+
+<http://shaclshapes.org/labelDatasetShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Products - Integration"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://rdfs.org/ns/void#Dataset ( )" .
+
+<http://shaclshapes.org/labelDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "has reliability index"@en ;
+  <http://example.org/example> "phone number"@en ;
+  <http://example.org/example> "quantity"@en ;
+  <http://example.org/example> "weight (g)"@en ;
+  <http://example.org/example> "width (mm)"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "7"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/labelDepartmentShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Product Management" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Department (Department)" .
+
+<http://shaclshapes.org/labelEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Adolfina Hoch" ;
+  <http://example.org/example> "Elisabeth Harman" ;
+  <http://example.org/example> "Erhard Fried" ;
+  <http://example.org/example> "Frauke Faerber" ;
+  <http://example.org/example> "Gretel Roth" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/labelHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "A145-1240844 - Bipolar-junction Coil Compensator Transducer" ;
+  <http://example.org/example> "A566-1562523 - Planck Dipole Sensor Warp" ;
+  <http://example.org/example> "A595-2446575 - Sensor Driver Capacitor" ;
+  <http://example.org/example> "A607-3251492 - Bipolar-junction Transistor Compensator" ;
+  <http://example.org/example> "A617-7075018 - Crystal Switch" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/labelManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Dietlinde Boehme" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/labelObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "area of expertise"@en ;
+  <http://example.org/example> "member of"@en ;
+  <http://example.org/example> "price"@en ;
+  <http://example.org/example> "responsible for"@en ;
+  <http://example.org/example> "supplier"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "5"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/labelOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "pv: Products - Vocab"@en ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> rdf:langString ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/labelPersonShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "René Pietzsch" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://xmlns.com/foaf/0.1/Person ( )" .
+
+<http://shaclshapes.org/labelPriceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "0,41 EUR" ;
+  <http://example.org/example> "1,40 EUR" ;
+  <http://example.org/example> "1,87 EUR" ;
+  <http://example.org/example> "2,47 EUR" ;
+  <http://example.org/example> "3,67 EUR" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Price (Price)" .
+
+<http://shaclshapes.org/labelProductCategoryShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Breaker" ;
+  <http://example.org/example> "Multiplexer" ;
+  <http://example.org/example> "Oscillator" ;
+  <http://example.org/example> "Potentiometer" ;
+  <http://example.org/example> "Resistor" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/ProductCategory (Product Category)" .
+
+<http://shaclshapes.org/labelServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "D215-3449390 - Manual Inspection" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/labelSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Bryan-James (Italy)" ;
+  <http://example.org/example> "Cochran-Delacruz (Colombia)" ;
+  <http://example.org/example> "Collins-Hensley (Germany)" ;
+  <http://example.org/example> "Grant-Nelson (Australia)" ;
+  <http://example.org/example> "Larsen-Martinez (Germany)" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> rdfs:label ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#label ( ) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/latSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "-37.8768611" ;
+  <http://example.org/example> "30.2841703" ;
+  <http://example.org/example> "41.5231076" ;
+  <http://example.org/example> "48.7149061" ;
+  <http://example.org/example> "54.0398024" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2003/01/geo/wgs84_pos#lat ( ) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/licenseOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://creativecommons.org/licenses/by/4.0/> (Creative Commons Attribution 4.0 International)" ;
+  <http://www.w3.org/ns/shacl#path> <http://creativecommons.org/ns#license> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://creativecommons.org/ns#license ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/longSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "-81.5184553" ;
+  <http://example.org/example> "145.0691707" ;
+  <http://example.org/example> "30.7196884" ;
+  <http://example.org/example> "38.79211626125999" ;
+  <http://example.org/example> "9.5259189" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2003/01/geo/wgs84_pos#long ( ) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/memberOfEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/dept-22183> (Product Management)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/dept-41622> (Data Services)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/dept-84279> (Procurement)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/dept-85880> (Marketing)" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "4"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Department> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/DepartmentShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/memberOf> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/memberOf (member of) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/memberOfManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/dept-85880> (Marketing)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/memberOf> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/memberOf (member of) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/modifiedOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "2018-08-29"^^xsd:date ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:date ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> dcterms:modified ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/dc/terms/modified ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/nameAgentShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "eccenca GmbH" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://xmlns.com/foaf/0.1/name ( ) is a property that takes values from http://purl.org/dc/terms/Agent ( )" .
+
+<http://shaclshapes.org/nameBillOfMaterialShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "ElectroMech ProDrive" ;
+  <http://example.org/example> "MechaScape IonDrive" ;
+  <http://example.org/example> "MechaVolt Surge" ;
+  <http://example.org/example> "Mechtron SynthWave" ;
+  <http://example.org/example> "NexaCore Integrator" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/BillOfMaterial (Bill of Material (BOM))" .
+
+<http://shaclshapes.org/nameDepartmentShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Product Management" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Department (Department)" .
+
+<http://shaclshapes.org/nameEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Elisabeth Harman" ;
+  <http://example.org/example> "Emil Gotti" ;
+  <http://example.org/example> "Erhard Fried" ;
+  <http://example.org/example> "Heinrich Hoch" ;
+  <http://example.org/example> "Herr Burgh Eichel" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/nameHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Bipolar-junction Coil Compensator Transducer" ;
+  <http://example.org/example> "Film Inductor Warp" ;
+  <http://example.org/example> "Multiplexer Inductor" ;
+  <http://example.org/example> "Sensor Crystal" ;
+  <http://example.org/example> "Sensor Driver Capacitor" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/nameManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Dietlinde Boehme" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/nameOrganizationShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "eccenca GmbH" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://xmlns.com/foaf/0.1/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://xmlns.com/foaf/0.1/name ( ) is a property that takes values from http://xmlns.com/foaf/0.1/Organization ( )" .
+
+<http://shaclshapes.org/nameProductCategoryShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Breaker" ;
+  <http://example.org/example> "Memristor" ;
+  <http://example.org/example> "Oscillator" ;
+  <http://example.org/example> "Resistor" ;
+  <http://example.org/example> "Rheostat" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/ProductCategory (Product Category)" .
+
+<http://shaclshapes.org/nameServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Manual Inspection" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/nameSupplierShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "Aguilar, Matthews and Martinez" ;
+  <http://example.org/example> "Bryan-James" ;
+  <http://example.org/example> "Cochran-Delacruz" ;
+  <http://example.org/example> "Larsen-Martinez" ;
+  <http://example.org/example> "Nguyen-Peters" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/name> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/name (name) is a property that takes values from http://ld.company.org/prod-vocab/Supplier (Supplier)" .
+
+<http://shaclshapes.org/phoneEmployeeShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "(0101) 854043584" ;
+  <http://example.org/example> "(0686) 108701699" ;
+  <http://example.org/example> "+49-109-5719002" ;
+  <http://example.org/example> "+49-4446-26033173" ;
+  <http://example.org/example> "+49-9456-94517553" ;
+  <http://shaclshapes.org/confidence> 9E-1 ;
+  <http://shaclshapes.org/support> "9"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/phone> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/phone (phone number) is a property that takes values from http://ld.company.org/prod-vocab/Employee (Employee)" .
+
+<http://shaclshapes.org/phoneManagerShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "(06582) 6550636" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/phone> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/phone (phone number) is a property that takes values from http://ld.company.org/prod-vocab/Manager (Manager)" .
+
+<http://shaclshapes.org/preferredNamespacePrefixOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "pv" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://purl.org/vocab/vann/preferredNamespacePrefix> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/vocab/vann/preferredNamespacePrefix ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/preferredNamespaceUriOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> """"http://ld.company.org/prod-vocab/" (pv: Products - Vocab)""" ;
+  <http://www.w3.org/ns/shacl#path> <http://purl.org/vocab/vann/preferredNamespaceUri> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/vocab/vann/preferredNamespaceUri ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/priceHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-hw-A509-5571891-EUR> (0,49 EUR)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-hw-A529-2906246-EUR> (2,47 EUR)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-hw-A566-1562523-EUR> (2,83 EUR)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-hw-A607-3251492-EUR> (2,79 EUR)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-hw-B387-9270009-EUR> (4,67 EUR)" ;
+  <http://shaclshapes.org/confidence> 8E-1 ;
+  <http://shaclshapes.org/support> "8"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> <http://ld.company.org/prod-vocab/Price> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/PriceShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/price> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/price (price) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/priceServiceShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/price-srv-D215-3449390-EUR> (1709,54 EUR)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/price> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/price (price) is a property that takes values from http://ld.company.org/prod-vocab/Service (Service)" .
+
+<http://shaclshapes.org/publisherOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<https://ns.eccenca.com/eccenca-GmbH> ( )" ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/AgentShape> ;
+  <http://www.w3.org/ns/shacl#or> ( [
+    <http://shaclshapes.org/confidence> 1E0 ;
+    <http://shaclshapes.org/support> "1"^^xsd:int ;
+    <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+    <http://www.w3.org/ns/shacl#class> dcterms:Agent ;
+  ] [
+    <http://shaclshapes.org/confidence> 1E0 ;
+    <http://shaclshapes.org/support> "1"^^xsd:int ;
+    <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+    <http://www.w3.org/ns/shacl#class> <http://xmlns.com/foaf/0.1/Organization> ;
+  ] ) ;
+  <http://www.w3.org/ns/shacl#path> dcterms:publisher ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://purl.org/dc/terms/publisher ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/quantityBomPartShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "11" ;
+  <http://example.org/example> "17" ;
+  <http://example.org/example> "23" ;
+  <http://example.org/example> "26" ;
+  <http://example.org/example> "90" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/quantity> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/quantity (quantity) is a property that takes values from http://ld.company.org/prod-vocab/BomPart (BOM Part)" .
+
+<http://shaclshapes.org/rangeDatatypePropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://www.w3.org/2001/XMLSchema#decimal> ( )" ;
+  <http://example.org/example> "<http://www.w3.org/2001/XMLSchema#string> ( )" ;
+  <http://www.w3.org/ns/shacl#path> rdfs:range ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#range ( ) is a property that takes values from http://www.w3.org/2002/07/owl#DatatypeProperty ( )" .
+
+<http://shaclshapes.org/rangeObjectPropertyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Department> (Department)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Price> (Price)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Product> (Product)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/ProductCategory> (Product Category)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Supplier> (Supplier)" ;
+  <http://shaclshapes.org/confidence> 4E-1 ;
+  <http://shaclshapes.org/support> "2"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+  <http://www.w3.org/ns/shacl#class> owl:Class ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#node> <http://shaclshapes.org/ClassShape> ;
+  <http://www.w3.org/ns/shacl#path> rdfs:range ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#range ( ) is a property that takes values from http://www.w3.org/2002/07/owl#ObjectProperty ( )" .
+
+<http://shaclshapes.org/reliabilityIndexHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 0.633 ;
+  <http://example.org/example> 0.699 ;
+  <http://example.org/example> 0.754 ;
+  <http://example.org/example> 0.842 ;
+  <http://example.org/example> 0.921 ;
+  <http://shaclshapes.org/confidence> 9E-1 ;
+  <http://shaclshapes.org/support> "9"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:decimal ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/reliabilityIndex> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/reliabilityIndex (has reliability index) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/responsibleForDepartmentShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-L128-5499058> (L128-5499058 - Field-effect Multiplexer Potentiometer)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-L316-4863597> (L316-4863597 - Potentiometer Inductor)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-O857-5463957> (O857-5463957 - Transistor Compensator)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-T291-4144066> (T291-4144066 - LCD Gauge Warp)" ;
+  <http://example.org/example> "<http://ld.company.org/prod-instances/hw-W501-5990901> (W501-5990901 - Film Memristor Resonator Compensator)" ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/responsibleFor> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/responsibleFor (responsible for) is a property that takes values from http://ld.company.org/prod-vocab/Department (Department)" .
+
+<http://shaclshapes.org/subClassOfClassShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://ld.company.org/prod-vocab/Product> (Product)" ;
+  <http://www.w3.org/ns/shacl#path> rdfs:subClassOf ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2000/01/rdf-schema#subClassOf ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Class ( )" .
+
+<http://shaclshapes.org/versionInfoOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "v0.0.1-37-g15bd45c-dirty" ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "1"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:string ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> owl:versionInfo ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://www.w3.org/2002/07/owl#versionInfo ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/vocabularyOntologyShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> "<http://purl.org/vocab/vann/> ( )" ;
+  <http://example.org/example> "<http://xmlns.com/foaf/0.1/> ( )" ;
+  <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#vocabulary> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://rdfs.org/ns/void#vocabulary ( ) is a property that takes values from http://www.w3.org/2002/07/owl#Ontology ( )" .
+
+<http://shaclshapes.org/weight_gHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 14 ;
+  <http://example.org/example> 16 ;
+  <http://example.org/example> 19 ;
+  <http://example.org/example> 20 ;
+  <http://example.org/example> 7 ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/weight_g> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/weight_g (weight (g)) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+<http://shaclshapes.org/width_mmHardwareShapeProperty> rdf:type <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://example.org/example> 22 ;
+  <http://example.org/example> 34 ;
+  <http://example.org/example> 51 ;
+  <http://example.org/example> 57 ;
+  <http://example.org/example> 77 ;
+  <http://shaclshapes.org/confidence> 1E0 ;
+  <http://shaclshapes.org/support> "10"^^xsd:int ;
+  <http://www.w3.org/ns/shacl#NodeKind> <http://www.w3.org/ns/shacl#Literal> ;
+  <http://www.w3.org/ns/shacl#datatype> xsd:integer ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#path> <http://ld.company.org/prod-vocab/width_mm> ;
+  <https://www.w3.org/TR/rdf-schema/#ch_comment> "http://ld.company.org/prod-vocab/width_mm (width (mm)) is a property that takes values from http://ld.company.org/prod-vocab/Hardware (Hardware)" .
+
+

@@ -1,0 +1,73 @@
+﻿{
+    "question":  "List the names and countries of suppliers and the prices of hardware items ranked from 11th to 15th highest by price (in EUR).",
+    "question_id":  73,
+    "expected_classes":  [
+                             "Supplier",
+                             "Hardware",
+                             "Price"
+                         ],
+    "expected_properties":  [
+                                {
+                                    "class_name":  "Supplier",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "hasSupplier",
+                                                                "amount",
+                                                                "currency",
+                                                                "addressCountry"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Hardware",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "hasSupplier",
+                                                                "amount",
+                                                                "currency",
+                                                                "addressCountry"
+                                                            ]
+                                },
+                                {
+                                    "class_name":  "Price",
+                                    "relevant_properties":  [
+                                                                "name",
+                                                                "hasSupplier",
+                                                                "amount",
+                                                                "currency",
+                                                                "addressCountry"
+                                                            ]
+                                }
+                            ],
+    "expected_entities":  {
+
+                          },
+    "expected_results":  [
+                             {
+                                 "name":  "Page, Hernandez and Ayala",
+                                 "country":  "United States",
+                                 "price":  "5.96"
+                             },
+                             {
+                                 "name":  "Fox-Delacruz",
+                                 "country":  "Spain",
+                                 "price":  "5.95"
+                             },
+                             {
+                                 "name":  "Garcia Ltd",
+                                 "country":  "Malaysia",
+                                 "price":  "5.95"
+                             },
+                             {
+                                 "name":  "Green-Crawford",
+                                 "country":  "Brazil",
+                                 "price":  "5.93"
+                             },
+                             {
+                                 "name":  "Newton Inc",
+                                 "country":  "Germany",
+                                 "price":  "5.92"
+                             }
+                         ],
+    "key_field":  null,
+    "query_type":  "SELECT"
+}
