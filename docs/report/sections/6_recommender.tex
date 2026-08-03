@@ -1,0 +1,267 @@
+This chapter presents the thesis's central design contribution: a four-stage pipeline that turns a
+just-answered query, a user's own query history, and their behavioral profile
+(Chapter~\ref{ch:behavior}) into three follow-up query suggestions.
+
+\section{Overview}
+\label{sec:rec-overview}
+
+The central research question --- can conditioning on real behavior, not just query history,
+produce measurably different recommendations --- is operationalized directly in this chapter's
+design: the candidate-generation prompt (Section~\ref{sec:rec-generation}) explicitly presents the
+LLM with two separate signals, framed as potentially \emph{different} things, not two views of the
+same preference; and the ranking stage (Section~\ref{sec:rec-ranking}) makes this signal
+load-bearing rather than decorative, rewarding candidates that align with the behavioral profile's
+real top categories, not merely with the user's own past phrasing. All four stages are composed
+inside the single extension point Section~\ref{sec:arch-api} established,
+\code{handle\_recommend()}, requiring no change to the API contract or the development harness.
+
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.88\textheight, center}
+\begin{tikzpicture}[node distance=1.0cm and 2.2cm]
+
+    \node[block, fill=colSource] (qlog) {Query log\\[2pt]\footnotesize \code{query\_log.db}};
+    \node[block, fill=colSource, right=of qlog] (bprof) {Behavioral profile\\[2pt]\footnotesize Ch.~\ref{ch:behavior}};
+
+    \node[block, fill=colGreen, below=of qlog] (retrieve) {4a --- retrieval\\[2pt]\footnotesize top-$k$ similar past queries, embedding cosine};
+
+    \node[block, fill=colOrange, below=of retrieve] (generate) {4b --- generation\\[2pt]\footnotesize LLM prompt (query + history + divergence) $\to$ pool of 5};
+
+    \node[block, fill=colPurple, below=of generate] (validate) {4c --- validation\\[2pt]\footnotesize schema-grounding cosine-similarity floor};
+
+    \node[block, fill=colPink, below=of validate] (rank) {4d --- ranking\\[2pt]\footnotesize history-similarity vs.\ behavioral-alignment, MMR diversify};
+
+    \node[smallblock, fill=colPink, below=of rank] (out) {3 suggestions};
+
+    \draw[arrow] (qlog) -- (retrieve);
+    \draw[arrow] (retrieve) -- (generate);
+    \draw[arrow] (bprof) -- (generate);
+    \draw[arrow] (generate) -- (validate);
+    \draw[arrow] (validate) -- (rank);
+    \draw[arrow] (retrieve.east) .. controls +(2.5,0) and +(2.5,0.8) .. (rank.east);
+    \draw[arrow] (bprof.east) .. controls +(2.2,0) and +(2.2,-6.5) .. (rank.east);
+    \draw[arrow] (rank) -- (out);
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{The four-stage recommender core. The behavioral profile (right) feeds both the generation
+prompt and the ranking score directly --- the two concrete points where the thesis's
+stated-vs-actual signal shapes the final output, not just the initial candidate pool.}
+\label{fig:rec-pipeline}
+\end{figure}
+
+\section{Retrieval}
+\label{sec:rec-retrieval}
+
+The retrieval stage implements the retrieval half of RA-GQR~\cite{bacciu2024}: a user's query
+history is pulled from the query log (Section~\ref{sec:arch-api}), exact duplicates of the current
+query are excluded, the current query and every remaining history entry are embedded with the same
+sentence-embedding model already used elsewhere in the NL2SPARQL pipeline for class/property
+relevance extraction, and candidates are ranked by cosine similarity. The top-$k$ retrieved queries
+become the few-shot context for Section~\ref{sec:rec-generation}'s prompt, in place of generically
+hand-curated examples. If a user has no other logged queries, the function returns an empty list;
+the generation stage still functions correctly, consistent with the original GQR premise that the
+technique does not require historical data to work at all.
+
+This stage was verified directly: seeding one user's query log with four varied movie queries, and
+querying with \emph{``Show me exciting action films,''} correctly ranked \emph{``Action movies''}
+(0.79 cosine) and \emph{``Best action movies with high ratings''} (0.765) above \emph{``Romantic
+comedies''} (0.371), excluding unrelated seeded queries entirely.
+
+\section{Candidate Generation}
+\label{sec:rec-generation}
+
+A prompt is assembled from three inputs: the current query; the retrieved similar past queries,
+rendered as a bulleted list; and a compact rendering of the behavioral divergence
+(Section~\ref{sec:behavior-divergence}), explicitly framed as \emph{``what this user says they
+want''} versus \emph{``what this user actually engages with, which may DIFFER.''} The LLM is asked
+for a pool of \textbf{five} candidates, deliberately more than the three ultimately returned, so
+that the validation and ranking stages have real material to filter and diversify from.
+
+Generation reuses the same multi-provider LLM abstraction already used elsewhere in the codebase,
+so the recommender can run against any configured provider --- cloud or local --- without code
+changes, only an environment variable and that provider's credentials. In practice, both configured
+cloud providers (Gemini and OpenAI) turned out to be unusable during this thesis for account and
+billing reasons unrelated to the code: one had no billing configured, the other had a zero free-tier
+quota on its project. Rather than block on acquiring new credentials, a local, containerized Ollama
+model (\code{llama3.1:8b}) was integrated as an additional provider, requiring no API key and no
+quota, and was used for all generation reported in this thesis, including the evaluation in
+Chapter~\ref{ch:eval}. This is explicitly a validation of the \emph{pipeline}, not of the
+\emph{provider} originally envisioned; the abstraction was already provider-agnostic before this
+substitution, so a funded cloud key could be swapped in later with no code change. At this
+substitution's local, CPU-only configuration, one generation call takes roughly 18--22 seconds ---
+acceptable for offline evaluation, but worth flagging as a real deployment-latency concern distinct
+from suggestion quality.
+
+\section{Schema-Grounding Validation}
+\label{sec:rec-validation}
+
+\subsection{Motivation and original design}
+
+Section~\ref{sec:rel-kgllm} establishes the motivation directly: LLM-generated content referencing
+structured knowledge is a documented hallucination risk, and the baseline system's own measured
+SPARQL-correctness rate (70\%, Section~\ref{sec:rel-nl2sparql}) is a concrete reminder that this
+risk is not merely theoretical in this exact class of system. The original design intent was to run
+each candidate query's implied entities and classes through the NL2SPARQL pipeline's own
+class-relevance and property-relevance evaluators, confirming a candidate is answerable against the
+currently loaded domain schema before it is ever shown to a user.
+
+\subsection{Empirical calibration and a negative result}
+
+Two implementations of this idea were built and empirically rejected before a third, deliberately
+weaker version shipped.
+
+The first, reusing the pipeline's own class-relevance evaluator directly, uses relative
+thresholding --- keeping every class scoring at or above one standard deviation below the mean
+across the schema's own classes. With only 7--11 classes per domain, this reliably selects at least
+one class for \emph{any} input, including completely unrelated text: evaluating \emph{``Best pizza
+recipe''} against the Tourism schema returned a non-empty class list.
+
+The second computed raw cosine similarity between each candidate and every class's embedded
+description, requiring the maximum score across all classes to clear a fixed floor. This was
+calibrated against control (clearly off-topic) and probe (genuinely in-domain) phrases
+(Table~\ref{tab:rec-calibration}).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lclr l}
+\toprule
+\textbf{Query} & \textbf{Domain} & \textbf{Max cosine sim.} & \textbf{Best-matching class} \\
+\midrule
+Top rated action movies from the 2010s        & movie    & 0.275 & Movie \\
+Movies directed by Christopher Nolan          & movie    & 0.302 & Movie \\
+Documentaries produced in Canada              & movie    & 0.288 & Country \\
+Best pizza recipe \emph{(control)}            & movie    & 0.175 & SubscriptionPlan \\
+How to fix a flat tire \emph{(control)}       & movie    & 0.094 & Country \\
+\textbf{Churches in Verona}                   & tourism  & 0.163 & Location \\
+\textbf{Roman Churches in Verona}             & tourism  & 0.154 & Location \\
+\textbf{Free Churches in Verona}              & tourism  & \textbf{0.092} & Location \\
+Events happening this weekend                 & tourism  & 0.401 & Event \\
+Art categories available                      & tourism  & 0.601 & ArtCategory \\
+Best pizza recipe \emph{(control)}            & tourism  & 0.064 & Tour \\
+\textbf{How to fix a flat tire (control)}     & tourism  & \textbf{0.112} & Tour \\
+Latest news about the stock market \emph{(control)} & tourism & 0.004 & --- \\
+\bottomrule
+\end{tabular}
+\caption{Absolute cosine-floor calibration data. The Movie domain separates cleanly, but the
+Tourism domain does not: the supervisor's own canonical example, \emph{``Free Churches in
+Verona,''} scores below an off-topic control phrase.}
+\label{tab:rec-calibration}
+\end{table}
+
+The Movie domain separates cleanly (in-domain floor $\approx 0.275$, control ceiling $\approx
+0.175$). \textbf{The Tourism domain does not}: \emph{``Free Churches in Verona''} --- one of the
+supervisor's own three canonical example suggestions, quoted verbatim in the original scoping email
+(Section~\ref{sec:intro-motivation}) --- scores $0.092$, below the off-topic control phrase
+\emph{``How to fix a flat tire''} at $0.112$. No single threshold can accept the former while
+rejecting the latter. A $z$-score variant, relative to each query's own mean and standard deviation
+across classes, was also tried and rejected for the same underlying reason: with only 7--11 classes,
+the maximum of such a small sample is reliably 1.3--2.3 standard deviations above the mean
+regardless of whether the query is on-topic, confirmed empirically --- \emph{``Best pizza recipe''}
+against the Movie schema scored a \emph{higher} $z$-score than several genuinely in-domain movie
+queries.
+
+The root cause is structural, not a tuning failure: both domains' machine-readable schema class
+descriptions are generated purely from SHACL cardinality constraints (e.g.\ \emph{``Art has exactly
+1 Art Class ID''}), with no natural-language descriptions and no example instance values in either
+source ontology. The Tourism ontology's classes carry essentially no text a general-purpose sentence
+embedding could relate to English words like ``church'' --- that correspondence only exists via the
+literal Italian category value \emph{``Chiese''} in the live database, which is not present anywhere
+in the schema metadata being embedded.
+
+\subsection{What shipped instead}
+
+Given this finding, the shipped validation step uses the absolute-cosine-floor mechanism with a
+threshold of $0.05$ --- low enough to reject only genuinely degenerate candidates (near-zero or
+negative similarity to every class in the schema, such as \emph{``Latest news about the stock
+market''} at $0.004$) while admitting everything else, including borderline-but-valid phrasings like
+\emph{``Free Churches in Verona.''} This is explicitly documented as a coarse sanity filter, not the
+precision hallucination guard originally intended, and is re-verified against four cases:
+\emph{``Free Churches in Verona''} (tourism) and \emph{``Roman Churches in Verona''} (tourism) both
+correctly pass; \emph{``Top rated action movies''} (movie) correctly passes; \emph{``Latest news
+about the stock market''} (tourism) correctly fails.
+
+This negative result is treated here as a genuine, reportable contribution
+(Section~\ref{sec:intro-contrib}) rather than a silently shipped limitation: automatic
+schema-grounding of natural-language candidate suggestions, at the class-description level, was not
+achievable with acceptable precision given how sparse this project's source ontologies are. A
+stronger version would require enriching class descriptions with real catalog/instance values pulled
+from the live VKG endpoints --- a concrete, scoped direction for future work
+(Section~\ref{sec:conclusion-future}).
+
+\section{Ranking and Diversification}
+\label{sec:rec-ranking}
+
+The final stage scores surviving candidates along two axes echoing QRMOCCGA's two-objective framing
+(Section~\ref{sec:rel-qrmoccga}), each normalized to $[0,1]$: history-similarity, the maximum
+Jaccard word overlap between a candidate and any of the user's retrieved similar past queries; and
+behavioral-alignment, the fraction of the behavioral profile's real top interest categories
+(Chapter~\ref{ch:behavior}) whose words appear in the candidate text. This second axis is the
+concrete place the thesis's central signal enters ranking: a candidate that textually references
+what the user \emph{actually watches}, not just what they typed, scores higher here. A weighted sum
+of the two axes ranks the candidate pool; a greedy, Maximal-Marginal-Relevance-style loop then
+repeatedly selects the highest-scoring remaining candidate, penalized by its word overlap with
+candidates already selected, so the final three suggestions are not near-duplicates of one another.
+
+This stage was verified with a hand-built pool of five candidates (one near-duplicate of query
+history, two behaviorally-aligned, one off-axis, one more history-similar): it correctly picked the
+history-similar candidate first, then diversified into the two behaviorally-aligned candidates
+rather than a near-duplicate of the first pick. Reimplementing QRMOCCGA's cooperative
+co-evolutionary genetic algorithm itself was explicitly out of scope --- only its feature ideas were
+borrowed, as planned in Section~\ref{sec:rel-qrmoccga}.
+
+\section{End-to-End Verification}
+\label{sec:rec-verification}
+
+The full chain was verified at three levels of fidelity. First, with a mocked LLM returning fixed
+candidates, the real production entry point --- not a reimplementation --- was called for the
+user profiled in Section~\ref{sec:behavior-results} with the query \emph{``Show me exciting action
+films.''} The result:
+
+\begin{lstlisting}[language=, caption={Mocked-LLM end-to-end output, ranked top to bottom.}]
+War documentaries produced in the USA
+Crime thrillers with high ratings
+Adventure movies set during wartime
+\end{lstlisting}
+
+The top-ranked suggestion is the one most strongly aligned with this user's \emph{actual} top
+interest categories (\code{Movie, USA, Canada, Adventure, War}) rather than a plain paraphrase of
+the stated query about ``action films.''
+
+Second, over real HTTP with a placeholder API key, the server log confirmed the full path executed
+--- log, retrieval, a generation attempt that failed cleanly on the invalid key, caught and logged
+as a warning rather than a crash --- and the response was \code{200 OK} with an empty suggestion
+list, confirming the pipeline degrades gracefully rather than failing the request when generation is
+unavailable.
+
+Third, and most significantly, against genuine Ollama-backed model output (Section~\ref{sec:rec-generation}),
+the same request produced:
+
+\begin{lstlisting}[language=, caption={End-to-end suggestions from genuine \code{llama3.1:8b}
+output, via the real production code path.}]
+{
+  "suggestions": [
+    "War movies with high ratings on IMDB",
+    "Movies that combine action and adventure genres",
+    "Films starring actors from Canada or USA"
+  ]
+}
+\end{lstlisting}
+
+All three suggestions reference this user's real \code{actual\_top} categories, not a paraphrase of
+the stated query --- reproducing, with genuine model output, the same qualitative pattern already
+observed with the mocked-LLM run.
+
+\section{Interpretation and Limitations}
+\label{sec:rec-limits}
+
+The schema-grounding check (Section~\ref{sec:rec-validation}) is intentionally weak, and is reported
+as such rather than presented as the precision filter originally planned. The candidate pool size
+(five) is an arbitrary choice, not derived from data; a sensitivity check across pool sizes was not
+performed. The behavioral-alignment ranking axis only functions for the Movie domain today, since
+behavioral profiles only exist there (Section~\ref{sec:arch-vkgs}); it correctly returns $0.0$ when
+no profile exists, so Tourism recommendations degrade to history-similarity-only ranking rather than
+erroring, but this means the thesis's core stated-vs-actual contribution is only demonstrable
+end-to-end on the Movie domain --- consistent with every earlier chapter's own scoping note. A
+systematic, quantitative check of suggestion quality across many users and queries, rather than the
+worked examples in Section~\ref{sec:rec-verification}, is the subject of Chapter~\ref{ch:eval}.

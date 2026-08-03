@@ -1,0 +1,71 @@
+\section{Summary of Contributions}
+\label{sec:conclusion-summary}
+
+This thesis set out to answer a specific research question, posed directly by the supervisor: can a
+query recommender that conditions on both a user's stated queries and their real interaction
+behavior produce measurably better follow-up suggestions than one conditioning on query history
+alone? The answer, established in Chapter~\ref{ch:eval}, is yes: a controlled ablation, run on the
+real production recommender and scored against real held-out ground truth, shows a $6.5\times$
+increase in behavioral-alignment@3 and a more than $2\times$ increase in proxy-recall@3 when the
+behavioral signal is included, consistently across every evaluated user and question.
+
+Reaching that result required, in order: a per-user behavioral divergence signal engineered from two
+data sources that share no natural key (Chapter~\ref{ch:behavior}); a retrieval-augmented,
+LLM-based candidate-generation step conditioned on that signal (Section~\ref{sec:rec-generation});
+and a ranking stage that makes the signal load-bearing in the final output
+(Section~\ref{sec:rec-ranking}). One design goal, however, was pursued and found not to be
+achievable within this thesis's scope: a precision schema-grounding filter, motivated by a
+well-documented hallucination risk in the LLM+KG literature, was calibrated against this project's
+actual ontologies and found unable to separate the supervisor's own canonical example query from an
+off-topic control phrase, because the underlying schema metadata is too sparse for embedding
+similarity to carry the necessary signal. This is reported as a concrete, empirically-grounded
+negative result (Section~\ref{sec:rec-validation}) rather than an over-claimed feature.
+
+\section{Limitations}
+\label{sec:conclusion-limits}
+
+Three limitations bound how far this thesis's results can be claimed to generalize, beyond those
+already discussed in each chapter. First, all quantitative results are obtained on a single,
+synthetic, Faker-generated dataset with no true causal link between stated search intent and later
+watch behavior; the \emph{direction} of the observed divergence and ablation effects is consistent
+with the supervisor's own real-world framing, but their \emph{magnitude} is, in part, a property of
+this dataset's generation process. Second, per the scope decision in
+Section~\ref{sec:arch-vkgs}, the entire behavioral, stated-vs-actual contribution is demonstrable
+only on the Movie domain; the Tourism domain's only large behavioral signal is anonymous and was
+deliberately excluded. Third, the recommender's input-contract dependency on an external
+application --- what real interaction data a caller actually logs per user --- was never resolved
+during this thesis; the \code{interaction\_data} field in the API contract
+(Section~\ref{sec:arch-api}) remains an untyped placeholder, and all behavioral conditioning in this
+work instead uses the offline, precomputed profile described in Chapter~\ref{ch:behavior}.
+
+\section{Future Work}
+\label{sec:conclusion-future}
+
+Several concrete extensions follow directly from limitations identified in this thesis, rather than
+being open-ended:
+
+\begin{itemize}
+    \item \textbf{A larger evaluation run.} Chapter~\ref{ch:eval}'s ablation used 3 users and 4
+        questions by explicit scope choice; the evaluation harness already supports a larger run via
+        configuration constants alone, with no design or code changes required.
+    \item \textbf{Validation against real interaction data.} If the external application's logging
+        contract is ever confirmed (Section~\ref{sec:conclusion-limits}), or if any other source of
+        real user interaction data becomes available, both the behavioral-profiling pipeline
+        (Chapter~\ref{ch:behavior}) and the evaluation harness (Chapter~\ref{ch:eval}) can be
+        re-run against it directly, since both already consume this exact CSV schema; this would
+        directly test whether the divergence effect's magnitude, not just its direction, holds
+        outside synthetic data.
+    \item \textbf{Enriching schema metadata for a real precision grounding filter.} The negative
+        result in Section~\ref{sec:rec-validation} traces to sparse class descriptions in the source
+        ontologies; enriching them with real catalog/instance values pulled from the live VKG
+        endpoints is a concrete, scoped path toward the precision hallucination filter originally
+        intended.
+    \item \textbf{A sensitivity analysis on heuristic parameters.} The temporal-join window
+        (Section~\ref{sec:behavior-link}) and the candidate-pool size
+        (Section~\ref{sec:rec-generation}) are both fixed, undertuned choices; a systematic sweep
+        over both was left for future work once real interaction data makes such tuning meaningful.
+    \item \textbf{Re-evaluating against a funded cloud LLM.} All generation and evaluation in this
+        thesis used a local Ollama model after both configured cloud providers were blocked by
+        account issues unrelated to the code; re-running with a stronger, funded model is a direct,
+        no-code-change comparison worth pursuing.
+\end{itemize}

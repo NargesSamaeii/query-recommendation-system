@@ -1,0 +1,176 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+% \usepackage{mathtools}
+% \usepackage{cool}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{multirow}
+% \usepackage{parskip}
+% \usepackage{caption}
+% \usepackage{subcaption}
+% \usepackage{tikz}
+% \usepackage{matlab-prettifier}
+% \usepackage{cancel}
+% \usepackage{wrapfig}
+\usepackage{fancyhdr}
+% \usepackage{array}
+% \usepackage{tabularx}
+% \usepackage{soul}
+
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+
+%%ADD ANNA
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{todonotes}
+\usepackage{float}
+
+\renewcommand{\baselinestretch}{1.1}
+
+
+\pagestyle{fancy}
+\lhead{{}}
+ 
+\rhead{\nouppercase{\rightmark}}
+\lhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+%%ADD ANNA
+\newtheorem{defn}{Definition}
+
+%for abstract in english and italian
+\newenvironment{poliabstract}[1]
+  {\renewcommand{\abstractname}{#1}\begin{abstract}}
+  {\end{abstract}}
+
+
+\begin{document}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\setlength{\topmargin}{0in}
+\center
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+%\textsc{\huge Università degli studi di Verona}\\[0.2cm] % Major
+%\textsc{\large Dipartimento di Informatica }\\[0.1cm] % Minor heading such as course title
+%\textsc{\large Corso di Laurea in Ingegneria e scienze informatiche}\\[4cm]
+\textsc{\huge University of Verona}\\[0.2cm] % Major
+\textsc{\large Department of Computer Science}\\[0.1cm] % Minor heading such as course title
+\textsc{\large Master's degree in Artificial Intelligence}\\[4cm]
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.5cm]
+{ \LARGE \bfseries LLM-based Virtual Knowledge Graph Construction and Natural Language Querying over Movie Data}
+
+
+\HRule \\[3.5cm]
+
+%----------------------------------------------------------------------------------------
+%  AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.49\textwidth}
+	{\large{\textit{Supervisor}:\\ Professor\\ Elisa Quintarelli}}
+	
+    
+    \vspace{0.5cm}
+	
+\end{minipage}\hfill\begin{minipage}[t]{0.47\textwidth}\raggedleft
+  {\large{\textit{Candidate}:\\ Narges Samaei\\ VR512693 \\ }}
+  \vspace{40mm}
+\end{minipage}
+\centering{\large{\bf ACADEMIC YEAR 2025/2026 }}
+\end{titlepage}
+
+%per pagina vuota
+\newpage\null\thispagestyle{empty}\newpage
+
+ %\cleardoublepage
+
+
+%per pagina vuota
+\newpage\null\thispagestyle{empty}\newpage
+
+
+%----------------------------------------------------------------------------------------
+%  ABSTRACT SECTION
+%----------------------------------------------------------------------------------------
+\begin{poliabstract}{Abstract}
+To be completed.
+\end{poliabstract}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%----------------------------------------------------------------------------------------
+%  CONTENT SECTION
+%----------------------------------------------------------------------------------------
+\chapter{Introduction}
+    \input{sections/1_introduction}
+
+\chapter{Background}
+\label{ch:background}
+\input{sections/2_background}
+
+\chapter{Related Work}
+\label{ch:relwork}
+\input{sections/3_relwork}
+
+\chapter{Your main contribution}\label{ch:framework}
+\input{sections/4_framework}
+
+\chapter{Evaluation}\label{ch:eval}
+\input{sections/5_evaluation}
+
+\chapter{Conclusions}\label{ch:conclusions}
+    \input{sections/6_conclusions}
+
+
+
+\chapter*{Acknowledgement}
+    %\input{sections/8_ack}
+
+    
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+%\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}

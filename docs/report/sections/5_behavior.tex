@@ -1,0 +1,197 @@
+\section{Motivation: Stated versus Actual Preference}
+\label{sec:behavior-motivation}
+
+The supervisor's framing of the query-recommendation problem rests on a specific empirical claim:
+that a user's stated queries and their real interaction behavior often diverge --- a user may type
+\emph{``romantic movie''} but consistently watch American comedies. A recommender that only looks
+at query history is, per this framing, little more than autocomplete; a genuinely useful one must
+condition on both signals. This chapter builds the first half of that requirement: a
+machine-readable, per-user summary of what a user says they want versus what they actually engage
+with, quantified as a single divergence score. This is the empirical substrate
+Chapter~\ref{ch:recommender}'s candidate generation and ranking stages condition on.
+
+This chapter operates on the \textbf{Movie domain only}, for the reason established in
+Section~\ref{sec:arch-vkgs}: the Tourism domain's only large behavioral table is keyed to an
+anonymous card, not a named user, and was explicitly excluded from the ontology. All
+behavior-aware work in this thesis is therefore carried by the Movie domain's dataset (10{,}300
+users, 1{,}040 movies, 105{,}000 watch events, 26{,}500 search-log entries).
+
+\section{Method}
+\label{sec:behavior-method}
+
+For each user, two independent rankings are computed over the same vocabulary of catalog categories
+(genre, content type, country of origin): one derived from what they searched for, one from what
+they watched. Three design choices make the resulting comparison meaningful rather than a raw
+count comparison.
+
+\subsection{Weighting, not counting}
+
+A watch event a user completed counts more than one abandoned after 5\% of its duration; this is
+implemented as a continuous completion weight rather than a binary watched/not-watched signal:
+
+\[
+w(\text{row}) =
+\begin{cases}
+1.0 & \text{if } \code{action} = \code{"completed"} \\[4pt]
+\operatorname{clip}\!\left(\dfrac{\code{progress\_percentage}}{100},\, 0.05,\, 1.0\right) &
+    \text{if progress is known} \\[8pt]
+0.3 & \text{otherwise}
+\end{cases}
+\]
+
+This operationalizes ``actual interest'' as \emph{how much} of something a user engaged with, not
+merely whether a watch event was logged: a user who starts and abandons five thrillers should not
+count for as much as one who finishes a single thriller. Weighted watches are grouped by
+\code{(user, month, category)} and normalized by that user-month's total weighted interactions to
+obtain a relative intensity in $[0,1]$.
+
+\subsection{An engineered link between two unconnected data sources}
+\label{sec:behavior-link}
+
+The search-log and watch-history tables share no foreign key in the source dataset --- there is no
+column recording which movie, if any, a given search led to. A temporal join recovers this link
+where it plausibly exists: for every search with at least one inferred category, the user's next
+watch within a 7-day window is found via a forward, tolerance-bounded merge, grouped per user.
+
+\begin{lstlisting}[language=Python, caption={The temporal join. \code{matched\_stated\_intent}
+flags whether any category inferred from the search actually appears among the linked watch's own
+genre/content-type --- an individually inspectable, row-level artifact of stated-vs-actual
+correspondence, independent of the aggregate divergence score in Section~\ref{sec:behavior-divergence}.}]
+linked = pd.merge_asof(
+    searches, watch_sorted,
+    left_on="search_date", right_on="watch_date", by="user_id",
+    direction="forward", tolerance=pd.Timedelta(days=7),
+    suffixes=("", "_watched"),
+)
+linked = linked.dropna(subset=["movie_id"]).copy()
+linked["matched_stated_intent"] = linked.apply(
+    lambda r: bool(set(r["inferred_categories"])
+                   & {r["genre_primary"], r["genre_secondary"], r["content_type"]}),
+    axis=1,
+)
+\end{lstlisting}
+
+Which categories a search is tagged with in the first place is not a trivial substring match: an
+early implementation let \code{content\_type="Movie"} spuriously match inside the plural word
+``movies'' in nearly every query, and would similarly have let \code{"War"} match inside
+``warrior.'' The fix, a word-boundary regular expression rather than a plain substring test, is
+worth recording as a concrete lesson for any similarly-structured tagging step:
+
+\begin{lstlisting}[language=Python, caption={Word-boundary category tagging, applied to every
+search query against a vocabulary sorted longest-string-first so a multi-word value like
+``Stand-up Comedy'' is checked before a shorter value like ``Comedy'' could match part of it.}]
+def build_vocabulary_patterns(vocabulary):
+    return {v: re.compile(r"\b" + re.escape(v.lower()) + r"\b") for v in vocabulary}
+
+def infer_categories(search_query, vocabulary_patterns):
+    query = str(search_query).lower()
+    return [v for v, pattern in vocabulary_patterns.items() if pattern.search(query)]
+\end{lstlisting}
+
+\subsection{A single summary statistic}
+\label{sec:behavior-divergence}
+
+Each user's top-5 actual categories and top-5 stated categories, ranked by summed intensity across
+all months, are compared via Jaccard similarity: $|A \cap S| / |A \cup S|$ for actual set $A$ and
+stated set $S$. This single number is the behavioral divergence signal
+Chapter~\ref{ch:recommender}'s candidate generation and ranking condition on.
+
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.85\textheight, center}
+\begin{tikzpicture}[node distance=1.0cm and 1.3cm]
+
+    \node[block, fill=colSource] (movies) {\code{movies.csv}\\[2pt]\footnotesize 1{,}040 rows: genre, content type, country};
+    \node[block, fill=colSource, below left=1.3cm and -0.3cm of movies] (watch) {\code{watch\_history.csv}\\[2pt]\footnotesize 105{,}000 rows};
+    \node[block, fill=colSource, below right=1.3cm and -0.3cm of movies] (search) {\code{search\_logs.csv}\\[2pt]\footnotesize 26{,}500 rows};
+
+    \node[smallblock, fill=colPurple, below=1.1cm of movies] (vocab) {catalog vocabulary};
+
+    \node[block, fill=colGreen, below=of watch] (weight) {completion weight};
+    \node[block, fill=colOrange, below=of search] (tag) {word-boundary tagging};
+
+    \node[block, fill=colGreen, below=of weight] (actualtab) {actual nodes table\\[2pt]\footnotesize per user/month/category, intensity};
+    \node[block, fill=colOrange, below=of tag] (statedtab) {stated nodes table\\[2pt]\footnotesize per user/month/category, intensity};
+
+    \node[smallblock, fill=colPink, right=1.4cm of statedtab] (link) {temporal join\\[2pt]\footnotesize 7-day window};
+
+    \coordinate (midAS) at ($(actualtab)!0.5!(statedtab)$);
+    \node[block, fill=colPurple, below=1.6cm of midAS] (div) {divergence scoring\\[2pt]\footnotesize top-5 Jaccard};
+
+    \node[block, fill=colPink, below=of div] (out) {\code{profile\_<user\_id>.json}\\[2pt]\footnotesize nodes + divergence, per user};
+    \node[smallblock, fill=colPink, below=1.6cm of link] (links) {\code{search\_watch\_links.csv}};
+
+    \draw[arrow] (movies) -- (vocab);
+    \draw[arrow] (vocab) -- (tag);
+    \draw[arrow] (vocab.west) .. controls +(-0.6,-1.2) .. (weight.north);
+    \draw[arrow] (watch) -- (weight);
+    \draw[arrow] (search) -- (tag);
+    \draw[arrow] (weight) -- (actualtab);
+    \draw[arrow] (tag) -- (statedtab);
+    \draw[arrow] (tag.east) .. controls +(1.8,0) and +(0,1.2) .. (link.north);
+    \draw[arrow] (watch.east) .. controls +(4.5,-1.0) and +(-2.5,2.0) .. (link.west);
+    \draw[arrow] (actualtab.south) .. controls +(0.3,-0.9) .. (div.west);
+    \draw[arrow] (statedtab.south) .. controls +(-0.3,-0.9) .. (div.east);
+    \draw[arrow] (div) -- (out);
+    \draw[arrow] (actualtab.west) .. controls +(-1.2,-3.0) .. (out.west);
+    \draw[arrow] (statedtab.east) .. controls +(1.2,-1.0) and +(1.5,1.0) .. (out.east);
+    \draw[arrow] (link) -- (links);
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{The behavioral-profiling pipeline. The catalog vocabulary (top) tags search queries and
+implicitly defines the category space watch events are grouped into. The actual (left) and stated
+(right) branches each produce a per-user/month/category intensity table, feeding both the per-user
+JSON profiles and a divergence score; the temporal join (bottom left) produces a separate,
+row-level output.}
+\label{fig:behavior-pipeline}
+\end{figure}
+
+\section{Results}
+\label{sec:behavior-results}
+
+The pipeline was run against the full dataset (Table~\ref{tab:behavior-results}).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Users with a behavioral profile written & 10{,}000 of 10{,}300 \\
+Search$\to$watch links found (7-day window) & 1{,}179 \\
+Average stated-vs-actual Jaccard similarity & \textbf{0.01} \\
+Users with zero overlap (top-5 stated vs.\ top-5 actual) & \textbf{9{,}399 / 10{,}000} \\
+\bottomrule
+\end{tabular}
+\caption{Behavioral-profiling results on the full dataset. 300 users have no watch history and
+therefore receive no profile.}
+\label{tab:behavior-results}
+\end{table}
+
+As a spot check, one profile was inspected directly: its actual top-5 was \code{["Movie", "USA",
+"Canada", "Adventure", "War"]} (a mix of content-type, country, and genre values, since all three
+category types share one ranking pool), its stated top-5 was \code{["Action"]} (this user had only
+one tagged search in the log), the overlap was empty, and the Jaccard similarity was $0.0$ ---
+consistent with the aggregate numbers above. This same user's profile is used again in
+Chapter~\ref{ch:recommender} as a worked example of the recommender's behavior in practice.
+
+\section{Interpretation and Limitations}
+\label{sec:behavior-limits}
+
+The near-zero average Jaccard similarity ($0.01$) is a striking number, and its \emph{direction} is
+consistent with the supervisor's own framing example. It should not, however, be reported as a
+validated real-world divergence rate. The underlying dataset is Faker-generated synthetic data with
+no true causal link between a search string and a later watch event --- a search and a subsequent
+watch being uncorrelated is exactly what random generation would produce, so this number reflects
+the heuristic's behavior on synthetic data at least as much as it reflects a real
+stated-not-equal-actual phenomenon. This caveat is repeated in Chapter~\ref{ch:eval} because it
+directly bounds how strongly that chapter's ablation results can be claimed to generalize.
+
+The 7-day linking window (Section~\ref{sec:behavior-link}) is a heuristic choice, not derived from
+the data; a sensitivity check at other window widths was not performed and is noted as future work
+(Section~\ref{sec:conclusion-future}). Recency weighting (older watches currently count equally
+with recent ones) and review-sentiment as a third signal were also not incorporated, left for a
+later iteration if the divergence signal needed refining --- in the event, the signal as built
+proved sufficient to produce the clear ablation effect reported in Chapter~\ref{ch:eval}, so this
+extension was not pursued.

@@ -1,0 +1,243 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{caption}
+\usepackage{fancyhdr}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\graphicspath{ {./sections/images/} }
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc}
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage{longtable}
+\usepackage{underscore}
+
+\renewcommand{\baselinestretch}{1.1}
+
+\pagestyle{fancy}
+\lhead{{}}
+\rhead{\nouppercase{\rightmark}}
+\lhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\newtheorem{defn}{Definition}
+
+%for abstract in english and italian
+\newenvironment{poliabstract}[1]
+  {\renewcommand{\abstractname}{#1}\begin{abstract}}
+  {\end{abstract}}
+
+% ---------------------------------------------------------------------------
+% One consistent color palette and node style, reused by every tikz diagram
+% in this thesis.
+% ---------------------------------------------------------------------------
+\definecolor{colSource}{RGB}{215,235,250}   % data sources / stores (blue)
+\definecolor{colGreen}{RGB}{225,245,225}    % "actual" / retrieval / already-built
+\definecolor{colOrange}{RGB}{255,235,205}   % "stated" / generation / external interfaces
+\definecolor{colPurple}{RGB}{240,225,245}   % pipeline / processing stages
+\definecolor{colPink}{RGB}{255,225,225}     % outputs / ranking / harness
+\definecolor{colBorder}{RGB}{80,80,80}
+
+\tikzset{
+    block/.style={rectangle, draw=colBorder, rounded corners, thick,
+        text width=3.2cm, minimum height=1.1cm, align=center, font=\small},
+    smallblock/.style={rectangle, draw=colBorder, rounded corners, thick,
+        text width=2.6cm, minimum height=0.9cm, align=center, font=\footnotesize},
+    arrow/.style={-{Latex[length=2.5mm]}, thick}
+}
+
+% ---------------------------------------------------------------------------
+% Listings style
+% ---------------------------------------------------------------------------
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!7},
+    columns=fullflexible,
+    showstringspaces=false,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=8pt,
+    belowskip=8pt
+}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\hypersetup{
+    colorlinks=false,
+    pdftitle={A Query Recommender for Preference-Aware Natural Language Querying over Virtual Knowledge Graphs},
+    pdfauthor={Narges Samaei}
+}
+
+\begin{document}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\setlength{\topmargin}{0in}
+\center
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\huge University of Verona}\\[0.2cm] % Major
+\textsc{\large Department of Computer Science}\\[0.1cm] % Minor heading such as course title
+\textsc{\large Master's degree in Artificial Intelligence}\\[4cm]
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.5cm]
+{ \LARGE \bfseries A Query Recommender for Preference-Aware Natural Language Querying over Virtual Knowledge Graphs}
+
+\HRule \\[1cm]
+
+{\large A behavior-aware, retrieval-augmented recommender that conditions follow-up query
+suggestions on both a user's stated queries and their real interaction behavior}
+
+\vspace{2cm}
+
+%----------------------------------------------------------------------------------------
+%  AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.49\textwidth}
+	{\large{\textit{Supervisor}:\\ Professor\\ Elisa Quintarelli}}
+
+
+    \vspace{0.5cm}
+
+\end{minipage}\hfill\begin{minipage}[t]{0.47\textwidth}\raggedleft
+  {\large{\textit{Candidate}:\\ Narges Samaei\\ VR512693 \\ }}
+  \vspace{40mm}
+\end{minipage}
+\centering{\large{\bf ACADEMIC YEAR 2025/2026 }}
+\end{titlepage}
+
+%per pagina vuota
+\newpage\null\thispagestyle{empty}\newpage
+
+%----------------------------------------------------------------------------------------
+%  ABSTRACT SECTION
+%----------------------------------------------------------------------------------------
+\begin{poliabstract}{Abstract}
+
+The baseline system this thesis extends, ``Indeewari,'' lets a non-expert user type a
+natural-language question (e.g.\ \emph{``Churches in Verona''}) and receive results retrieved from
+a Virtual Knowledge Graph (VKG) via an LLM-driven NL2SPARQL pipeline. This thesis addresses a gap
+its own predecessor paper names explicitly as future work: the system answers a question but never
+helps the user ask a \emph{better} next one. The contribution is a \textbf{query recommender} ---
+delivered as a standalone model and API, not a UI feature --- that, after a query is answered,
+proposes three follow-up query suggestions.
+
+The central research idea, attributed by the supervisor to ``Jerry's'' analysis, is that a user's
+\emph{stated} queries and their \emph{real} interaction behavior often diverge: a user may type
+\emph{``romantic movie''} but consistently watch American comedies. A recommender conditioning on
+query history alone is, on this view, little more than autocomplete. This thesis builds and
+evaluates a recommender that conditions on \emph{both} signals. A per-user behavioral preference
+profile is constructed from real (synthetic but behaviorally rich) watch and search data,
+quantifying how far a user's stated search intent diverges from what they actually watch. This
+signal is injected into a retrieval-augmented generation pipeline, adapted from the GQR/RA-GQR
+line of work: an LLM proposes candidate follow-up queries conditioned on the user's retrieved past
+queries \emph{and} their behavioral divergence, candidates are passed through a schema-grounding
+validation step to mitigate hallucinated, unanswerable suggestions, and a final ranking stage
+scores and diversifies the result along two axes echoing the classical query-recommendation
+literature: lexical similarity to query history versus alignment with real behavior.
+
+A controlled ablation --- the real production pipeline run twice per (user, question) pair, once
+with and once without the behavioral signal, scored identically against real held-out ground truth
+--- shows that conditioning on behavior increases behavioral-alignment@3 by roughly $6.5\times$ and
+proxy-recall@3 by more than $2\times$, consistently across every evaluated user and question. This
+is the thesis's central empirical result: conditioning candidate generation and ranking on real
+interaction behavior, not just stated query text, measurably shifts suggestions toward what a user
+actually engages with. The system, its design rationale, an empirically-grounded limitation in
+schema-grounding validation, and this evaluation are the subject of the chapters that follow.
+
+\end{poliabstract}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+
+\begin{tabular}{ll}
+VKG      & Virtual Knowledge Graph \\
+OBDA     & Ontology-Based Data Access \\
+NL2SPARQL & Natural-Language-to-SPARQL translation \\
+LLM      & Large Language Model \\
+GQR      & Generating Query Recommendations (via LLMs) \\
+RA-GQR   & Retrieval-Augmented GQR \\
+SHACL    & Shapes Constraint Language \\
+MMR      & Maximal Marginal Relevance \\
+API      & Application Programming Interface \\
+JSON     & JavaScript Object Notation \\
+SQL      & Structured Query Language \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%  CONTENT SECTION
+%----------------------------------------------------------------------------------------
+\chapter{Introduction}\label{ch:intro}
+    \input{sections/1_introduction}
+
+\chapter{Background}\label{ch:background}
+    \input{sections/2_background}
+
+\chapter{Related Work}\label{ch:relwork}
+    \input{sections/3_relwork}
+
+\chapter{System Architecture and Development Harness}\label{ch:arch}
+    \input{sections/4_architecture}
+
+\chapter{Behavioral Preference Profiling}\label{ch:behavior}
+    \input{sections/5_behavior}
+
+\chapter{The Query Recommender Core}\label{ch:recommender}
+    \input{sections/6_recommender}
+
+\chapter{Evaluation}\label{ch:eval}
+    \input{sections/7_evaluation}
+
+\chapter{Conclusion and Future Work}\label{ch:conclusion}
+    \input{sections/8_conclusions}
+
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+
+\end{document}

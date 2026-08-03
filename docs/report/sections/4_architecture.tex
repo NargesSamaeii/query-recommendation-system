@@ -1,0 +1,276 @@
+This chapter describes the infrastructure the recommender (Chapters~\ref{ch:behavior}
+and~\ref{ch:recommender}) is built and evaluated against: two running Virtual Knowledge Graphs, a
+domain-switching development harness, and the recommender's own API contract and persistence
+layer. As established in Section~\ref{sec:intro-scope}, none of this chapter's content is itself a
+thesis deliverable --- domain and user selection are the responsibility of a separate, external
+application. This chapter is included because the recommender genuinely depends on parts of it: the
+schema-grounding validation step (Section~\ref{sec:rec-validation}) consumes the machine-readable
+schema representations produced here, one of the two evaluation domains (Tourism,
+Section~\ref{sec:eval-results}) is only reachable through this infrastructure, and the API contract
+described in Section~\ref{sec:arch-api} is the boundary the recommender core is built inside.
+
+\section{Overview}
+\label{sec:arch-overview}
+
+Before this work, the NL2SPARQL pipeline queried a single, hardcoded SPARQL endpoint with no
+notion of alternate domains, and had no concept of user identity or query persistence. Three layers
+were added on top of the unmodified pipeline core: a containerized data/infrastructure layer
+(Section~\ref{sec:arch-vkgs}), a domain registry and switching mechanism used only by the internal
+development harness (Section~\ref{sec:arch-domain}), and the recommender's own API contract and
+query log (Section~\ref{sec:arch-api}), which is the actual thesis-relevant boundary. Because the
+NL2SPARQL pipeline's internals --- schema formatting, class/property relevance extraction, entity
+linking, SPARQL generation, execution, and result formatting --- are entirely unmodified, any defect
+introduced by this work is necessarily located in the new infrastructure, not in query-answering
+logic that predates this thesis.
+
+\section{Two Virtual Knowledge Graphs}
+\label{sec:arch-vkgs}
+
+Two domains were stood up as isolated Docker Compose stacks, each a relational database container
+feeding an Ontop container exposing the data as a VKG over SPARQL (Figure~\ref{fig:arch-phase0}).
+
+\definecolor{dbcolorA}{RGB}{215,235,250}
+\definecolor{ontopcolorA}{RGB}{255,235,205}
+\definecolor{regcolorA}{RGB}{255,225,225}
+\tikzset{blockA/.style={rectangle, draw=colBorder, rounded corners, thick, text width=3.1cm, minimum height=1.1cm, align=center, font=\small}}
+\tikzset{smallblockA/.style={rectangle, draw=colBorder, rounded corners, thick, text width=2.5cm, minimum height=0.9cm, align=center, font=\footnotesize}}
+
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=0.85\textwidth, max totalheight=0.7\textheight, center}
+\begin{tikzpicture}[node distance=1.4cm and 2cm]
+
+    \node[blockA, fill=colSource] (pgm) {\code{postgres-movie}\\[2pt]\footnotesize db: \code{netflix\_vkg}\\ port 5433};
+    \node[blockA, fill=colOrange, right=of pgm] (om) {\code{ontop-movie}\\[2pt]\footnotesize port 8081};
+
+    \node[blockA, fill=colSource, below=of pgm] (pgt) {\code{postgres-tourism}\\[2pt]\footnotesize db: \code{tourismdb} (PostGIS)\\ port 5434};
+    \node[blockA, fill=colOrange, right=of pgt] (ot) {\code{ontop-tourism}\\[2pt]\footnotesize port 8082};
+
+    \node[smallblockA, fill=colPink, below right=1.0cm and -0.3cm of pgt] (jdbc) {\code{docker\slash{}jdbc\slash{}postgresql.jar}\\[2pt]\footnotesize bind-mounted into both Ontop containers};
+
+    \draw[arrow] (pgm) -- node[above,font=\scriptsize]{healthy} (om);
+    \draw[arrow] (pgt) -- node[above,font=\scriptsize]{healthy} (ot);
+    \draw[arrow, dashed] (jdbc) -- (om);
+    \draw[arrow, dashed] (jdbc) -- (ot);
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{Docker Compose topology for the two Virtual Knowledge Graphs. Each Ontop container waits
+for its database's healthcheck before starting, and both mount the same JDBC driver directory
+(dashed arrows) --- a workaround for a missing-driver defect in the base Ontop image.}
+\label{fig:arch-phase0}
+\end{figure}
+
+\subsection{The Movie domain}
+
+The Movie side uses a synthetic, Faker-generated Netflix-shaped dataset chosen specifically because
+it carries per-user behavioral signals (watch history, search logs, reviews) the Tourism domain
+lacks --- the substrate Chapter~\ref{ch:behavior} depends on. \code{postgres-movie} is initialized
+from six tables (Table~\ref{tab:arch-movie-tables}); no table has a primary key, since the source
+dataset contains genuine duplicate id values across every table, a deliberate accommodation rather
+than an oversight.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lrl}
+\toprule
+\textbf{Table} & \textbf{Rows} & \textbf{Role} \\
+\midrule
+\code{movies}              & 1{,}040   & Catalog \\
+\code{users}               & 10{,}300  & User master data \\
+\code{watch\_history}       & 105{,}000 & Real behavior (implicit feedback) \\
+\code{search\_logs}         & 26{,}500  & Stated intent (free-text search) \\
+\code{reviews}             & 15{,}450  & Explicit stated opinions \\
+\code{recommendation\_logs} & 52{,}000  & System-suggested vs.\ consumed \\
+\bottomrule
+\end{tabular}
+\caption{Movie-domain tables, with row counts verified exactly against the source CSVs.}
+\label{tab:arch-movie-tables}
+\end{table}
+
+The pre-existing OBDA mapping for this domain required two categories of fixes before it was usable:
+a bug fix (a mapping selected a non-existent column, \code{watch\_duration}, where the real column
+is \code{watch\_duration\_minutes}), and a coverage extension --- to 17 mappings in total --- adding
+the columns a later phase's search-to-watch temporal join needs (\code{search\_date},
+\code{watch\_date}, \code{action}, \code{device\_type}), plus a new object property connecting
+\code{WatchSession} to \code{User} that had not previously existed despite the equivalent
+\code{WatchSession}$\to$\code{Movie} relationship being present.
+
+\subsection{The Tourism domain}
+
+The Tourism side reuses a real, 293\,MB production PostgreSQL dump of Verona's tourism
+application, together with an ontology that --- unlike the Movie domain --- already embeds SHACL
+node shapes per class, a direct structural match for the NL2SPARQL pipeline's schema loader
+(Section~\ref{sec:arch-domain}). \code{postgres-tourism} runs on a PostGIS-enabled image, since the
+source database uses geometry/geography columns a plain Postgres image cannot represent.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Table} & \textbf{Rows} \\
+\midrule
+\code{art}      & 41 \\
+\code{event}    & 1{,}416 \\
+\code{calendar} & 10{,}640 \\
+\code{location} & 1{,}600 \\
+\bottomrule
+\end{tabular}
+\caption{Tourism-domain tables, row counts verified exactly against the source backup.}
+\label{tab:arch-tourism-tables}
+\end{table}
+
+Two mappings in the original OBDA file referenced a table, \code{art\_images}, that does not exist
+anywhere in the backup (only a differently-shaped legacy table exists). Rather than reconstructing
+the missing table, these two mappings were dropped --- a decision made explicitly with the
+supervisor's sign-off, since art images are not needed for this thesis's demonstration. The
+resulting classes remain declared in the ontology for documentation purposes but are unpopulated.
+
+\paragraph{An explicit scope decision.} The backup also contains a large behavioral table,
+\code{log\_vc} (4.4 million rows of VeronaCard tap-in visits), which could in principle serve as a
+Tourism-domain behavioral signal analogous to the Movie domain's watch history. However, it
+identifies an anonymous card, not a named person, and the database's only user-like table has just
+4 administrative rows, not tourists. It was decided that Tourism stays catalog-query-only for this
+thesis: \code{log\_vc} is not mapped into the ontology, and all user-selection/behavior-aware work
+in later chapters is carried entirely by the Movie domain. This is a load-bearing scope decision,
+not an oversight --- it bounds what Chapters~\ref{ch:behavior},~\ref{ch:recommender},
+and~\ref{ch:eval} can demonstrate on the Tourism side, and is referenced repeatedly in those
+chapters as the reason certain results are Movie-only.
+
+\section{Domain-Switching Infrastructure}
+\label{sec:arch-domain}
+
+A declarative KG registry (\code{kg\_config.yaml}) lists the available knowledge graphs by name,
+schema-file path, SPARQL endpoint, and an \code{enabled} flag, read by a small loader function that
+returns only enabled entries. This registry, and the internal development harness that consumes it
+to let a developer manually switch domains while exercising the recommender, are not thesis
+deliverables in themselves (Section~\ref{sec:intro-scope}) and are not documented further here.
+
+One infrastructural fix in this layer is worth recording because it directly affects
+Section~\ref{sec:rec-validation}'s later results: the NL2SPARQL pipeline's schema loader builds its
+machine-readable schema representation (``m-schema'') entirely from SHACL \code{sh:NodeShape}
+triples, with no fallback for plain \code{rdfs:domain}/\code{rdfs:range} declarations. The Movie
+ontology, unlike the Tourism ontology, originally had no SHACL shapes at all, so feeding it directly
+to the parser silently produced an empty schema (Figure~\ref{fig:arch-shacl}). A one-time conversion
+script generates the missing shapes mechanically from the ontology's existing \code{rdfs:domain}
+declarations, producing \code{movie\_mschema.json} (11 classes) alongside the Tourism domain's
+already-SHACL-native \code{tourism\_mschema.json} (7 classes). Both files are the direct input to
+Section~\ref{sec:rec-validation}'s schema-grounding check.
+
+\definecolor{ownercolorB}{RGB}{215,235,250}
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=0.85\textwidth, max totalheight=0.6\textheight, center}
+\begin{tikzpicture}[node distance=1.3cm and 1.8cm]
+    \node[block, fill=colPurple] (owl) {\code{netflix\_ontology.owl}\\[2pt]\footnotesize plain OWL, rdfs:domain/range only};
+    \node[block, fill=colPink, right=of owl] (script) {\code{generate\_shacl\_shapes.py}\\[2pt]\footnotesize one-time conversion script};
+    \node[block, fill=colPurple, right=of script] (shapes) {\code{netflix\_shapes.ttl}\\[2pt]\footnotesize 11 sh:NodeShapes};
+    \node[block, fill=colGreen, below=of script, text width=4.2cm, font=\footnotesize] (parser) {SHACL schema parser};
+    \node[block, fill=colGreen, right=of parser] (mschema) {\code{movie\_mschema.json}\\[2pt]\footnotesize 11 classes};
+
+    \draw[arrow] (owl) -- (script);
+    \draw[arrow] (script) -- (shapes);
+    \draw[arrow] (shapes) -- (parser);
+    \draw[arrow] (parser) -- (mschema);
+\end{tikzpicture}
+\end{adjustbox}
+\caption{The Movie ontology has no native SHACL shapes, so a one-time script generates them from
+its existing \code{rdfs:domain}/\code{rdfs:range} declarations before the schema parser can consume
+it. This m-schema JSON is the same artifact Section~\ref{sec:rec-validation}'s schema-grounding
+check embeds and thresholds against.}
+\label{fig:arch-shacl}
+\end{figure}
+
+\section{The Recommender API Contract and Query Log}
+\label{sec:arch-api}
+
+This is the layer the recommender core (Chapter~\ref{ch:recommender}) is built inside, and the
+only genuinely thesis-relevant infrastructure in this chapter beyond the two VKGs above. Before any
+recommendation logic exists, two things are needed: a fixed request/response contract external
+callers can integrate against, and a place to persist queries, since the recommender's core
+technique depends on retrieving a user's own past queries.
+
+\subsection{The contract}
+
+\begin{lstlisting}[language=Python, caption={The recommender's request/response contract. One
+field, \code{interaction\_data}, is deliberately left untyped: its real shape depends on what the
+external application actually logs per user, a dependency that was never confirmed during this
+thesis (Section~\ref{sec:conclusion-limits}).}]
+class RecommendRequest(BaseModel):
+    user_id: str
+    domain: str
+    query_text: str
+    generated_sparql: Optional[str] = None
+    result_summary: Optional[Any] = None
+    interaction_data: Optional[dict] = None
+
+class RecommendResponse(BaseModel):
+    suggestions: list[str] = Field(default_factory=list)
+\end{lstlisting}
+
+\subsection{The query log}
+
+A single SQLite table, indexed on \code{(user\_id, domain)}, appended to on every request. SQLite
+was chosen deliberately over a heavier database: a single-file, zero-infrastructure store is
+appropriate for a thesis-scale log that does not need to be shared across processes beyond one
+local API server, consistent with this project's broader pattern of using the lightest tool that
+fits. Two functions cover the read and write side: \code{log\_query()} appends one row (with
+automatic JSON-serialization of structured result summaries), and \code{get\_user\_history()}
+retrieves the most recent rows for a user, optionally scoped to one domain --- the function
+Section~\ref{sec:rec-retrieval}'s retrieval step calls to build its candidate pool.
+
+\subsection{One shared entry point}
+
+Both the real HTTP endpoint (\code{POST /recommend}, exposed via FastAPI, with OpenAPI
+documentation auto-served at \code{/docs}) and the internal development harness call a single
+function, \code{handle\_recommend()} (Figure~\ref{fig:arch-api}). This was a deliberate design
+choice, not a literal reading of the original plan (which could be read as requiring the harness to
+make a real HTTP call to a separately-running server): the request/response \emph{shape} being
+validated is identical either way, since both paths go through the same pydantic models and the
+same handler logic, and requiring a developer to keep a second server process running just to see a
+suggestions panel render is friction the contract does not need to impose. External callers are
+unaffected by this choice --- they only ever see the HTTP surface.
+
+\definecolor{apicolorC}{RGB}{255,235,205}
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.85\textheight, center}
+\begin{tikzpicture}[node distance=1.0cm and 1.4cm]
+
+    \node[block, fill=colOrange] (http) {External caller\\[2pt]\footnotesize \code{POST /recommend} over HTTP};
+    \node[block, fill=colGreen, right=1.8cm of http] (gui) {Development harness\\[2pt]\footnotesize in-process call};
+
+    \node[smallblock, fill=colOrange, below=of http] (app) {FastAPI app\\[2pt]\footnotesize \code{/recommend}, \code{/health}};
+
+    \node[block, fill=colPurple, below=1.6cm of http, xshift=2.5cm] (handle) {\code{handle\_recommend()}\\[2pt]\footnotesize shared entry point};
+
+    \node[block, fill=colPink, below=1.1cm of handle] (log) {\code{log\_query()}\\[2pt]\footnotesize $\to$ SQLite};
+
+    \node[smallblock, fill=colPink, below=of log] (db) {\code{query\_log.db}\\[2pt]\footnotesize indexed on (user\_id, domain)};
+
+    \node[block, fill=colPurple, right=1.6cm of log] (resp) {\code{RecommendResponse}\\[2pt]\footnotesize the recommender core (Ch.~\ref{ch:recommender}) fills this in};
+
+    \draw[arrow] (http) -- (app);
+    \draw[arrow] (app) -- (handle);
+    \draw[arrow] (gui) -- (handle);
+    \draw[arrow] (handle) -- (log);
+    \draw[arrow] (log) -- (db);
+    \draw[arrow] (handle) -- (resp);
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{Both the real HTTP endpoint and the internal development harness converge on
+\code{handle\_recommend()}, which validates the request, persists it, and returns a response. This
+is the extension point the recommender core (Chapter~\ref{ch:recommender}) is built inside, without
+any further change to the contract, the log store, or the harness.}
+\label{fig:arch-api}
+\end{figure}
+
+\section{Summary}
+
+This chapter described the infrastructure the recommender depends on but does not itself
+contribute: two running VKGs (Movie, behaviorally rich but synthetic; Tourism, real but
+catalog-only by explicit scope decision), a domain-switching development harness, and --- the one
+piece that is genuinely load-bearing for the thesis --- a fixed API contract and persistent
+query log that Chapter~\ref{ch:recommender}'s recommender core is built entirely inside, with no
+further change to this boundary.

@@ -1,0 +1,101 @@
+\section{Motivation and Problem Statement}
+\label{sec:intro-motivation}
+
+Virtual Knowledge Graphs (VKGs) let a relational database be queried as if it were RDF, through an
+Ontology-Based Data Access (OBDA) mapping layer such as Ontop~\cite{ontop}. Combined with an
+LLM-driven natural-language-to-SPARQL (NL2SPARQL) pipeline, this lets a non-expert user ask a
+question in plain language --- \emph{``Churches in Verona''} --- and receive results retrieved
+directly from the underlying data, with no SPARQL expertise required. This is the architecture of
+the baseline system this thesis extends, ``Indeewari''~\cite{balasooriya2026}, developed under the
+same supervisor and grounded in the Verona tourism domain.
+
+The supervisor's own paper describing that baseline system explicitly names
+\emph{``recommendations''} as future work~\cite{balasooriya2026}: the system answers a question but
+does nothing to help a user formulate a better next one. An email from the supervisor made this
+concrete, asking for three extensions, in increasing order of research weight:
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{Domain selection} --- generalize the application so a user can choose \emph{which}
+        VKG to query (e.g.\ Movie vs.\ Tourism) instead of the system being wired to a single
+        dataset.
+    \item \textbf{User selection instead of login} --- let the user pick \emph{who they are} from a
+        list of personas, so the system can reason about that user's preferences, without
+        implementing real authentication.
+    \item \textbf{Query recommendation} --- the thesis's core contribution: after answering a
+        query, propose three follow-up query suggestions. If a user asks \emph{``Churches in
+        Verona,''} the system should show results \emph{plus} suggestions such as \emph{``Roman
+        Churches in Verona,''} \emph{``Free Churches in Verona,''} or \emph{``Trip to visit churches
+        in Verona.''} Critically, this recommender should consider not only the user's previous
+        queries but also their \textbf{real interaction data} --- because what a user \emph{says}
+        they want and what they \emph{actually} engage with are frequently different.
+\end{enumerate}
+
+Item (3) is this thesis's actual contribution, and its framing is the thesis's central research
+question: can a recommender that conditions on both a user's stated queries \emph{and} their real
+interaction behavior produce suggestions that are measurably better --- more aligned with what the
+user actually wants --- than one conditioning on query history alone?
+
+\section{Scope of This Thesis}
+\label{sec:intro-scope}
+
+Following an email exchange with the supervisor, after items (1) and (2) had already been partially
+explored, the scope was narrowed. Domain selection and user selection instead of login are handled
+by a separate application, already implemented by two other students under the same supervisor,
+described by the supervisor as ``empty on the recommendation side.'' This thesis does not build or
+integrate with that application's user interface. Its entire contribution is item (3): the query
+recommender, delivered as a \textbf{standalone model and API} --- any calling application,
+including the other students' system, integrates it later by calling an endpoint. This thesis is
+not responsible for that integration.
+
+The multi-domain VKG infrastructure that had already been built at the time of this scope decision
+--- two working VKGs (Movie and Tourism) and a domain-switching development harness --- is retained,
+but strictly as an \textbf{internal development and evaluation harness}: a way to build, test, and
+demo the recommender against real schemas and data, without depending on the external
+application's timeline or codebase. It is documented in Chapter~\ref{ch:arch} because the
+recommender's schema-grounding step and one of its two evaluation domains depend on it, but it is
+explicitly not, itself, a thesis deliverable.
+
+\section{Contributions}
+\label{sec:intro-contrib}
+
+This thesis makes the following contributions:
+
+\begin{itemize}
+    \item A \textbf{per-user behavioral preference profile} (Chapter~\ref{ch:behavior}) that
+        quantifies, for the Movie domain, how far a user's stated search intent diverges from what
+        they actually watch --- including an engineered temporal-join heuristic recovering an
+        implicit link between free-text search queries and later watch events that does not exist
+        as a key in the source data.
+    \item A \textbf{retrieval-augmented, behavior-conditioned query recommender}
+        (Chapter~\ref{ch:recommender}) --- a four-stage pipeline (retrieval, LLM-based candidate
+        generation, schema-grounding validation, and behavior-aware ranking) delivered as a
+        standalone HTTP API, adapting the GQR/RA-GQR line of work~\cite{bacciu2024} and borrowing
+        scoring-axis ideas from classical, non-LLM query-recommendation research~\cite{barman2024}.
+    \item An \textbf{empirically-grounded negative result} on schema-grounding validation
+        (Section~\ref{sec:rec-validation}): a precision hallucination filter, motivated directly by
+        a documented risk in the LLM+KG integration literature~\cite{pan2024} and by the baseline
+        system's own measured SPARQL-correctness rate~\cite{balasooriya2026}, was designed,
+        calibrated, and found not to be achievable with acceptable precision given how sparse this
+        project's source ontologies are --- a concrete, reportable limitation rather than a silently
+        shipped, over-claimed feature.
+    \item A \textbf{controlled ablation study} (Chapter~\ref{ch:eval}) isolating the effect of the
+        behavioral signal on suggestion quality, scored against real held-out ground truth, showing
+        a $6.5\times$ increase in behavioral-alignment@3 and a more than $2\times$ increase in
+        proxy-recall@3 when the behavioral profile is included --- the thesis's central empirical
+        confirmation that conditioning on real behavior, not just stated query text, produces
+        measurably different and better-aligned recommendations.
+\end{itemize}
+
+\section{Thesis Structure}
+\label{sec:intro-outline}
+
+Chapter~\ref{ch:background} introduces the theoretical background required for this work, including
+Knowledge Graphs, Virtual Knowledge Graphs, Ontology-Based Data Access, Ontop, RDF, SPARQL, and
+Large Language Models. Chapter~\ref{ch:relwork} reviews the four bodies of literature that ground
+the recommender's design. Chapter~\ref{ch:arch} describes the system architecture and development
+harness the recommender is built and evaluated against. Chapter~\ref{ch:behavior} presents the
+behavioral preference profile, the empirical substrate for the thesis's central premise.
+Chapter~\ref{ch:recommender} presents the recommender core itself --- the thesis's central design
+contribution. Chapter~\ref{ch:eval} presents the evaluation and its results.
+Chapter~\ref{ch:conclusion} summarizes the contributions, discusses limitations, and outlines
+future work.

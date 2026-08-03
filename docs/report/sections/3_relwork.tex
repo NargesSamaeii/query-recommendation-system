@@ -1,0 +1,102 @@
+Four bodies of work ground the design decisions made in this thesis, each informing a different
+part of the system.
+
+\section{Natural Language Reasoning over Virtual Knowledge Graphs}
+\label{sec:rel-nl2sparql}
+
+Balasooriya, Dalla Vecchia, and Quintarelli~\cite{balasooriya2026} describe the baseline system
+this thesis extends: Ontop exposes relational Verona tourism data as a VKG; NL2SPARQL translation
+is delegated to SPARQL-LLM, an external, triplestore-agnostic, metadata-driven Text2SPARQL system
+using SHACL-annotated query examples, VoID schema descriptions, and embedding-based retrieval; and
+a GPT-4.1-mini prompt-based intent classifier first decides whether a question is factual (routed
+to NL2SPARQL) or analytical/preference-oriented (routed to a lightweight, frequency-based inference
+module over Verona Card visit data). Their preliminary evaluation reports 100\% routing accuracy on
+50 hand-labeled questions, but only 70\% SPARQL-correctness on the factual subset --- 12 of 40
+failures attributed to entity-linking errors or invalid syntax. Their conclusion explicitly names
+recommendations as future work; this thesis is that future work, generalized to a second domain and
+grounded in real interaction data rather than only aggregate frequency.
+
+Three design implications follow directly. First, the existing pipeline's stage-by-stage structure
+is kept intact; this thesis adds a new module operating \emph{after} result formatting, rather than
+replacing the NL2SPARQL core (Chapter~\ref{ch:arch}). Second, their intent-routing pattern --- an
+LLM classifying before acting --- is a template this thesis does not directly reuse, but their
+70\% SPARQL-correctness figure is a direct, empirically-grounded warning: entity-linking and query
+validity are real failure modes, and any downstream step that generates \emph{new} natural-language
+queries inherits an analogous risk that they might not be answerable at all
+(Section~\ref{sec:rec-validation}).
+
+\section{LLM-Based Query Recommendation}
+\label{sec:rel-gqr}
+
+Bacciu, Palumbo, Damianou, Tonellotto, and Silvestri~\cite{bacciu2024} reframe query recommendation
+as a pure generation task: prompt an LLM with a handful of \emph{query $\to$ recommendations}
+example pairs plus the user's current query, and let the model generate recommendations directly,
+with no query-log-trained ranking model needed --- solving the cold-start problem that afflicts
+classical, log-mining recommenders. Their RA-GQR variant retrieves semantically similar past
+queries from a log via sentence embeddings and approximate nearest-neighbor search, and uses those,
+rather than generic hand-curated examples, to build the few-shot prompt dynamically --- Retrieval-
+Augmented Generation applied to the recommendation prompt itself. In their experiments, RA-GQR
+measurably outperforms plain GQR (roughly $+13$ to $+22\%$ NDCG@10).
+
+This is the direct technique behind Section~\ref{sec:rec-retrieval} and~\ref{sec:rec-generation}: a
+prompt is built from (i) a small number of retrieved, embedding-similar past queries from the
+user's own log, (ii) the current query, and (iii) an instruction to continue with recommendations,
+following their prompt template structure. Their evaluation protocols and metrics --- scoring a
+recommendation as if it substituted for the original query, or as if it were appended to it, plus
+a blind user-preference study --- are the direct ancestor of this thesis's own ablation design in
+Chapter~\ref{ch:eval}, adapted to a query-history-versus-behavioral-profile axis in place of their
+original data-availability axis.
+
+\section{LLM and Knowledge Graph Integration}
+\label{sec:rel-kgllm}
+
+Pan, Luo, Wang, Chen, Wang, and Wu~\cite{pan2024} survey a broad taxonomy of LLM+KG integration
+patterns. Two parts are directly relevant here, not the full taxonomy: their KG-prompting/KGQA
+sections describe patterns for injecting retrieved graph facts into an LLM prompt so it reasons
+\emph{with} the graph rather than purely from parametric knowledge, informing how this thesis's
+recommended queries should ideally be grounded in the loaded ontology's actual classes and
+properties rather than an imagined schema; and their repeated, explicit documentation of a
+hallucination/faithfulness risk --- that LLM-generated content referencing structured knowledge
+must match the target graph \emph{exactly}, and that this remains a known failure mode even with
+in-context learning. Combined with the baseline system's own measured 70\% SPARQL-correctness rate
+(Section~\ref{sec:rel-nl2sparql}), this directly motivates \emph{not} shipping raw LLM-suggested
+queries to a user without first checking that they are actually answerable against the currently
+loaded schema --- the requirement Section~\ref{sec:rec-validation} attempts, and partially fails,
+to satisfy.
+
+\section{Classical, Non-LLM Query Recommendation}
+\label{sec:rel-qrmoccga}
+
+Barman, Sarkar, and Chowdhury~\cite{barman2024} model query recommendation as multi-objective
+optimization over a query-click bipartite graph built from search logs, using two objective
+functions built from four concrete similarity features --- compound click probability, Jaccard
+index of clicked links, Jaccard index of query words, and longest-common-subsequence ratio of query
+strings --- optimized via a cooperative co-evolutionary genetic algorithm (QRMOCCGA), evaluated
+against SimRank, Heat Diffusion, and commercial search engines on real AOL query logs.
+
+Reimplementing their full cooperative co-evolutionary genetic algorithm is out of scope for this
+thesis, but two of its ideas are directly useful and were borrowed at negligible cost. First, their
+behavioral-similarity features --- word-overlap and click-overlap similarity between two queries ---
+are a simple, non-LLM way to quantify ``how well does this candidate query match the user's actual
+watch behavior,'' used directly inside this thesis's own ranking step
+(Section~\ref{sec:rec-ranking}) without training anything. Second, their explicit two-objective
+framing --- semantic relevance versus lexical/visual similarity --- is the direct conceptual
+ancestor of this thesis's own two ranking axes, query-history similarity versus behavioral
+alignment, even though the actual ranking mechanism here is a simple weighted score with greedy
+diversification rather than a genetic algorithm. QRMOCCGA's simpler feature set is also used
+directly as a classical, non-LLM baseline in this thesis's evaluation (Section~\ref{sec:eval-results}).
+
+\section{Positioning of This Thesis}
+\label{sec:rel-position}
+
+No prior work reviewed here combines all three ingredients this thesis's recommender uses jointly:
+retrieval-augmented, LLM-based candidate generation (from GQR/RA-GQR); an explicit, per-user
+divergence signal between stated and actual preference, rather than either signal alone (motivated
+directly by the supervisor's framing and absent from all four reviewed papers); and a
+schema-grounding validation step informed by, but going beyond, generic LLM+KG hallucination
+concerns, calibrated empirically against this project's own ontologies rather than assumed to work.
+The negative empirical result reported in Section~\ref{sec:rec-validation} --- that class-level
+embedding similarity cannot reliably separate on-topic from off-topic candidates when source
+ontology metadata is this sparse --- is, to the author's knowledge, not previously documented in
+this specific combination of techniques, and is offered as a concrete, reportable finding for
+future work in this space to build on.

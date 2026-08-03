@@ -1,0 +1,172 @@
+\section{Methodology}
+\label{sec:eval-method}
+
+Chapter~\ref{ch:recommender} verified the recommender \emph{qualitatively}, on worked examples. This
+chapter turns that into a controlled, quantitative comparison, answering four questions: does the
+schema-grounding step let anything sensible through at all; does adding the behavioral signal shift
+suggestions in the intended direction; would the resulting suggestions have actually surfaced
+content the user went on to watch; and how does a trivial, non-LLM baseline compare on the same
+metrics. All four are answered by running the real, unmodified recommender core from
+Chapter~\ref{ch:recommender} --- no reimplementation, no mocking --- with an evaluation harness
+layered additively on top of it. The evaluation scope was deliberately kept small: 3 Movie users
+$\times$ 4 test questions $\times$ 2 ablation conditions (24 LLM calls), plus 4 Tourism test
+questions (4 calls).
+
+An honest ablation requires that the two compared conditions differ \emph{only} in the variable
+under test, and that both are graded against the same, uncontaminated ground truth. This is
+achieved with three mechanisms. First, evaluation users are selected among those with a behavioral
+profile, at least five search-log rows, and \emph{maximal} stated-vs-actual divergence (zero
+Jaccard similarity), for the sharpest possible contrast; the first three by user id are used for
+reproducibility. Second, each selected user's behavioral profile is rebuilt \emph{held out}: watch
+history is split at that user's own 80th-percentile watch date, everything at or before the cutoff
+building a held-out profile the recommender is allowed to see, everything after kept aside as proxy
+ground truth --- and the same cutoff bounds which search-log rows seed retrieval, so no future
+information leaks into either signal. Third, query-history retrieval is seeded from this held-out
+data via a new optional parameter on the retrieval function, entirely bypassing the shared
+production query log, so the live system used by real callers is untouched by the evaluation run.
+
+\begin{figure}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth, max totalheight=0.88\textheight, center}
+\begin{tikzpicture}[node distance=1.0cm and 1.5cm]
+
+    \node[block, fill=colSource] (users) {Evaluation-user selection\\[2pt]\footnotesize 3 users: max divergence, $\geq$5 searches};
+
+    \node[block, fill=colSource, below=of users] (split) {Held-out profile split\\[2pt]\footnotesize 80th-pctile watch-date cutoff per user};
+
+    \node[block, fill=colPink, below left=1.6cm and -1.6cm of split] (condA) {Condition A\\[2pt]\footnotesize history-only (plain GQR)};
+    \node[block, fill=colGreen, below right=1.6cm and -1.6cm of split] (condB) {Condition B\\[2pt]\footnotesize history + held-out behavior};
+
+    \coordinate (midCond) at ($(condA)!0.5!(condB)$);
+    \node[block, fill=colPurple, below=2.4cm of midCond] (chain) {real recommender core (Ch.~\ref{ch:recommender})\\[2pt]\footnotesize retrieval $\to$ generation $\to$ validation $\to$ ranking};
+
+    \node[block, fill=colOrange, below=of chain] (score) {Scoring\\[2pt]\footnotesize against REAL held-out profile + held-out watch rows, both conditions};
+
+    \node[smallblock, fill=colOrange, below=of score] (out) {groundedness, behavioral-alignment@3,\\ history-sim@3, proxy-recall@3};
+
+    \draw[arrow] (users) -- (split);
+    \draw[arrow] (split) -- (condA);
+    \draw[arrow] (split) -- (condB);
+    \draw[arrow] (condA) -- (chain);
+    \draw[arrow] (condB) -- (chain);
+    \draw[arrow] (chain) -- (score);
+    \draw[arrow] (score) -- (out);
+
+\end{tikzpicture}
+\end{adjustbox}
+\caption{The evaluation's ablation flow. Both conditions run the identical, real recommender-core
+functions; the only difference is whether the behavioral profile is passed. Scoring is decoupled
+from what each condition was allowed to see --- both are graded against the same real held-out
+ground truth.}
+\label{fig:eval-pipeline}
+\end{figure}
+
+For every (user, question) pair, the real pipeline is run twice: \textbf{Condition A}
+(history-only, plain GQR) with no behavioral profile passed to generation or ranking; and
+\textbf{Condition B} (history + behavior) with the held-out profile passed through. Every resulting
+suggestion set from both conditions is scored against the same real held-out profile and held-out
+watch rows, using the same behavioral-alignment and history-similarity functions
+Section~\ref{sec:rec-ranking} already uses for ranking, plus a new proxy-recall check (token overlap
+between a suggestion and the held-out rows' genre/country/content-type values). A trivial, non-LLM
+classical baseline, mirroring both the frequency-based fallback in the baseline system and
+QRMOCCGA's non-LLM framing without reimplementing either paper's actual method, returns up to three
+suggestions of the form ``\{category\} movies,'' one per profile's top category.
+
+\section{Results}
+\label{sec:eval-results}
+
+\begin{table}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Condition} & \textbf{Calls} & \textbf{Groundedness} & \textbf{Behavioral} & \textbf{History} & \textbf{Proxy} \\
+ & & \textbf{rate} & \textbf{alignment@3} & \textbf{similarity@3} & \textbf{recall@3} \\
+\midrule
+A: history-only (plain GQR)             & 12 & 1.00 & \textbf{0.022} & 0.121 & \textbf{0.25} \\
+B: history + behavior (this thesis)     & 12 & 1.00 & \textbf{0.144} & 0.057 & \textbf{0.583} \\
+Classical baseline (non-LLM template)   & 3  & 1.00 & 0.222          & ---    & 1.00 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Movie-domain ablation results, averaged across 3 users $\times$ 4 questions.}
+\label{tab:eval-ablation}
+\end{table}
+
+\textbf{The headline result}: Condition B's behavioral-alignment@3 is approximately $6.5\times$
+Condition A's ($0.144$ vs.\ $0.022$), and its proxy-recall@3 is more than double ($0.583$ vs.\
+$0.25$) --- the direct, quantitative confirmation of this thesis's central claim, consistent across
+every one of the three evaluated users and all four test questions, not a cherry-picked case.
+
+An unexpected, worth-reporting side effect: history-similarity@3 is \emph{lower} in Condition B
+($0.057$) than Condition A ($0.121$). Adding the behavioral signal does not simply layer new
+information on top of the history-only suggestions --- it visibly \emph{displaces} some of the
+lexical closeness to the user's own past queries in favor of behaviorally novel suggestions, a
+genuine trade-off rather than a free lunch (Section~\ref{sec:eval-qual}).
+
+The classical baseline's very high behavioral-alignment@3 ($0.222$) and perfect proxy-recall@3
+($1.00$) are close to definitional, not a fair ``it beats the LLM'' result: its suggestions are
+literally the profile's own top category names, so scoring them against that same profile's
+categories is close to tautological. It is included as a required sanity ceiling and a legitimate
+non-LLM comparison point, not as evidence the LLM-based approach underperforms --- Condition B,
+notably, still generates novel, well-formed natural-language queries rather than a category name
+mechanically appended with ``movies.''
+
+No behavioral profile exists for Tourism, by the design decision recorded in
+Section~\ref{sec:arch-vkgs}, so the ablation and proxy-recall metrics do not apply there. A
+groundedness-only check on four Tourism test questions (20 raw candidates across all four) passed
+$0.95$ of candidates through the schema-grounding filter --- consistent with that filter's
+documented design as a weak sanity check (Section~\ref{sec:rec-validation}) rather than a precision
+guard: a near-100\% pass rate confirms the filter is not degenerate, but says nothing further about
+precision.
+
+\section{Qualitative Examples}
+\label{sec:eval-qual}
+
+Two representative rows illustrate the mechanism behind Table~\ref{tab:eval-ablation}'s numbers.
+
+\paragraph{One user, query ``Show me exciting action films''} (actual-top categories: Horror, USA,
+TV Series, Canada --- not Action, despite the stated query).
+\begin{itemize}
+    \item \textbf{A}: \emph{``What are the most popular action movies on Netflix,'' ``Can you
+        recommend some intense martial arts films,'' ``Show me action films starring Dwayne
+        Johnson''} --- straightforward elaborations of ``action,'' ignoring behavior entirely.
+    \item \textbf{B}: \emph{``Horror movies on Netflix,'' ``USA action films of the 80s,''
+        ``Canadian TV series based on true stories''} --- visibly pivots toward Horror/USA/Canada,
+        the user's real top-watched categories, while still keeping one action-adjacent suggestion.
+\end{itemize}
+
+\paragraph{Another user, query ``What movies have the genre Action?''} (actual-top: USA, Stand-up
+Comedy, Documentary, Comedy --- again, not Action).
+\begin{itemize}
+    \item \textbf{A}: \emph{``...family-friendly action movies?,'' ``Movies similar to Die
+        Hard...,'' ``...action movies with a strong female lead?''} --- all still literally about
+        action movies.
+    \item \textbf{B}: \emph{``Stand-up comedians who have acted in movies,'' ``Movies similar to
+        Die Hard,'' ``Action movies set in New York City''} --- one suggestion pivots fully to
+        stand-up comedy, this user's actual top category; a second stays closer to the stated query.
+\end{itemize}
+
+\section{Threats to Validity and Limitations}
+\label{sec:eval-limits}
+
+Sample size is small, by explicit choice (3 users, 4 questions, 12 scored suggestion sets per
+condition). The direction and magnitude of the ablation effect ($6.5\times$ alignment, $2.3\times$
+proxy recall) are large enough to be a credible signal at this size, but a larger run --- more
+users, more questions, supported by the harness with no code changes --- would strengthen these
+claims statistically, and is the most direct piece of future work
+(Section~\ref{sec:conclusion-future}). Held-out watch rows are very few per user (1--3 rows), an
+artifact of the per-user percentile cutoff applied to a modest amount of synthetic watch history;
+proxy-recall numbers should be read as directionally informative, not statistically tight.
+
+The synthetic-data caveat from Chapter~\ref{ch:behavior} carries over directly: the underlying
+dataset has no real causal link between a stated search and a later watch, so the specific
+\emph{magnitude} of the divergence effect is a property of this dataset's generation process as
+much as of real user behavior. This directly bounds how strongly these results can be claimed to
+generalize to real users; re-running this exact harness against real interaction data, if it ever
+becomes available, is a direct, no-code-change validation step.
+
+This evaluation used a local Ollama model rather than the originally-planned cloud provider
+(Section~\ref{sec:rec-generation}); re-running after flipping the provider is a direct,
+no-code-change comparison worth pursuing if a funded key becomes available, to check whether
+suggestion quality or alignment changes with a stronger model.
