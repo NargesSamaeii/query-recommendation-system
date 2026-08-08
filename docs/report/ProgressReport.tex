@@ -1,0 +1,65 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdftitle={Thesis Progress Report},
+    pdfauthor={Narges Samaei}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Thesis Progress Report}\\[0.3cm]
+Narges Samaei\\
+University of Verona --- Department of Computer Science\\
+Master's Degree in Artificial Intelligence\\
+\emph{Supervisor}: Professor Elisa Quintarelli\\
+\today
+\end{center}
+
+\vspace{0.8cm}
+
+\noindent Dear Professor Quintarelli,
+
+\vspace{0.3cm}
+
+\noindent I would like to share a brief update on my thesis project.
+
+\chapter{Progress Update}
+
+\section{Objective}
+
+The objective is to develop a personalized query recommender that proposes three follow-up
+questions after the user receives an answer. The recommendations will consider both previous
+queries and actual user behavior, since stated and real preferences may differ.
+
+\section{Infrastructure}
+
+The PostgreSQL and Ontop infrastructure is now ready and fully Dockerized. The datasets are
+loaded into PostgreSQL containers, while the Ontop containers expose the Movie and Tourism data
+through separate SPARQL endpoints. The behavioral-profile component is also ready for the Movie
+domain and analyzes search logs and watch history to identify each user's stated and actual
+preferences.
+
+\section{Current Work: Embedding-Based Retrieval}
+
+I am currently working on embedding-based retrieval. Sentence embeddings and cosine similarity
+will be used to find previous user queries that are semantically related to the current
+question, even when they use different words.
+
+\section{Next Steps}
+
+The next step is to combine the current question, similar past queries, and the behavioral
+profile. An LLM will generate candidate follow-up questions, which will then be validated against
+the domain schema, ranked, and diversified to select the best three. I am using Ollama as a local
+LLM environment for development and testing.
+
+\vspace{0.8cm}
+
+\noindent Kind regards,\\
+Narges Samaei
+
+\end{document}

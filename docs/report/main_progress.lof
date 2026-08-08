@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Docker Compose topology for the two Virtual Knowledge Graphs. Each Ontop container waits for its database's healthcheck before starting, and both mount the same JDBC driver directory (dashed arrows) --- a workaround for a missing-driver defect in the base Ontop image.}}{21}{figure.caption.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The Movie ontology has no native SHACL shapes, so a one-time script generates them from its existing \texttt {rdfs:domain}/\texttt {rdfs:range} declarations before the schema parser can consume it. This m-schema JSON is the same artifact Section~\ref {sec:rec-validation}'s schema-grounding check embeds and thresholds against.}}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Both the real HTTP endpoint and the internal development harness converge on \texttt {handle\_recommend()}, which validates the request, persists it, and returns a response. This is the extension point the recommender core (Chapter~\ref {ch:recommender}) is built inside, without any further change to the contract, the log store, or the harness.}}{26}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The behavioral-profiling pipeline. The catalog vocabulary (top) tags search queries and implicitly defines the category space watch events are grouped into. The actual (left) and stated (right) branches each produce a per-user/month/category intensity table, feeding both the per-user JSON profiles and a divergence score; the temporal join (bottom left) produces a separate, row-level output.}}{30}{figure.caption.11}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
