@@ -68,4 +68,10 @@ being open-ended:
         thesis used a local Ollama model after both configured cloud providers were blocked by
         account issues unrelated to the code; re-running with a stronger, funded model is a direct,
         no-code-change comparison worth pursuing.
+    \item \textbf{Collecting and analyzing live user ratings.} The \code{POST /rate} endpoint and
+        its summary script (Section~\ref{sec:arch-ratings}) are implemented and exercised
+        end-to-end, but no real ratings had been collected at the time of writing; once a caller
+        starts sending them, \code{ratings\_summary.py} already reports mean stars and counts
+        overall, per domain, and per suggestion with no further code changes, giving a live
+        complement to Chapter~\ref{ch:eval}'s offline ablation.
 \end{itemize}

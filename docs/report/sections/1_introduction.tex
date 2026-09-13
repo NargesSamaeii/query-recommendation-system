@@ -5,14 +5,14 @@ Virtual Knowledge Graphs (VKGs) let a relational database be queried as if it we
 Ontology-Based Data Access (OBDA) mapping layer such as Ontop~\cite{ontop}. Combined with an
 LLM-driven natural-language-to-SPARQL (NL2SPARQL) pipeline, this lets a non-expert user ask a
 question in plain language --- \emph{``Churches in Verona''} --- and receive results retrieved
-directly from the underlying data, with no SPARQL expertise required. This is the architecture of
-the baseline system this thesis extends, ``Indeewari''~\cite{balasooriya2026}, developed under the
-same supervisor and grounded in the Verona tourism domain.
+directly from the underlying data, with no SPARQL expertise required. This is the architecture
+underlying the Verona tourism domain used as one of this thesis's evaluation
+domains~\cite{balasooriya2026}.
 
-The supervisor's own paper describing that baseline system explicitly names
-\emph{``recommendations''} as future work~\cite{balasooriya2026}: the system answers a question but
-does nothing to help a user formulate a better next one. An email from the supervisor made this
-concrete, asking for three extensions, in increasing order of research weight:
+Prior work describing this architecture explicitly names \emph{``recommendations''} as future
+work~\cite{balasooriya2026}: the system answers a question but does nothing to help a user
+formulate a better next one. This thesis addresses that gap along three fronts, in increasing
+order of research weight:
 
 \begin{enumerate}[label=(\arabic*)]
     \item \textbf{Domain selection} --- generalize the application so a user can choose \emph{which}
@@ -38,14 +38,12 @@ user actually wants --- than one conditioning on query history alone?
 \section{Scope of This Thesis}
 \label{sec:intro-scope}
 
-Following an email exchange with the supervisor, after items (1) and (2) had already been partially
-explored, the scope was narrowed. Domain selection and user selection instead of login are handled
-by a separate application, already implemented by two other students under the same supervisor,
-described by the supervisor as ``empty on the recommendation side.'' This thesis does not build or
-integrate with that application's user interface. Its entire contribution is item (3): the query
-recommender, delivered as a \textbf{standalone model and API} --- any calling application,
-including the other students' system, integrates it later by calling an endpoint. This thesis is
-not responsible for that integration.
+After items (1) and (2) had already been partially explored, the scope was narrowed to item (3).
+Domain selection and user selection instead of login are handled by a separate, existing
+application that has no query-recommendation functionality of its own. This thesis does not build
+or integrate with that application's user interface. Its entire contribution is item (3): the
+query recommender, delivered as a \textbf{standalone model and API} --- any calling application
+integrates it later by calling an endpoint. This thesis is not responsible for that integration.
 
 The multi-domain VKG infrastructure that had already been built at the time of this scope decision
 --- two working VKGs (Movie and Tourism) and a domain-switching development harness --- is retained,

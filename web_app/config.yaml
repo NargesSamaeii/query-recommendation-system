@@ -25,16 +25,16 @@ llm:
       provider: "mistral"  # Fast extraction - use Mistral (7B)
       # seed: 42            # Optional per-stage override
     missing_id_extraction:
-      provider: "azure"  # Use Azure OpenAI for better entity resolution
-      model_name: "gpt-4o-mini"
+      provider: "ollama"  # No AZURE_OPENAI_API_KEY configured in this environment -- use local Ollama instead
+      model_name: "llama3.1:8b"
       # seed: 42            # Optional per-stage override
     query_generation:
-      provider: "azure"  # Use Azure OpenAI for best query generation quality
-      model_name: "gpt-4o-mini"
+      provider: "ollama"  # No AZURE_OPENAI_API_KEY configured in this environment -- use local Ollama instead
+      model_name: "llama3.1:8b"
       # seed: 42            # Optional per-stage override
     query_routing:
-      provider: "azure"  # Use Azure OpenAI for routing preview and stage decisions
-      model_name: "gpt-4o-mini"
+      provider: "ollama"  # No AZURE_OPENAI_API_KEY configured in this environment -- use local Ollama instead
+      model_name: "llama3.1:8b"
       # seed: 42            # Optional per-stage override
 
 # SPARQL Endpoint Configuration

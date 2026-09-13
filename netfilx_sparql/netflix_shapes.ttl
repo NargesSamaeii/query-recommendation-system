@@ -1,6 +1,7 @@
 @prefix ex: <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 ex:CountryShape a sh:NodeShape ;
     sh:targetClass ex:Country .
@@ -9,6 +10,8 @@ ex:DeviceShape a sh:NodeShape ;
     sh:targetClass ex:Device .
 
 ex:GenreShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:path rdfs:label ] ;
     sh:targetClass ex:Genre .
 
 ex:LanguageShape a sh:NodeShape ;

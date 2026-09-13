@@ -206,6 +206,7 @@ class RecommendRequest(BaseModel):
 
 class RecommendResponse(BaseModel):
     suggestions: list[str] = Field(default_factory=list)
+    query_log_id: Optional[int] = None
 \end{lstlisting}
 
 \subsection{The query log}
@@ -266,11 +267,47 @@ any further change to the contract, the log store, or the harness.}
 \label{fig:arch-api}
 \end{figure}
 
+\subsection{Live rating capture}
+\label{sec:arch-ratings}
+
+The offline ablation in Chapter~\ref{ch:eval} scores suggestions against held-out historical
+behavior, not against feedback from a real user who actually saw them. To make that second,
+complementary form of evaluation possible, a second endpoint, \code{POST /rate}, was added
+alongside \code{POST /recommend}:
+
+\begin{lstlisting}[language=Python, caption={The rating contract. \code{query\_log\_id} is the id
+returned by the \code{/recommend} call that produced the rated suggestion, so a rating can be
+joined back to the request it responds to.}]
+class RateRequest(BaseModel):
+    user_id: str
+    domain: str
+    suggestion: str
+    stars: int = Field(ge=1, le=5)
+    query_log_id: Optional[int] = None
+
+class RateResponse(BaseModel):
+    rating_id: int
+\end{lstlisting}
+
+\code{handle\_rate()} is deliberately the simplest handler in the API: unlike
+\code{handle\_recommend()}, it orchestrates no pipeline --- it validates the 1--5 star rating
+(Pydantic-enforced) and appends one row to a second SQLite store, \code{ratings.db}, mirroring the
+query log's single-file, zero-infrastructure pattern (\code{ratings.py}, indexed on \code{domain}
+and \code{query\_log\_id}). A companion script, \code{ratings\_summary.py}, reads that table back
+and reports mean stars and rating counts overall, per domain, and per suggestion. Both the endpoint
+and the summary script are domain-agnostic by construction --- neither depends on a behavioral
+profile existing for the rated user --- so the mechanism already covers Tourism as well as Movie,
+unlike the ablation in Chapter~\ref{ch:eval}. No real ratings had been collected by the time this
+thesis was written, so this section documents a working, exercised mechanism (demonstrated
+end-to-end by \code{call\_recommender.py}: call \code{/recommend}, then rate its first suggestion),
+not a results table; using it to gather real user feedback is future work
+(Section~\ref{sec:conclusion-future}).
+
 \section{Summary}
 
 This chapter described the infrastructure the recommender depends on but does not itself
 contribute: two running VKGs (Movie, behaviorally rich but synthetic; Tourism, real but
 catalog-only by explicit scope decision), a domain-switching development harness, and --- the one
-piece that is genuinely load-bearing for the thesis --- a fixed API contract and persistent
-query log that Chapter~\ref{ch:recommender}'s recommender core is built entirely inside, with no
-further change to this boundary.
+piece that is genuinely load-bearing for the thesis --- a fixed API contract, persistent query log,
+and live rating store that Chapter~\ref{ch:recommender}'s recommender core is built entirely
+inside, with no further change to this boundary.

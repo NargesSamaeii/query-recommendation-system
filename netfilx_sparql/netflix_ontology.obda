@@ -44,7 +44,7 @@ source		SELECT movie_id, genre_primary
 			  AND genre_primary IS NOT NULL
 
 mappingId	genre-basic
-target		:genre/{genre_primary} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#Genre> . 
+target		:genre/{genre_primary} a <http://www.semanticweb.org/exogame/ontologies/2026/4/untitled-ontology-57#Genre> ; rdfs:label {genre_primary}^^xsd:string .
 source		SELECT DISTINCT genre_primary
 			FROM movies
 			WHERE genre_primary IS NOT NULL

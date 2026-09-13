@@ -94,9 +94,9 @@ Swapping back to a real Gemini/OpenAI key later needs no code changes -- just ch
 Real passwords live only in the gitignored `.env` file at the repo root and are passed to
 Ontop directly as `ONTOP_DB_USER`/`ONTOP_DB_PASSWORD`/`ONTOP_DB_URL` environment variables (see
 `docker-compose.yml`) -- no `.properties` file with a plaintext password is used by this stack.
-The pre-existing `netfilx_sparql/netflix_ontology.properties` and
-`Movie/movie_project.properties` files are legacy/standalone-CLI artifacts, not consumed here;
-their plaintext passwords have been replaced with a `CHANGEME` placeholder.
+The pre-existing `netfilx_sparql/netflix_ontology.properties` file is a legacy/standalone-CLI
+artifact, not consumed here; its plaintext password has been replaced with a `CHANGEME`
+placeholder.
 
 ## Known limitations (Phase 0 scope)
 

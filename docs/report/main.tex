@@ -154,19 +154,18 @@ suggestions on both a user's stated queries and their real interaction behavior}
 %----------------------------------------------------------------------------------------
 \begin{poliabstract}{Abstract}
 
-The baseline system this thesis extends, ``Indeewari,'' lets a non-expert user type a
-natural-language question (e.g.\ \emph{``Churches in Verona''}) and receive results retrieved from
-a Virtual Knowledge Graph (VKG) via an LLM-driven NL2SPARQL pipeline. This thesis addresses a gap
-its own predecessor paper names explicitly as future work: the system answers a question but never
-helps the user ask a \emph{better} next one. The contribution is a \textbf{query recommender} ---
-delivered as a standalone model and API, not a UI feature --- that, after a query is answered,
-proposes three follow-up query suggestions.
+Systems that let a non-expert user type a natural-language question (e.g.\ \emph{``Churches in
+Verona''}) and receive results retrieved from a Virtual Knowledge Graph (VKG) via an LLM-driven
+NL2SPARQL pipeline answer a question but never help the user ask a \emph{better} next one --- a gap
+explicitly named as future work in this line of research~\cite{balasooriya2026}. The contribution
+of this thesis is a \textbf{query recommender} --- delivered as a standalone model and API, not a
+UI feature --- that, after a query is answered, proposes three follow-up query suggestions.
 
-The central research idea, attributed by the supervisor to ``Jerry's'' analysis, is that a user's
-\emph{stated} queries and their \emph{real} interaction behavior often diverge: a user may type
-\emph{``romantic movie''} but consistently watch American comedies. A recommender conditioning on
-query history alone is, on this view, little more than autocomplete. This thesis builds and
-evaluates a recommender that conditions on \emph{both} signals. A per-user behavioral preference
+The central research idea is that a user's \emph{stated} queries and their \emph{real} interaction
+behavior often diverge: a user may type \emph{``romantic movie''} but consistently watch American
+comedies. A recommender conditioning on query history alone is, on this view, little more than
+autocomplete. This thesis builds and evaluates a recommender that conditions on \emph{both}
+signals. A per-user behavioral preference
 profile is constructed from real (synthetic but behaviorally rich) watch and search data,
 quantifying how far a user's stated search intent diverges from what they actually watch. This
 signal is injected into a retrieval-augmented generation pipeline, adapted from the GQR/RA-GQR

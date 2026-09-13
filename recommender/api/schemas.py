@@ -21,3 +21,22 @@ class RecommendRequest(BaseModel):
 
 class RecommendResponse(BaseModel):
     suggestions: list[str] = Field(default_factory=list)
+    query_log_id: Optional[int] = None
+
+
+class RateRequest(BaseModel):
+    """Phase 7: live star rating (1-5) on one suggestion from a /recommend response.
+
+    `query_log_id` should be the id returned by the /recommend call that produced
+    `suggestion`, so ratings can be joined back to the request they're rating.
+    """
+
+    user_id: str
+    domain: str
+    suggestion: str
+    stars: int = Field(ge=1, le=5)
+    query_log_id: Optional[int] = None
+
+
+class RateResponse(BaseModel):
+    rating_id: int

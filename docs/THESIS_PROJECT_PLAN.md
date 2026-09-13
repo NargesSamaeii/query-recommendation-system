@@ -3,16 +3,16 @@
 **Status:** draft roadmap · **Owner:** Narges · **Supervisor:** Prof. Elisa Quintarelli
 **Scope (updated 2026-07-25):** the thesis contribution is the **query recommender model
 itself**, delivered as a **standalone API** any app can call. Domain selection and user selection
-(items (1)/(2) below) are handled by a separate app already built by two bachelor students under
-Prof. Quintarelli — they are **not** a thesis deliverable. The multi-domain VKG work already done
-in this repo (`web_app`, Phases 0-1) is kept only as an **internal dev/test harness** for
-building and validating the recommender in isolation — see §2a.
+(items (1)/(2) below) are handled by a separate, existing app — they are **not** a thesis
+deliverable. The multi-domain VKG work already done in this repo (`web_app`, Phases 0-1) is kept
+only as an **internal dev/test harness** for building and validating the recommender in isolation
+— see §2a.
 
 ---
 
 ## 1. Executive summary
 
-The base system ("Indeewari") lets a non-expert user type a natural-language question (e.g.
+The underlying architecture lets a non-expert user type a natural-language question (e.g.
 *"Churches in Verona"*) and get results retrieved from a Virtual Knowledge Graph (VKG) via an
 LLM-driven NL2SPARQL pipeline. The professor's email asks for three extensions, in increasing
 order of research weight:
@@ -23,22 +23,21 @@ order of research weight:
    so the system can reason about that user's preferences, without building real
    authentication.
 3. **The actual thesis contribution** — a **query recommender**: after the system answers a
-   query, it should propose 3 follow-up query suggestions. The key research idea, attributed
-   in the email to "Jerry's" analysis, is that a user's *stated* queries and their *real*
-   interaction behavior often diverge (a user types "romantic movie" but consistently watches
-   American comedies). A good recommender must condition on **both** signals — not just query
-   history — to be genuinely useful rather than a superficial autocomplete.
+   query, it should propose 3 follow-up query suggestions. The key research idea is that a
+   user's *stated* queries and their *real* interaction behavior often diverge (a user types
+   "romantic movie" but consistently watches American comedies). A good recommender must
+   condition on **both** signals — not just query history — to be genuinely useful rather than
+   a superficial autocomplete.
 
 This document (a) inventories what already exists in the repository and what is missing for
 each of the three asks, (b) grounds the design of extension (3) in four papers the professor
 supplied, and (c) lays out a phased implementation plan.
 
-> **Scope update (2026-07-25):** after an email exchange with the professor, items (1) and (2)
-> above are handled by a separate app already implemented by two bachelor students (per the
-> professor, "empty on the recommendation side"). This thesis does **not** build or integrate
+> **Scope update (2026-07-25):** items (1) and (2) above are handled by a separate, existing app
+> with no recommendation functionality of its own. This thesis does **not** build or integrate
 > with that app's UI — it narrows to **item (3) only**: design, implement, and evaluate the query
-> recommender as a **standalone model + API**, so any app (theirs or otherwise) can integrate it
-> later by calling an endpoint. See §2a and the revised phase plan in §7.
+> recommender as a **standalone model + API**, so any app can integrate it later by calling an
+> endpoint. See §2a and the revised phase plan in §7.
 
 ---
 
@@ -47,7 +46,7 @@ supplied, and (c) lays out a phased implementation plan.
 From the email (paraphrased, structure preserved):
 
 > - Extend the app to let the user choose a domain from a list (e.g. Movie, Tourism). If
->   Tourism is chosen, use Indeewari's Verona VKG; if Movie is chosen, use Narges's own case
+>   Tourism is chosen, use the existing Verona VKG; if Movie is chosen, use Narges's own case
 >   study (data + ontology).
 > - Extend the app to let the user choose a *user* instead of logging in, so the system can
 >   analyze that user's preferences.
@@ -65,21 +64,21 @@ These three items map directly onto the phases in §7.
 
 ## 2a. Scope narrowing, agreed 2026-07-25
 
-Following an email exchange with Prof. Quintarelli, the scope above was narrowed:
+The scope above was narrowed:
 
 - Items (1) domain selection and (2) user selection instead of login are **out of scope for
-  this thesis** — they are handled by a separate, already-implemented app built by two bachelor
-  students (per the professor, "empty on the recommendation side"). This thesis does not build,
-  extend, or integrate with that app's UI.
+  this thesis** — they are handled by a separate, already-implemented app with no
+  recommendation functionality of its own. This thesis does not build, extend, or integrate
+  with that app's UI.
 - Item (3), the query recommender, is the **entire thesis contribution**, delivered as a
-  **standalone model + API** (not a UI feature) — any app, including the bachelor students',
-  integrates it later by calling the API. Narges is not responsible for that integration.
+  **standalone model + API** (not a UI feature) — any app integrates it later by calling the
+  API. Narges is not responsible for that integration.
 - The multi-domain VKG work already completed in this repo (`web_app/`, Phases 0-1 below) is
   retained, but only as an **internal development/evaluation harness** — a way to build, test,
   and demo the recommender against real schemas/data without depending on the external app's
   timeline or codebase. It is not the thesis deliverable.
 - **Open dependency**: the recommender API's input contract (what "real interaction data" it
-  receives) depends on what the bachelor students' app actually logs per user (queries, clicks,
+  receives) depends on what the external app actually logs per user (queries, clicks,
   dwell time, etc.). This needs to be confirmed before the Phase 2 API contract can be finalized
   — see §8.
 
@@ -242,6 +241,10 @@ There is currently no running Ontop instance wired to this ontology/mapping, and
 in `web_app` that this VKG has ever been queried by the NL2SPARQL pipeline.
 
 ### 3.5 `Movie/` — a second, newly-added Movie ontology+data (NOT a fix/superset of §3.3-3.4)
+
+**Status (2026-08-21): folder deleted.** It was never wired into the running stack — see the
+verdict below — and has since been removed from the repo entirely. Kept here as the historical
+record of why it was excluded.
 
 Four files, no README, no scripts: `movie_project.owl`, `movie_project.obda`,
 `movie_project.properties`, `movie_db.backup` (a PostgreSQL custom-format `pg_dump`).
@@ -437,7 +440,7 @@ approach do on this task," per §7 Phase 5.
 > Phases 2–5 existed; now redrawn to match what was actually built and verified (§7, and the
 > companion `docs/report/Phase2_Report.tex`/`Phase4_Report.tex`/`Phase5_Report.tex` for full
 > detail). The deliverable is still the **Recommender API**, not a GUI, and the external app
-> (bachelor students') and this repo's own harness are both still just *callers* of it — but
+> (the external app) and this repo's own harness are both still just *callers* of it — but
 > three things changed from the original sketch once the system existed to draw accurately:
 >
 > 1. **The harness calls in-process, not over HTTP.** `gui_v2.py` imports and calls
@@ -457,7 +460,7 @@ approach do on this task," per §7 Phase 5.
 
 ```mermaid
 flowchart TD
-    subgraph External["External app (bachelor students' — out of scope, black box)"]
+    subgraph External["External app (out of scope, black box)"]
         EApp["App UI<br/>(domain/user selection, NL query, results display)"]
     end
 
@@ -543,9 +546,10 @@ to run a controlled ablation against held-out ground truth, and neither modifies
   `postgresql-42.7.4.jar` was downloaded into `docker/jdbc/` and bind-mounted to
   `/opt/ontop/jdbc/` in both `ontop-*` services. `curl` smoke test at :8081/sparql returns movie
   titles correctly.)
-- *(Optional, low-effort win, still not done)*: `Movie/`'s `Director` entity/mapping is clean
-  and could be merged into `netfilx_sparql`'s richer ontology later if director-level querying
-  is wanted — but don't swap to `Movie/` as the primary VKG, it has no behavioral data.
+- *(Optional idea, now moot — `Movie/` was deleted 2026-08-21)*: `Movie/`'s `Director`
+  entity/mapping was clean and could have been merged into `netfilx_sparql`'s richer ontology
+  if director-level querying were wanted — but it was never the primary VKG, since it had no
+  behavioral data.
 
 **Tourism side** — use `Verona_Tourism_Ontop/` as the real VKG:
 - [x] Restore `tourismdb_jan 1.backup` into a **PostGIS-enabled** Postgres instance (plain
@@ -592,11 +596,12 @@ to run a controlled ablation against held-out ground truth, and neither modifies
   before either folder is shared or committed anywhere beyond local dev. Both `.properties`
   files now carry a `CHANGEME` placeholder + a comment; real passwords for the new Docker stack
   live only in a gitignored root `.env` (see `.env.example`, `.gitignore`, `docker/README.md`).
+  (`Movie/` folder deleted 2026-08-21; this item now only applies to `netflix_ontology.properties`.)
 
 ### Phase 1 — Domain selection UX
 
 > **Reframed 2026-07-25 (§2a): this phase's output is now the internal dev/test harness only,
-> not a production deliverable** — domain selection UI is the bachelor students' app's job.
+> not a production deliverable** — domain selection UI is the external app's job.
 > Kept as-is below since the work is already done and remains useful for developing/demoing the
 > recommender against real schemas.
 
@@ -658,7 +663,7 @@ to run a controlled ablation against held-out ground truth, and neither modifies
 > get suggestions displayed would be more friction than the contract needs to enforce. The
 > **request/response shape** (`RecommendRequest`/`RecommendResponse` in
 > `recommender/api/schemas.py`) is identical either way, and `recommender/api/app.py` still
-> exposes the real HTTP `POST /recommend` (+ `GET /health`) for the bachelor students' app or any
+> exposes the real HTTP `POST /recommend` (+ `GET /health`) for the external app or any
 > other external caller, with OpenAPI docs auto-served at `/docs`.
 >
 > `RecommendResponse.suggestions` is an empty list for now — `handle_recommend()`'s only job in
@@ -842,15 +847,67 @@ to run a controlled ablation against held-out ground truth, and neither modifies
 
 ---
 
+## 7a. Phase 7: Professor feedback response (2026-09-11)
+
+Two rounds of feedback from Prof. Quintarelli, addressed as follows:
+
+**Thesis writing.** The professor flagged that the thesis text described the *process* of
+extending a named prior student's work and being told what to focus/not focus on (the GUI) —
+her point being that this narrates supervision rather than presenting original contribution.
+Fixed in `docs/report/main.tex` (abstract) and `docs/report/sections/1_introduction.tex`
+(motivation + scope sections): removed the "baseline system this thesis extends" framing, the
+"Jerry's analysis" attribution, and the "two other students / empty on the recommendation side"
+narration, while keeping the legitimate `\cite{balasooriya2026}` related-work citation. She was
+otherwise positive on the contribution and said to proceed with the next steps — evaluation is
+the interesting part going forward.
+
+**Technical confirmation — implementation verified working** by the professor together with the
+author of the baseline app (Cc'd on the email). Two follow-up questions:
+
+1. *Why does "List the romantic movies" fail while "Recommend romantic movies" works — is the
+   dataset fake/logs-only?* No — the Movie catalog data is real (`netflix_dataset/movies.csv`
+   has genuine title/genre/rating metadata, correctly OBDA-mapped). The actual cause is
+   architectural: `recommender/api/service.py::handle_recommend` never executes SPARQL itself —
+   it takes `generated_sparql`/`result_summary` as pre-computed inputs and only logs the
+   interaction + LLM-suggests follow-ups. A "List" query needs the full NL→SPARQL→live-execution
+   path (`web_app/nl2sparql/pipeline.py` + `sparql_executor.py`) against a running Ontop/Postgres
+   endpoint, which per §8 below is not currently up. "Recommend" works because it doesn't depend
+   on live KG execution; "List" fails because there's nothing live to answer it against.
+2. *What's needed to extend to the Tourism domain, and could a star-rating evaluation mechanism
+   be added?* Tourism (`Verona_Tourism_Ontop/`) has real catalog data but **zero interaction
+   logs** — generating/collecting Tourism interaction logs (mirroring
+   `recommendation_logs.csv`/`watch_history.csv`/`search_logs.csv`) so the behavioral-profile
+   signal (currently Movie-only, per `README.md` §1) can extend to Tourism remains **open,
+   not-yet-started work**. The **star-rating capture mechanism is now implemented** (below).
+
+**Live star-rating evaluation — implemented (2026-09-11).** A new feedback channel,
+complementary to the offline Phase 5 ablation (§7 above), which scores against held-out
+historical logs rather than live user feedback:
+- `recommender/ratings.py` — SQLite store (`recommender/output/ratings.db`), same pattern as
+  `query_log.py`: one row per (query_log_id, user_id, domain, suggestion, stars, timestamp).
+- `POST /rate` (`recommender/api/app.py`, `schemas.RateRequest`/`RateResponse`,
+  `service.handle_rate`) — takes a `query_log_id` (returned by `POST /recommend`, now added to
+  `RecommendResponse`), the rated `suggestion` text, and `stars` (1-5, Pydantic-validated).
+  Demonstrated end-to-end in `call_recommender.py`: call `/recommend`, then rate its first
+  suggestion via `/rate`.
+- `recommender/evaluation/ratings_summary.py` (`python -m recommender.evaluation.ratings_summary`)
+  — reads `ratings.db` and reports mean stars/count overall, per domain, and per suggestion, to
+  `recommender/output/evaluation/ratings_summary.{json,md}`. Purely additive, like
+  `run_evaluation.py`: doesn't touch `query_log.db` or call the recommender itself.
+- Domain-agnostic by construction (no dependency on the behavioral profile), so it already works
+  for Tourism once real ratings start coming in — it doesn't wait on the Tourism logs gap above.
+
+---
+
 ## 8. Risks & open questions
 
 - **API input-contract dependency on the external app (new, 2026-07-25)**: the recommender's
   value proposition rests on conditioning on real interaction data, not just query text, but what
-  that data looks like depends entirely on what the bachelor students' app logs per user. This
+  that data looks like depends entirely on what the external app logs per user. This
   must be confirmed before Phase 2's API contract can be finalized — until then, Phase 3's
   behavioral-profile work proceeds against `netflix_dataset`'s synthetic signals as a stand-in.
 - **User testing depends on external integration timing (new, 2026-07-25)**: "test with real
-  users" (per the professor's email) may happen either through the bachelor students' app calling
+  users" (per the professor's email) may happen either through the external app calling
   the finished API, or through this repo's own harness (`gui_v2.py`) if their integration isn't
   ready in time. Don't let thesis evaluation (Phase 5) block on their schedule — keep the internal
   harness as a fallback demo path.
@@ -876,7 +933,8 @@ to run a controlled ablation against held-out ground truth, and neither modifies
   `Movie/movie_project.properties` currently contain plaintext passwords; move both to
   environment variables before any further sharing/committing of these folders.
   `Verona_Tourism_Ontop/` has no `.properties` file yet — when one is authored, don't repeat the
-  same plaintext-password pattern.
+  same plaintext-password pattern. (Resolved — see §3.6/3.7 checklist; `Movie/` folder deleted
+  2026-08-21.)
 - **Search→watch linking is heuristic, not ground truth**: the temporal-join method in Phase 3
   is an approximation (the dataset is synthetic and has no true causal link between a search
   and a later watch); this should be stated explicitly as a limitation in the thesis rather

@@ -8,7 +8,7 @@ OpenAPI docs auto-served at /docs.
 from fastapi import FastAPI
 
 from . import schemas
-from .service import handle_recommend
+from .service import handle_recommend, handle_rate
 
 app = FastAPI(
     title="Query Recommender API",
@@ -25,3 +25,9 @@ def health():
 @app.post("/recommend", response_model=schemas.RecommendResponse)
 def recommend(request: schemas.RecommendRequest) -> schemas.RecommendResponse:
     return handle_recommend(request)
+
+
+@app.post("/rate", response_model=schemas.RateResponse)
+def rate(request: schemas.RateRequest) -> schemas.RateResponse:
+    """Phase 7: live star rating (1-5) on one suggestion from a prior /recommend response."""
+    return handle_rate(request)

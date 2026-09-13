@@ -15,6 +15,7 @@ from pathlib import Path
 
 from . import schemas
 from ..query_log import log_query
+from ..ratings import add_rating
 from ..core.retrieval import retrieve_similar_queries
 from ..core.generation import generate_candidates
 from ..core.validation import filter_grounded
@@ -42,7 +43,7 @@ def _load_behavioral_profile(user_id):
 
 
 def handle_recommend(request: schemas.RecommendRequest) -> schemas.RecommendResponse:
-    log_query(
+    query_log_id = log_query(
         user_id=request.user_id,
         domain=request.domain,
         query_text=request.query_text,
@@ -59,7 +60,7 @@ def handle_recommend(request: schemas.RecommendRequest) -> schemas.RecommendResp
         )
     except Exception as exc:
         logger.warning("Candidate generation failed for user=%s domain=%s: %s", request.user_id, request.domain, exc)
-        return schemas.RecommendResponse(suggestions=[])
+        return schemas.RecommendResponse(suggestions=[], query_log_id=query_log_id)
 
     try:
         grounded = filter_grounded(candidates, request.domain)
@@ -68,4 +69,19 @@ def handle_recommend(request: schemas.RecommendRequest) -> schemas.RecommendResp
         grounded = candidates
 
     suggestions = rank_and_diversify(grounded, similar_queries, behavioral_profile, top_n=3)
-    return schemas.RecommendResponse(suggestions=suggestions)
+    return schemas.RecommendResponse(suggestions=suggestions, query_log_id=query_log_id)
+
+
+def handle_rate(request: schemas.RateRequest) -> schemas.RateResponse:
+    """Phase 7: record a live star rating on one suggestion (docs/THESIS_PROJECT_PLAN.md SS7a).
+
+    Purely a feedback sink -- unlike handle_recommend, it has no pipeline to orchestrate.
+    """
+    rating_id = add_rating(
+        user_id=request.user_id,
+        domain=request.domain,
+        suggestion=request.suggestion,
+        stars=request.stars,
+        query_log_id=request.query_log_id,
+    )
+    return schemas.RateResponse(rating_id=rating_id)

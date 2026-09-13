@@ -6,7 +6,7 @@ domain-selection UX (Phase 1) from [`THESIS_PROJECT_PLAN.md`](THESIS_PROJECT_PLA
 > **Scope note (2026-07-25):** after this work was completed, the thesis scope was narrowed
 > (`THESIS_PROJECT_PLAN.md` §2a) to the query recommender (Phase 3/4) as a standalone API only.
 > Domain selection and user selection — items (1)/(2), i.e. everything this document covers — are
-> **not thesis deliverables**; they're owned by a separate app built by two bachelor students.
+> **not thesis deliverables**; they're owned by a separate, existing app.
 > Everything below is retained and kept running as an **internal dev/test harness**: the two live
 > Movie/Tourism VKGs and the GUI domain switcher exist so the recommender (Phase 3 onward) can be
 > built and demoed against real schemas/data without depending on the external app's timeline. No
@@ -25,7 +25,7 @@ get mixed in with forward-looking planning text. For Phase 2 onward, see the roa
 Phase 0 stood up two independent Virtual Knowledge Graphs (VKGs) — **Movie** and **Tourism** —
 each behind its own Ontop instance, sourced from real relational data (a synthetic Netflix-shaped
 dataset for Movie, a real 293MB Verona tourism DB dump for Tourism). Phase 1 wired a **domain
-selector** into the existing Indeewari NL2SPARQL Streamlit GUI so a user can pick which VKG to
+selector** into the existing NL2SPARQL Streamlit GUI so a user can pick which VKG to
 query, replacing the app's previous single-KG wiring.
 
 Neither phase touches the NL2SPARQL pipeline's core logic (schema formatting → class/property
@@ -166,9 +166,9 @@ thesis; the Movie domain carries all user-selection and behavior-aware work.
 
 ### 3.5 Credential hygiene
 
-`netfilx_sparql/netflix_ontology.properties` and `Movie/movie_project.properties` (both legacy,
-unused by the Docker Compose stack) now carry `jdbc.password=CHANGEME` placeholders instead of
-plaintext passwords. Real credentials for the running stack live only in a gitignored root
+`netfilx_sparql/netflix_ontology.properties` (legacy, unused by the Docker Compose stack) now
+carries a `jdbc.password=CHANGEME` placeholder instead of a plaintext password. Real credentials
+for the running stack live only in a gitignored root
 `.env` (`POSTGRES_MOVIE_PASSWORD`, `POSTGRES_TOURISM_PASSWORD`), templated in `.env.example`.
 
 ### 3.6 Verification performed

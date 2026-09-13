@@ -15,7 +15,7 @@ query recommender core) will be built inside.
 ## 1. Overview
 
 Per the scope narrowing agreed with the professor (§2a), the thesis contribution is a
-**standalone model + API** — any caller (the bachelor students' app, or this repo's own dev
+**standalone model + API** — any caller (the external app, or this repo's own dev
 harness) integrates it by calling an endpoint, not by embedding UI. Phase 2's job is to stand up
 that boundary before any recommendation logic exists behind it:
 
@@ -69,7 +69,7 @@ class RecommendResponse(BaseModel):
 
 This matches the roadmap's §7 Phase 2 contract sketch exactly, with one explicit gap left open:
 `interaction_data` stays an untyped `Optional[dict]` rather than a fixed schema, because its real
-shape depends on the **open dependency in §2a/§8** — what the bachelor students' external app
+shape depends on the **open dependency in §2a/§8** — what the external app
 actually logs per user (queries, clicks, dwell time, etc.). That confirmation hasn't happened
 yet, so typing it further now would mean guessing.
 
@@ -194,7 +194,7 @@ the real HTTP endpoint) and `gui_v2.py` (for the harness). Reasoning:
   the finished SPARQL query and result count as inputs, which don't exist until the pipeline has
   already run.
 - **The real HTTP path still exists and was verified independently** (§4) — external callers
-  (the bachelor students' app) are unaffected by this choice; they only ever see the HTTP surface.
+  (the external app) are unaffected by this choice; they only ever see the HTTP surface.
 
 If a future need arises for the harness to test the *actual* HTTP transport (e.g. once
 Phase 4 adds latency/timeout behavior worth exercising realistically), swapping the harness's
